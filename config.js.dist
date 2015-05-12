@@ -1,5 +1,5 @@
 (function () {
-  var app = angular.module('engine');
+  var app = angular.module('keira2');
 
   /* Edit with path of TC-JSON-API */
   app.api = "../TC-JSON-API/public/index.php/";
