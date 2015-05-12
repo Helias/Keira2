@@ -6,7 +6,7 @@
 
     $stateProvider
     .state('quest', {
-      url: '/quest/:id',
+      url: '/quest',
       controller: 'QuestController',
       templateUrl: 'partials/quest.html'
     })
@@ -15,14 +15,13 @@
       controller: 'CreatureController',
       templateUrl: 'partials/creature.html'
     })
-
     .state('gameobject', {
-      url: '/gameobject/:id',
+      url: '/gameobject',
       controller: 'gameobjectController',
       templateUrl: 'partials/gameobject.html'
     })
     .state('item', {
-      url: '/item/:id',
+      url: '/item',
       controller: 'ItemController',
       templateUrl: 'partials/item.html'
     });

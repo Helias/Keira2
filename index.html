@@ -15,6 +15,7 @@
     <script src="js/lib/loading-bar.min.js"></script>
     <script src="js/app/main.js"></script>
     <script src="js/app/creature.js"></script>
+    <script src="js/app/quest.js"></script>
     <script src="js/app/routes.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -34,17 +35,18 @@
       <h2>Keira2</h2>
       <div class="row">
         <div class="col-xs-12">
-          <a ng-href="#/quest"><button class="btn-primary">Quest</button></a>
-          <a ng-href="#/creature"><button class="btn-primary">Creature</button></a>
-          <a ng-href="#/gameobject"><button class="btn-primary">Game Object</button></a>
-          <a ng-href="#/item"><button class="btn-primary">Item</button></a>
-          <a ng-href="#/smartai"><button class="btn-primary">SmartAI</button></a>
-          <a ng-href="#/conditions"><button class="btn-primary">Conditions</button></a>
-          <a ng-href="#/other"><button class="btn-primary">Other</button></a>
-          <a ng-href="#/character"><button class="btn-primary">Character</button></a>
-          <a ng-href="#/sql"><button class="btn-primary">SQL</button></a>
+          <a ng-href="#/quest"><button class="btn-primary btn-lg">Quest</button></a>
+          <a ng-href="#/creature"><button class="btn-primary btn-lg">Creature</button></a>
+          <a ng-href="#/gameobject"><button class="btn-primary btn-lg">Game Object</button></a>
+          <a ng-href="#/item"><button class="btn-primary btn-lg">Item</button></a>
+          <a ng-href="#/smartai"><button class="btn-primary btn-lg">SmartAI</button></a>
+          <a ng-href="#/conditions"><button class="btn-primary btn-lg">Conditions</button></a>
+          <a ng-href="#/other"><button class="btn-primary btn-lg">Other</button></a>
+          <a ng-href="#/character"><button class="btn-primary btn-lg">Character</button></a>
+          <a ng-href="#/sql"><button class="btn-primary btn-lg">SQL</button></a>
         </div>
       </div>
+      <hr>
       <div ui-view></div>
     </div>
   </body>
