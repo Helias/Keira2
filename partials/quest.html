@@ -25,13 +25,55 @@
         <tr ng-repeat="quest in quests">
           <td><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Id }}</a></td>
           <td><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Title }}</a></td>
-          <td>{{ quest.Details | limitTo: 100 }}</a></td>
+          <td>{{ quest.Details | limitTo: 100 }}</td>
         </tr>
       </tbody>
     </table>
   </tab>
   <tab id="tab-questpart1" heading="Quest Part 1">
-    Quest Part 1
+    <br>
+    <div class="row">
+      <div class="col-xs-1">
+        <small>Id</small>
+        <div class="input-group">
+          <input class="form-control input-sm" placeholder="ID" type="text">
+          <div class="input-group-btn">
+            <button class="btn btn-default btn-xs">→</button>
+          </div>
+        </div>
+        <small>ExclusiveGroup</small>
+        <input type="text" class="form-control input-xs">
+        <small>NextQuestIdChain</small>
+        <div class="input-group">
+          <input class="form-control input-xs" placeholder="ChainID" type="text">
+          <div class="input-group-btn">
+            <button class="btn btn-default btn-xs">→</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-1">
+        <small>PrevQuestId</small>
+        <div class="input-group">
+          <input class="form-control input-xs" placeholder="PrevID" type="text">
+          <div class="input-group-btn">
+            <button class="btn btn-default btn-xs">→</button>
+          </div>
+        </div>
+        <small>NextQuestId</small>
+        <div class="input-group">
+          <input class="form-control input-xs" placeholder="NextID" type="text">
+          <div class="input-group-btn">
+            <button class="btn btn-default btn-xs">→</button>
+          </div>
+        </div>
+        <small>RewardXPId</small>
+        <input type="text" class="form-control input-xs">
+      </div>
+      <div class="col-xs-3"></div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-4"></div>
+      <div class="col-xs-1"></div>
+    </div>
   </tab>
   <tab id="tab-questpart2" heading="Quest Part 2">
     Quest Part 2
