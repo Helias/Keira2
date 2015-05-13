@@ -1,0 +1,61 @@
+<tabset>
+  <tab id="tab-search" heading="Search">
+    <div class="row">
+      <br>
+      <div class="col-xs-2">
+        Entry
+        <input class="form-control" id="entry" type="text" placeholder="Item Entry" ng-model="item_template.entry">
+      </div>
+      <div class="col-xs-3">
+        Name
+        <input class="form-control" id="name" type="text" placeholder="Name" ng-model="item_template.name">
+      </div>
+      <div class="col-xs-1">
+        <br>
+        <button class="btn-primary btn-sm" ng-click="search(item_template.entry, item_template.name)">Search</button>
+      </div>
+    </div>
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th class="text-center">Entry</th>
+        <th class="text-center">Name</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in items">
+          <td><a ng-href="./#/item/{{ item.entry }}">{{ item.entry }}</a></td>
+          <td><a ng-href="./#/item/{{ item.entry }}">{{ item.name }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </tab>
+  <tab id="tab-item_template" heading="Item Template">
+    Item Template
+  </tab>
+  <tab id="tab-item_loot" heading="Item Loot">
+    Item Loot
+  </tab>
+  <tab id="tab-item_disenchant_loot" heading="Disenchant Loot">
+    Disenchant Loot
+  </tab>
+  <tab id="tab-item_prospecting_loot" heading="Prospecting Loot">
+    Prospecting Loot
+  </tab>
+  <tab id="tab-item_milling_loot" heading="Milling Loot">
+    Milling Loot
+  </tab>
+  <tab id="tab-item_reference_loot" heading="Reference Loot">
+    Reference Loot
+  </tab>
+  <tab id="tab-item_enchantment" heading="Enchantment">
+    Enchantment
+  </tab>
+  <tab id="tab-looted_from" heading="Loted From">
+    Loted From
+  </tab>
+  <tab id="tab-involved_in" heading="Involved In">
+    Involved In
+  </tab>
+  <tab id="tab-item_script" heading="Script">
+    Script
+  </tab>
+</tabset>

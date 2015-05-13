@@ -31,7 +31,6 @@
       templateUrl: 'partials/item.html'
     });
 
-
   });
 
 }());
