@@ -14,7 +14,7 @@
 
         request += creatureEntry;
 
-      } else if (typeof CreatureName !== "undefined" && typeof CreatureSubname !== "undefined") {
+      } else if (typeof CreatureName !== "undefined" && typeof CreatureSubname !== "undefined" && CreatureSubname.length >= 4) {
 
         request += CreatureName+"/"+CreatureSubname;
 
@@ -32,7 +32,6 @@
       $http.get(request)
         .success(function (data, status, header, config) {
         $scope.creatures = data;
-        console.log(data[0]);
       })
         .error(function (data, status, header, config) {
         console.log("Error in CREATURE SEARCH $http.get request");
