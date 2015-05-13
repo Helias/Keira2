@@ -19,14 +19,15 @@
         <button class="btn-primary btn-sm" ng-click="search(creature_template.entry, creature_template.name, creature_template.subname)">Search</button>
       </div>
     </div>
-    <table class="table table-striped table-condensed">
+    <br>
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
-        <th class="text-center">Entry</th>
-        <th class="text-center">Name</th>
-        <th class="text-center">Subname</th>
+        <th class="text-center" ts-criteria="entry|parseInt">Entry</th>
+        <th class="text-center" ts-criteria="name|lowercase">Name</th>
+        <th class="text-center" ts-criteria="subname|lowercase">Subname</th>
       </thead>
       <tbody>
-        <tr ng-repeat="creature in creatures">
+        <tr ng-repeat="creature in creatures" ts-repeat>
           <td><a ng-href="./#/creature/{{ creature.entry }}">{{ creature.entry }}</a></td>
           <td><a ng-href="./#/creature/{{ creature.entry }}">{{ creature.name }}</a></td>
           <td>{{ creature.subname }}</td>

@@ -15,14 +15,15 @@
         <button class="btn-primary btn-sm" ng-click="search(quest_template.id, quest_template.title)">Search</button>
       </div>
     </div>
-    <table class="table table-striped table-condensed">
+    <br>
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
-        <th class="text-center">ID</th>
-        <th class="text-center">Title</th>
-        <th class="text-center">Details</th>
+        <th class="text-center" ts-criteria="Id|parseInt">ID</th>
+        <th class="text-center" ts-criteria="Title|lowercase">Title</th>
+        <th class="text-center" ts-criteria="Details|lowercase">Details</th>
       </thead>
       <tbody>
-        <tr ng-repeat="quest in quests">
+        <tr ng-repeat="quest in quests" ts-repeat>
           <td><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Id }}</a></td>
           <td><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Title }}</a></td>
           <td>{{ quest.Details | limitTo: 100 }}</td>
