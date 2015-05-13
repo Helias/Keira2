@@ -1,0 +1,30 @@
+<div class="row">
+  <br>
+  <div class="col-xs-2">
+    Quest ID
+    <input class="form-control" id="questid" type="text" placeholder="Quest ID" ng-model="quest_template.id">
+  </div>
+  <div class="col-xs-3">
+    Title
+    <input class="form-control" id="title" type="text" placeholder="Title" ng-model="quest_template.title">
+  </div>
+  <div class="col-xs-1">
+    <br>
+    <button class="btn-primary btn-sm" ng-click="search(quest_template.id, quest_template.title)">Search</button>
+  </div>
+</div>
+<br>
+<table class="table table-striped table-condensed" ts-wrapper>
+  <thead>
+    <th class="text-center" ts-criteria="Id|parseInt">ID</th>
+    <th class="text-center" ts-criteria="Title|lowercase">Title</th>
+    <th class="text-center" ts-criteria="Details|lowercase">Details</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="quest in quests" ts-repeat>
+      <td><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Id }}</a></td>
+      <td><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Title }}</a></td>
+      <td>{{ quest.Details | limitTo: 100 }}</td>
+    </tr>
+  </tbody>
+</table>

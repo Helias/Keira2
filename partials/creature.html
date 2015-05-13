@@ -1,39 +1,6 @@
 <tabset>
   <tab id="tab-search" heading="Search">
-    <div class="row">
-      <br>
-      <div class="col-xs-2">
-        Entry
-        <input class="form-control" id="entry" type="text" placeholder="Creature Entry" ng-model="creature_template.entry">
-      </div>
-      <div class="col-xs-3">
-        Name
-        <input class="form-control" id="name" type="text" placeholder="Name" ng-model="creature_template.name">
-      </div>
-      <div class="col-xs-3">
-        Subname
-        <input class="form-control" id="subname" type="text" placeholder="Subname" ng-model="creature_template.subname">
-      </div>
-      <div class="col-xs-1">
-        <br>
-        <button class="btn-primary btn-sm" ng-click="search(creature_template.entry, creature_template.name, creature_template.subname)">Search</button>
-      </div>
-    </div>
-    <br>
-    <table class="table table-striped table-condensed" ts-wrapper>
-      <thead>
-        <th class="text-center" ts-criteria="entry|parseInt">Entry</th>
-        <th class="text-center" ts-criteria="name|lowercase">Name</th>
-        <th class="text-center" ts-criteria="subname|lowercase">Subname</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="creature in creatures" ts-repeat>
-          <td><a ng-href="./#/creature/{{ creature.entry }}">{{ creature.entry }}</a></td>
-          <td><a ng-href="./#/creature/{{ creature.entry }}">{{ creature.name }}</a></td>
-          <td>{{ creature.subname }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div ng-include="'Creature/search.html'"></div>
   </tab>
   <tab id="tab-creature_template" heading="Creature Template">
     Creature Template
