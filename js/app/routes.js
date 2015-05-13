@@ -22,7 +22,8 @@
     })
       .state('creature_template', {
       url: '/creature/:id',
-      controller: 'CreatureController'
+      controller: 'CreatureController',
+      templateUrl: 'partials/creature.html'
     })
       .state('gameobject', {
       url: '/gameobject',
