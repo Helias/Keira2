@@ -7,12 +7,12 @@
   var app = angular.module('keira2');
 
   app.controller("CreatureController", function ($scope, $http) {
-    $scope.search = function (creatureEntry, CreatureName, CreatureSubname) {
+    $scope.search = function (CreatureEntry, CreatureName, CreatureSubname) {
       var request = app.api + "creature/template/";
 
-      if ((typeof creatureEntry !== "undefined") && (creatureEntry !== "")) {
+      if ((typeof CreatureEntry !== "undefined") && (CreatureEntry !== "")) {
 
-        request += creatureEntry;
+        request += CreatureEntry;
 
       } else if (typeof CreatureName !== "undefined" && typeof CreatureSubname !== "undefined" && CreatureSubname.length >= 4) {
 
