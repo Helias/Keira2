@@ -34,7 +34,7 @@
         $scope.quests = data;
       })
         .error(function (data, status, header, config) {
-        console.log("Error in QUEST $http.get request");
+        console.log("Error in QUEST SEARCH $http.get request");
       });
 
     };
