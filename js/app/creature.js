@@ -6,7 +6,12 @@
 
   var app = angular.module('keira2');
 
-  app.controller("CreatureController", function ($scope, $http) {
+  app.controller("CreatureController", function ($scope, $http, $stateParams) {
+    if($stateParams.id !== null) {
+//      document.getElementById("tab-creature_template").click();
+//      alert(angular.element(document.querySelector("#tab-creature_template")).active);
+    }
+
     $scope.search = function (CreatureEntry, CreatureName, CreatureSubname) {
       var request = app.api + "creature/template/";
 
