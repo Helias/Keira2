@@ -22,7 +22,7 @@
     })
     .state('gameobject', {
       url: '/gameobject',
-      controller: 'gameobjectController',
+      controller: 'GameobjectController',
       templateUrl: 'partials/gameobject.html'
     })
     .state('item', {
@@ -30,7 +30,6 @@
       controller: 'ItemController',
       templateUrl: 'partials/item.html'
     });
-
 
   });
 

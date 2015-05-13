@@ -1,1 +1,79 @@
-TO DO
+<tabset>
+  <tab id="tab-search" heading="Search">
+    <div class="row">
+      <br>
+      <div class="col-xs-2">
+        Entry
+        <input class="form-control" id="entry" type="text" placeholder="Creature Entry" ng-model="creature_template.entry">
+      </div>
+      <div class="col-xs-3">
+        Name
+        <input class="form-control" id="name" type="text" placeholder="Name" ng-model="creature_template.name">
+      </div>
+      <div class="col-xs-3">
+        Subname
+        <input class="form-control" id="subname" type="text" placeholder="Subname" ng-model="creature_template.subname">
+      </div>
+      <div class="col-xs-1">
+        <br>
+        <button class="btn-primary btn-sm" ng-click="search(creature_template.entry, creature_template.name, creature_template.subname)">Search</button>
+      </div>
+    </div>
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th class="text-center">Entry</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Subname</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="creature in creatures">
+          <td><a ng-href="./#/creature/{{ creature.entry }}">{{ creature.entry }}</a></td>
+          <td><a ng-href="./#/creature/{{ creature.entry }}">{{ creature.name }}</a></td>
+          <td>{{ creature.subname }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </tab>
+  <tab id="tab-creature_template" heading="Creature Template">
+    Creature Template
+  </tab>
+  <tab id="tab-creature_location" heading="Creature Location">
+    Creature Location
+  </tab>
+  <tab id="tab-model_info" heading="Model Info">
+    Model Info
+  </tab>
+  <tab id="tab-equip_template" heading="Equip Template">
+    Equip Template
+  </tab>
+  <tab id="tab-creature_loot" heading="Creature Loot">
+    Creature Loot
+  </tab>
+  <tab id="tab-creature_pickpocketloot" heading="Pickpocket Loot">
+    Pickpocket Loot
+  </tab>
+  <tab id="tab-creature_skinloot" heading="Skin Loot">
+    Skin Loot
+  </tab>
+  <tab id="tab-creature_template_addon" heading="Creature Template Addon">
+    Creature Template Addon
+  </tab>
+  <tab id="tab-npc_gossip" heading="NPC Gossip">
+    NPC Gossip
+  </tab>
+  <tab id="tab-on_kill_reputation" heading="On Kill Reputation">
+    On Kill Reputation
+  </tab>
+  <tab id="tab-involved_in" heading="Involved In">
+    Involved In
+  </tab>
+  <tab id="tab-locales_npc_text" heading="Locales NPC Text">
+    Locales NPC Text
+  </tab>
+  <tab id="tab-creature_movement" heading="Creature Movement">
+    Creature Movement
+  </tab>
+  <tab id="tab-creature_addon" heading="Creature Addon">
+    Creature Addon
+  </tab>
+</tabset>
