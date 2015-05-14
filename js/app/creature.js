@@ -7,8 +7,17 @@
   var app = angular.module('keira2');
 
   app.controller("CreatureController", function ($scope, $http, $stateParams) {
+    $scope.npc = "TEST";
 
     if ($stateParams.id) {
+      $http.get( app.api + "creature/template/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.npc = data[0];
+        console.log(data[0]);
+      })
+        .error(function (data, status, header, config) {
+        console.log("Error in CREATURE DATA $http.get request");
+      });
       $scope.isFirstActive = true;
     }
 
