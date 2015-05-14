@@ -9,7 +9,7 @@
   app.controller("CreatureController", function ($scope, $http, $stateParams) {
 
     if ($stateParams.id) {
-      $scope.isFirstActive = true;
+      $scope.isCreatureSelected = true;
     }
 
     $scope.search = function (CreatureEntry, CreatureName, CreatureSubname) {

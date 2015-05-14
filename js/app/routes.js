@@ -59,7 +59,7 @@
       url: '/sql',
       controller: 'SQLController',
       templateUrl: 'partials/sql.html'
-    })
+    });
 
   });
 
