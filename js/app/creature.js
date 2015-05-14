@@ -22,14 +22,14 @@
 
     // TO DO: use this function to compare object literals "current" and "new"
     $scope.labels = function getLabels(obj) {
-      var result = "";
-      for (var label in obj) {
+      var result = "", label;
+      for (label in obj) {
         if (obj.hasOwnProperty(label)) {
           result += "creature_template." + label + " = " + obj[label] + "\n";
         }
       }
       return result;
-    }
+    };
 
     $scope.search = function (CreatureEntry, CreatureName, CreatureSubname) {
 
