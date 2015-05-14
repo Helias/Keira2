@@ -34,7 +34,32 @@
       url: '/item',
       controller: 'ItemController',
       templateUrl: 'partials/item.html'
-    });
+    })
+      .state('smartai', {
+      url: '/smartai',
+      controller: 'SmartAIController',
+      templateUrl: 'partials/smartai.html'
+    })
+      .state('conditions', {
+      url: '/conditions',
+      controller: 'ConditionsController',
+      templateUrl: 'partials/conditions.html'
+    })
+      .state('other', {
+      url: '/other',
+      controller: 'OtherController',
+      templateUrl: 'partials/other.html'
+    })
+      .state('character', {
+      url: '/character',
+      controller: 'CharacterController',
+      templateUrl: 'partials/character.html'
+    })
+      .state('sql', {
+      url: '/sql',
+      controller: 'SQLController',
+      templateUrl: 'partials/sql.html'
+    })
 
   });
 
