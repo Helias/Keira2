@@ -5,106 +5,106 @@
       <div class="col-xs-3">
         <small>Entry</small>
         <div class="input-group">
-          <input class="form-control input-xs" placeholder="Entry" type="text" value="{{ npc.entry }}" ng-model="entry">
+          <input class="form-control input-xs" placeholder="Entry" type="text" value="{{ current.creature_templateentry }}" ng-model="new.creature_template.entry">
           <div class="input-group-btn">
-            <a ng-href="#/creature/{{ entry }}"><button class="btn btn-default btn-xs">→</button></a>
+            <a ng-href="#/creature/{{ current.creature_templateentry }}"><button class="btn btn-default btn-xs">→</button></a>
           </div>
         </div>
       </div>
       <div class="col-xs-3">
         <small>difficulty_entry_1</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" value="{{ npc.difficulty_entry_1 }}">
+          <input class="form-control input-xs" type="text" value="{{ current.creature_templatedifficulty_entry_1 }}" ng-model="new.creature_template.difficulty_entry_1">
           <div class="input-group-btn">
-            <a ng-href="#/creature/{{ npc.difficulty_entry_1 }}"><button class="btn btn-default btn-xs">→</button></a>
+            <a ng-href="#/creature/{{ current.creature_templatedifficulty_entry_1 }}"><button class="btn btn-default btn-xs">→</button></a>
           </div>
         </div>
       </div>
       <div class="col-xs-3">
         <small>difficulty_entry_2</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" value="{{ npc.difficulty_entry_2 }}">
+          <input class="form-control input-xs" type="text" value="{{ current.creature_templatedifficulty_entry_2 }}" ng-model="new.creature_template.difficulty_entry_2">
           <div class="input-group-btn">
-            <a ng-href="#/creature/{{ npc.difficulty_entry_2 }}"><button class="btn btn-default btn-xs">→</button></a>
+            <a ng-href="#/creature/{{ current.creature_templatedifficulty_entry_2 }}"><button class="btn btn-default btn-xs">→</button></a>
           </div>
         </div>
       </div>
       <div class="col-xs-3">
         <small>difficulty_entry_3</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" value="{{ npc.difficulty_entry_3 }}">
+          <input class="form-control input-xs" type="text" value="{{ current.creature_templatedifficulty_entry_3 }}" ng-model="new.creature_template.difficulty_entry_3">
           <div class="input-group-btn">
-            <a ng-href="#/creature/{{ npc.difficulty_entry_3 }}"><button class="btn btn-default btn-xs">→</button></a>
+            <a ng-href="#/creature/{{ current.creature_templatedifficulty_entry_3 }}"><button class="btn btn-default btn-xs">→</button></a>
           </div>
         </div>
       </div>
       <div class="col-xs-6 text-left">
         <small>KillCredit1</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.KillCredit1 }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templateKillCredit1 }}" ng-model="new.creature_template.KillCredit1">
       </div>
       <div class="col-xs-6 text-left">
         <small>KillCredit2</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.KillCredit2 }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templateKillCredit2 }}" ng-model="new.creature_template.KillCredit2">
       </div>
       <div class="col-xs-12 text-left">
         <small>Name</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.name }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templatename }}" ng-model="new.creature_template.name">
       </div>
       <div class="col-xs-6 text-left">
         <small>subname</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.subname }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templatesubname }}" ng-model="new.creature_template.subname">
       </div>
       <div class="col-xs-6 text-left">
         <small>IconName</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.IconName }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templateIconName }}" ng-model="new.creature_template.IconName">
       </div>
       <div class="col-xs-3 text-left">
         <small>modelid1</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.modelid1 }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templatemodelid1 }}" ng-model="new.creature_template.modelid1">
       </div>
       <div class="col-xs-3 text-left">
         <small>modelid2</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.modelid2 }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templatemodelid2 }}" ng-model="new.creature_template.modelid2">
       </div>
       <div class="col-xs-3 text-left">
         <small>modelid3</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.modelid3 }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templatemodelid3 }}" ng-model="new.creature_template.modelid3">
       </div>
       <div class="col-xs-3 text-left">
         <small>modelid4</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.modelid4 }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templatemodelid4 }}" ng-model="new.creature_template.modelid4">
       </div>
       <div class="col-xs-3 text-left">
         <small>mingold</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.mingold }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templatemingold }}" ng-model="new.creature_template.mingold">
       </div>
       <div class="col-xs-3 text-left">
         <small>maxgold</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.maxgold }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templatemaxgold }}" ng-model="new.creature_template.maxgold">
       </div>
       <div class="col-xs-3 text-left">
         <small>minlevel</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.minlevel }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templateminlevel }}" ng-model="new.creature_template.minlevel">
       </div>
       <div class="col-xs-3 text-left">
         <small>maxlevel</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.maxlevel }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templatemaxlevel }}" ng-model="new.creature_template.maxlevel">
       </div>
       <div class="col-xs-3 text-left">
         <small>Health_mod</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.HealthModifier }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templateHealthModifier }}" ng-model="new.creature_template.HealthModifier">
       </div>
       <div class="col-xs-3 text-left">
         <small>Mana_mod</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.ManaModifier }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templateManaModifier }}" ng-model="new.creature_template.ManaModifier">
       </div>
       <div class="col-xs-3 text-left">
         <small>Vehicleid</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.Vehicleid }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templateVehicleid }}" ng-model="new.creature_template.Vehicleid">
       </div>
       <div class="col-xs-3 text-left">
         <small>exp</small>
-        <input type="text" class="form-control input-xs" value="{{ npc.exp }}">
+        <input type="text" class="form-control input-xs" value="{{ current.creature_templateexp }}" ng-model="new.creature_template.exp">
       </div>
     </div>
   </div>

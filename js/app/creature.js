@@ -9,10 +9,10 @@
   app.controller("CreatureController", function ($scope, $http, $stateParams) {
 
     if ($stateParams.id) {
-      $scope.entry = $stateParams.id;
       $http.get( app.api + "creature/template/" + $stateParams.id)
         .success(function (data, status, header, config) {
-        $scope.npc = data[0];
+        $scope.new.creature_template = data[0];
+        $scope.current.creature_template = data[0];
       })
         .error(function (data, status, header, config) {
         console.log("Error in CREATURE DATA $http.get request");
