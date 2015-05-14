@@ -13,6 +13,7 @@
     }
 
     $scope.search = function (CreatureEntry, CreatureName, CreatureSubname) {
+
       var request = app.api + "creature/template/";
 
       if ((typeof CreatureEntry !== "undefined") && (CreatureEntry !== "")) {
