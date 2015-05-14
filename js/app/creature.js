@@ -13,6 +13,7 @@
         .success(function (data, status, header, config) {
         $scope.new_creature_template = data[0];
         $scope.current_creature_template = data[0];
+        console.log($scope.current_creature_template);
       })
         .error(function (data, status, header, config) {
         console.log("Error in CREATURE DATA $http.get request");

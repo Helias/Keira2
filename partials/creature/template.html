@@ -1,6 +1,8 @@
 <br>
 <div class="row">
   <div class="col-xs-5">
+
+    <h5 class="text-left">Creature I</h5>
     <div class="row">
       <div class="col-xs-3">
         <small>Entry</small>
@@ -107,7 +109,84 @@
         <input type="text" class="form-control input-xs" value="{{ current_creature_template.exp }}" ng-model="new_creature_template.exp">
       </div>
     </div>
+    <br>
+
+    <div class="row">
+      <div class="col-xs-4 text-left">
+
+        <h5 class="text-left">Loot</h5>
+        <small>lootid</small>
+        <input type="text" class="form-control input-xs" value="{{ current_creature_template.lootid }}" ng-model="new_creature_template.lootid">
+        <small>pickpocketloot</small>
+        <input type="text" class="form-control input-xs" value="{{ current_creature_template.pickpocketloot }}" ng-model="new_creature_template.pickpocketloot">
+        <small>skinloot</small>
+        <input type="text" class="form-control input-xs" value="{{ current_creature_template.skinloot }}" ng-model="new_creature_template.skinloot">
+
+      </div>
+      <div class="col-xs-8 text-left">
+
+        <h5 class="text-left">Resistance</h5>
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <small>resistance1</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.resistance1 }}" ng-model="new_creature_template.resistance1">
+            <small>resistance2</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.resistance2 }}" ng-model="new_creature_template.resistance2">
+            <small>resistance3</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.resistance3 }}" ng-model="new_creature_template.resistance3">
+          </div>
+          <div class="col-xs-6 text-left">
+            <small>resistance4</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.resistance4 }}" ng-model="new_creature_template.resistance4">
+            <small>resistance5</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.resistance5 }}" ng-model="new_creature_template.resistance5">
+            <small>resistance6</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.resistance6 }}" ng-model="new_creature_template.resistance6">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+
+      <div class="col-xs-8 text-left">
+        <h5 class="text-left">QuestItems</h5>
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <small>questItem1</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.questItem1 }}" ng-model="new_creature_template.questItem1">
+            <small>questItem2</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.questItem2 }}" ng-model="new_creature_template.questItem2">
+            <small>questItem3</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.questItem3 }}" ng-model="new_creature_template.questItem3">
+          </div>
+          <div class="col-xs-6 text-left">
+            <small>questItem4</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.questItem4 }}" ng-model="new_creature_template.questItem4">
+            <small>questItem5</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.questItem5 }}" ng-model="new_creature_template.questItem5">
+            <small>questItem6</small>
+            <input type="text" class="form-control input-xs" value="{{ current_creature_template.questItem6 }}" ng-model="new_creature_template.questItem6">
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 text-left">
+
+        <small>RacialLeader</small>
+        <input type="text" class="form-control input-xs" ng-model="new_creature_template.RacialLeader">
+        <small>mechanic_immune_mask</small>
+        <input type="text" class="form-control input-xs" value="{{ current_creature_template.mechanic_immune_mask }}" ng-model="new_creature_template.mechanic_immune_mask">
+        <small>PetSpellDataId</small>
+        <input type="text" class="form-control input-xs" value="{{ current_creature_template.PetSpellDataId }}" ng-model="new_creature_template.PetSpellDataId">
+        <small>flags_extra</small>
+        <input type="text" class="form-control input-xs" value="{{ current_creature_template.flags_extra }}" ng-model="new_creature_template.flags_extra">
+
+      </div>
+    </div>
+
   </div>
-  <div class="col-xs-8">
-  </div>
+  <div class="col-xs-7"></div>
 </div>
+<br><br><br><br>
