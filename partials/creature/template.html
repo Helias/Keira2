@@ -5,9 +5,9 @@
       <div class="col-xs-3">
         <small>Entry</small>
         <div class="input-group">
-          <input class="form-control input-xs" placeholder="Entry" type="text" value="{{ npc.entry }}">
+          <input class="form-control input-xs" placeholder="Entry" type="text" value="{{ npc.entry }}" ng-model="entry">
           <div class="input-group-btn">
-            <button class="btn btn-default btn-xs">→</button>
+            <a ng-href="#/creature/{{entry}}"><button class="btn btn-default btn-xs">→</button></a>
           </div>
         </div>
       </div>
@@ -16,7 +16,7 @@
         <div class="input-group">
           <input class="form-control input-xs" type="text" value="{{ npc.difficulty_entry_1 }}">
           <div class="input-group-btn">
-            <button class="btn btn-default btn-xs">→</button>
+            <a ng-href="#/creature/{{ npc.difficulty_entry_1 }}"><button class="btn btn-default btn-xs">→</button></a>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@
         <div class="input-group">
           <input class="form-control input-xs" type="text" value="{{ npc.difficulty_entry_2 }}">
           <div class="input-group-btn">
-            <button class="btn btn-default btn-xs">→</button>
+            <a ng-href="#/creature/{{ npc.difficulty_entry_2 }}"><button class="btn btn-default btn-xs">→</button></a>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
         <div class="input-group">
           <input class="form-control input-xs" type="text" value="{{ npc.difficulty_entry_3 }}">
           <div class="input-group-btn">
-            <button class="btn btn-default btn-xs">→</button>
+            <a ng-href="#/creature/{{ npc.difficulty_entry_3 }}"><button class="btn btn-default btn-xs">→</button></a>
           </div>
         </div>
       </div>
