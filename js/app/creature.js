@@ -9,6 +9,7 @@
   app.controller("CreatureController", function ($scope, $http, $stateParams) {
 
     if ($stateParams.id) {
+      $scope.entry = $stateParams.id;
       $http.get( app.api + "creature/template/" + $stateParams.id)
         .success(function (data, status, header, config) {
         $scope.npc = data[0];
