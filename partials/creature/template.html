@@ -177,7 +177,12 @@
         <small>RacialLeader</small>
         <input type="text" class="form-control input-xs" ng-model="new_creature_template.RacialLeader">
         <small>mechanic_immune_mask</small>
-        <input type="text" class="form-control input-xs" value="{{ current_creature_template.mechanic_immune_mask }}" ng-model="new_creature_template.mechanic_immune_mask">
+        <div class="input-group">
+                  <input type="text" class="form-control input-xs" value="{{ current_creature_template.mechanic_immune_mask }}" ng-model="new_creature_template.mechanic_immune_mask">
+          <div class="input-group-btn">
+            <button class="btn btn-default input-xs" ng-click="open()">...</button>
+          </div>
+        </div>
         <small>PetSpellDataId</small>
         <input type="text" class="form-control input-xs" value="{{ current_creature_template.PetSpellDataId }}" ng-model="new_creature_template.PetSpellDataId">
         <small>flags_extra</small>
