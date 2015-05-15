@@ -6,12 +6,18 @@
 
   var app = angular.module('keira2', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'tableSort']);
 
-  app.getUpdateQuery = function(tableName, tableIndex, currentRow, newRow) {
+  /* getUpdateQuery inputs:
+  *   - tableName -> the name of the table (example: "creature_template")
+  *   - whereCondition -> the WHERE condition (example: "entry = 30")
+  *   - currentRow -> object of the original table
+  *   - newRow -> object bound with ng-model to view
+  */
+  app.getUpdateQuery = function(tableName, whereCondition, currentRow, newRow) {
 
     var key,
         query = squel.update();
 
-    query.table("creature_template");
+    query.table(tableName);
 
     for (key in currentRow) {
       if (currentRow[key] !== newRow[key]) {
@@ -19,7 +25,7 @@
       }
     }
 
-    query.where("entry = " + tableIndex);
+    query.where(whereCondition);
 
     return query.toString();
   };
