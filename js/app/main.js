@@ -15,6 +15,7 @@
   app.getUpdateQuery = function(tableName, whereCondition, currentRow, newRow) {
 
     var key,
+        diff = false,
         query = squel.update();
 
     query.table(tableName);
@@ -22,12 +23,15 @@
     for (key in currentRow) {
       if (currentRow[key] !== newRow[key]) {
         query.set(key, newRow[key]);
+        diff = true;
       }
     }
 
+    if (!diff)
+      return "# There are no `" + tableName + "` changes\n\n";
     query.where(whereCondition);
 
-    return query.toString();
+    return "# Table `" + tableName + "`\n" + query.toString() + "\n\n";
   };
 
   /* TODO: Empty controllers, will be moved in their own files once implemented */
