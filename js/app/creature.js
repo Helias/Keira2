@@ -11,8 +11,8 @@
     if ($stateParams.id) {
       $http.get( app.api + "creature/template/" + $stateParams.id)
         .success(function (data, status, header, config) {
-        $scope.new_creature_template = data[0];
         $scope.current_creature_template = data[0];
+        $scope.new_creature_template = angular.copy($scope.current_creature_template);
         console.log($scope.current_creature_template);
       })
         .error(function (data, status, header, config) {
@@ -21,21 +21,14 @@
       $scope.isCreatureSelected = true;
     }
 
-    // TO DO: use this function to compare object literals "current" and "new"
-    $scope.labels = function getLabels(obj) {
-      var result = "", label;
-      for (label in obj) {
-        if (obj.hasOwnProperty(label)) {
-          result += "creature_template." + label + " = " + obj[label] + "\n";
-        }
-      }
-      return result;
-    };
-
     $scope.search = function (CreatureEntry, CreatureName, CreatureSubname) {
 
       $http.get( app.api + "/search/creature/", {
-        params: { id: CreatureEntry, name: CreatureName, subname: CreatureSubname }
+        params: {
+          id: CreatureEntry,
+          name: CreatureName,
+          subname: CreatureSubname
+        }
       }).success(function (data, status, header, config) {
         $scope.creatures = data;
       })
@@ -44,6 +37,13 @@
       });
 
     };
+
+    $scope.generateCreatureScript = function() {
+
+      $scope.creatureScript = app.getUpdateQuery("creature_template", $scope.current_creature_template.entry, $scope.current_creature_template, $scope.new_creature_template);
+
+    };
+
   });
 
 }());
