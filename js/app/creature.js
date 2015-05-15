@@ -1,4 +1,4 @@
-/*jslint browser: true, white: true*/
+/*jslint browser: true, white: true, plusplus: true */
 /*global angular, console, alert*/
 
 (function () {
@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("CreatureController", function ($scope, $http, $stateParams) {
+  app.controller("CreatureController", function ($scope, $http, $stateParams, $modal) {
 
     if ($stateParams.id) {
       $http.get( app.api + "creature/template/" + $stateParams.id)
@@ -43,6 +43,61 @@
         console.log("Error in CREATURE SEARCH $http.get request");
       });
 
+    };
+
+    $scope.open = function (size) {
+
+      var modalInstance = $modal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: 'partials/creature/modals/mechanic.html',
+        controller: "ModalInstanceCtrl",
+        size: size,
+        resolve: {
+          mechanicVal: function () {
+            return $scope.new_creature_template.mechanic_immune_mask;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (mechanicRes) {
+        $scope.new_creature_template.mechanic_immune_mask = mechanicRes;
+      });
+
+    };
+
+  });
+
+  app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, mechanicVal) {
+
+    mechanicVal = String(parseInt(mechanicVal, 10).toString(2));
+    mechanicVal = mechanicVal.split("").reverse().join("");
+
+    $scope.mechanic = new Array(31);
+
+    var i = 0;
+    for (i = 0; i < $scope.mechanic.length; i++)
+    {
+      if(parseInt(mechanicVal[i], 10) !== 1) {
+        $scope.mechanic[i] = false;
+      } else {
+        $scope.mechanic[i] = true;
+      }
+    }
+
+    $scope.ok = function () {
+      var i = 0, mechanicRes = 0;
+      for (i = 0; i < $scope.mechanic.length; i++)
+      {
+        if($scope.mechanic[i] === true)
+        {
+          mechanicRes += Math.pow(2, i);
+        }
+      }
+      $modalInstance.close(mechanicRes);
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
     };
   });
 

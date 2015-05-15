@@ -5,3 +5,7 @@
   line-height: 1.5;
   border-radius: 3px;
 }
+
+.modal-body * {
+ padding-left: 10px;
+}
