@@ -27,8 +27,10 @@
       }
     }
 
-    if (!diff)
+    if (!diff) {
       return "# There are no `" + tableName + "` changes\n\n";
+    }
+
     query.where(whereCondition);
 
     return "# Table `" + tableName + "`\n" + query.toString() + ";\n\n";
