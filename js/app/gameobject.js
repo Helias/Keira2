@@ -7,6 +7,7 @@
   var app = angular.module('keira2');
 
   app.controller("GameobjectController", function ($scope, $http) {
+    /*
     $scope.search = function (GameobjectEntry, GameobjectName) {
       var request = app.api + "gameobject/template/";
 
@@ -34,6 +35,7 @@
       });
 
     };
+    */
   });
 
 }());

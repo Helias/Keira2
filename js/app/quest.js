@@ -7,6 +7,7 @@
   var app = angular.module('keira2');
 
   app.controller("QuestController", function ($scope, $http) {
+    /*
     $scope.search = function (questId, questTitle) {
       var request = app.api + "quest/template/";
 
@@ -38,6 +39,7 @@
       });
 
     };
+    */
   });
 
 }());

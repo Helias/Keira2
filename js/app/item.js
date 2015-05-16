@@ -7,6 +7,7 @@
   var app = angular.module('keira2');
 
   app.controller("ItemController", function ($scope, $http) {
+    /*
     $scope.search = function (ItemEntry, ItemName) {
       var request = app.api + "item/template/";
 
@@ -34,6 +35,7 @@
       });
 
     };
+    */
   });
 
 }());
