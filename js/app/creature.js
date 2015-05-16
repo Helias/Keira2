@@ -137,7 +137,7 @@
     propertyVal = String(parseInt(propertyVal, 10).toString(2));
     propertyVal = propertyVal.split("").reverse().join("");
 
-    $scope.values = new Array(numValuesVal);
+    $scope.values = [];
 
     var i = 0;
     for (i = 0; i < numValuesVal; i++)
