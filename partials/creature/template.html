@@ -186,7 +186,12 @@
         <small>PetSpellDataId</small>
         <input type="text" class="form-control input-xs" ng-value="current_creature_template.PetSpellDataId " ng-model="new_creature_template.PetSpellDataId">
         <small>flags_extra</small>
-        <input type="text" class="form-control input-xs" ng-value="current_creature_template.flags_extra " ng-model="new_creature_template.flags_extra">
+        <div class="input-group">
+          <input type="text" class="form-control input-xs" ng-value="current_creature_template.flags_extra " ng-model="new_creature_template.flags_extra">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openModal('', 'partials/creature/modals/flags-extra.html', new_creature_template, 'flags_extra', 32)">...</button>
+          </div>
+        </div>
 
       </div>
     </div>
