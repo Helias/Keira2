@@ -32,7 +32,7 @@
     /* Check if a creature is selected */
     if ($stateParams.id) {
 
-      /* Retrieve all creature datas */
+      /* Retrieve all creature_template datas */
       $http.get( app.api + "creature/template/" + $stateParams.id)
         .success(function (data, status, header, config) {
 
@@ -40,16 +40,27 @@
         *  new_*     mantains the editor state  */
         $scope.current_creature_template = data[0];
         $scope.new_creature_template = angular.copy($scope.current_creature_template);
-
-        console.log($scope.current_creature_template);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in CREATURE DATA $http.get request");
+        console.log("Error in CREATURE_TEMPLATE $http.get request");
       });
 
       /* We have a creature selected and default active tab is creatureTemplate */
       $scope.isCreatureSelected = true;
       $scope.creatureTabs.creatureTemplate = true;
+
+      /* Retrieve all creature_equip_template datas */
+      $http.get( app.api + "creature/equip_template/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+
+        /* current_* mantains the database state
+        *  new_*     mantains the editor state  */
+        $scope.current_creature_equip_template = data[0];
+        $scope.new_creature_equip_template = angular.copy($scope.current_creature_equip_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("Error in CREATURE_EQUIP_TEMPLATE $http.get request");
+      });
     } else {
       /* We have no creature selected and default active tab is search */
       $scope.isCreatureSelected = false;
@@ -77,11 +88,20 @@
     /* [Function] Generate SQL Script for Creature */
     $scope.generateCreatureScript = function() {
 
-      if (!$scope.isCreatureSelected) { return; }
+      if (!$scope.isCreatureSelected) {
+        $scope.creatureScript = "# No Creature selected";
+        return;
+      }
+
+      $scope.creatureScript = "";
 
       var whereCondition = "entry = " + $scope.current_creature_template.entry;
 
-      $scope.creatureScript = app.getUpdateQuery("creature_template", whereCondition, $scope.current_creature_template, $scope.new_creature_template);
+      // creature_template
+      $scope.creatureScript += app.getUpdateQuery("creature_template", whereCondition, $scope.current_creature_template, $scope.new_creature_template);
+
+      // creature_equip_template
+      $scope.creatureScript += app.getUpdateQuery("creature_equip_template", whereCondition, $scope.current_creature_equip_template, $scope.new_creature_equip_template);
 
     };
 

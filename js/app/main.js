@@ -31,7 +31,7 @@
       return "# There are no `" + tableName + "` changes\n\n";
     query.where(whereCondition);
 
-    return "# Table `" + tableName + "`\n" + query.toString() + "\n\n";
+    return "# Table `" + tableName + "`\n" + query.toString() + ";\n\n";
   };
 
   /* TODO: Empty controllers, will be moved in their own files once implemented */
