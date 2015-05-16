@@ -41,6 +41,8 @@
     /* Generate SQL Script for Creature */
     $scope.generateCreatureScript = function() {
 
+      if (!$scope.isCreatureSelected) { return; }
+
       var whereCondition = "entry = " + $scope.current_creature_template.entry;
 
       $scope.creatureScript = app.getUpdateQuery("creature_template", whereCondition, $scope.current_creature_template, $scope.new_creature_template);
