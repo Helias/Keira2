@@ -119,55 +119,66 @@
       $scope.creatureTabs.script = true;
     };
 
-    $scope.open = function (size) {
+      /* Open modal to handle flags
+    params:
+      size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
+      TemplateUrl => content of the modal (file html inside the folder "modals")
+      object      => new_tablename the object responsible of the table (example: new_creature_template)
+      property    => property of the table to modify (example: npcflag)
+      numValues   => number of the total values (flag) of the property
+    */
+    $scope.open = function (size, TemplateUrl, object, property, numValues) {
 
       var modalInstance = $modal.open({
-        animation: $scope.animationsEnabled,
-        templateUrl: 'partials/creature/modals/mechanic.html',
+        templateUrl: TemplateUrl,
         controller: "ModalInstanceCtrl",
         size: size,
         resolve: {
-          mechanicVal: function () {
-            return $scope.new_creature_template.mechanic_immune_mask;
+          propertyVal: function () {
+            return object[property];
+          },
+          numValuesVal: function () {
+            return numValues;
           }
         }
       });
 
-      modalInstance.result.then(function (mechanicRes) {
-        $scope.new_creature_template.mechanic_immune_mask = mechanicRes;
+      // When the modal will be closed this function takes the new value to assign
+      modalInstance.result.then(function (Res) {
+        object[property] = Res;
       });
 
     };
 
   });
 
-  app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, mechanicVal) {
+  app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, propertyVal, numValuesVal) {
 
-    mechanicVal = String(parseInt(mechanicVal, 10).toString(2));
-    mechanicVal = mechanicVal.split("").reverse().join("");
+    propertyVal = String(parseInt(propertyVal, 10).toString(2));
+    propertyVal = propertyVal.split("").reverse().join("");
 
-    $scope.mechanic = new Array(31);
+    $scope.values = [];
 
     var i = 0;
-    for (i = 0; i < $scope.mechanic.length; i++)
+    for (i = 0; i < numValuesVal; i++)
     {
-      if(parseInt(mechanicVal[i], 10) !== 1) {
-        $scope.mechanic[i] = false;
+      if(parseInt(propertyVal[i], 10) !== 1) {
+        $scope.values[i] = false;
       } else {
-        $scope.mechanic[i] = true;
+        $scope.values[i] = true;
       }
     }
 
     $scope.ok = function () {
-      var i = 0, mechanicRes = 0;
-      for (i = 0; i < $scope.mechanic.length; i++)
+      var i = 0, Res = 0;
+      for (i = 0; i < numValuesVal; i++)
       {
-        if($scope.mechanic[i] === true)
+        if($scope.values[i] === true)
         {
-          mechanicRes += Math.pow(2, i);
+          Res += Math.pow(2, i);
         }
       }
-      $modalInstance.close(mechanicRes);
+      $modalInstance.close(Res);
     };
 
     $scope.cancel = function () {
