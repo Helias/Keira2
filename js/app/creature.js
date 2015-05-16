@@ -72,6 +72,16 @@
         console.log("Error in CREATURE_TEMPLATE_ADDON $http.get request");
       });
 
+      /* Retrieve all creature_onkill_reputation datas */
+      $http.get( app.api + "creature/onkill_reputation/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_creature_onkill_reputation = data[0];
+        $scope.new_creature_onkill_reputation = angular.copy($scope.current_creature_onkill_reputation);
+      })
+        .error(function (data, status, header, config) {
+        console.log("Error in CREATURE_ONKILL_REPUTATION $http.get request");
+      });
+
     } else {
       /* We have no creature selected and default active tab is search */
       $scope.isCreatureSelected = false;
@@ -116,6 +126,9 @@
 
       // creature_template_addon
       $scope.creatureScript += app.getUpdateQuery("creature_template_addon", whereCondition, $scope.current_creature_template_addon, $scope.new_creature_template_addon);
+
+      // creature_onkill_reputation
+      $scope.creatureScript += app.getUpdateQuery("creature_onkill_reputation", whereCondition, $scope.current_creature_onkill_reputation, $scope.new_creature_onkill_reputation);
 
     };
 
