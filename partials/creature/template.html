@@ -180,7 +180,7 @@
         <div class="input-group">
           <input type="text" class="form-control input-xs" ng-value="current_creature_template.mechanic_immune_mask " ng-model="new_creature_template.mechanic_immune_mask">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="open('', 'partials/creature/modals/mechanic.html', new_creature_template, 'mechanic_immune_mask', 31)">...</button>
+            <button class="btn btn-info input-xs" ng-click="openModal('', 'partials/creature/modals/mechanic.html', new_creature_template, 'mechanic_immune_mask', 31)">...</button>
           </div>
         </div>
         <small>PetSpellDataId</small>
@@ -231,6 +231,9 @@
         <small>npcflag</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-value="current_creature_template.npcflag " ng-model="new_creature_template.npcflag">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openModal('', 'partials/creature/modals/npcflag.html', new_creature_template, 'npcflag', 32)">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-2">

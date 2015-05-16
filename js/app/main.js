@@ -38,15 +38,14 @@
 
 
   app.run(function($rootScope, $modal) {
-    /* Open modal to handle flags
-    params:
-      size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
-      TemplateUrl => content of the modal (file html inside the folder "modals")
-      object      => new_tablename the object responsible of the table (example: new_creature_template)
-      property    => property of the table to modify (example: npcflag)
-      numValues   => number of the total values (flag) of the property
-  */
-    $rootScope.open = function (size, TemplateUrl, object, property, numValues) {
+    /* Open modal to handle flags params:
+     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
+     * TemplateUrl => content of the modal (file html inside the folder "modals")
+     * object      => new_tablename the object responsible of the table (example: new_creature_template)
+     * property    => property of the table to modify (example: npcflag)
+     * numValues   => number of the total values (flag) of the property
+    */
+    $rootScope.openModal = function (size, TemplateUrl, object, property, numValues) {
       var modalInstance = $modal.open({
         templateUrl: TemplateUrl,
         controller: "ModalInstanceCtrl",
@@ -70,7 +69,11 @@
 
   });
 
-  /* ModalInstanceCtrl: controller for any modals that works with the flags */
+  /* Modal Controller for bit flags:
+  *  - creates an array of booleans as values for modal checkboxes
+  *  - links checkbox values with flag values
+  *  - allows user to edit flag values through checkboxes
+  */
   app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, $rootScope, propertyVal, numValuesVal) {
 
     propertyVal = String(parseInt(propertyVal, 10).toString(2));
@@ -88,7 +91,7 @@
       }
     }
 
-    $scope.ok = function () {
+    $scope.modalOk = function () {
       var i = 0, Res = 0;
       for (i = 0; i < numValuesVal; i++)
       {
@@ -100,7 +103,7 @@
       $modalInstance.close(Res);
     };
 
-    $scope.cancel = function () {
+    $scope.modalCancel = function () {
       $modalInstance.dismiss('cancel');
     };
 
