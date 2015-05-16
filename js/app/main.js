@@ -70,6 +70,7 @@
 
   });
 
+  /* ModalInstanceCtrl: controller for any modals that works with the flags */
   app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, $rootScope, propertyVal, numValuesVal) {
 
     propertyVal = String(parseInt(propertyVal, 10).toString(2));
