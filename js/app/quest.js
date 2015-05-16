@@ -1,4 +1,4 @@
-/*jslint browser: true, white: true*/
+/*jslint browser: true, white: true, plusplus: true*/
 /*global angular, console, alert*/
 
 (function () {
