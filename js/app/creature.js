@@ -32,12 +32,19 @@
     /* Check if a creature is selected */
     if ($stateParams.id) {
 
+      /* We have a creature selected and default active tab is creatureTemplate */
+      $scope.isCreatureSelected = true;
+      $scope.creatureTabs.creatureTemplate = true;
+
+      /*  Following lines retrieve all Creature datas
+       *  current_* mantains the database state
+       *  new_*     mantains the editor state
+       *  we will use those two objects to generate UPDATE queries
+       */
+
       /* Retrieve all creature_template datas */
       $http.get( app.api + "creature/template/" + $stateParams.id)
         .success(function (data, status, header, config) {
-
-        /* current_* mantains the database state
-        *  new_*     mantains the editor state  */
         $scope.current_creature_template = data[0];
         $scope.new_creature_template = angular.copy($scope.current_creature_template);
       })
@@ -45,22 +52,26 @@
         console.log("Error in CREATURE_TEMPLATE $http.get request");
       });
 
-      /* We have a creature selected and default active tab is creatureTemplate */
-      $scope.isCreatureSelected = true;
-      $scope.creatureTabs.creatureTemplate = true;
-
       /* Retrieve all creature_equip_template datas */
       $http.get( app.api + "creature/equip_template/" + $stateParams.id)
         .success(function (data, status, header, config) {
-
-        /* current_* mantains the database state
-        *  new_*     mantains the editor state  */
         $scope.current_creature_equip_template = data[0];
         $scope.new_creature_equip_template = angular.copy($scope.current_creature_equip_template);
       })
         .error(function (data, status, header, config) {
         console.log("Error in CREATURE_EQUIP_TEMPLATE $http.get request");
       });
+
+      /* Retrieve all creature_template_addon datas */
+      $http.get( app.api + "creature/template_addon/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_creature_template_addon = data[0];
+        $scope.new_creature_template_addon = angular.copy($scope.current_creature_template_addon);
+      })
+        .error(function (data, status, header, config) {
+        console.log("Error in CREATURE_TEMPLATE_ADDON $http.get request");
+      });
+
     } else {
       /* We have no creature selected and default active tab is search */
       $scope.isCreatureSelected = false;
@@ -102,6 +113,9 @@
 
       // creature_equip_template
       $scope.creatureScript += app.getUpdateQuery("creature_equip_template", whereCondition, $scope.current_creature_equip_template, $scope.new_creature_equip_template);
+
+      // creature_template_addon
+      $scope.creatureScript += app.getUpdateQuery("creature_template_addon", whereCondition, $scope.current_creature_template_addon, $scope.new_creature_template_addon);
 
     };
 
