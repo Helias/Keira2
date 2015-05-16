@@ -2,49 +2,49 @@
   <tab id="tab-search" heading="Search">
     <div ng-include="'partials/creature/search.html'"></div>
   </tab>
-  <tab heading="Creature Template" active="isCreatureSelected">
+  <tab heading="Creature Template" active="creatureTabs.creatureTemplate">
     <div ng-include="'partials/creature/template.html'"></div>
   </tab>
-  <tab heading="Creature Location">
+  <tab heading="Creature Location" active="creatureTabs.creatureLocation">
     <div ng-include="'partials/creature/location.html'"></div>
   </tab>
-  <tab heading="Model Info">
+  <tab heading="Model Info" active="creatureTabs.modelInfo">
     <div ng-include="'partials/creature/model-info.html'"></div>
   </tab>
-  <tab heading="Equip Template">
+  <tab heading="Equip Template" active="creatureTabs.equipTemplate">
     <div ng-include="'partials/creature/equip-template.html'"></div>
   </tab>
-  <tab heading="Creature Loot">
+  <tab heading="Creature Loot" active="creatureTabs.creatureLoot">
     <div ng-include="'partials/creature/creature-loot.html'"></div>
   </tab>
-  <tab heading="Pickpocket Loot">
+  <tab heading="Pickpocket Loot" active="creatureTabs.pickpocketLoot">
     <div ng-include="'partials/creature/pickpocket-loot.html'"></div>
   </tab>
-  <tab heading="Skin Loot">
+  <tab heading="Skin Loot" active="creatureTabs.skinLoot">
     <div ng-include="'partials/creature/skinning-loot.html'"></div>
   </tab>
-  <tab heading="Creature Template Addon">
+  <tab heading="Creature Template Addon" active="creatureTabs.creatureTemplateAddon">
     <div ng-include="'partials/creature/template-addon.html'"></div>
   </tab>
-  <tab heading="NPC Gossip">
+  <tab heading="NPC Gossip" active="creatureTabs.npcGossip">
     <div ng-include="'partials/creature/npc-gossip.html'"></div>
   </tab>
-  <tab heading="On Kill Reputation">
+  <tab heading="On Kill Reputation" active="creatureTabs.onKillReputation">
     <div ng-include="'partials/creature/on-kill-reputation.html'"></div>
   </tab>
-  <tab heading="Involved In">
+  <tab heading="Involved In" active="creatureTabs.involvedIn">
     <div ng-include="'partials/creature/involved-in.html'"></div>
   </tab>
-  <tab heading="Locales NPC Text">
+  <tab heading="Locales NPC Text" active="creatureTabs.localesNpcText">
     <div ng-include="'partials/creature/locales-npc-text.html'"></div>
   </tab>
-  <tab heading="Creature Movement">
+  <tab heading="Creature Movement" active="creatureTabs.creatureMovement">
     <div ng-include="'partials/creature/creature-movement.html'"></div>
   </tab>
-  <tab heading="Creature Addon">
+  <tab heading="Creature Addon" active="creatureTabs.creatureAddon">
     <div ng-include="'partials/creature/creature-addon.html'"></div>
   </tab>
-  <tab heading="SQL Script" ng-click="generateCreatureScript()">
+  <tab heading="SQL Script" ng-click="generateCreatureScript()" active="creatureTabs.script">
     <div ng-include="'partials/creature/creature-sql-script.html'"></div>
   </tab>
 </tabset>
