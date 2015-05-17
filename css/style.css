@@ -11,3 +11,8 @@
 }
 
 .pointer { cursor: pointer; }
+
+.doc-link {
+  margin-top: 8px;
+  margin-bottom: 2px;
+}

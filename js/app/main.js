@@ -28,7 +28,8 @@
     }
 
     if (!diff) {
-      return "# There are no `" + tableName + "` changes\n\n";
+      console.log("There are no `" + tableName + "` changes\n\n");
+      return "";
     }
 
     query.where(whereCondition);
@@ -38,6 +39,9 @@
 
 
   app.run(function($rootScope, $modal) {
+
+    /* TrinityCore Documentation wiki */
+    $rootScope.wikiLink = "http://collab.kpsn.org/display/tc/";
 
     /* Open modal to handle flags params:
      * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
