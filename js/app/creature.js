@@ -83,11 +83,11 @@
       });
 
       /* Retrieve all creature_template_loot datas */
-      $http.get( app.api + "loot/creature/" + $stateParams.id)
+      $http.get( app.api + "loot/template/creature/" + $stateParams.id)
         .success(function (data, status, header, config) {
         $scope.current_creature_loot_template = data;
         $scope.new_creature_loot_template = angular.copy($scope.current_creature_loot_template);
-        console.log(data); // TMP console.log() TO DELETE
+        console.log(data[0]); // TMP console.log() TO DELETE
       })
         .error(function (data, status, header, config) {
         console.log("Error in CREATURE_LOOT_TEMPLATE $http.get request");
@@ -141,6 +141,9 @@
       // creature_onkill_reputation
       $scope.creatureScript += app.getUpdateQuery("creature_onkill_reputation", whereCondition, $scope.current_creature_onkill_reputation, $scope.new_creature_onkill_reputation);
 
+      // creature_loot_template
+      // TODO change with Diff:
+      // app.getFullDeleteInsert("creature_loot_template", "Entry", $scope.new_creature_loot_template);
     };
 
     /* [Function] disactive all tabs */
