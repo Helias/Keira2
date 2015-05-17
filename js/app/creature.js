@@ -82,6 +82,17 @@
         console.log("Error in CREATURE_ONKILL_REPUTATION $http.get request");
       });
 
+      /* Retrieve all creature_template_loot datas */
+      $http.get( app.api + "loot/creature/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_creature_loot_template = data;
+        $scope.new_creature_loot_template = angular.copy($scope.current_creature_loot_template);
+        console.log(data); // TMP console.log() TO DELETE
+      })
+        .error(function (data, status, header, config) {
+        console.log("Error in CREATURE_LOOT_TEMPLATE $http.get request");
+      });
+
     } else {
       /* We have no creature selected and default active tab is search */
       $scope.isCreatureSelected = false;

@@ -1,2 +1,35 @@
-<br>
-<p class="h2">TODO</p>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-striped table-condensed" ts-wrapper>
+      <tr>
+        <td></td>
+        <td ts-criteria="Entry|parseInt">Entry</td>
+        <td ts-criteria="Item|parseInt">Item</td>
+        <td ts-criteria="name|lowercase">name</td>
+        <td ts-criteria="Chance|parseInt">Chance</td>
+        <td ts-criteria="Chance|parseInt">QuestRequired</td>
+        <td ts-criteria="GroupId|parseInt">GroupId</td>
+        <td ts-criteria="GroupId|parseInt">Reference</td>
+        <td ts-criteria="MinCount|parseInt">MinCount</td>
+        <td ts-criteria="MaxCount|parseInt">MaxCount</td>
+        <td ts-criteria="LootMode|parseInt">LootMode</td>
+      </tr>
+      <tr ng-repeat="loot in new_creature_loot_template" ts-repeat>
+        <td><i ng-click="select_tr($event)" class="glyphicon glyphicon-edit pointer"></i></td>
+        <td>{{ loot.Entry }}</td>
+        <td>{{ loot.Item }}</td>
+        <td>{{ loot.name }}</td>
+        <td>{{ loot.Chance }}</td>
+        <td>{{ loot.QuestRequired }}</td>
+        <td>{{ loot.GroupId }}</td>
+        <td>{{ loot.Reference }}</td>
+        <td>{{ loot.MinCount }}</td>
+        <td>{{ loot.MaxCount }}</td>
+        <td>{{ loot.LootMode }}</td>
+      </tr>
+    </table>
+
+
+  </div>
+</div>

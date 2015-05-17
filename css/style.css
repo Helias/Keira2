@@ -9,3 +9,5 @@
 .modal-body * {
  padding-left: 10px;
 }
+
+.pointer { cursor: pointer; }
