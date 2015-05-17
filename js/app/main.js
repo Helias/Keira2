@@ -44,14 +44,14 @@
 
     };
 
-    /* Open modal to show Full *_loot_template script */
-    $rootScope.openFullLootModal = function(lootObject, tableName, primaryKey1) {
+    /* Open modal to show Full SQL Script */
+    $rootScope.openFullScriptModal = function(lootObject, tableName, primaryKey1) {
 
       if (lootObject === undefined) { return; }
 
       var modalInstance = $modal.open({
-        templateUrl: "partials/creature/modals/full-loot.html",
-        controller: "FullLootModalController",
+        templateUrl: "partials/full-script-modal.html",
+        controller: "FullScriptModalController",
         size: 'lg',
         resolve: {
           lootObject: function () {

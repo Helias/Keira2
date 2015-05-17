@@ -165,10 +165,9 @@
 
 
     /* [Functions] loot_template
-
-    param:
-        rowId => index of the array new_*_loot_template that contain the property of the loot_item
-    */
+     * input:
+     * - rowId => index of the array new_*_loot_template that contain the property of the loot_item
+     */
     $scope.selectRow = function(rowIdChild) {
       if($scope.row !== "")
       {
