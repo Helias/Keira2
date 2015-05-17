@@ -193,6 +193,10 @@
 
     $scope.SQLCode = app.getFullDeleteInsert(tableName, primaryKey1, lootObject);
 
+    $scope.modalClose = function () {
+      $modalInstance.dismiss('close');
+    };
+
   });
 
 
