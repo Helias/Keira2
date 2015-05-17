@@ -154,7 +154,7 @@
   *  - links checkbox values with flag values
   *  - allows user to edit flag values through checkboxes
   */
-  app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, $rootScope, propertyVal, numValuesVal) {
+  app.controller('FlagModalController', function ($scope, $modalInstance, $rootScope, propertyVal, numValuesVal) {
 
     propertyVal = String(parseInt(propertyVal, 10).toString(2));
     propertyVal = propertyVal.split("").reverse().join("");
