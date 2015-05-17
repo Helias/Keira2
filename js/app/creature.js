@@ -183,7 +183,15 @@
 
     // Add an item to *_item_loot
     $scope.addItem_loot = function(rowId) {
-      var lootLen = $scope.new_creature_loot_template.length;
+      var i = 0, lootLen = $scope.new_creature_loot_template.length;
+      for (i = 0; i < lootLen; i++)
+      {
+        if ($scope.new_creature_loot_template[i].Item == $scope.itemLoot.Item)
+        {
+          alert("The item " + $scope.itemLoot.Item + " already exists in this loot_template, you can't add it, you can only delete or edit it");
+          return;
+        }
+      }
 
       $scope.itemLoot.Entry = $scope.new_creature_loot_template[0].Entry;
       $scope.new_creature_loot_template[lootLen] = angular.copy($scope.itemLoot);
