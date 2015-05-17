@@ -36,9 +36,9 @@
 
   <div class="col-xs-4">
     <br>
-    <button class="btn btn-primary" ng-click="editItem_loot(itemLoot.id)"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
-    <button class="btn btn-danger" ng-click="deleteItem_loot(itemLoot.id)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
-    <button class="btn btn-success" ng-click="addItem_loot(itemLoot.id)"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+    <button class="btn btn-primary" ng-click="editItem_loot(itemLoot.id, itemLoot, new_creature_loot_template)"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+    <button class="btn btn-danger" ng-click="deleteItem_loot(itemLoot.id, new_creature_loot_template)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+    <button class="btn btn-success" ng-click="addItem_loot(itemLoot.id, itemLoot, new_creature_loot_template)"><i class="glyphicon glyphicon-plus"></i> Add new</button>
   </div>
 
   <button class="btn btn-info" ng-click="openFullLootModal(new_creature_loot_template, 'creature_loot_template', 'Entry')">FULL Creature Loot Script</button>
@@ -58,7 +58,7 @@
         <td>LootMode</td>
       </tr>
       <tr ng-repeat="loot in new_creature_loot_template track by $index" id="{{ $index }}">
-        <td><i ng-click="selectRow($event)" class="glyphicon glyphicon-edit pointer"></i></td>
+        <td><i ng-click="selectRow($event, itemLoot, new_creature_loot_template)" class="glyphicon glyphicon-edit pointer"></i></td>
         <td>{{ loot.Entry }}</td>
         <td>{{ loot.Item }}</td>
         <td>{{ loot.Chance }}</td>

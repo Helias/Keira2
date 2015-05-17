@@ -8,10 +8,6 @@
 
   app.controller("CreatureController", function ($scope, $http, $stateParams, $modal) {
 
-    // Initialize some variables needed for *_item_loot
-    $scope.itemLoot = {};
-    $scope.row = "";
-
     /* All Creature tabs, disabled by default.
     *  Only one tab can be active at a time */
     $scope.creatureTabs = {
@@ -161,50 +157,6 @@
       $scope.disactiveAllTabs();
       $scope.generateCreatureScript();
       $scope.creatureTabs.script = true;
-    };
-
-
-    /* [Functions] loot_template
-
-    param:
-        rowId => index of the array new_*_loot_template that contain the property of the loot_item
-    */
-    $scope.selectRow = function(rowIdChild) {
-      if($scope.row !== "")
-      {
-        angular.element($scope.row).removeClass("trSelected");
-      }
-      $scope.row = rowIdChild.target.parentNode.parentNode;
-      angular.element($scope.row).addClass("trSelected");
-      var rowId = $scope.row.id;
-      $scope.itemLoot = angular.copy($scope.new_creature_loot_template[rowId]);
-      $scope.itemLoot.id = rowId;
-    };
-
-    // Add an item to *_item_loot
-    $scope.addItem_loot = function(rowId) {
-      var i = 0, lootLen = $scope.new_creature_loot_template.length;
-      for (i = 0; i < lootLen; i++)
-      {
-        if ($scope.new_creature_loot_template[i].Item == $scope.itemLoot.Item)
-        {
-          alert("The item " + $scope.itemLoot.Item + " already exists in this loot_template, you can't add it, you can only delete or edit it");
-          return;
-        }
-      }
-
-      $scope.itemLoot.Entry = $scope.new_creature_loot_template[0].Entry;
-      $scope.new_creature_loot_template[lootLen] = angular.copy($scope.itemLoot);
-    };
-
-    // Edit an item loot property
-    $scope.editItem_loot = function(rowId) {
-      $scope.new_creature_loot_template[rowId] = angular.copy($scope.itemLoot);
-    };
-
-    // Remove an item to *_item_loot
-    $scope.deleteItem_loot = function(rowId) {
-      $scope.new_creature_loot_template.splice(rowId, 1);
     };
 
   });
