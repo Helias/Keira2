@@ -1,7 +1,7 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}creature_equip_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>creature_equip_template</a></p>
 <div class="row">
   <div class="col-xs-2">
-    <small>Entry</small>
+    <small>entry</small>
     <div class="input-group">
       <input class="form-control input-xs" type="text" ng-value="current_creature_equip_template.entry" ng-model="new_creature_equip_template.entry">
     </div>
@@ -38,8 +38,12 @@
   </div>
 </div>
 <br>
+<br>
 <div class="row">
   <div class="col-xs-2 pull-right">
-    <button class="btn btn-success" ng-click="openScriptTab()">SQL Script</button>
+    <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_creature_equip_template, 'creature_equip_template', 'entry')">FULL SQL Script</button>
   </div>
 </div>
