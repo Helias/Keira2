@@ -157,6 +157,13 @@
       $scope.creatureTabs.script = true;
     };
 
+    $scope.select_tr = function(tr) {
+      var itemid = tr.target.parentNode.parentNode.id;
+
+      $scope.item_loot = $scope.new_creature_loot_template[itemid];
+      console.log($scope.new_creature_loot_template[itemid].Item);
+    };
+
   });
 
 }());
