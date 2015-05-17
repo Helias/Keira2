@@ -99,13 +99,13 @@
      * property    => property of the table to modify (example: npcflag)
      * numValues   => number of the total values (flag) of the property
     */
-    $rootScope.openModal = function (size, TemplateUrl, object, property, numValues) {
+    $rootScope.openFlagModal = function (size, TemplateUrl, object, property, numValues) {
 
       if (object === undefined) { return; }
 
       var modalInstance = $modal.open({
         templateUrl: TemplateUrl,
-        controller: "ModalInstanceCtrl",
+        controller: "FlagModalController",
         size: size,
         resolve: {
           propertyVal: function () {
@@ -122,6 +122,29 @@
         object[property] = Res;
       });
 
+    };
+
+    /* Open modal to show Full *_loot_template script */
+    $rootScope.openFullLootModal = function(lootObject, tableName, primaryKey1) {
+
+      if (lootObject === undefined) { return; }
+
+      var modalInstance = $modal.open({
+        templateUrl: "partials/creature/modals/full-loot.html",
+        controller: "FullLootModalController",
+        size: 'lg',
+        resolve: {
+          lootObject: function () {
+            return lootObject;
+          },
+          tableName: function () {
+            return tableName;
+          },
+          primaryKey1: function() {
+            return primaryKey1;
+          }
+        }
+      });
     };
 
   });
@@ -163,6 +186,12 @@
     $scope.modalCancel = function () {
       $modalInstance.dismiss('cancel');
     };
+
+  });
+
+  app.controller('FullLootModalController', function ($scope, $modalInstance, $rootScope, lootObject, tableName, primaryKey1) {
+
+    $scope.SQLCode = app.getFullDeleteInsert(tableName, primaryKey1, lootObject);
 
   });
 
