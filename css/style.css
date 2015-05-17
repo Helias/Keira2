@@ -1,3 +1,9 @@
+/* Remove responsive from container */
+.container {
+  width: 1170px;
+  max-width: none !important;
+}
+
 .input-xs {
   height: 22px;
   padding: 2px 5px;
