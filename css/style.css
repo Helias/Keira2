@@ -9,3 +9,8 @@
 .modal-body * {
  padding-left: 10px;
 }
+
+.doc-link {
+  margin-top: 8px;
+  margin-bottom: 2px;
+}

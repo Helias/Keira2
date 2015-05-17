@@ -39,6 +39,9 @@
 
   app.run(function($rootScope, $modal) {
 
+    /* TrinityCore Documentation wiki */
+    $rootScope.wikiLink = "http://collab.kpsn.org/display/tc/";
+
     /* Open modal to handle flags params:
      * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
      * TemplateUrl => content of the modal (file html inside the folder "modals")
