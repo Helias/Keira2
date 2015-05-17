@@ -28,7 +28,8 @@
     }
 
     if (!diff) {
-      return "# There are no `" + tableName + "` changes\n\n";
+      console.log("There are no `" + tableName + "` changes\n\n");
+      return "";
     }
 
     query.where(whereCondition);
