@@ -60,13 +60,20 @@
    *  Inputs:
    *  - tableName -> the name of the table (example: "creature_loot_template")
    *  - primaryKey1 -> first  primary key (example: "Entry")
-   *  - newRows -> object bound with ng-model to view (group of rows)
+   *  - newRows -> bound with ng-model to view (group of rows)
    */
   app.getFullDeleteInsert = function(tableName, primaryKey1, newRows) {
 
-    if (newRows === undefined || newRows.length <= 0 ) { return; }
+    if (newRows === undefined || (Array.isArray(newRows) && newRows.length <= 0) ) { return; }
 
-    var query, i, deleteQuery, insertQuery, cleanedNewRows;
+    var query, i, deleteQuery, insertQuery, cleanedNewRows, tmp;
+
+    // if we have a single object, convert it to array
+    if (!Array.isArray(newRows)) {
+      tmp = [];
+      tmp[0] = newRows;
+      newRows = tmp;
+    }
 
     deleteQuery = squel.delete().from(tableName).where(primaryKey1 + " = " + newRows[0][primaryKey1]);
 

@@ -44,15 +44,16 @@
 
     };
 
-
     /* Loot_template */
 
     // Initialize some variables needed for *_item_loot
     $rootScope.itemLoot = {};
     $rootScope.row = "";
 
-    /* param:
-        rowId => index of the array new_*_loot_template that contain the property of the loot_item */
+    /* [Functions] loot_template
+     * input:
+     * - rowId => index of the array new_*_loot_template that contain the property of the loot_item
+     */
     $rootScope.selectRow = function(rowIdChild, itemLoot, loot_template) {
 
       if ($rootScope.row !== "") {
@@ -97,14 +98,15 @@
       new_loot_template.splice(rowId, 1);
     };
 
-    /* Open modal to show Full *_loot_template script */
-    $rootScope.openFullLootModal = function(lootObject, tableName, primaryKey1) {
+
+    /* Open modal to show Full SQL Script */
+    $rootScope.openFullScriptModal = function(lootObject, tableName, primaryKey1) {
 
       if (lootObject === undefined) { return; }
 
       var modalInstance = $modal.open({
-        templateUrl: "partials/creature/modals/full-loot.html",
-        controller: "FullLootModalController",
+        templateUrl: "partials/full-script-modal.html",
+        controller: "FullScriptModalController",
         size: 'lg',
         resolve: {
           lootObject: function () {
