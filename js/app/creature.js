@@ -8,6 +8,10 @@
 
   app.controller("CreatureController", function ($scope, $http, $stateParams, $modal) {
 
+    // Initialize some variables needed for *_item_loot
+    $scope.itemLoot = {};
+    $scope.row = "";
+
     /* All Creature tabs, disabled by default.
     *  Only one tab can be active at a time */
     $scope.creatureTabs = {
@@ -163,31 +167,36 @@
     /* [Functions] loot_template
 
     param:
-        item => index of the array new_*_loot_template that contain the property of the loot_item
+        rowId => index of the array new_*_loot_template that contain the property of the loot_item
     */
-    $scope.select_tr = function(item) {
-      var itemid = item.target.parentNode.parentNode.id;
-
-      $scope.item_loot = angular.copy($scope.new_creature_loot_template[itemid]);
-      $scope.item_loot.id = itemid;
+    $scope.selectRow = function(rowIdChild) {
+      if($scope.row !== "")
+      {
+        angular.element($scope.row).removeClass("trSelected");
+      }
+      $scope.row = rowIdChild.target.parentNode.parentNode;
+      angular.element($scope.row).addClass("trSelected");
+      var rowId = $scope.row.id;
+      $scope.itemLoot = angular.copy($scope.new_creature_loot_template[rowId]);
+      $scope.itemLoot.id = rowId;
     };
 
     // Add an item to *_item_loot
-/*
-    $scope.add_item_loot = function(item) {
-      var loot_len = $scope.new_creature_loot_template.length;
-      $scope.item_loot.Entry = $scope.new_creature_loot_template[loot_len].Entry;
-      $scope.new_creature_loot_template[loot_len] = angular.copy($scope.item_loot);
+    $scope.addItem_loot = function(rowId) {
+      var lootLen = $scope.new_creature_loot_template.length;
+
+      $scope.itemLoot.Entry = $scope.new_creature_loot_template[0].Entry;
+      $scope.new_creature_loot_template[lootLen] = angular.copy($scope.itemLoot);
     };
-*/
+
     // Edit an item loot property
-    $scope.edit_item_loot = function(item) {
-      $scope.new_creature_loot_template[item] = angular.copy($scope.item_loot);
+    $scope.editItem_loot = function(rowId) {
+      $scope.new_creature_loot_template[rowId] = angular.copy($scope.itemLoot);
     };
 
     // Remove an item to *_item_loot
-    $scope.delete_item_loot = function(item) {
-      $scope.new_creature_loot_template.splice(item, 1);
+    $scope.deleteItem_loot = function(rowId) {
+      $scope.new_creature_loot_template.splice(rowId, 1);
     };
 
   });

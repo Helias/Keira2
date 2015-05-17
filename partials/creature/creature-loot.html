@@ -1,44 +1,44 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}loot_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>creature_loot_template</a></p>
 <div class="row">
-  <input type="hidden" ng-model="item_loot.id">
+  <input type="hidden" ng-model="itemLoot.id">
   <div class="col-xs-1 text-left">
     <small>Item</small>
-    <input class="form-control input-xs" type="text" ng-model="item_loot.Item">
+    <input class="form-control input-xs" type="text" ng-model="itemLoot.Item">
   </div>
   <div class="col-xs-1 text-left">
     <small>Chance</small>
-    <input class="form-control input-xs" type="text" ng-model="item_loot.Chance">
+    <input class="form-control input-xs" type="text" ng-model="itemLoot.Chance">
   </div>
   <div class="col-xs-1 text-left">
     <small>QuestReq.</small>
-    <input class="form-control input-xs" type="text" ng-model="item_loot.QuestRequired">
+    <input class="form-control input-xs" type="text" ng-model="itemLoot.QuestRequired">
   </div>
   <div class="col-xs-1 text-left">
     <small>GroupId</small>
-    <input class="form-control input-xs" type="text" ng-model="item_loot.GroupId">
+    <input class="form-control input-xs" type="text" ng-model="itemLoot.GroupId">
   </div>
   <div class="col-xs-1 text-left">
     <small>Reference</small>
-    <input class="form-control input-xs" type="text" ng-model="item_loot.Reference">
+    <input class="form-control input-xs" type="text" ng-model="itemLoot.Reference">
   </div>
   <div class="col-xs-1 text-left">
     <small>MinCount</small>
-    <input class="form-control input-xs" type="text" ng-model="item_loot.MinCount">
+    <input class="form-control input-xs" type="text" ng-model="itemLoot.MinCount">
   </div>
   <div class="col-xs-1 text-left">
     <small>MaxCount</small>
-    <input class="form-control input-xs" type="text" ng-model="item_loot.MaxCount">
+    <input class="form-control input-xs" type="text" ng-model="itemLoot.MaxCount">
   </div>
   <div class="col-xs-1 text-left">
     <small>LootMode</small>
-    <input class="form-control input-xs" type="text" ng-model="item_loot.LootMode">
+    <input class="form-control input-xs" type="text" ng-model="itemLoot.LootMode">
   </div>
 
   <div class="col-xs-4">
     <br>
-    <button class="btn btn-primary" ng-click="edit_item_loot(item_loot.id)"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
-    <button class="btn btn-danger" ng-click="delete_item_loot(item_loot.id)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
-    <button class="btn btn-success" ng-click="add_item_loot(item_loot.id)"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+    <button class="btn btn-primary" ng-click="editItem_loot(itemLoot.id)"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+    <button class="btn btn-danger" ng-click="deleteItem_loot(itemLoot.id)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+    <button class="btn btn-success" ng-click="addItem_loot(itemLoot.id)"><i class="glyphicon glyphicon-plus"></i> Add new</button>
   </div>
 
   <div class="col-xs-12">
@@ -57,7 +57,7 @@
         <td>LootMode</td>
       </tr>
       <tr ng-repeat="loot in new_creature_loot_template track by $index" id="{{ $index }}">
-        <td><i ng-click="select_tr($event)" class="glyphicon glyphicon-edit pointer"></i></td>
+        <td><i ng-click="selectRow($event)" class="glyphicon glyphicon-edit pointer"></i></td>
         <td>{{ loot.Entry }}</td>
         <td>{{ loot.Item }}</td>
         <td>{{ loot.Chance }}</td>

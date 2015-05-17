@@ -18,6 +18,10 @@
 
 .pointer { cursor: pointer; }
 
+.trSelected {
+ background-color: rgba(44,105,158, 0.4) !important;
+}
+
 .doc-link {
   margin-top: 8px;
   margin-bottom: 2px;
