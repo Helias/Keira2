@@ -87,7 +87,6 @@
         .success(function (data, status, header, config) {
         $scope.current_creature_loot_template = data;
         $scope.new_creature_loot_template = angular.copy($scope.current_creature_loot_template);
-        console.log(data); // TMP console.log() TO DELETE
       })
         .error(function (data, status, header, config) {
         console.log("Error in CREATURE_LOOT_TEMPLATE $http.get request");
@@ -157,11 +156,35 @@
       $scope.creatureTabs.script = true;
     };
 
-    $scope.select_tr = function(tr) {
-      var itemid = tr.target.parentNode.parentNode.id;
 
-      $scope.item_loot = $scope.new_creature_loot_template[itemid];
-      console.log($scope.new_creature_loot_template[itemid].Item);
+    /* [Functions] loot_template
+
+    param:
+        item => index of the array new_*_loot_template that contain the property of the loot_item
+    */
+    $scope.select_tr = function(item) {
+      var itemid = item.target.parentNode.parentNode.id;
+
+      $scope.item_loot = angular.copy($scope.new_creature_loot_template[itemid]);
+      $scope.item_loot.id = itemid;
+    };
+
+    // Add an item to *_item_loot
+/*
+    $scope.add_item_loot = function(item) {
+      var loot_len = $scope.new_creature_loot_template.length;
+      $scope.item_loot.Entry = $scope.new_creature_loot_template[loot_len].Entry;
+      $scope.new_creature_loot_template[loot_len] = angular.copy($scope.item_loot);
+    };
+*/
+    // Edit an item loot property
+    $scope.edit_item_loot = function(item) {
+      $scope.new_creature_loot_template[item] = angular.copy($scope.item_loot);
+    };
+
+    // Remove an item to *_item_loot
+    $scope.delete_item_loot = function(item) {
+      $scope.new_creature_loot_template.splice(item, 1);
     };
 
   });
