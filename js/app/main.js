@@ -83,6 +83,9 @@
     query += deleteQuery.toString() + ";\n";
     query += insertQuery.toString() + ";\n";
 
+    query = query.replace(") VALUES (", ") VALUES\n(");
+    query = query.replace(/\)\, \(/g, "),\n(");
+
     return query;
   };
 
