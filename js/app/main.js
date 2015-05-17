@@ -94,7 +94,6 @@
 
     // Remove an item to *_item_loot
     $rootScope.deleteItem_loot = function(rowId, new_loot_template) {
-      console.log(new_loot_template);
       new_loot_template.splice(rowId, 1);
     };
 
