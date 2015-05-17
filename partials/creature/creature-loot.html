@@ -1,4 +1,4 @@
-<br>
+<p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}loot_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>creature_loot_template</a></p>
 <div class="row">
   <input type="hidden" ng-model="item_loot.id">
   <div class="col-xs-1 text-left">
@@ -48,7 +48,6 @@
         <td></td>
         <td>Entry</td>
         <td>Item</td>
-        <td>name</td>
         <td>Chance</td>
         <td>QuestRequired</td>
         <td>GroupId</td>
@@ -61,7 +60,6 @@
         <td><i ng-click="select_tr($event)" class="glyphicon glyphicon-edit pointer"></i></td>
         <td>{{ loot.Entry }}</td>
         <td>{{ loot.Item }}</td>
-        <td>{{ loot.name }}</td>
         <td>{{ loot.Chance }}</td>
         <td>{{ loot.QuestRequired }}</td>
         <td>{{ loot.GroupId }}</td>
