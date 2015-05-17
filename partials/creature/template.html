@@ -189,7 +189,7 @@
         <div class="input-group">
           <input type="text" class="form-control input-xs" ng-value="current_creature_template.flags_extra " ng-model="new_creature_template.flags_extra">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openModal('', 'partials/creature/modals/flags-extra.html', new_creature_template, 'flags_extra', 32)">...</button>
+            <button class="btn btn-info input-xs" ng-click="openModal('', 'partials/creature/modals/flags_extra.html', new_creature_template, 'flags_extra', 32)">...</button>
           </div>
         </div>
 
@@ -289,12 +289,18 @@
         <small>type_flags</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-value="current_creature_template.type_flags " ng-model="new_creature_template.type_flags">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openModal('', 'partials/creature/modals/type_flags.html', new_creature_template, 'type_flags', 32)">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-2">
         <small>dynamicflags</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-value="current_creature_template.dynamicflags " ng-model="new_creature_template.dynamicflags">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openModal('', 'partials/creature/modals/dynamicflags.html', new_creature_template, 'dynamicflags', 8)">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-2">
@@ -490,10 +496,13 @@
               <input class="form-control input-xs" type="text" ng-value="current_creature_template.movementId " ng-model="new_creature_template.movementId">
             </div>
           </div>
-          <div class="col-xs-12">
+          <div class="col-xs-10">
             <small>InhabitType</small>
             <div class="input-group">
               <input class="form-control input-xs" type="text" ng-value="current_creature_template.InhabitType " ng-model="new_creature_template.InhabitType">
+              <div class="input-group-btn">
+                <button class="btn btn-info input-xs" ng-click="openModal('', 'partials/creature/modals/InhabitType.html', new_creature_template, 'InhabitType', 3)">...</button>
+              </div>
             </div>
           </div>
           <div class="col-xs-12">

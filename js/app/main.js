@@ -47,6 +47,9 @@
      * numValues   => number of the total values (flag) of the property
     */
     $rootScope.openModal = function (size, TemplateUrl, object, property, numValues) {
+
+      if (object === undefined) { return; }
+
       var modalInstance = $modal.open({
         templateUrl: TemplateUrl,
         controller: "ModalInstanceCtrl",
