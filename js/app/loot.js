@@ -1,4 +1,4 @@
-/*jslint browser: true, white: true, plusplus: true */
+/*jslint browser: true, eqeq: true, white: true, plusplus: true */
 /*global angular, console, alert*/
 
 (function () {
@@ -51,7 +51,7 @@
 
       // check primaryKey2 uniqueness
       for (i = 0; i < rows.length; i++) {
-        if ( (rows[i][primaryKey2] === $scope.selected[primaryKey2]) && (i !== $scope.selectedRow) ) {
+        if ( (rows[i][primaryKey2] == $scope.selected[primaryKey2]) && (i !== $scope.selectedRow) ) {
           alert("Duplicate row with `" + primaryKey2 + "` = " + $scope.selected[primaryKey2]);
           return;
         }
@@ -75,7 +75,7 @@
 
       // check primaryKey2 uniqueness
       for (i = 0; i < rows.length; i++) {
-        if (rows[i][primaryKey2] === $scope.selected[primaryKey2]) {
+        if (rows[i][primaryKey2] == $scope.selected[primaryKey2]) {
           alert("Duplicate row with `" + primaryKey2 + "` = " + $scope.selected[primaryKey2]);
           return;
         }
