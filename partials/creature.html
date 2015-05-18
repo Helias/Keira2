@@ -23,13 +23,19 @@
   <tab heading="Skinning Loot" active="creatureTabs.skinLoot" ng-controller="LootController">
     <div ng-include="'partials/creature/skinning-loot.html'"></div>
   </tab>
+  <tab heading="Vendor" active="creatureTabs.vendor" ng-controller="VendorController">
+    <div ng-include="'partials/creature/vendor.html'"></div>
+  </tab>
+   <tab heading="Trainer" active="creatureTabs.trainer" ng-controller="TrainerController">
+    <div ng-include="'partials/creature/trainer.html'"></div>
+  </tab>
   <tab heading="Spawns" active="creatureTabs.spawns" ng-controller="SpawnsController">
     <div ng-include="'partials/creature/spawns.html'"></div>
   </tab>
   <tab heading="Spawns Addon" active="creatureTabs.spawnsAddon" ng-controller="SpawnsAddonController">
     <div ng-include="'partials/creature/spawns-addon.html'"></div>
   </tab>
-  <tab heading="SQL Script" ng-click="generateCreatureScript()" active="creatureTabs.script">
+  <tab heading="SQL Update Script" ng-click="generateCreatureScript()" active="creatureTabs.script">
     <div ng-include="'partials/creature/creature-sql-script.html'"></div>
   </tab>
 </tabset>
