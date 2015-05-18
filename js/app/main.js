@@ -7,10 +7,20 @@
 
   var app = angular.module('keira2', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'tableSort']);
 
-  app.run(function($rootScope, $modal) {
+  app.run(function($rootScope, $modal, $stateParams) {
 
     /* TrinityCore Documentation wiki */
     $rootScope.wikiLink = "http://collab.kpsn.org/display/tc/";
+
+    /* [Funcion] check if entry is selected */
+    $rootScope.isEntrySelected = function() {
+      if (!$stateParams.id) {
+        alert("Please use the Search tab and select an entry");
+        return false;
+      } else {
+        return true;
+      }
+    };
 
     /* Open modal to handle flags params:
      * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size

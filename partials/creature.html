@@ -15,12 +15,12 @@
     <div ng-include="'partials/creature/equip-template.html'"></div>
   </tab>
   <tab heading="Creature Loot" active="creatureTabs.creatureLoot">
-    <div ng-include="'partials/creature/creature-loot.html'" ng-controller="CreatureLootController"></div>
+    <div ng-include="'partials/creature/creature-loot.html'" ng-controller="LootController"></div>
   </tab>
-  <tab heading="Pickpocket Loot" active="creatureTabs.pickpocketLoot">
+  <tab heading="Pickpocket Loot" active="creatureTabs.pickpocketLoot" ng-controller="LootController">
     <div ng-include="'partials/creature/pickpocket-loot.html'"></div>
   </tab>
-  <tab heading="Skin Loot" active="creatureTabs.skinLoot">
+  <tab heading="Skin Loot" active="creatureTabs.skinLoot" ng-controller="LootController">
     <div ng-include="'partials/creature/skinning-loot.html'"></div>
   </tab>
   <tab heading="Creature Template Addon" active="creatureTabs.creatureTemplateAddon">
