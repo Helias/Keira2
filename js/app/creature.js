@@ -35,6 +35,10 @@
     $scope.new_spawns = [];
     $scope.current_creature_addon = [];
     $scope.new_creature_addon = [];
+    $scope.current_npc_vendor = [];
+    $scope.new_npc_vendor = [];
+    $scope.current_npc_trainer = [];
+    $scope.new_npc_trainer = [];
 
     /* Check if a creature is selected */
     if ($stateParams.id) {
@@ -56,7 +60,7 @@
         $scope.new_creature_template = angular.copy($scope.current_creature_template);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in CREATURE_TEMPLATE $http.get request");
+        console.log("[ERROR] creature/template/" + $stateParams.id + " $http.get request failed");
       });
 
       /* Retrieve all creature_equip_template datas */
@@ -66,7 +70,7 @@
         $scope.new_creature_equip_template = angular.copy($scope.current_creature_equip_template);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in CREATURE_EQUIP_TEMPLATE $http.get request");
+        console.log("[ERROR] creature/equip_template/" + $stateParams.id + " $http.get request failed");
       });
 
       /* Retrieve all creature_template_addon datas */
@@ -76,7 +80,7 @@
         $scope.new_creature_template_addon = angular.copy($scope.current_creature_template_addon);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in CREATURE_TEMPLATE_ADDON $http.get request");
+        console.log("[ERROR] creature/template_addon/" + $stateParams.id + " $http.get request failed");
       });
 
       /* Retrieve all creature_onkill_reputation datas */
@@ -86,7 +90,7 @@
         $scope.new_creature_onkill_reputation = angular.copy($scope.current_creature_onkill_reputation);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in CREATURE_ONKILL_REPUTATION $http.get request");
+        console.log("[ERROR] creature/onkill_reputation/ $http.get request failed");
       });
 
       /* Retrieve all creature_template_loot datas */
@@ -96,7 +100,7 @@
         $scope.new_creature_loot_template = angular.copy($scope.current_creature_loot_template);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in CREATURE_LOOT_TEMPLATE $http.get request");
+        console.log("[ERROR] loot/template/creature/" + $stateParams.id + " $http.get request failed");
       });
 
       /* Retrieve all skinning_template_loot datas */
@@ -106,7 +110,7 @@
         $scope.new_skinning_loot_template = angular.copy($scope.current_skinning_loot_template);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in SKINNING_LOOT_TEMPLATE $http.get request");
+        console.log("[ERROR] loot/template/skinning/" + $stateParams.id + " $http.get request failed");
       });
 
       /* Retrieve all pickpocketing_template_loot datas */
@@ -116,7 +120,7 @@
         $scope.new_pickpocketing_loot_template = angular.copy($scope.current_pickpocketing_loot_template);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in PICKPOCKETING_LOOT_TEMPLATE $http.get request");
+        console.log("[ERROR] loot/template/pickpocketing/" + $stateParams.id + " $http.get request failed");
       });
 
       /* Retrieve all spawns */
@@ -126,7 +130,7 @@
         $scope.new_creature = angular.copy($scope.current_creature);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in CREATURE SPAWN $http.get request");
+        console.log("[ERROR] creature/spawn/id/" + $stateParams.id + " $http.get request failed");
       });
 
       /* Retrieve all spawns addon */
@@ -136,7 +140,27 @@
         $scope.new_creature_addon = angular.copy($scope.current_creature_addon);
       })
         .error(function (data, status, header, config) {
-        console.log("Error in CREATURE SPAWN ADDON $http.get request");
+        console.log("[ERROR] creature/spawn/addon/id/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all npc vendor */
+      $http.get( app.api + "npc_vendor/creature/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_npc_vendor = data;
+        $scope.new_npc_vendor = angular.copy($scope.current_npc_vendor);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] npc_vendor/creature/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all npc trainer */
+      $http.get( app.api + "npc_trainer/creature/" + $stateParams.id )
+        .success(function (data, status, header, config) {
+        $scope.current_npc_trainer = data;
+        $scope.new_npc_trainer = angular.copy($scope.current_npc_trainer);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] npc_trainer/creature/" + $stateParams.id + " $http.get request failed");
       });
 
     } else {
@@ -158,7 +182,7 @@
         $scope.creatures = data;
       })
         .error(function (data, status, header, config) {
-        console.log("Error in CREATURE SEARCH $http.get request");
+        console.log("[ERROR] CREATURE SEARCH $http.get request failed");
       });
 
     };
