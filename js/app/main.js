@@ -31,7 +31,7 @@
     */
     $rootScope.openFlagModal = function (size, TemplateUrl, object, property, numValues) {
 
-      if (object === undefined) { return; }
+      if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $modal.open({
         templateUrl: TemplateUrl,
@@ -58,7 +58,7 @@
     /* Open modal to show Full SQL Script */
     $rootScope.openFullScriptModal = function(rows, tableName, primaryKey1) {
 
-      if (rows === undefined) { return; }
+      if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $modal.open({
         templateUrl: "partials/full-script-modal.html",
@@ -73,6 +73,35 @@
           },
           primaryKey1: function() {
             return primaryKey1;
+          }
+        }
+      });
+    };
+
+    /* Open modal to show Full SQL Script */
+    $rootScope.openDiffScriptModal = function(tableName, primaryKey1, primaryKey2, currentRows, newRows) {
+
+      if (currentRows === undefined || newRows === undefined) { return; }
+
+      var modalInstance = $modal.open({
+        templateUrl: "partials/diff-script-modal.html",
+        controller: "DiffScriptModalController",
+        size: 'lg',
+        resolve: {
+          tableName: function () {
+            return tableName;
+          },
+          primaryKey1: function() {
+            return primaryKey1;
+          },
+          primaryKey2: function() {
+            return primaryKey2;
+          },
+          currentRows: function() {
+            return currentRows;
+          },
+          newRows: function() {
+            return newRows;
           }
         }
       });

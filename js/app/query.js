@@ -65,7 +65,8 @@
    */
   app.getDiffDeleteInsert = function(tableName, primaryKey1, primaryKey2, currentRows, newRows) {
 
-    // TODO
+    console.log(newRows);
+    return "# This feature is under development";
 
   };
 

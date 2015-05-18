@@ -57,4 +57,15 @@
 
   });
 
+
+  app.controller('DiffScriptModalController', function ($scope, $modalInstance, $rootScope, tableName, primaryKey1, primaryKey2, currentRows, newRows) {
+
+    $scope.SQLCode = app.getDiffDeleteInsert(tableName, primaryKey1, primaryKey2, currentRows, newRows);
+
+    $scope.modalClose = function () {
+      $modalInstance.dismiss('close');
+    };
+
+  });
+
 }());
