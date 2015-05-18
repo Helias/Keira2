@@ -19,7 +19,7 @@
 
     var key,
         diff = false,
-        query = squel.update();
+        query = squel.update({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" });
 
     query.table(tableName);
 
@@ -84,7 +84,7 @@
      * clearedNewRows will be the copy of newRows objects without the $$hashKey field */
     cleanedNewRows = angular.fromJson(angular.toJson(newRows));
 
-    insertQuery = squel.insert().into(tableName).setFieldsRows(cleanedNewRows);
+    insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName).setFieldsRows(cleanedNewRows);
 
     query = "# FULL `" + tableName + "` of " + primaryKey1 + " " + newRows[0][primaryKey1] + "\n";
     query += deleteQuery.toString() + ";\n";
