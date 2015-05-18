@@ -25,7 +25,12 @@
       </div>
       <div class="col-xs-4">
         <small>LootMode</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.LootMode">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.LootMode">
+          <div class="input-group-btn">
+           <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/LootMode.html', selected, 'LootMode', 5)">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-4">
         <small>GroupId</small>
