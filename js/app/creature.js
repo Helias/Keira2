@@ -33,6 +33,8 @@
     $scope.new_pickpocketing_loot_template = [];
     $scope.current_spawns = [];
     $scope.new_spawns = [];
+    $scope.current_creature_addon = [];
+    $scope.new_creature_addon = [];
 
     /* Check if a creature is selected */
     if ($stateParams.id) {
@@ -125,6 +127,16 @@
       })
         .error(function (data, status, header, config) {
         console.log("Error in CREATURE SPAWN $http.get request");
+      });
+
+      /* Retrieve all spawns addon */
+      $http.get( app.api + "creature/spawn/addon/id/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_creature_addon = data;
+        $scope.new_creature_addon = angular.copy($scope.current_creature_addon);
+      })
+        .error(function (data, status, header, config) {
+        console.log("Error in CREATURE SPAWN ADDON $http.get request");
       });
 
     } else {
