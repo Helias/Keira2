@@ -5,14 +5,14 @@
   <tab heading="Creature Template" active="creatureTabs.creatureTemplate">
     <div ng-include="'partials/creature/template.html'"></div>
   </tab>
-  <tab heading="Creature Location" active="creatureTabs.creatureLocation">
-    <div ng-include="'partials/creature/location.html'"></div>
-  </tab>
-  <tab heading="Model Info" active="creatureTabs.modelInfo">
-    <div ng-include="'partials/creature/model-info.html'"></div>
+  <tab heading="Template Addon" active="creatureTabs.templateAddon">
+    <div ng-include="'partials/creature/template-addon.html'"></div>
   </tab>
   <tab heading="Equip Template" active="creatureTabs.equipTemplate">
     <div ng-include="'partials/creature/equip-template.html'"></div>
+  </tab>
+  <tab heading="On Kill Reputation" active="creatureTabs.onKillReputation">
+    <div ng-include="'partials/creature/on-kill-reputation.html'"></div>
   </tab>
   <tab heading="Creature Loot" active="creatureTabs.creatureLoot">
     <div ng-include="'partials/creature/creature-loot.html'" ng-controller="LootController"></div>
@@ -23,14 +23,11 @@
   <tab heading="Skin Loot" active="creatureTabs.skinLoot" ng-controller="LootController">
     <div ng-include="'partials/creature/skinning-loot.html'"></div>
   </tab>
-  <tab heading="Creature Template Addon" active="creatureTabs.creatureTemplateAddon">
-    <div ng-include="'partials/creature/template-addon.html'"></div>
+  <tab heading="Model Info" active="creatureTabs.modelInfo">
+    <div ng-include="'partials/creature/model-info.html'"></div>
   </tab>
   <tab heading="NPC Gossip" active="creatureTabs.npcGossip">
     <div ng-include="'partials/creature/npc-gossip.html'"></div>
-  </tab>
-  <tab heading="On Kill Reputation" active="creatureTabs.onKillReputation">
-    <div ng-include="'partials/creature/on-kill-reputation.html'"></div>
   </tab>
   <tab heading="Involved In" active="creatureTabs.involvedIn">
     <div ng-include="'partials/creature/involved-in.html'"></div>
@@ -38,11 +35,11 @@
   <tab heading="Locales NPC Text" active="creatureTabs.localesNpcText">
     <div ng-include="'partials/creature/locales-npc-text.html'"></div>
   </tab>
-  <tab heading="Creature Movement" active="creatureTabs.creatureMovement">
-    <div ng-include="'partials/creature/movement.html'"></div>
+  <tab heading="Spawns" active="creatureTabs.spawns">
+    <div ng-include="'partials/creature/spawns.html'"></div>
   </tab>
-  <tab heading="Creature Addon" active="creatureTabs.creatureAddon">
-    <div ng-include="'partials/creature/addon.html'"></div>
+  <tab heading="Spawns Addon" active="creatureTabs.spawnsAddon">
+    <div ng-include="'partials/creature/spawns-addon.html'"></div>
   </tab>
   <tab heading="SQL Script" ng-click="generateCreatureScript()" active="creatureTabs.script">
     <div ng-include="'partials/creature/creature-sql-script.html'"></div>

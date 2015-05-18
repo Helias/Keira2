@@ -13,19 +13,21 @@
     $scope.creatureTabs = {
       search                : false,
       creatureTemplate      : false,
-      creatureLocation      : false,
-      modelInfo             : false,
+      templateAddon         : false,
       equipTemplate         : false,
+      onKillReputation      : false,
+
       creatureLoot          : false,
       pickpocketLoot        : false,
       skinLoot              : false,
-      creatureTemplateAddon : false,
+
+      modelInfo             : false,
       npcGossip             : false,
-      onKillReputation      : false,
       involvedIn            : false,
       localesNpcText        : false,
-      creatureMovement      : false,
-      creatureAddon         : false,
+
+      spawns                : false,
+      spawnsAddon           : false,
       script                : false
     };
 
