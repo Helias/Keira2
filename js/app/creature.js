@@ -217,7 +217,7 @@
       // check primaryKey2 uniqueness
       for (i = 0; i < rows.length; i++) {
         if (rows[i][primaryKey2] === $scope.selected.Item) {
-          alert("Duplicate row with " + primaryKey2 + " " + $scope.selected.Item);
+          alert("Duplicate row with `" + primaryKey2 + "` = " + $scope.selected.Item);
           return;
         }
       }
