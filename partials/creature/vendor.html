@@ -48,8 +48,12 @@
   </div>
   <div class="col-xs-2 pull-right">
     <br>
-    <button class="btn btn-info pull-right" ng-click="openFullScriptModal(new_npc_vendor, 'npc_vendor', 'entry')">FULL Vendor Script</button>
+    <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_npc_vendor, 'npc_vendor', 'entry')">FULL Vendor Script</button>
   </div>
+  <div class="col-xs-2 pull-right">
+      <br>
+      <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('npc_vendor', 'entry', 'item', current_npc_vendor, new_npc_vendor)">DIFF Vendor Script</button>
+    </div>
 </div>
 <br>
 <table class="table table-striped table-condensed">

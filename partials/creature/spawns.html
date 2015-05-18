@@ -158,8 +158,12 @@
   </div>
   <div class="col-xs-2 pull-right">
     <br>
-    <button class="btn btn-info pull-right" ng-click="openFullScriptModal(new_creature, 'creature', 'guid')">FULL Spawns Script</button>
+    <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_creature, 'creature', 'guid')">FULL Spawns Script</button>
   </div>
+  <div class="col-xs-2 pull-right">
+      <br>
+      <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('creature', 'id', 'guid', current_creature, new_creature)">DIFF Spawns Script</button>
+    </div>
 </div>
 <br>
 <div style="overflow-y: scroll !important;">
