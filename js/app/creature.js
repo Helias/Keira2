@@ -32,6 +32,10 @@
     /* Init arrays */
     $scope.current_creature_loot_template = [];
     $scope.new_creature_loot_template = [];
+    $scope.current_skinning_loot_template = [];
+    $scope.new_skinning_loot_template = [];
+    $scope.current_pickpocketing_loot_template = [];
+    $scope.new_pickpocketing_loot_template = [];
 
     /* Check if a creature is selected */
     if ($stateParams.id) {
@@ -94,6 +98,26 @@
       })
         .error(function (data, status, header, config) {
         console.log("Error in CREATURE_LOOT_TEMPLATE $http.get request");
+      });
+
+      /* Retrieve all skinning_template_loot datas */
+      $http.get( app.api + "loot/template/skinning/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_skinning_loot_template = data;
+        $scope.new_skinning_loot_template = angular.copy($scope.current_skinning_loot_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("Error in SKINNING_LOOT_TEMPLATE $http.get request");
+      });
+
+      /* Retrieve all pickpocketing_template_loot datas */
+      $http.get( app.api + "loot/template/pickpocketing/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_pickpocketing_loot_template = data;
+        $scope.new_pickpocketing_loot_template = angular.copy($scope.current_pickpocketing_loot_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("Error in PICKPOCKETING_LOOT_TEMPLATE $http.get request");
       });
 
     } else {
