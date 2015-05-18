@@ -28,7 +28,13 @@
         </div>
         <div class="col-xs-3">
           <small>spawnMask</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.spawnMask">
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="selected.spawnMask">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/spawnMask.html', selected, 'spawnMask', 8)">...</button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -104,7 +110,12 @@
         </div>
         <div class="col-xs-3">
           <small>npcflag</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.npcflag">
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="selected.npcflag">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/npcflag.html', selected, 'npcflag', 28)">...</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -112,11 +123,22 @@
       <div class="row">
         <div class="col-xs-3">
           <small>unit_flags</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.unit_flags">
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="selected.unit_flags">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/unit_flags.html', selected, 'unit_flags', 32)">...</button>
+            </div>
+          </div>
         </div>
         <div class="col-xs-3">
           <small>dynamicflags</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.dynamicflags">
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="selected.dynamicflags">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/dynamicflags.html', selected, 'dynamicflags', 8)">...</button>
+            </div>
+          </div>
+
         </div>
         <div class="col-xs-3">
           <small>VerifiedBuild</small>
