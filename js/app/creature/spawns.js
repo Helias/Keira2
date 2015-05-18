@@ -14,7 +14,7 @@
     /* The row currently selected by the user (bound to the view) */
     $scope.selected = {
       guid            : 0,
-      id              : $scope.Entry = parseInt($stateParams.id, 10),
+      id              : parseInt($stateParams.id, 10),
       map             : 0,
       zoneId          : 0,
       areaId          : 0,

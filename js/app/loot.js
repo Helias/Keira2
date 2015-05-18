@@ -13,7 +13,7 @@
 
     /* The item currently selected by the user (bound to the view) */
     $scope.selected = {
-      Entry         : $scope.Entry = parseInt($stateParams.id, 10),
+      Entry         : parseInt($stateParams.id, 10),
       Item          : 0,
       Reference     : 0,
       Chance        : 100,

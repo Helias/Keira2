@@ -31,7 +31,7 @@
     }
 
     if (!diff) {
-      console.log("There are no `" + tableName + "` changes\n\n");
+      console.log("[INFO] There are no `" + tableName + "` changes");
       return "";
     }
 
