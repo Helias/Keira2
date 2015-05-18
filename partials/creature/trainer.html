@@ -1,0 +1,68 @@
+<p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}npc_trainer"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>npc_trainer</a></p>
+<br>
+<div class="row">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <small>spell</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.spell">
+        </div>
+        <div class="col-xs-3">
+          <small>spellcost</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.spellcost">
+        </div>
+        <div class="col-xs-3">
+          <small>reqskill</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.reqskill">
+        </div>
+        <div class="col-xs-3">
+          <small>reqskillvalue</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="selected.reqskillvalue">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <small>reqlevel</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.reqlevel">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-4">
+    <br>
+    <button class="btn btn-primary" ng-click="editSelectedRowOf(new_npc_trainer, 'spell')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_npc_trainer)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+    <button class="btn btn-success" ng-click="addRowTo(new_npc_trainer, 'spell')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <br>
+    <button class="btn btn-info pull-right" ng-click="openFullScriptModal(new_npc_trainer, 'npc_trainer', 'entry')">FULL Trainer Script</button>
+  </div>
+</div>
+<br>
+<table class="table table-striped table-condensed">
+  <thead>
+    <th class="text-center"></th>
+    <th class="text-center">spell</th>
+    <th class="text-center">spellcost</th>
+    <th class="text-center">reqskill</th>
+    <th class="text-center">reqskillvalue</th>
+    <th class="text-center">reqlevel</th>
+  </thead>
+  <tr ng-repeat="trainer in new_npc_trainer track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+    <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_npc_trainer, $index)"></i></td>
+    <td>{{ trainer.spell }}</td>
+    <td>{{ trainer.spellcost }}</td>
+    <td>{{ trainer.reqskill }}</td>
+    <td>{{ trainer.reqskillvalue }}</td>
+    <td>{{ trainer.reqlevel }}</td>
+  </tr>
+</table>
