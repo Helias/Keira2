@@ -29,6 +29,10 @@
       script                : false
     };
 
+    /* Init arrays */
+    $scope.current_creature_loot_template = [];
+    $scope.new_creature_loot_template = [];
+
     /* Check if a creature is selected */
     if ($stateParams.id) {
 
@@ -159,6 +163,16 @@
       $scope.creatureTabs.script = true;
     };
 
+    /* [Funcion] check if creature selected */
+    $scope.isCreatureSelected = function() {
+      if (!$stateParams.id) {
+        alert("Please use the Search tab and select a creature");
+        return false;
+      } else {
+        return true;
+      }
+    };
+
   });
 
   app.controller("CreatureLootController", function ($scope, $http, $stateParams, $modal) {
@@ -201,16 +215,22 @@
 
     /* Edit selected row */
     $scope.editSelectedRowOf = function(rows) {
+      if (!$scope.isCreatureSelected()) { return; }
+
       rows.splice($scope.selectedRow, 1, angular.copy($scope.selected));
     };
 
     /* Delete selected row from collection */
     $scope.deleteSelectedRowFrom = function(rows) {
+      if (!$scope.isCreatureSelected()) { return; }
+
       rows.splice($scope.selectedRow, 1);
     };
 
     /* Add selected row to collection */
     $scope.addRowTo = function(rows, primaryKey2) {
+      if (!$scope.isCreatureSelected()) { return; }
+
       var i;
       $scope.parseValues();
 
