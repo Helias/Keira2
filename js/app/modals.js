@@ -47,9 +47,9 @@
 
   });
 
-  app.controller('FullScriptModalController', function ($scope, $modalInstance, $rootScope, lootObject, tableName, primaryKey1) {
+  app.controller('FullScriptModalController', function ($scope, $modalInstance, $rootScope, rows, tableName, primaryKey1) {
 
-    $scope.SQLCode = app.getFullDeleteInsert(tableName, primaryKey1, lootObject);
+    $scope.SQLCode = app.getFullDeleteInsert(tableName, primaryKey1, rows);
 
     $scope.modalClose = function () {
       $modalInstance.dismiss('close');

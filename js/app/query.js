@@ -1,6 +1,5 @@
-/*jslint browser: true, white: true, plusplus: true*/
+/*jslint browser: true, white: true, plusplus: true, eqeq: true, es5: true*/
 /*global angular, console, alert, squel*/
-/*jslint es5: true */
 
 (function () {
   'use strict';
@@ -38,6 +37,21 @@
     query.where(whereCondition);
 
     return "# Table `" + tableName + "`\n" + query.toString() + ";\n\n";
+  };
+
+  /* [Function] containsRow
+   *  checks if object having key is contained in array
+   */
+  app.containsRow = function(key, object, array) {
+    var i;
+
+    for (i = 0; i < array.length; i++) {
+      if (array[i][key] == object[key]) {
+        return true;
+      }
+    }
+
+    return false;
   };
 
   /* [Function] getDiffDeleteInsert

@@ -56,17 +56,17 @@
 
 
     /* Open modal to show Full SQL Script */
-    $rootScope.openFullScriptModal = function(lootObject, tableName, primaryKey1) {
+    $rootScope.openFullScriptModal = function(rows, tableName, primaryKey1) {
 
-      if (lootObject === undefined) { return; }
+      if (rows === undefined) { return; }
 
       var modalInstance = $modal.open({
         templateUrl: "partials/full-script-modal.html",
         controller: "FullScriptModalController",
         size: 'lg',
         resolve: {
-          lootObject: function () {
-            return lootObject;
+          rows: function () {
+            return rows;
           },
           tableName: function () {
             return tableName;
