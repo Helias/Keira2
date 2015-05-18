@@ -48,6 +48,7 @@
     $scope.editSelectedRowOf = function(rows, primaryKey2) {
       if (!$scope.isEntrySelected()) { return; }
       var i;
+      $scope.parseValues();
 
       // check primaryKey2 uniqueness
       for (i = 0; i < rows.length; i++) {

@@ -61,7 +61,7 @@
       if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $modal.open({
-        templateUrl: "partials/full-script-modal.html",
+        templateUrl: "partials/sql-script-modal.html",
         controller: "FullScriptModalController",
         size: 'lg',
         resolve: {
@@ -84,7 +84,7 @@
       if (currentRows === undefined || newRows === undefined) { return; }
 
       var modalInstance = $modal.open({
-        templateUrl: "partials/diff-script-modal.html",
+        templateUrl: "partials/sql-script-modal.html",
         controller: "DiffScriptModalController",
         size: 'lg',
         resolve: {
