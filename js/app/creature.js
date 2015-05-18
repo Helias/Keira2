@@ -214,8 +214,17 @@
     };
 
     /* Edit selected row */
-    $scope.editSelectedRowOf = function(rows) {
+    $scope.editSelectedRowOf = function(rows, primaryKey2) {
       if (!$scope.isCreatureSelected()) { return; }
+      var i;
+
+      // check primaryKey2 uniqueness
+      for (i = 0; i < rows.length; i++) {
+        if ( (rows[i][primaryKey2] === $scope.selected.Item) && (i !== $scope.selectedRow) ) {
+          alert("Duplicate row with `" + primaryKey2 + "` = " + $scope.selected.Item);
+          return;
+        }
+      }
 
       rows.splice($scope.selectedRow, 1, angular.copy($scope.selected));
     };
@@ -230,7 +239,6 @@
     /* Add selected row to collection */
     $scope.addRowTo = function(rows, primaryKey2) {
       if (!$scope.isCreatureSelected()) { return; }
-
       var i;
       $scope.parseValues();
 
