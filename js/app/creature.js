@@ -16,16 +16,9 @@
       templateAddon         : false,
       equipTemplate         : false,
       onKillReputation      : false,
-
       creatureLoot          : false,
       pickpocketLoot        : false,
       skinLoot              : false,
-
-      modelInfo             : false,
-      npcGossip             : false,
-      involvedIn            : false,
-      localesNpcText        : false,
-
       spawns                : false,
       spawnsAddon           : false,
       script                : false
@@ -38,6 +31,8 @@
     $scope.new_skinning_loot_template = [];
     $scope.current_pickpocketing_loot_template = [];
     $scope.new_pickpocketing_loot_template = [];
+    $scope.current_spawns = [];
+    $scope.new_spawns = [];
 
     /* Check if a creature is selected */
     if ($stateParams.id) {
@@ -120,6 +115,16 @@
       })
         .error(function (data, status, header, config) {
         console.log("Error in PICKPOCKETING_LOOT_TEMPLATE $http.get request");
+      });
+
+      /* Retrieve all spawns */
+      $http.get( app.api + "creature/spawn/id/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_creature = data;
+        $scope.new_creature = angular.copy($scope.current_creature);
+      })
+        .error(function (data, status, header, config) {
+        console.log("Error in CREATURE SPAWN $http.get request");
       });
 
     } else {

@@ -1,2 +1,196 @@
+<p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}creature"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>creature</a></p>
 <br>
-<p class="h2">TODO</p>
+<div class="row">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <small>guid</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.guid">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <small>map</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.map">
+        </div>
+        <div class="col-xs-3">
+          <small>zoneId</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.zoneId">
+        </div>
+        <div class="col-xs-3">
+          <small>areaId</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.areaId">
+        </div>
+        <div class="col-xs-3">
+          <small>spawnMask</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.spawnMask">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <small>phaseMask</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.phaseMask">
+        </div>
+        <div class="col-xs-3">
+          <small>modelid</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.modelid">
+        </div>
+        <div class="col-xs-3">
+          <small>equipment_id</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.equipment_id">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <small>position_x</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.position_x">
+        </div>
+        <div class="col-xs-3">
+          <small>position_y</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.position_y">
+        </div>
+        <div class="col-xs-3">
+          <small>position_z</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.position_z">
+        </div>
+        <div class="col-xs-3">
+          <small>orientation</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.orientation">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <small>spawntimesecs</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.spawntimesecs">
+        </div>
+        <div class="col-xs-3">
+          <small>spawndist</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.spawndist">
+        </div>
+        <div class="col-xs-3">
+          <small>currentwaypoint</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.currentwaypoint">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <small>curhealth</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.curhealth">
+        </div>
+        <div class="col-xs-3">
+          <small>curmana</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.curmana">
+        </div>
+        <div class="col-xs-3">
+          <small>MovementType</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.MovementType">
+        </div>
+        <div class="col-xs-3">
+          <small>npcflag</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.npcflag">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-3">
+          <small>unit_flags</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.unit_flags">
+        </div>
+        <div class="col-xs-3">
+          <small>dynamicflags</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.dynamicflags">
+        </div>
+        <div class="col-xs-3">
+          <small>VerifiedBuild</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.VerifiedBuild">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-4">
+    <br>
+    <button class="btn btn-primary" ng-click="editSelectedRowOf(new_creature, 'guid')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_creature)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+    <button class="btn btn-success" ng-click="addRowTo(new_creature, 'guid')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <br>
+    <button class="btn btn-info pull-right" ng-click="openFullScriptModal(new_creature, 'creature_loot_template', 'guid')">FULL Spawns Script</button>
+  </div>
+</div>
+<br>
+<div style="overflow-y: scroll !important;">
+  <table class="table table-striped table-condensed">
+    <thead>
+      <th class="text-center"></th>
+      <th class="text-center">guid</th>
+      <th class="text-center">map</th>
+      <th class="text-center">zoneId</th>
+      <th class="text-center">areaId</th>
+      <th class="text-center">spawnMask</th>
+      <th class="text-center">phaseMask</th>
+      <th class="text-center">modelid</th>
+      <th class="text-center">equipment_id</th>
+      <th class="text-center">position_x</th>
+      <th class="text-center">position_y</th>
+      <th class="text-center">position_z</th>
+      <th class="text-center">orientation</th>
+      <th class="text-center">spawntimesecs</th>
+      <th class="text-center">spawndist</th>
+      <th class="text-center">currentwaypoint</th>
+      <th class="text-center">curhealth</th>
+      <th class="text-center">curmana</th>
+      <th class="text-center">MovementType</th>
+      <th class="text-center">npcflag</th>
+      <th class="text-center">unit_flags</th>
+      <th class="text-center">dynamicflags</th>
+      <th class="text-center">VerifiedBuild</th>
+    </thead>
+    <tr ng-repeat="spawn in new_creature track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+      <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_creature, $index)"></i></td>
+      <td>{{ spawn.guid }}</td>
+      <td>{{ spawn.map }}</td>
+      <td>{{ spawn.zoneId }}</td>
+      <td>{{ spawn.areaId }}</td>
+      <td>{{ spawn.spawnMask }}</td>
+      <td>{{ spawn.phaseMask }}</td>
+      <td>{{ spawn.modelid }}</td>
+      <td>{{ spawn.equipment_id }}</td>
+      <td>{{ spawn.position_x }}</td>
+      <td>{{ spawn.position_y }}</td>
+      <td>{{ spawn.position_z }}</td>
+      <td>{{ spawn.orientation }}</td>
+      <td>{{ spawn.spawntimesecs }}</td>
+      <td>{{ spawn.spawndist }}</td>
+      <td>{{ spawn.currentwaypoint }}</td>
+      <td>{{ spawn.curhealth }}</td>
+      <td>{{ spawn.curmana }}</td>
+      <td>{{ spawn.MovementType }}</td>
+      <td>{{ spawn.npcflag }}</td>
+      <td>{{ spawn.unit_flags }}</td>
+      <td>{{ spawn.dynamicflags }}</td>
+      <td>{{ spawn.VerifiedBuild }}</td>
+    </tr>
+  </table>
+</div>

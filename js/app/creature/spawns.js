@@ -6,36 +6,42 @@
 
   var app = angular.module('keira2');
 
-  app.controller("LootController", function ($scope, $rootScope, $stateParams) {
+  app.controller("SpawnsController", function ($scope, $rootScope, $stateParams) {
 
     /* At start we have no row selected */
     $scope.selectedRow = -1;
 
-    /* The item currently selected by the user (bound to the view) */
+    /* The row currently selected by the user (bound to the view) */
     $scope.selected = {
-      Entry         : $scope.Entry = parseInt($stateParams.id, 10),
-      Item          : 0,
-      Reference     : 0,
-      Chance        : 100,
-      QuestRequired : 0,
-      LootMode      : 1,
-      GroupId       : 0,
-      MinCount      : 1,
-      MaxCount      : 1,
-      Comment       : ''
+      guid            : 0,
+      id              : $scope.Entry = parseInt($stateParams.id, 10),
+      map             : 0,
+      zoneId          : 0,
+      areaId          : 0,
+      spawnMask       : 1,
+      phaseMask       : 2,
+      modelid         : 0,
+      equipment_id    : 0,
+      position_x      : 0,
+      position_y      : 0,
+      position_z      : 0,
+      orientation     : 0,
+      spawntimesecs   : 120,
+      spawndist       : 0,
+      currentwaypoint : 0,
+      curhealth       : 1,
+      curmana         : 0,
+      MovementType    : 0,
+      npcflag         : 0,
+      unit_flags      : 0,
+      dynamicflags    : 0,
+      VerifiedBuild   : 0
     };
 
     /* Type check */
     $scope.parseValues = function() {
 
       $scope.selected.Item          = parseInt($scope.selected.Item, 10);
-      $scope.selected.Reference     = parseInt($scope.selected.Reference, 10);
-      $scope.selected.Chance        = parseFloat($scope.selected.Chance, 10);
-      $scope.selected.QuestRequired = parseInt($scope.selected.QuestRequired, 10);
-      $scope.selected.LootMode      = parseInt($scope.selected.LootMode, 10);
-      $scope.selected.GroupId       = parseInt($scope.selected.GroupId, 10);
-      $scope.selected.MinCount      = parseInt($scope.selected.MinCount, 10);
-      $scope.selected.MaxCount      = parseInt($scope.selected.MaxCount, 10);
     };
 
     /* Select a row from collection */
