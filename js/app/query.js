@@ -65,11 +65,25 @@
    */
   app.getDiffDeleteInsert = function(tableName, primaryKey1, primaryKey2, currentRows, newRows) {
 
-    if (newRows === undefined || (Array.isArray(newRows) && newRows.length <= 0) ) { return; }
+    if ( newRows === undefined ) { return; }
 
     var query, i, deleteQuery, insertQuery, cleanedNewRows, row,
         involvedRows      = [], // -> needed for DELETE
         addedOrEditedRows = []; // -> needed for INSERT
+
+    if (Array.isArray(newRows) && newRows.length <= 0) {
+
+      if ( (currentRows === undefined) || (Array.isArray(currentRows) &&  currentRows.length <= 0)) {
+        return;
+      } else {
+
+        // all rows were deleted
+        query = query = "# DIFF `" + tableName + "` of " + primaryKey1 + " " + currentRows[0][primaryKey1] + "\n";
+        query += "DELETE * FROM " + tableName + " WHERE " + primaryKey1 + " = " + currentRows[0][primaryKey1] + ";";
+
+        return query;
+      }
+    }
 
     /* Here we need to remove the $$hashKey field from all newRows objects
      * because we don't want it inside our query
@@ -125,6 +139,7 @@
       query += insertQuery.toString() + ";\n";
     }
 
+    // format query
     query = query.replace(") VALUES (", ") VALUES\n(");
     query = query.replace(/\)\, \(/g, "),\n(");
 
