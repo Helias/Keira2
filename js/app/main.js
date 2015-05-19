@@ -81,7 +81,7 @@
     /* Open modal to show Full SQL Script */
     $rootScope.openDiffScriptModal = function(tableName, primaryKey1, primaryKey2, currentRows, newRows) {
 
-      if (currentRows === undefined || newRows === undefined) { return; }
+      if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $modal.open({
         templateUrl: "partials/sql-script-modal.html",
