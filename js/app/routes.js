@@ -15,12 +15,17 @@
       controller: 'QuestController',
       templateUrl: 'partials/quest.html'
     })
+      .state('questSelected', {
+      url: '/quest/:id',
+      controller: 'QuestController',
+      templateUrl: 'partials/quest.html'
+    })
       .state('creature', {
       url: '/creature',
       controller: 'CreatureController',
       templateUrl: 'partials/creature.html'
     })
-      .state('creature_template', {
+      .state('creatureSelected', {
       url: '/creature/:id',
       controller: 'CreatureController',
       templateUrl: 'partials/creature.html'
