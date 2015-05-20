@@ -145,10 +145,9 @@
 
       $scope.questScript = "";
 
-      var whereCondition = "entry = " + $scope.current_quest_template.Id;
+      var whereCondition = "Id = " + $scope.current_quest_template.Id;
 
-      // TODO
-      // quest_template
+
       $scope.questScript += app.getUpdateQuery("quest_template", whereCondition, $scope.current_quest_template, $scope.new_quest_template);
     };
 
