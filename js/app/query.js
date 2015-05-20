@@ -36,7 +36,7 @@
 
     query.where(whereCondition);
 
-    return "# Table `" + tableName + "`\n" + query.toString() + ";\n\n";
+    return "-- Table `" + tableName + "`\n" + query.toString() + ";\n\n";
   };
 
   /* [Function] containsRow
@@ -78,7 +78,7 @@
       } else {
 
         // all rows were deleted
-        query = query = "# DIFF `" + tableName + "` of " + primaryKey1 + " " + currentRows[0][primaryKey1] + "\n";
+        query = query = "-- DIFF `" + tableName + "` of " + primaryKey1 + " " + currentRows[0][primaryKey1] + "\n";
         query += "DELETE * FROM " + tableName + " WHERE " + primaryKey1 + " = " + currentRows[0][primaryKey1] + ";";
 
         return query;
@@ -132,7 +132,7 @@
     insertQuery.setFieldsRows(addedOrEditedRows);
 
     // compose final query
-    query = query = "# DIFF `" + tableName + "` of " + primaryKey1 + " " + newRows[0][primaryKey1] + "\n";
+    query = query = "-- DIFF `" + tableName + "` of " + primaryKey1 + " " + newRows[0][primaryKey1] + "\n";
     query += deleteQuery.toString() + ";\n";
 
     if (addedOrEditedRows.length > 0) {
@@ -178,7 +178,7 @@
 
     insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName).setFieldsRows(cleanedNewRows);
 
-    query = "# FULL `" + tableName + "` of " + primaryKey1 + " " + newRows[0][primaryKey1] + "\n";
+    query = "-- FULL `" + tableName + "` of " + primaryKey1 + " " + newRows[0][primaryKey1] + "\n";
     query += deleteQuery.toString() + ";\n";
     query += insertQuery.toString() + ";\n";
 
