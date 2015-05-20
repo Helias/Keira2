@@ -11,12 +11,12 @@
     /* All Quest tabs, disabled by default.
     *  Only one tab can be active at a time */
     $scope.questTabs = {
-      search  : false,
-      part1   : false,
-      part2   : false,
-      givers  : false,
-      takers  : false,
-      script  : false
+      search    : false,
+      part1     : false,
+      part2     : false,
+      starters  : false,
+      enders    : false,
+      script    : false
     };
 
     /* Init arrays */
