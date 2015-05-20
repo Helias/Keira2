@@ -26,3 +26,8 @@
   margin-top: 8px;
   margin-bottom: 2px;
 }
+
+.modal-overflow {
+    height: 400px;
+    overflow: auto;
+}

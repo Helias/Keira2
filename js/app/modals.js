@@ -12,7 +12,7 @@
    * - links checkbox values with flag values
    * - allows user to edit flag values through checkboxes
    */
-  app.controller('FlagModalController', function ($scope, $modalInstance, $rootScope, propertyVal, numValuesVal) {
+  app.controller('FlagModalController', function ($scope, $modalInstance, propertyVal, numValuesVal) {
 
     propertyVal = String(parseInt(propertyVal, 10).toString(2));
     propertyVal = propertyVal.split("").reverse().join("");
@@ -47,7 +47,19 @@
 
   });
 
-  app.controller('FullScriptModalController', function ($scope, $modalInstance, $rootScope, rows, tableName, primaryKey1) {
+  app.controller('ValueModalController', function ($scope, $modalInstance) {
+
+    $scope.modalOk = function () {
+      $modalInstance.close();
+    };
+
+    $scope.modalCancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+
+  });
+
+  app.controller('FullScriptModalController', function ($scope, $modalInstance, rows, tableName, primaryKey1) {
 
     $scope.SQLCode = app.getFullDeleteInsert(tableName, primaryKey1, rows);
 
@@ -58,7 +70,7 @@
   });
 
 
-  app.controller('DiffScriptModalController', function ($scope, $modalInstance, $rootScope, tableName, primaryKey1, primaryKey2, currentRows, newRows) {
+  app.controller('DiffScriptModalController', function ($scope, $modalInstance, tableName, primaryKey1, primaryKey2, currentRows, newRows) {
 
     $scope.SQLCode = app.getDiffDeleteInsert(tableName, primaryKey1, primaryKey2, currentRows, newRows);
 
