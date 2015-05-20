@@ -11,16 +11,21 @@
     /* All Quest tabs, disabled by default.
     *  Only one tab can be active at a time */
     $scope.questTabs = {
-      search    : false,
-      part1     : false,
-      part2     : false,
-      starters  : false,
-      enders    : false,
-      script    : false
+      search              : false,
+      part1               : false,
+      part2               : false,
+      creatureStarters    : false,
+      creatureEnders      : false,
+      gameobjectStarters  : false,
+      gameobjectEnders    : false,
+      script              : false
     };
 
     /* Init arrays */
-    // TODO
+    $scope.current_creature_queststarter = [];
+    $scope.new_creature_questender = [];
+    $scope.current_gameobject_queststarter = [];
+    $scope.new_gameobject_questender = [];
 
     /* Check if a quest is selected */
     if ($stateParams.id) {
@@ -43,6 +48,55 @@
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] quest/template/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all creature_queststarter datas */
+      $http.get( app.api + "creature/queststarter/quest/" + $stateParams.id, {
+        params : { names : 0 }
+      })
+        .success(function (data, status, header, config) {
+        $scope.current_creature_queststarter = data;
+        $scope.new_creature_queststarter = angular.copy($scope.current_creature_queststarter);
+        console.log("asd" + data[0]);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] creature/queststarter/quest/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all creature_questender datas */
+      $http.get( app.api + "creature/questender/quest/" + $stateParams.id, {
+        params : { names : 0 }
+      })
+        .success(function (data, status, header, config) {
+        $scope.current_creature_questender = data;
+        $scope.new_creature_questender = angular.copy($scope.current_creature_questender);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] creature/questender/quest/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all gameobject_queststarter datas */
+      $http.get( app.api + "gameobject/queststarter/quest/" + $stateParams.id, {
+        params : { names : 0 }
+      })
+        .success(function (data, status, header, config) {
+        $scope.current_gameobject_queststarter = data;
+        $scope.new_gameobject_queststarter = angular.copy($scope.current_gameobject_queststarter);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] gameobject/queststarter/quest/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all gameobject_questender datas */
+      $http.get( app.api + "gameobject/questender/quest/" + $stateParams.id, {
+        params : { names : 0 }
+      })
+        .success(function (data, status, header, config) {
+        $scope.current_gameobject_questender = data;
+        $scope.new_gameobject_questender = angular.copy($scope.current_gameobject_questender);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] gameobject/questender/quest/" + $stateParams.id + " $http.get request failed");
       });
 
     } else {
