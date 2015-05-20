@@ -1,2 +1,258 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}quest_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>quest_template</a></p>
-<p class="h2">TODO</p>
+
+<div class="row">
+  <div class="col-xs-3">
+    <h5>Keys</h5>
+    <div class="row">
+      <div class="col-xs-6">
+        <small>Id</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.Id" ng-model="new_quest_template.Id">
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <small>PrevQuestId</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.PrevQuestId" ng-model="new_quest_template.PrevQuestId">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <small>ExclusiveGroup</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.ExclusiveGroup" ng-model="new_quest_template.ExclusiveGroup">
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <small>PrevQuestId</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.PrevQuestId" ng-model="new_quest_template.PrevQuestId">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <small>NextQuestIdChain</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.NextQuestIdChain" ng-model="new_quest_template.NextQuestIdChain">
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <small>RewardXPId</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RewardXPId" ng-model="new_quest_template.RewardXPId">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <h5>Zone, Sort, Level, Flags</h5>
+    <div class="row">
+      <div class="col-xs-6">
+        <small>ZoneOrSort</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.ZoneOrSort" ng-model="new_quest_template.ZoneOrSort">
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <small>RequiredSkillId</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredSkillId" ng-model="new_quest_template.RequiredSkillId">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>MinLevel</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.MinLevel" ng-model="new_quest_template.MinLevel">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <small>MaxLevel</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.MaxLevel" ng-model="new_quest_template.MaxLevel">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <small>Level</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.Level" ng-model="new_quest_template.Level">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>Type</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.Type" ng-model="new_quest_template.Type">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <small>Flags</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.Flags" ng-model="new_quest_template.Flags">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <small>LimitTime</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.LimitTime" ng-model="new_quest_template.LimitTime">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <h5>Requirements to begin quest</h5>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>RequiredRaces</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredRaces" ng-model="new_quest_template.RequiredRaces">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <small>RequiredClasses</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredClasses" ng-model="new_quest_template.RequiredClasses">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <small>RequiredSkillPoints</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredSkillPoints" ng-model="new_quest_template.RequiredSkillPoints">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-5">
+        <small>RequiredMinRepFaction</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredMinRepFaction" ng-model="new_quest_template.RequiredMinRepFaction">
+        </div>
+      </div>
+      <div class="col-xs-5">
+        <small>RequiredMinRepValue</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredMinRepValue" ng-model="new_quest_template.RequiredMinRepValue">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-5">
+        <small>RequiredMaxReqFaction</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredMaxReqFaction" ng-model="new_quest_template.RequiredMinRepFaction">
+        </div>
+      </div>
+      <div class="col-xs-5">
+        <small>RequiredMaxRepValue</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredMaxRepValue" ng-model="new_quest_template.RequiredMaxRepValue">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-2">
+    <h5 class="text-left">Source for quest</h5>
+    <div class="row">
+      <div class="col-xs-12">
+        <small>SourceItemId</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.SourceItemId" ng-model="new_quest_template.SourceItemId">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <small>SourceItemCount</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.SourceItemCount" ng-model="new_quest_template.SourceItemCount">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <small>SourceSpellId</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.SourceSpellId" ng-model="new_quest_template.SourceSpellId">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" style="margin-top: 12px">
+  <div class="col-xs-4">
+    <small class="text-left">Title</small>
+    <div>
+
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-4">
+    <small class="text-left">Details</small>
+    <div>
+      <textarea class="form-control input-xs" rows="8" type="text" ng-value="current_quest_template.Details" ng-model="new_quest_template.Details"></textarea>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <small class="text-left">Objectives</small>
+    <div>
+      <textarea class="form-control input-xs" rows="8" type="text" ng-value="current_quest_template.Objectives" ng-model="new_quest_template.Objectives"></textarea>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <small class="text-left">EndText</small>
+    <div>
+      <textarea class="form-control input-xs" rows="6" type="text" ng-value="current_quest_template.EndText" ng-model="new_quest_template.EndText"></textarea>
+    </div>
+    <small class="text-left">CompletedText</small>
+    <div>
+      <input class="form-control input-xs" type="text" ng-value="current_quest_template.CompletedText" ng-model="new_quest_template.CompletedText">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-4">
+    <small class="text-left">OfferRewardText</small>
+    <div>
+      <textarea class="form-control input-xs" rows="6" type="text" ng-value="current_quest_template.OfferRewardText" ng-model="new_quest_template.OfferRewardText"></textarea>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <small class="text-left">RequestItemsText</small>
+    <div>
+      <textarea class="form-control input-xs" rows="6" type="text" ng-value="current_quest_template.RequestItemsText" ng-model="new_quest_template.RequestItemsText"></textarea>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <small class="text-left">ObjectiveText1</small>
+    <div>
+      <input class="form-control input-xs" type="text" ng-value="current_quest_template.ObjectiveText1" ng-model="new_quest_template.ObjectiveText1">
+    </div>
+    <small class="text-left">ObjectiveText2</small>
+    <div>
+      <input class="form-control input-xs" type="text" ng-value="current_quest_template.ObjectiveText2" ng-model="new_quest_template.ObjectiveText2">
+    </div>
+    <small class="text-left">ObjectiveText3</small>
+    <div>
+      <input class="form-control input-xs" type="text" ng-value="current_quest_template.ObjectiveText3" ng-model="new_quest_template.ObjectiveText3">
+    </div>
+    <small class="text-left">ObjectiveText4</small>
+    <div>
+      <input class="form-control input-xs" type="text" ng-value="current_quest_template.ObjectiveText4" ng-model="new_quest_template.ObjectiveText4">
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-2 pull-right">
+    <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_quest_template, 'quest_template', 'Id')">FULL SQL Script</button>
+  </div>
+</div>
+<br>
