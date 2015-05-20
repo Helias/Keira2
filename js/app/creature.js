@@ -50,7 +50,7 @@
       /*  Following lines retrieve all Creature datas
        *  current_* mantains the database state
        *  new_*     mantains the editor state
-       *  we will use those two objects to generate UPDATE queries
+       *  we will use those two objects to generate the SQL queries
        */
 
       /* Retrieve all creature_template datas */
@@ -173,7 +173,7 @@
     $scope.search = function (creatureEntry, creatureName, creatureSubname) {
 
       if ( creatureEntry && (!creatureName && !creatureSubname) && (creatureEntry.length < 2) ) {
-        alert("Please insert an Entry of at least 3 characters");
+        alert("Please insert an Entry of at least 2 characters");
         return;
       }
       if ( creatureName && (!creatureEntry && !creatureSubname) && (creatureName.length < 3) ) {
@@ -223,10 +223,6 @@
 
       // creature_onkill_reputation
       $scope.creatureScript += app.getUpdateQuery("creature_onkill_reputation", whereCondition, $scope.current_creature_onkill_reputation, $scope.new_creature_onkill_reputation);
-
-      // creature_loot_template
-      // TODO change with Diff:
-      // app.getFullDeleteInsert("creature_loot_template", "Entry", $scope.new_creature_loot_template);
     };
 
     /* [Function] disactive all tabs */
