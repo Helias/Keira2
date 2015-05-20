@@ -54,6 +54,29 @@
 
     };
 
+    $rootScope.openValueModal = function (size, TemplateUrl) {
+
+      var modalInstance = $modal.open({
+        templateUrl: TemplateUrl,
+        controller: "ValueModalController",
+        size: size/*,
+        resolve: {
+          propertyVal: function () {
+            return object[property];
+          },
+          numValuesVal: function () {
+            return numValues;
+          }
+        }*/
+      });
+
+/*      // When the modal will be closed this function takes the new value to assign
+      modalInstance.result.then(function (Res) {
+        object[property] = Res;
+      });*/
+
+    };
+
 
     /* Open modal to show Full SQL Script */
     $rootScope.openFullScriptModal = function(rows, tableName, primaryKey1) {
