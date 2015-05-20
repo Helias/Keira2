@@ -22,10 +22,15 @@
     };
 
     /* Init arrays */
-    $scope.current_creature_queststarter = [];
-    $scope.new_creature_questender = [];
-    $scope.current_gameobject_queststarter = [];
-    $scope.new_gameobject_questender = [];
+    $scope.current_creature_queststarter    = [];
+    $scope.new_creature_queststarter        = [];
+    $scope.current_creature_questender      = [];
+    $scope.new_creature_questender          = [];
+    $scope.current_gameobject_queststarter  = [];
+    $scope.new_gameobject_queststarter      = [];
+    $scope.current_gameobject_questender    = [];
+    $scope.new_gameobject_questender        = [];
+
 
     /* Check if a quest is selected */
     if ($stateParams.id) {
@@ -57,7 +62,6 @@
         .success(function (data, status, header, config) {
         $scope.current_creature_queststarter = data;
         $scope.new_creature_queststarter = angular.copy($scope.current_creature_queststarter);
-        console.log("asd" + data[0]);
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] creature/queststarter/quest/" + $stateParams.id + " $http.get request failed");

@@ -25,20 +25,20 @@
     };
 
     /* Init arrays */
-    $scope.current_creature_loot_template = [];
-    $scope.new_creature_loot_template = [];
-    $scope.current_skinning_loot_template = [];
-    $scope.new_skinning_loot_template = [];
-    $scope.current_pickpocketing_loot_template = [];
-    $scope.new_pickpocketing_loot_template = [];
-    $scope.current_spawns = [];
-    $scope.new_spawns = [];
-    $scope.current_creature_addon = [];
-    $scope.new_creature_addon = [];
-    $scope.current_npc_vendor = [];
-    $scope.new_npc_vendor = [];
-    $scope.current_npc_trainer = [];
-    $scope.new_npc_trainer = [];
+    $scope.current_creature_loot_template       = [];
+    $scope.new_creature_loot_template           = [];
+    $scope.current_skinning_loot_template       = [];
+    $scope.new_skinning_loot_template           = [];
+    $scope.current_pickpocketing_loot_template  = [];
+    $scope.new_pickpocketing_loot_template      = [];
+    $scope.current_spawns                       = [];
+    $scope.new_spawns                           = [];
+    $scope.current_creature_addon               = [];
+    $scope.new_creature_addon                   = [];
+    $scope.current_npc_vendor                   = [];
+    $scope.new_npc_vendor                       = [];
+    $scope.current_npc_trainer                  = [];
+    $scope.new_npc_trainer                      = [];
 
     /* Check if a creature is selected */
     if ($stateParams.id) {
