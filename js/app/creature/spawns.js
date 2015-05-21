@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("SpawnsController", function ($scope, $rootScope, $stateParams) {
+  app.controller("CreatureSpawnsController", function ($scope, $rootScope, $stateParams) {
 
     /* At start we have no row selected */
     $scope.selectedRow = -1;
