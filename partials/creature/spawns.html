@@ -1,149 +1,146 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}creature"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>creature</a></p>
-<br>
 <div class="row">
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="row">
-        <div class="col-xs-3">
-          <small>guid</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.guid">
-        </div>
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-xs-3">
+        <small>guid</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.guid">
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="row">
-        <div class="col-xs-3">
-          <small>map</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.map">
-        </div>
-        <div class="col-xs-3">
-          <small>zoneId</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.zoneId">
-        </div>
-        <div class="col-xs-3">
-          <small>areaId</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.areaId">
-        </div>
-        <div class="col-xs-3">
-          <small>spawnMask</small>
-          <div class="input-group">
-            <input class="form-control input-xs" type="text" ng-model="selected.spawnMask">
-            <div class="input-group-btn">
-              <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/spawnMask.html', selected, 'spawnMask', 8)">...</button>
-            </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-xs-3">
+        <small>map</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.map">
+      </div>
+      <div class="col-xs-3">
+        <small>zoneId</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.zoneId">
+      </div>
+      <div class="col-xs-3">
+        <small>areaId</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.areaId">
+      </div>
+      <div class="col-xs-3">
+        <small>spawnMask</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.spawnMask">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/spawnMask.html', selected, 'spawnMask', 8)">...</button>
           </div>
+        </div>
 
-        </div>
       </div>
     </div>
-    <div class="col-xs-6">
-      <div class="row">
-        <div class="col-xs-3">
-          <small>phaseMask</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.phaseMask">
-        </div>
-        <div class="col-xs-3">
-          <small>modelid</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.modelid">
-        </div>
-        <div class="col-xs-3">
-          <small>equipment_id</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.equipment_id">
+  </div>
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-xs-3">
+        <small>phaseMask</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.phaseMask">
+      </div>
+      <div class="col-xs-3">
+        <small>modelid</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.modelid">
+      </div>
+      <div class="col-xs-3">
+        <small>equipment_id</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.equipment_id">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-xs-3">
+        <small>position_x</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.position_x">
+      </div>
+      <div class="col-xs-3">
+        <small>position_y</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.position_y">
+      </div>
+      <div class="col-xs-3">
+        <small>position_z</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.position_z">
+      </div>
+      <div class="col-xs-3">
+        <small>orientation</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.orientation">
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-xs-3">
+        <small>spawntimesecs</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.spawntimesecs">
+      </div>
+      <div class="col-xs-3">
+        <small>spawndist</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.spawndist">
+      </div>
+      <div class="col-xs-3">
+        <small>currentwaypoint</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.currentwaypoint">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-xs-3">
+        <small>curhealth</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.curhealth">
+      </div>
+      <div class="col-xs-3">
+        <small>curmana</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.curmana">
+      </div>
+      <div class="col-xs-3">
+        <small>MovementType</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.MovementType">
+      </div>
+      <div class="col-xs-3">
+        <small>npcflag</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.npcflag">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/npcflag.html', selected, 'npcflag', 28)">...</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="row">
-        <div class="col-xs-3">
-          <small>position_x</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.position_x">
-        </div>
-        <div class="col-xs-3">
-          <small>position_y</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.position_y">
-        </div>
-        <div class="col-xs-3">
-          <small>position_z</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.position_z">
-        </div>
-        <div class="col-xs-3">
-          <small>orientation</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.orientation">
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <div class="row">
-        <div class="col-xs-3">
-          <small>spawntimesecs</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.spawntimesecs">
-        </div>
-        <div class="col-xs-3">
-          <small>spawndist</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.spawndist">
-        </div>
-        <div class="col-xs-3">
-          <small>currentwaypoint</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.currentwaypoint">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="row">
-        <div class="col-xs-3">
-          <small>curhealth</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.curhealth">
-        </div>
-        <div class="col-xs-3">
-          <small>curmana</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.curmana">
-        </div>
-        <div class="col-xs-3">
-          <small>MovementType</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.MovementType">
-        </div>
-        <div class="col-xs-3">
-          <small>npcflag</small>
-          <div class="input-group">
-            <input class="form-control input-xs" type="text" ng-model="selected.npcflag">
-            <div class="input-group-btn">
-              <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/npcflag.html', selected, 'npcflag', 28)">...</button>
-            </div>
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-xs-3">
+        <small>unit_flags</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.unit_flags">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/unit_flags.html', selected, 'unit_flags', 32)">...</button>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-6">
-      <div class="row">
-        <div class="col-xs-3">
-          <small>unit_flags</small>
-          <div class="input-group">
-            <input class="form-control input-xs" type="text" ng-model="selected.unit_flags">
-            <div class="input-group-btn">
-              <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/unit_flags.html', selected, 'unit_flags', 32)">...</button>
-            </div>
+      <div class="col-xs-3">
+        <small>dynamicflags</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.dynamicflags">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/dynamicflags.html', selected, 'dynamicflags', 8)">...</button>
           </div>
         </div>
-        <div class="col-xs-3">
-          <small>dynamicflags</small>
-          <div class="input-group">
-            <input class="form-control input-xs" type="text" ng-model="selected.dynamicflags">
-            <div class="input-group-btn">
-              <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/dynamicflags.html', selected, 'dynamicflags', 8)">...</button>
-            </div>
-          </div>
 
-        </div>
-        <div class="col-xs-3">
-          <small>VerifiedBuild</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.VerifiedBuild">
-        </div>
+      </div>
+      <div class="col-xs-3">
+        <small>VerifiedBuild</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.VerifiedBuild">
       </div>
     </div>
   </div>
@@ -161,9 +158,9 @@
     <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_creature, 'creature', 'guid')">FULL Spawns Script</button>
   </div>
   <div class="col-xs-2 pull-right">
-      <br>
-      <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('creature', 'id', 'guid', current_creature, new_creature)">DIFF Spawns Script</button>
-    </div>
+    <br>
+    <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('creature', 'id', 'guid', current_creature, new_creature)">DIFF Spawns Script</button>
+  </div>
 </div>
 <br>
 <div style="overflow-y: scroll !important;">
