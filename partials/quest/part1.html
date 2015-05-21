@@ -93,6 +93,9 @@
         <small>Flags</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text"  ng-model="new_quest_template.Flags">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/quest/modals/Flags.html', new_quest_template, 'Flags', 20)">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-4">
@@ -119,6 +122,9 @@
         <small>RequiredClasses</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredClasses">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/quest/modals/Classes.html', new_quest_template, 'RequiredClasses', 11)">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-4">
