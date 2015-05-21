@@ -1,0 +1,37 @@
+<div class="modal-header">
+  <h3 class="modal-title">SpecialFlags</h3>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-xs-6">
+      <label class="checkbox" >
+        <input type="checkbox" class="input-xs" ng-model="values[0]">
+        <small>0 REPEATABLE</small>
+      </label>
+      <label class="checkbox" >
+        <input type="checkbox" class="input-xs" ng-model="values[1]">
+        <small>1 EXPLORATION_OR_EVENT</small>
+      </label>
+      <label class="checkbox" >
+        <input type="checkbox" class="input-xs" ng-model="values[2]">
+        <small>2 AUTO_ACCEPT</small>
+      </label>
+      <label class="checkbox" >
+        <input type="checkbox" class="input-xs" ng-model="values[3]">
+        <small>3 DF_QUEST (DungeonFinder)</small>
+      </label>
+      <label class="checkbox" >
+        <input type="checkbox" class="input-xs" ng-model="values[4]">
+        <small>4 MONTHLY</small>
+      </label>
+      <label class="checkbox" >
+        <input type="checkbox" class="input-xs" ng-model="values[5]">
+        <small>5 SPELL_CAST for killcredit but not kill</small>
+      </label>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="modalOk()">OK</button>
+  <button class="btn btn-danger" ng-click="modalCancel()">Cancel</button>
+</div>
