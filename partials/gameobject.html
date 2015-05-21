@@ -6,12 +6,12 @@
     <div ng-include="'partials/gameobject/template.html'"></div>
   </tab>
   <tab heading="GO Spawns" active="gameobjectTabs.spawns">
-    GO Spawns
+    <div ng-include="'partials/gameobject/spawns.html'"></div>
   </tab>
-  <tab heading="GO Loot" active="gameobjectTabs.loot">
-    GO Loot
+  <tab heading="GO Loot" active="gameobjectTabs.loot" ng-controller="LootController">
+    <div ng-include="'partials/gameobject/loot.html'"></div>
   </tab>
-  <tab heading="SQL Update Script" active="gameobjectTabs.script">
-    SQL Update Script
+  <tab heading="SQL Update Script" active="gameobjectTabs.script"  ng-click="generateGameobjectScript()">
+    <div ng-include="'partials/gameobject/sql-script.html'"></div>
   </tab>
 </tabset>

@@ -19,12 +19,10 @@
     };
 
     /* Init arrays */
-    $scope.current_gameobject_template  = [];
-    $scope.new_gameobject_template      = [];
-    $scope.current_spawns               = [];
-    $scope.new_spawns                   = [];
-    $scope.current_loot                 = [];
-    $scope.new_loot                     = [];
+    $scope.current_gameobject               = [];
+    $scope.new_gameobject                   = [];
+    $scope.current_gameobject_loot_template = [];
+    $scope.new_gameobject_loot_template     = [];
 
     /* Check if a gameobject is selected */
     if ($stateParams.id) {
@@ -32,7 +30,6 @@
       /* We have a gameobject selected and default active tab is template */
       $scope.isGameobjectSelected = true;
       $scope.gameobjectTabs.template = true;
-      console.log($scope.gameobjectTabs);
 
       /*  Following lines retrieve all Gameobject datas
        *  current_* mantains the database state
@@ -48,6 +45,16 @@
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] gameobject/template/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all gameobject_loot_template datas */
+      $http.get( app.api + "loot/template/gameobject/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_gameobject_loot_template = data;
+        $scope.new_gameobject_loot_template = angular.copy($scope.current_gameobject_loot_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] loot/template/gameobject/" + $stateParams.id + " $http.get request failed");
       });
 
     } else {
@@ -107,7 +114,7 @@
     /* [Function] open SQL Script tab */
     $scope.openScriptTab = function() {
       $scope.disactiveAllTabs();
-      $scope.gameobjectScript();
+      $scope.generateGameobjectScript();
       $scope.gameobjectTabs.script = true;
     };
 
