@@ -28,7 +28,7 @@
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="selected.LootMode">
           <div class="input-group-btn">
-           <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/LootMode.html', selected, 'LootMode', 5)">...</button>
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/LootMode.html', selected, 'LootMode', 5)">...</button>
           </div>
         </div>
       </div>
@@ -54,54 +54,51 @@
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-xs-4">
-      <br>
-      <button class="btn btn-primary" ng-click="editSelectedRowOf(new_skinning_loot_template, 'Item')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
-      <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_skinning_loot_template)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
-      <button class="btn btn-success" ng-click="addRowTo(new_skinning_loot_template, 'Item')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
-    </div>
-    <div class="col-xs-2 pull-right">
-      <br>
-      <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_skinning_loot_template, 'skinning_loot_template', 'Entry')">FULL Loot Script</button>
-    </div>
-    <div class="col-xs-2 pull-right">
-      <br>
-      <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('skinning_loot_template', 'Entry', 'Item', current_skinning_loot_template, new_skinning_loot_template)">DIFF Loot Script</button>
-    </div>
+</div>
+<div class="row">
+  <div class="col-xs-4">
+    <br>
+    <button class="btn btn-primary" ng-click="editSelectedRowOf(new_skinning_loot_template, 'Item')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_skinning_loot_template)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+    <button class="btn btn-success" ng-click="addRowTo(new_skinning_loot_template, 'Item')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
   </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <br>
-      <table class="table table-striped table-condensed">
-        <thead>
-          <th class="text-center"></th>
-          <th class="text-center">Item</th>
-          <th class="text-center">Reference</th>
-          <th class="text-center">Chance</th>
-          <th class="text-center">QuestRequired</th>
-          <th class="text-center">LootMode</th>
-          <th class="text-center">GroupId</th>
-          <th class="text-center">MinCount</th>
-          <th class="text-center">MaxCount</th>
-          <th class="text-center">Comment</th>
-        </thead>
-        <tr ng-repeat="loot in new_skinning_loot_template track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
-          <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_skinning_loot_template, $index)"></i></td>
-          <td>{{ loot.Item }}</td>
-          <td>{{ loot.Reference }}</td>
-          <td>{{ loot.Chance }}</td>
-          <td>{{ loot.QuestRequired }}</td>
-          <td>{{ loot.LootMode }}</td>
-          <td>{{ loot.GroupId }}</td>
-          <td>{{ loot.MinCount }}</td>
-          <td>{{ loot.MaxCount }}</td>
-          <td>{{ loot.Comment }}</td>
-        </tr>
-      </table>
-
-
-    </div>
+  <div class="col-xs-2 pull-right">
+    <br>
+    <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_skinning_loot_template, 'skinning_loot_template', 'Entry')">FULL Loot Script</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <br>
+    <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('skinning_loot_template', 'Entry', 'Item', current_skinning_loot_template, new_skinning_loot_template)">DIFF Loot Script</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <br>
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th class="text-center"></th>
+        <th class="text-center">Item</th>
+        <th class="text-center">Reference</th>
+        <th class="text-center">Chance</th>
+        <th class="text-center">QuestRequired</th>
+        <th class="text-center">LootMode</th>
+        <th class="text-center">GroupId</th>
+        <th class="text-center">MinCount</th>
+        <th class="text-center">MaxCount</th>
+        <th class="text-center">Comment</th>
+      </thead>
+      <tr ng-repeat="loot in new_skinning_loot_template track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+        <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_skinning_loot_template, $index)"></i></td>
+        <td>{{ loot.Item }}</td>
+        <td>{{ loot.Reference }}</td>
+        <td>{{ loot.Chance }}</td>
+        <td>{{ loot.QuestRequired }}</td>
+        <td>{{ loot.LootMode }}</td>
+        <td>{{ loot.GroupId }}</td>
+        <td>{{ loot.MinCount }}</td>
+        <td>{{ loot.MaxCount }}</td>
+        <td>{{ loot.Comment }}</td>
+      </tr>
+    </table>
   </div>
 </div>

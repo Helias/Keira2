@@ -8,16 +8,16 @@
   <tab heading="Quest Part 2" active="questTabs.part2">
     <div ng-include="'partials/quest/part2.html'"></div>
   </tab>
-  <tab heading="Creature Starters" active="questTabs.creatureStarters">
+  <tab heading="Creature Starters" active="questTabs.creatureStarters" ng-controller="StartersEndersController">
     <div ng-include="'partials/quest/creature-starters.html'"></div>
   </tab>
-  <tab heading="Creature Enders" active="questTabs.creatureEnders">
+  <tab heading="Creature Enders" active="questTabs.creatureEnders" ng-controller="StartersEndersController">
     <div ng-include="'partials/quest/creature-enders.html'"></div>
   </tab>
-  <tab heading="Gameobject Starters" active="questTabs.gameobjectStarters">
+  <tab heading="Gameobject Starters" active="questTabs.gameobjectStarters" ng-controller="StartersEndersController">
     <div ng-include="'partials/quest/gameobject-starters.html'"></div>
   </tab>
-  <tab heading="Gameobject Enders" active="questTabs.gameobjectEnders">
+  <tab heading="Gameobject Enders" active="questTabs.gameobjectEnders" ng-controller="StartersEndersController">
     <div ng-include="'partials/quest/gameobject-enders.html'"></div>
   </tab>
   <tab heading="SQL Update Script" active="questTabs.script" ng-click="generateQuestScript()">

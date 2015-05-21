@@ -1,2 +1,38 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}gameobject_questender"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>gameobject_questender</a></p>
-<p class="h2">TODO</p>
+<br>
+<div class="row">
+  <div class="col-xs-offset-1 col-xs-2">
+    <small>id</small>
+    <input class="form-control input-xs" type="text" ng-model="selected.id">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-4">
+    <br>
+    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_gameobject_questender)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+    <button class="btn btn-success" ng-click="addRowTo(new_gameobject_questender, 'id')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <br>
+    <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_gameobject_questender, 'gameobject_questender', 'quest')">FULL Loot Script</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <br>
+    <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('gameobject_questender', 'quest', 'id', current_gameobject_questender, new_gameobject_questender)">DIFF Loot Script</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 col-xs-offset-1">
+    <br>
+    <table class="table table-striped table-condensed" style="max-width: 160px">
+      <thead>
+        <th class="text-center"></th>
+        <th class="text-center">id</th>
+      </thead>
+      <tr ng-repeat="creature in new_gameobject_questender track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+        <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_gameobject_questender, $index)"></i></td>
+        <td>{{ creature.id }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

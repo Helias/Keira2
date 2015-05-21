@@ -1,43 +1,41 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}creature_addon"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>creature_addon</a></p>
 <br>
 <div class="row">
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="row">
-        <div class="col-xs-3">
-          <small>guid</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.guid">
-        </div>
-        <div class="col-xs-3">
-          <small>path_id</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.path_id">
-        </div>
-        <div class="col-xs-3">
-          <small>mount</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.mount">
-        </div>
-        <div class="col-xs-3">
-          <small>bytes1</small>
-          <div class="input-group">
-            <input class="form-control input-xs" type="text" ng-model="selected.bytes1">
-          </div>
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-xs-3">
+        <small>guid</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.guid">
+      </div>
+      <div class="col-xs-3">
+        <small>path_id</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.path_id">
+      </div>
+      <div class="col-xs-3">
+        <small>mount</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.mount">
+      </div>
+      <div class="col-xs-3">
+        <small>bytes1</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.bytes1">
         </div>
       </div>
     </div>
-    <div class="col-xs-6">
-      <div class="row">
-        <div class="col-xs-3">
-          <small>bytes2</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.bytes2">
-        </div>
-        <div class="col-xs-3">
-          <small>emote</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.emote">
-        </div>
-        <div class="col-xs-3">
-          <small>auras</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.auras">
-        </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="row">
+      <div class="col-xs-3">
+        <small>bytes2</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.bytes2">
+      </div>
+      <div class="col-xs-3">
+        <small>emote</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.emote">
+      </div>
+      <div class="col-xs-3">
+        <small>auras</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.auras">
       </div>
     </div>
   </div>
@@ -55,9 +53,9 @@
     <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_creature_addon, 'creature_addon', 'guid')">FULL Addon Script</button>
   </div>
   <div class="col-xs-2 pull-right">
-      <br>
-      <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('creature_addon', 'id', 'guid', current_creature_addon, new_creature_addon)">DIFF Addon Script</button>
-    </div>
+    <br>
+    <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('creature_addon', 'id', 'guid', current_creature_addon, new_creature_addon)">DIFF Addon Script</button>
+  </div>
 </div>
 <br>
 <table class="table table-striped table-condensed">
