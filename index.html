@@ -15,6 +15,8 @@
     <script src="js/lib/ui-bootstrap.min.js"></script>
     <script src="js/lib/loading-bar.min.js"></script>
     <script src="js/lib/angular-tablesort.js"></script>
+    <script src="js/lib/ngStorage.min.js"></script>
+    <script src="js/lib/jdf-ngThemeSwitcher.js"></script>
 
     <!-- Other Javascript libraries -->
     <script src="js/lib/squel.min.js"></script>
@@ -22,6 +24,7 @@
     <!-- Keira2 Core -->
     <script src="js/app/main.js"></script>
     <script src="config.js"></script>
+    <script src="js/app/theme.js"></script>
     <script src="js/app/query.js"></script>
     <script src="js/app/modals.js"></script>
     <script src="js/app/loot.js"></script>
@@ -47,7 +50,7 @@
 <![endif]-->
   </head>
 
-  <body>
+  <body ng-controller="ThemeController">
     <div class="container text-center">
       <p class="h5">Keira2 Database Editor</p>
       <a ng-href="#/quest"><button class="btn-primary btn-lg">Quest</button></a>
@@ -57,8 +60,22 @@
       <a ng-href="#/smartai"><button class="btn-primary btn-lg">SmartAI</button></a>
       <a ng-href="#/conditions"><button class="btn-primary btn-lg">Conditions</button></a>
       <a ng-href="#/other"><button class="btn-primary btn-lg">Other</button></a>
-      <a ng-href="#/character"><button class="btn-primary btn-lg">Character</button></a>
-      <a ng-href="#/sql"><button class="btn-primary btn-lg">SQL</button></a>
+      <!--
+<a ng-href="#/character"><button class="btn-primary btn-lg">Character</button></a>
+<a ng-href="#/sql"><button class="btn-primary btn-lg">SQL</button></a>
+-->
+      <div class="btn-group pull-right" dropdown>
+        <theme-switcher urls="[theme.url]"></theme-switcher>
+        <div class="btn-group" dropdown is-open="status.isopen">
+          <button type="button" class="btn-success btn" dropdown-toggle ng-disabled="disabled">
+            Theme {{ theme.name }} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="pointer" ng-repeat="theme in themes"><a ng-href="{{currentLocation}}" ng-click="setTheme(theme)">{{theme.name}}</a></li>
+          </ul>
+          <br>
+        </div>
+      </div>
       <hr>
       <div ui-view></div>
     </div>

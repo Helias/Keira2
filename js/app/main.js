@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  var app = angular.module('keira2', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'tableSort']);
+  var app = angular.module('keira2', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'tableSort', 'jdf.ngThemeSwitcher', 'ngStorage']);
 
   app.run(function($rootScope, $modal, $stateParams) {
 
