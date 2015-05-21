@@ -10,6 +10,11 @@
   app.config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
+    .state('info', {
+      url: '/',
+      controller: 'InfoController',
+      templateUrl: 'partials/info.html'
+    })
       .state('quest', {
       url: '/quest',
       controller: 'QuestController',

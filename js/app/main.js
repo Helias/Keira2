@@ -133,6 +133,7 @@
   });
 
   /* TODO: Empty controllers, will be moved in their own files once implemented */
+  app.controller("InfoController", function ($scope, $http, $stateParams) {});
   app.controller("SmartAIController", function ($scope, $http, $stateParams) {});
   app.controller("ConditionsController", function ($scope, $http, $stateParams) {});
   app.controller("OtherController", function ($scope, $http, $stateParams) {});
