@@ -43,6 +43,11 @@
       controller: 'GameobjectController',
       templateUrl: 'partials/gameobject.html'
     })
+      .state('gameobjectSelected', {
+      url: '/gameobject/:id',
+      controller: 'GameobjectController',
+      templateUrl: 'partials/gameobject.html'
+    })
       .state('item', {
       url: '/item',
       controller: 'ItemController',

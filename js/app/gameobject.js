@@ -11,27 +11,28 @@
     /* All Gameobject tabs, disabled by default.
     *  Only one tab can be active at a time */
     $scope.gameobjectTabs = {
-      search              : false,
-      gameobjectTemplate  : false,
-      spawns              : false,
-      loot                : false,
-      script              : false
+      search    : false,
+      template  : false,
+      spawns    : false,
+      loot      : false,
+      script    : false
     };
 
     /* Init arrays */
-    $scope.current_gameobject_template      = [];
-    $scope.new_gameobject_template          = [];
-    $scope.current_spawns                   = [];
-    $scope.new_spawns                       = [];
-    $scope.current_loot                     = [];
-    $scope.new_loot                         = [];
+    $scope.current_gameobject_template  = [];
+    $scope.new_gameobject_template      = [];
+    $scope.current_spawns               = [];
+    $scope.new_spawns                   = [];
+    $scope.current_loot                 = [];
+    $scope.new_loot                     = [];
 
     /* Check if a gameobject is selected */
     if ($stateParams.id) {
 
-      /* We have a gameobject selected and default active tab is gameobjectTemplate */
+      /* We have a gameobject selected and default active tab is template */
       $scope.isGameobjectSelected = true;
-      $scope.gameobjectTabs.gameobjectTemplate = true;
+      $scope.gameobjectTabs.template = true;
+      console.log($scope.gameobjectTabs);
 
       /*  Following lines retrieve all Gameobject datas
        *  current_* mantains the database state
