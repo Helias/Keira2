@@ -9,6 +9,9 @@
   // routing
   app.config(function ($stateProvider, $urlRouterProvider) {
 
+    // default route
+    $urlRouterProvider.otherwise("/");
+
     $stateProvider
     .state('info', {
       url: '/',
