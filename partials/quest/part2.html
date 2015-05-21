@@ -1,4 +1,5 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}quest_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>quest_template</a></p>
+<p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}quest_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>quest_template</a></p>
 
 <div class="row">
   <div class="col-xs-6">
@@ -115,43 +116,37 @@
       <div class="col-xs-3">
         <small>ReqNpcOrGoCount1</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.ReqNpcOrGoCount1" ng-model="new_quest_template.ReqNpcOrGoCount1">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredNpcOrGoCount1" ng-model="new_quest_template.RequiredNpcOrGoCount1">
         </div>
         <small>ReqNpcOrGoCount2</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.ReqNpcOrGoCount2" ng-model="new_quest_template.ReqNpcOrGoCount2">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredNpcOrGoCount2" ng-model="new_quest_template.RequiredNpcOrGoCount2">
         </div>
         <small>ReqNpcOrGoCount3</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.ReqNpcOrGoCount3" ng-model="new_quest_template.ReqNpcOrGoCount3">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredNpcOrGoCount3" ng-model="new_quest_template.RequiredNpcOrGoCount3">
         </div>
         <small>ReqNpcOrGoCount4</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.ReqNpcOrGoCount4" ng-model="new_quest_template.ReqNpcOrGoCount4">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredNpcOrGoCount4" ng-model="new_quest_template.RequiredNpcOrGoCount4">
         </div>
       </div>
       <div class="col-xs-3">
-        <small>RequiredSpellCast1</small>
+        <small>RequiredFactionId1</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredSpellCast1" ng-model="new_quest_template.RequiredSpellCast1">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredFactionId1" ng-model="new_quest_template.RequiredFactionId1">
         </div>
-        <small>RequiredSpellCast2</small>
+        <small>RequiredFactionId2</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredSpellCast2" ng-model="new_quest_template.RequiredSpellCast2">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredFactionId2" ng-model="new_quest_template.RequiredFactionId2">
         </div>
-        <small>RequiredSpellCast3</small>
+        <small>ReqFactionValue1</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredSpellCast3" ng-model="new_quest_template.RequiredSpellCast3">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredFactionValue1" ng-model="new_quest_template.RequiredFactionValue1">
         </div>
-        <small>RequiredSpellCast4</small>
+        <small>ReqFactionValue2</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredSpellCast4" ng-model="new_quest_template.RequiredSpellCast4">
-        </div>
-      </div>
-      <div class="col-xs-3">
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.RequiredFactionValue2" ng-model="new_quest_template.RequiredFactionValue2">
         </div>
       </div>
     </div>
@@ -159,10 +154,58 @@
     <h5>Emotions</h5>
     <div class="row">
       <div class="col-xs-3">
+        <small>PointMapId</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.PointMapId" ng-model="new_quest_template.PointMapId">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <small>PointX</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.PointX" ng-model="new_quest_template.PointX">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <small>PointY</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.PointY" ng-model="new_quest_template.PointY">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <small>PointOption</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.PointOption" ng-model="new_quest_template.PointOption">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <small>DetailsEmote1</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_quest_template.DetailsEmote1">
+        </div>
+        <small>DetailsEmote</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.DetailsEmote" ng-model="new_quest_template.XXX">
+        </div>
+        <small>DetailsEmote</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.DetailsEmote" ng-model="new_quest_template.DetailsEmote">
+        </div>
+        <small>DetailsEmote</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.DetailsEmote" ng-model="new_quest_template.DetailsEmote">
+        </div>
         <small>XXX</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
         </div>
+        <small>XXX</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
+        </div>
+      </div>
+      <div class="col-xs-3">
         <small>XXX</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
@@ -213,46 +256,8 @@
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
         </div>
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
-        </div>
       </div>
       <div class="col-xs-3">
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
-        </div>
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
-        </div>
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
-        </div>
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
-        </div>
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
-        </div>
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
-        </div>
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
-        </div>
-      </div>
-      <div class="col-xs-3">
-        <small>XXX</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
-        </div>
         <small>XXX</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-value="current_quest_template.XXX" ng-model="new_quest_template.XXX">
