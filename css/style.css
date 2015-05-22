@@ -48,3 +48,17 @@
 .nav-tabs {
   margin-top: 8px;
 }
+
+.info-table {
+  max-width: 400px;
+  margin: auto;
+}
+
+.info-table tr td:first-child {
+  text-align: right;
+}
+
+.info-table tr td:last-child {
+  text-align: left;
+}
+

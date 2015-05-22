@@ -68,28 +68,6 @@
       controller: 'CharacterController',
       templateUrl: 'partials/character.html'
     });
-    /*
-      .state('smartai', {
-      url: '/smartai',
-      controller: 'SmartAIController',
-      templateUrl: 'partials/smartai.html'
-    })
-      .state('conditions', {
-      url: '/conditions',
-      controller: 'ConditionsController',
-      templateUrl: 'partials/conditions.html'
-    })
-      .state('other', {
-      url: '/other',
-      controller: 'OtherController',
-      templateUrl: 'partials/other.html'
-    })
-      .state('sql', {
-      url: '/sql',
-      controller: 'SQLController',
-      templateUrl: 'partials/sql.html'
-    });
-    // */
 
   });
 
