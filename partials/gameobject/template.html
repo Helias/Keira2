@@ -37,7 +37,12 @@
       </div>
       <div class="col-xs-3 text-left">
         <small>flags</small>
-        <input type="text" class="form-control input-xs" ng-model="new_gameobject_template.flags">
+        <div class="input-group">
+          <input type="text" class="form-control input-xs" ng-model="new_gameobject_template.flags">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/gameobject/modals/flags.html', new_gameobject_template, 'flags', 11)">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-3 text-left">
         <small>ScriptName</small>
@@ -191,11 +196,11 @@
     <div class="row">
       <div class="col-xs-4">
         <small>questItems5</small>
-        <input type="text" class="form-control input-xs" ng-model="new_gameobject_template.questItems5">
+        <input type="text" class="form-control input-xs" ng-model="new_gameobject_template.questItem5">
       </div>
       <div class="col-xs-4">
         <small>questItems6</small>
-        <input type="text" class="form-control input-xs" ng-model="new_gameobject_template.questItems6">
+        <input type="text" class="form-control input-xs" ng-model="new_gameobject_template.questItem6">
       </div>
     </div>
     <br>
