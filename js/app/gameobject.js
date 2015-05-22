@@ -38,7 +38,7 @@
        */
 
       /* Retrieve all gameobject_template datas */
-      $http.get( app.api + "gameobject/template/" + $stateParams.id)
+      $http.get( app.api + "gameobject/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_gameobject_template = data[0];
         $scope.new_gameobject_template = angular.copy($scope.current_gameobject_template);
@@ -49,7 +49,7 @@
       });
 
       /* Retrieve all gameobject_loot_template datas */
-      $http.get( app.api + "loot/template/gameobject/" + $stateParams.id)
+      $http.get( app.api + "loot/template/gameobject/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_gameobject_loot_template = data;
         $scope.new_gameobject_loot_template = angular.copy($scope.current_gameobject_loot_template);
@@ -59,7 +59,7 @@
       });
 
       /* Retrieve all gameobject datas */
-      $http.get( app.api + "/gameobject/spawn/id/" + $stateParams.id)
+      $http.get( app.api + "/gameobject/spawn/id/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_gameobject = data;
         $scope.new_gameobject = angular.copy($scope.current_gameobject);

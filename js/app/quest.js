@@ -46,7 +46,7 @@
        */
 
       /* Retrieve all quest_template datas */
-      $http.get( app.api + "quest/template/" + $stateParams.id)
+      $http.get( app.api + "quest/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_quest_template = data[0];
         $scope.new_quest_template = angular.copy($scope.current_quest_template);

@@ -54,7 +54,7 @@
        */
 
       /* Retrieve all creature_template datas */
-      $http.get( app.api + "creature/template/" + $stateParams.id)
+      $http.get( app.api + "creature/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_template = data[0];
         $scope.new_creature_template = angular.copy($scope.current_creature_template);
@@ -65,7 +65,7 @@
       });
 
       /* Retrieve all creature_equip_template datas */
-      $http.get( app.api + "creature/equip_template/" + $stateParams.id)
+      $http.get( app.api + "creature/equip_template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_equip_template = data[0];
         $scope.new_creature_equip_template = angular.copy($scope.current_creature_equip_template);
@@ -75,7 +75,7 @@
       });
 
       /* Retrieve all creature_template_addon datas */
-      $http.get( app.api + "creature/template_addon/" + $stateParams.id)
+      $http.get( app.api + "creature/template_addon/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_template_addon = data[0];
         $scope.new_creature_template_addon = angular.copy($scope.current_creature_template_addon);
@@ -85,7 +85,7 @@
       });
 
       /* Retrieve all creature_onkill_reputation datas */
-      $http.get( app.api + "creature/onkill_reputation/" + $stateParams.id)
+      $http.get( app.api + "creature/onkill_reputation/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_onkill_reputation = data[0];
         $scope.new_creature_onkill_reputation = angular.copy($scope.current_creature_onkill_reputation);
@@ -95,7 +95,7 @@
       });
 
       /* Retrieve all creature_template_loot datas */
-      $http.get( app.api + "loot/template/creature/" + $stateParams.id)
+      $http.get( app.api + "loot/template/creature/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_loot_template = data;
         $scope.new_creature_loot_template = angular.copy($scope.current_creature_loot_template);
@@ -105,7 +105,7 @@
       });
 
       /* Retrieve all skinning_template_loot datas */
-      $http.get( app.api + "loot/template/skinning/" + $stateParams.id)
+      $http.get( app.api + "loot/template/skinning/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_skinning_loot_template = data;
         $scope.new_skinning_loot_template = angular.copy($scope.current_skinning_loot_template);
@@ -115,7 +115,7 @@
       });
 
       /* Retrieve all pickpocketing_template_loot datas */
-      $http.get( app.api + "loot/template/pickpocketing/" + $stateParams.id)
+      $http.get( app.api + "loot/template/pickpocketing/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_pickpocketing_loot_template = data;
         $scope.new_pickpocketing_loot_template = angular.copy($scope.current_pickpocketing_loot_template);
@@ -125,7 +125,7 @@
       });
 
       /* Retrieve all spawns */
-      $http.get( app.api + "creature/spawn/id/" + $stateParams.id)
+      $http.get( app.api + "creature/spawn/id/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature = data;
         $scope.new_creature = angular.copy($scope.current_creature);
@@ -135,7 +135,7 @@
       });
 
       /* Retrieve all spawns addon */
-      $http.get( app.api + "creature/spawn/addon/id/" + $stateParams.id)
+      $http.get( app.api + "creature/spawn/addon/id/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_addon = data;
         $scope.new_creature_addon = angular.copy($scope.current_creature_addon);
@@ -145,7 +145,7 @@
       });
 
       /* Retrieve all npc vendor */
-      $http.get( app.api + "npc_vendor/creature/" + $stateParams.id)
+      $http.get( app.api + "npc_vendor/creature/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_npc_vendor = data;
         $scope.new_npc_vendor = angular.copy($scope.current_npc_vendor);

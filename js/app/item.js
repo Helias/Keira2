@@ -47,7 +47,7 @@
        */
 
       /* Retrieve all item_template datas */
-      $http.get( app.api + "item/template/" + $stateParams.id)
+      $http.get( app.api + "item/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_item_template = data[0];
         $scope.new_item_template = angular.copy($scope.current_item_template);
@@ -58,7 +58,7 @@
       });
 
       /* Retrieve all disenchant_loot_template datas */
-      $http.get( app.api + "loot/template/disenchant/" + $stateParams.id)
+      $http.get( app.api + "loot/template/disenchant/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_disenchant_loot_template = data;
         $scope.new_disenchant_loot_template = angular.copy($scope.current_disenchant_loot_template);
@@ -68,7 +68,7 @@
       });
 
       /* Retrieve all prospecting_loot_template datas */
-      $http.get( app.api + "loot/template/prospecting/" + $stateParams.id)
+      $http.get( app.api + "loot/template/prospecting/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_prospecting_loot_template = data;
         $scope.new_prospecting_loot_template = angular.copy($scope.current_prospecting_loot_template);
@@ -78,7 +78,7 @@
       });
 
       /* Retrieve all milling_loot_template datas */
-      $http.get( app.api + "loot/template/milling/" + $stateParams.id)
+      $http.get( app.api + "loot/template/milling/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_milling_loot_template = data;
         $scope.new_milling_loot_template = angular.copy($scope.current_milling_loot_template);
@@ -88,7 +88,7 @@
       });
 
       /* Retrieve all item_loot_template datas */
-      $http.get( app.api + "loot/template/item/" + $stateParams.id)
+      $http.get( app.api + "loot/template/item/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_item_loot_template = data;
         $scope.new_item_loot_template = angular.copy($scope.current_item_loot_template);
@@ -98,7 +98,7 @@
       });
 
       /* Retrieve all item_enchantment_template datas */
-      $http.get( app.api + "item/enchantment/" + $stateParams.id)
+      $http.get( app.api + "item/enchantment/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_item_enchantment_template = data;
         $scope.new_item_enchantment_template = angular.copy($scope.current_item_enchantment_template);
