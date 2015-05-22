@@ -96,6 +96,16 @@
         console.log("[ERROR] loot/template/item/" + $stateParams.id + " $http.get request failed");
       });
 
+      /* Retrieve all item_enchantment_template datas */
+      $http.get( app.api + "item/enchantment/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_item_enchantment_template = data;
+        $scope.new_item_enchantment_template = angular.copy($scope.current_item_enchantment_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] item/enchantment/" + $stateParams.id + " $http.get request failed");
+      });
+
     } else {
       /* We have no item selected and default active tab is search */
       $scope.isItemSelected = false;

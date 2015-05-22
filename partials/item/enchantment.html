@@ -5,6 +5,10 @@
     <small>ench</small>
     <input class="form-control input-xs" type="text" ng-model="selected.ench">
   </div>
+  <div class="col-xs-2">
+    <small>chance</small>
+    <input class="form-control input-xs" type="text" ng-model="selected.chance">
+  </div>
 </div>
 <div class="row">
   <div class="col-xs-4">
@@ -28,10 +32,12 @@
       <thead>
         <th class="text-center"></th>
         <th class="text-center">ench</th>
+        <th class="text-center">chance</th>
       </thead>
       <tr ng-repeat="creature in new_item_enchantment_template track by $index" ng-class="{'tr-selected': $index == selectedRow}" ench="{{ $index }}">
         <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_item_enchantment_template, $index)"></i></td>
         <td>{{ creature.ench }}</td>
+        <td>{{ creature.chance }}</td>
       </tr>
     </table>
   </div>
