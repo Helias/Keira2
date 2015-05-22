@@ -8,12 +8,18 @@
         <small>Id</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text"  ng-model="new_quest_template.Id">
+          <div class="input-group-btn">
+            <a ng-href="#/quest/{{ new_quest_template.Id }}"><button class="btn btn-info btn-xs">→</button></a>
+          </div>
         </div>
       </div>
       <div class="col-xs-6">
         <small>PrevQuestId</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text"  ng-model="new_quest_template.PrevQuestId">
+          <div class="input-group-btn">
+            <a ng-href="#/quest/{{ new_quest_template.PrevQuestId }}"><button class="btn btn-info btn-xs">→</button></a>
+          </div>
         </div>
       </div>
     </div>
@@ -25,9 +31,12 @@
         </div>
       </div>
       <div class="col-xs-6">
-        <small>PrevQuestId</small>
+        <small>NextQuestId</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.PrevQuestId">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.NextQuestId">
+          <div class="input-group-btn">
+            <a ng-href="#/quest/{{ new_quest_template.NextQuestId }}"><button class="btn btn-info btn-xs">→</button></a>
+          </div>
         </div>
       </div>
     </div>
@@ -36,6 +45,9 @@
         <small>NextQuestIdChain</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text"  ng-model="new_quest_template.NextQuestIdChain">
+          <div class="input-group-btn">
+            <a ng-href="#/quest/{{ new_quest_template.NextQuestIdChain }}"><button class="btn btn-info btn-xs">→</button></a>
+          </div>
         </div>
       </div>
       <div class="col-xs-6">
