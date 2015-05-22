@@ -60,7 +60,7 @@
 
       $http.get( app.api + "/search/character/", {
         params: {
-          id: characterGuid,
+          guid: characterGuid,
           name: characterName
         }
       }).success(function (data, status, header, config) {
