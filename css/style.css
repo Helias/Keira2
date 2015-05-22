@@ -13,13 +13,13 @@
 }
 
 .modal-body * {
- padding-left: 10px;
+  padding-left: 10px;
 }
 
 .pointer { cursor: pointer; }
 
 .tr-selected {
- background-color: rgba(44,105,158, 0.4) !important;
+  background-color: rgba(44,105,158, 0.4) !important;
 }
 
 .doc-link {
@@ -28,8 +28,8 @@
 }
 
 .modal-overflow {
-    height: 400px;
-    overflow: auto;
+  height: 400px;
+  overflow: auto;
 }
 
 .lh {
@@ -43,4 +43,8 @@
 
 .selection-text {
   margin-bottom: 4px;
+}
+
+.nav-tabs {
+  margin-top: 8px;
 }
