@@ -6,6 +6,9 @@
   <tab heading="Item" active="itemTabs.template">
     <div ng-include="'partials/item/template.html'"></div>
   </tab>
+  <tab heading="Enchantment" active="itemTabs.enchantment">
+    <div ng-include="'partials/item/enchantment.html'"></div>
+  </tab>
   <tab heading="Item Loot" active="itemTabs.itemLoot" ng-controller="LootController">
     <div ng-include="'partials/item/item-loot.html'"></div>
   </tab>
@@ -18,10 +21,7 @@
   <tab heading="Milling Loot" active="itemTabs.millingLoot" ng-controller="LootController">
     <div ng-include="'partials/item/milling-loot.html'"></div>
   </tab>
-  <tab heading="Enchantment" active="itemTabs.enchantment">
-    <div ng-include="'partials/item/enchantment.html'"></div>
-  </tab>
   <tab heading="SQL Update Script" active="itemTabs.script">
-    <div ng-include="'partials/item/sql-update-script.html'"></div>
+    <div ng-include="'partials/item/sql-script.html'"></div>
   </tab>
 </tabset>
