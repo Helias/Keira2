@@ -6,7 +6,7 @@
       <div class="col-xs-3">
         <small>account</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="number" ng-model="new_characters.account">
+          <input class="form-control input-xs" type="text" ng-model="new_characters.account">
         </div>
       </div>
       <div class="col-xs-3">
@@ -18,13 +18,13 @@
       <div class="col-xs-3">
         <small>race</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="number" ng-model="new_characters.race">
+          <input class="form-control input-xs" type="text" ng-model="new_characters.race">
         </div>
       </div>
       <div class="col-xs-3">
         <small>class</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="number" ng-model="new_characters.class">
+          <input class="form-control input-xs" type="text" ng-model="new_characters.class">
         </div>
       </div>
     </div>
@@ -34,27 +34,36 @@
       <div class="col-xs-3">
         <small>gender</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="number" ng-model="new_characters.gender">
+          <input class="form-control input-xs" type="text" ng-model="new_characters.gender">
         </div>
       </div>
       <div class="col-xs-3">
         <small>level</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="number" ng-model="new_characters.level">
+          <input class="form-control input-xs" type="text" ng-model="new_characters.level">
         </div>
       </div>
       <div class="col-xs-3">
         <small>xp</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="number" ng-model="new_characters.xp">
+          <input class="form-control input-xs" type="text" ng-model="new_characters.xp">
         </div>
       </div>
       <div class="col-xs-3">
         <small>money</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="number" ng-model="new_characters.money">
+          <input class="form-control input-xs" type="text" ng-model="new_characters.money">
         </div>
       </div>
     </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-2 pull-right">
+    <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_characters, 'characters', 'guid')">FULL SQL Script</button>
   </div>
 </div>
