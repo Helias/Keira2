@@ -43,12 +43,8 @@
         <input class="form-control input-xs" type="text" ng-model="selected.phaseMask">
       </div>
       <div class="col-xs-3">
-        <small>modelid</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.modelid">
-      </div>
-      <div class="col-xs-3">
-        <small>equipment_id</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.equipment_id">
+        <small>spawntimesecs</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.spawntimesecs">
       </div>
     </div>
   </div>
@@ -77,16 +73,20 @@
   <div class="col-xs-6">
     <div class="row">
       <div class="col-xs-3">
-        <small>spawntimesecs</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.spawntimesecs">
+        <small>rotation0</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.rotation0">
       </div>
       <div class="col-xs-3">
-        <small>spawndist</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.spawndist">
+        <small>rotation1</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.rotation1">
       </div>
       <div class="col-xs-3">
-        <small>currentwaypoint</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.currentwaypoint">
+        <small>rotation2</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.rotation2">
+      </div>
+      <div class="col-xs-3">
+        <small>rotation3</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.rotation3">
       </div>
     </div>
   </div>
@@ -95,46 +95,15 @@
   <div class="col-xs-6">
     <div class="row">
       <div class="col-xs-3">
-        <small>curhealth</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.curhealth">
-      </div>
-      <div class="col-xs-3">
-        <small>curmana</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.curmana">
-      </div>
-      <div class="col-xs-3">
-        <small>MovementType</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.MovementType">
-      </div>
-      <div class="col-xs-3">
-        <small>npcflag</small>
+        <small>animprogress</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="selected.npcflag">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/npcflag.html', selected, 'npcflag', 28)">...</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-6">
-    <div class="row">
-      <div class="col-xs-3">
-        <small>unit_flags</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="selected.unit_flags">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/unit_flags.html', selected, 'unit_flags', 32)">...</button>
-          </div>
+          <input class="form-control input-xs" type="text" ng-model="selected.animprogress">
         </div>
       </div>
       <div class="col-xs-3">
-        <small>dynamicflags</small>
+        <small>state</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="selected.dynamicflags">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/creature/modals/dynamicflags.html', selected, 'dynamicflags', 8)">...</button>
-          </div>
+          <input class="form-control input-xs" type="text" ng-model="selected.state">
         </div>
 
       </div>

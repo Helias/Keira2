@@ -53,7 +53,7 @@
       $scope.selected.rotation2     = parseFloat($scope.selected.rotation2, 10);
       $scope.selected.rotation3     = parseFloat($scope.selected.rotation3, 10);
       $scope.selected.spawntimesecs = parseInt($scope.selected.spawntimesecs, 10);
-      $scope.selected.animprogress  = parseInt($scope.selected.state, 10);
+      $scope.selected.animprogress  = parseInt($scope.selected.animprogress, 10);
       $scope.selected.state         = parseInt($scope.selected.state, 10);
       $scope.selected.VerifiedBuild = parseInt($scope.selected.VerifiedBuild, 10);
     };
