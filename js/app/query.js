@@ -24,6 +24,12 @@
 
     for (key in currentRow) {
       if (currentRow[key] !== newRow[key]) {
+
+        // Convert numeric values
+        if (!isNaN(currentRow[key]) && !isNaN(newRow[key])) {
+          newRow[key] = Number(newRow[key]);
+        }
+
         query.set(key, newRow[key]);
         diff = true;
       }
