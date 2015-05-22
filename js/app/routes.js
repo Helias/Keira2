@@ -13,7 +13,7 @@
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
-    .state('info', {
+      .state('info', {
       url: '/',
       controller: 'InfoController',
       templateUrl: 'partials/info.html'
@@ -53,6 +53,22 @@
       controller: 'ItemController',
       templateUrl: 'partials/item.html'
     })
+      .state('itemSelected', {
+      url: '/item/:id',
+      controller: 'ItemController',
+      templateUrl: 'partials/item.html'
+    })
+      .state('character', {
+      url: '/character',
+      controller: 'CharacterController',
+      templateUrl: 'partials/character.html'
+    })
+      .state('characterSelected', {
+      url: '/character/:id',
+      controller: 'CharacterController',
+      templateUrl: 'partials/character.html'
+    });
+    /*
       .state('smartai', {
       url: '/smartai',
       controller: 'SmartAIController',
@@ -68,16 +84,12 @@
       controller: 'OtherController',
       templateUrl: 'partials/other.html'
     })
-      .state('character', {
-      url: '/character',
-      controller: 'CharacterController',
-      templateUrl: 'partials/character.html'
-    })
       .state('sql', {
       url: '/sql',
       controller: 'SQLController',
       templateUrl: 'partials/sql.html'
     });
+    // */
 
   });
 
