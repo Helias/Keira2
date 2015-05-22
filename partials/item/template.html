@@ -40,7 +40,12 @@
   </div>
   <div class="col-xs-2">
     <small>Flags</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.Flags">
+    <div class="input-group">
+      <input class="form-control input-xs" type="text" ng-model="new_item_template.Flags">
+      <div class="input-group-btn">
+        <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/item/modals/Flags.html', new_item_template, 'Flags', 32)">...</button>
+      </div>
+    </div>
   </div>
   <div class="col-xs-1">
     <small>FlagsExtra</small>
