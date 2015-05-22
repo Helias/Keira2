@@ -5,11 +5,11 @@
   <tab heading="GO Template" active="gameobjectTabs.template">
     <div ng-include="'partials/gameobject/template.html'"></div>
   </tab>
-  <tab heading="GO Spawns" active="gameobjectTabs.spawns">
-    <div ng-include="'partials/gameobject/spawns.html'"></div>
-  </tab>
   <tab heading="GO Loot" active="gameobjectTabs.loot" ng-controller="LootController">
     <div ng-include="'partials/gameobject/loot.html'"></div>
+  </tab>
+  <tab heading="GO Spawns" active="gameobjectTabs.spawns" ng-controller="GameobjectSpawnsController">
+    <div ng-include="'partials/gameobject/spawns.html'"></div>
   </tab>
   <tab heading="SQL Update Script" active="gameobjectTabs.script"  ng-click="generateGameobjectScript()">
     <div ng-include="'partials/gameobject/sql-script.html'"></div>

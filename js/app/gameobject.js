@@ -57,6 +57,16 @@
         console.log("[ERROR] loot/template/gameobject/" + $stateParams.id + " $http.get request failed");
       });
 
+      /* Retrieve all gameobject datas */
+      $http.get( app.api + "/gameobject/spawn/id/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_gameobject = data;
+        $scope.new_gameobject = angular.copy($scope.current_gameobject);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] /gameobject/spawn/id/" + $stateParams.id + " $http.get request failed");
+      });
+
     } else {
       /* We have no gameobject selected and default active tab is search */
       $scope.isGameobjectSelected = false;
