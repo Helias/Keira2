@@ -39,6 +39,7 @@
         .success(function (data, status, header, config) {
         $scope.current_characters = data[0];
         $scope.new_characters = angular.copy($scope.current_characters);
+        $scope.selectionText = $scope.current_characters.name + " (" + $scope.current_characters.guid +") ";
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] characters/" + $stateParams.id + " $http.get request failed");
@@ -48,6 +49,7 @@
       /* We have no character selected and default active tab is search */
       $scope.isCharacterSelected = false;
       $scope.characterTabs.search = true;
+      $scope.selectionText = "No Character selected. Please use Search to select one.";
     }
 
     /* [Function] Search */

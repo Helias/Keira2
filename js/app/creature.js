@@ -11,17 +11,17 @@
     /* All Creature tabs, disabled by default.
     *  Only one tab can be active at a time */
     $scope.creatureTabs = {
-      search                : false,
-      creatureTemplate      : false,
-      templateAddon         : false,
-      equipTemplate         : false,
-      onKillReputation      : false,
-      creatureLoot          : false,
-      pickpocketLoot        : false,
-      skinLoot              : false,
-      spawns                : false,
-      spawnsAddon           : false,
-      script                : false
+      search            : false,
+      creatureTemplate  : false,
+      templateAddon     : false,
+      equipTemplate     : false,
+      onKillReputation  : false,
+      creatureLoot      : false,
+      pickpocketLoot    : false,
+      skinLoot          : false,
+      spawns            : false,
+      spawnsAddon       : false,
+      script            : false
     };
 
     /* Init arrays */
@@ -58,6 +58,7 @@
         .success(function (data, status, header, config) {
         $scope.current_creature_template = data[0];
         $scope.new_creature_template = angular.copy($scope.current_creature_template);
+        $scope.selectionText = $scope.current_creature_template.name + " (" + $scope.current_creature_template.entry +") ";
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] creature/template/" + $stateParams.id + " $http.get request failed");
@@ -167,6 +168,7 @@
       /* We have no creature selected and default active tab is search */
       $scope.isCreatureSelected = false;
       $scope.creatureTabs.search = true;
+      $scope.selectionText = "No Creature selected. Please use Search to select one.";
     }
 
     /* [Function] Search */

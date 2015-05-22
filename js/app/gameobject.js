@@ -42,6 +42,7 @@
         .success(function (data, status, header, config) {
         $scope.current_gameobject_template = data[0];
         $scope.new_gameobject_template = angular.copy($scope.current_gameobject_template);
+        $scope.selectionText = "Gameobject " + $scope.current_gameobject_template.entry;
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] gameobject/template/" + $stateParams.id + " $http.get request failed");
@@ -71,6 +72,7 @@
       /* We have no gameobject selected and default active tab is search */
       $scope.isGameobjectSelected = false;
       $scope.gameobjectTabs.search = true;
+      $scope.selectionText = "No GameObject selected. Please use Search to select one.";
     }
 
     /* [Function] Search */

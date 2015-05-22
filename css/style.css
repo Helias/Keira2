@@ -36,3 +36,11 @@
   display: block;
   margin: 4px 0px 0px 0px;
 }
+
+.hr {
+  margin-bottom: 4px;
+}
+
+.selection-text {
+  margin-bottom: 4px;
+}

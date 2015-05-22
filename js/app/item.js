@@ -51,6 +51,7 @@
         .success(function (data, status, header, config) {
         $scope.current_item_template = data[0];
         $scope.new_item_template = angular.copy($scope.current_item_template);
+        $scope.selectionText = $scope.current_item_template.name + " (" + $scope.current_item_template.entry +") ";
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] item/template/" + $stateParams.id + " $http.get request failed");
@@ -110,6 +111,7 @@
       /* We have no item selected and default active tab is search */
       $scope.isItemSelected = false;
       $scope.itemTabs.search = true;
+      $scope.selectionText = "No Item selected. Please use Search to select one.";
     }
 
     /* [Function] Search */

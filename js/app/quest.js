@@ -50,6 +50,7 @@
         .success(function (data, status, header, config) {
         $scope.current_quest_template = data[0];
         $scope.new_quest_template = angular.copy($scope.current_quest_template);
+        $scope.selectionText = $scope.current_quest_template.Title + " (" + $scope.current_quest_template.Id +") ";
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] quest/template/" + $stateParams.id + " $http.get request failed");
@@ -107,6 +108,7 @@
       /* We have no quest selected and default active tab is search */
       $scope.isQuestSelected = false;
       $scope.questTabs.search = true;
+      $scope.selectionText = "No Quest selected. Please use Search to select one.";
     }
 
     /* [Function] Search */
