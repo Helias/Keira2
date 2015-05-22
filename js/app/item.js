@@ -11,20 +11,17 @@
     /* All Item tabs, disabled by default.
     *  Only one tab can be active at a time */
     $scope.itemTabs = {
-      search           : false,
-      template         : false,
-      item_loot        : false,
-      disenchant_loot  : false,
-      prospecting_loot : false,
-      milling_loot     : false,
-      reference_loot   : false,
-      enchantment      : false,
-      script           : false
+      search          : false,
+      template        : false,
+      itemLoot        : false,
+      disenchantLoot  : false,
+      prospectingLoot : false,
+      millingLoot     : false,
+      enchantment     : false,
+      script          : false
     };
 
     /* Init arrays */
-    $scope.current_item                       = [];
-    $scope.new_item                           = [];
     $scope.current_item_loot_template         = [];
     $scope.new_item_loot_template             = [];
     $scope.current_disenchant_loot_template   = [];
@@ -33,8 +30,6 @@
     $scope.new_prospecting_loot_template      = [];
     $scope.current_milling_loot_template      = [];
     $scope.new_milling_loot_template          = [];
-    $scope.current_reference_loot_template    = [];
-    $scope.new_reference_loot_template        = [];
     $scope.current_item_enchantment_template  = [];
     $scope.new_item_enchantment_template      = [];
 
@@ -59,6 +54,56 @@
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] item/template/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all disenchant_loot_template datas */
+      $http.get( app.api + "loot/template/disenchant/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_disenchant_loot_template = data;
+        $scope.new_disenchant_loot_template = angular.copy($scope.current_disenchant_loot_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] loot/template/disenchant/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all prospecting_loot_template datas */
+      $http.get( app.api + "loot/template/prospecting/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_prospecting_loot_template = data;
+        $scope.new_prospecting_loot_template = angular.copy($scope.current_prospecting_loot_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] loot/template/prospecting/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all milling_loot_template datas */
+      $http.get( app.api + "loot/template/milling/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_milling_loot_template = data;
+        $scope.new_milling_loot_template = angular.copy($scope.current_milling_loot_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] loot/template/item/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all item_loot_template datas */
+      $http.get( app.api + "loot/template/item/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_item_loot_template = data;
+        $scope.new_item_loot_template = angular.copy($scope.current_item_loot_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] loot/template/item/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all item_enchantment_template datas */
+      $http.get( app.api + "item/enchantment/" + $stateParams.id)
+        .success(function (data, status, header, config) {
+        $scope.current_item_enchantment_template = data;
+        $scope.new_item_enchantment_template = angular.copy($scope.current_item_enchantment_template);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] item/enchantment/" + $stateParams.id + " $http.get request failed");
       });
 
     } else {
