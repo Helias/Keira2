@@ -21,7 +21,7 @@
   <tab heading="Milling Loot" active="itemTabs.millingLoot" ng-controller="LootController">
     <div ng-include="'partials/item/milling-loot.html'"></div>
   </tab>
-  <tab heading="SQL Update Script" active="itemTabs.script">
+  <tab heading="SQL Update Script" active="itemTabs.script" ng-click="generateItemScript()">
     <div ng-include="'partials/item/sql-script.html'"></div>
   </tab>
 </tabset>

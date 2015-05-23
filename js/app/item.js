@@ -150,7 +150,7 @@
 
       $scope.itemScript = "";
 
-      var whereCondition = "Entry = " + $scope.current_item_template.Entry;
+      var whereCondition = "entry = " + $scope.current_item_template.entry;
 
       $scope.itemScript += app.getUpdateQuery("item_template", whereCondition, $scope.current_item_template, $scope.new_item_template);
     };
