@@ -132,6 +132,13 @@
     // return if there are no changes
     if ( involvedRows.length <= 0 ) { return "-- There are no changes"; }
 
+    // convert any numbers to numeric values
+    for (i = 0; i < involvedRows.length; i++) {
+      if (!isNaN(involvedRows[i])) {
+        involvedRows[i] = Number(involvedRows[i]);
+      }
+    }
+
     // build queries
     deleteQuery.where(primaryKey1 + " = " + cleanedNewRows[0][primaryKey1]);
     deleteQuery.where(primaryKey2 + " IN ?", involvedRows);
