@@ -60,7 +60,7 @@
     return false;
   };
 
-  /* [Function] getDiffDeleteInsert
+  /* [Function] getDiffDeleteInsert (TWO PRIMARY KEYS)
    *  Description: Tracks difference between two groups of rows and generate DELETE/INSERT query
    *  Inputs:
    *  - tableName -> the name of the table (example: "creature_loot_template")
@@ -158,6 +158,92 @@
 
     return query;
 
+  };
+
+  /* [Function] getDiffDeleteInsertOneKey (ONE PRIMARY KEY)
+   *  Description: Tracks difference between two groups of rows and generate DELETE/INSERT query
+   *  Inputs:
+   *  - tableName -> the name of the table (example: "creature_loot_template")
+   *  - primaryKeyName -> name of the primary key (example: "guid")
+   *  - entityType -> type subject (not needed to generate queries)
+   *  - entity -> entity subject (not needed to generate queries)
+   *  - currentRows -> object of the original table   (group of rows)
+   *  - newRows -> object bound with ng-model to view (group of rows)
+   */
+  app.getDiffDeleteInsertOneKey = function(tableName, primaryKey, entityType, entity, currentRows, newRows) {
+
+    if ( newRows === undefined && currentRows === undefined) { return; }
+
+    var query, i, deleteQuery, insertQuery, cleanedNewRows, row,
+        involvedRows      = [], // -> needed for DELETE
+        addedOrEditedRows = []; // -> needed for INSERT
+
+    /* Here we need to remove the $$hashKey field from all newRows objects
+     * because we don't want it inside our query
+     * if we remove $$hashKey field directly from newRows objects we will break the DOM
+     * then we create a copy of newRows without that field
+     * clearedNewRows will be the copy of newRows objects without the $$hashKey field */
+
+    cleanedNewRows = angular.fromJson(angular.toJson(newRows));
+
+    deleteQuery = squel.delete().from(tableName);
+    insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName);
+
+    // find deleted or edited rows
+    for (i = 0; i < currentRows.length; i++) {
+
+      row = app.containsRow(primaryKey, currentRows[i], cleanedNewRows);
+      if (!row) {
+
+        // currentRows[i] was deleted
+        involvedRows.push(currentRows[i][primaryKey]);
+
+      } else if ( JSON.stringify(row) !== JSON.stringify(currentRows[i]) ) {
+
+        // row was edited
+        involvedRows.push(row[primaryKey]);
+        addedOrEditedRows.push(row);
+      }
+    }
+
+    // find added rows
+    for (i = 0; i < cleanedNewRows.length; i++) {
+
+      if ( !app.containsRow(primaryKey, cleanedNewRows[i], currentRows) ) {
+
+        // cleanedNewRows[i] was added
+        involvedRows.push(cleanedNewRows[i][primaryKey]);
+        addedOrEditedRows.push(cleanedNewRows[i]);
+      }
+    }
+
+    // return if there are no changes
+    if ( involvedRows.length <= 0 ) { return "-- There are no changes"; }
+
+    // convert any numbers to numeric values
+    for (i = 0; i < involvedRows.length; i++) {
+      if (!isNaN(involvedRows[i])) {
+        involvedRows[i] = Number(involvedRows[i]);
+      }
+    }
+
+    // build queries
+    deleteQuery.where(primaryKey + " IN ?", involvedRows);
+    insertQuery.setFieldsRows(addedOrEditedRows);
+
+    // compose final query
+    query = query = "-- DIFF `" + tableName + "` of " + entityType + " " + entity + "\n";
+    query += deleteQuery.toString() + ";\n";
+
+    if (addedOrEditedRows.length > 0) {
+      query += insertQuery.toString() + ";\n";
+    }
+
+    // format query
+    query = query.replace(") VALUES (", ") VALUES\n(");
+    query = query.replace(/\)\, \(/g, "),\n(");
+
+    return query;
   };
 
   /* [Function] getFullDeleteInsert

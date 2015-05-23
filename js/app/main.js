@@ -101,7 +101,7 @@
       });
     };
 
-    /* Open modal to show Full SQL Script */
+    /* Open modal to show Diff SQL Script */
     $rootScope.openDiffScriptModal = function(tableName, primaryKey1, primaryKey2, currentRows, newRows) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
@@ -130,6 +130,37 @@
       });
     };
 
+    /* Open modal to show Diff one-key SQL Script */
+    $rootScope.openDiffOneKeyScriptModal = function(tableName, primaryKey, entityType, entity, currentRows, newRows) {
+
+      if ( !$rootScope.isEntrySelected() ) { return; }
+
+      var modalInstance = $modal.open({
+        templateUrl: "partials/sql-script-modal.html",
+        controller: "DiffOneKeyScriptModalController",
+        size: 'lg',
+        resolve: {
+          tableName: function () {
+            return tableName;
+          },
+          primaryKey: function() {
+            return primaryKey;
+          },
+          entityType: function() {
+            return entityType;
+          },
+          entity: function() {
+            return entity;
+          },
+          currentRows: function() {
+            return currentRows;
+          },
+          newRows: function() {
+            return newRows;
+          }
+        }
+      });
+    };
   });
 
 }());

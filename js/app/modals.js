@@ -80,4 +80,14 @@
 
   });
 
+  app.controller('DiffOneKeyScriptModalController', function ($scope, $modalInstance, tableName, primaryKey, entityType, entity, currentRows, newRows) {
+
+    $scope.SQLCode = app.getDiffDeleteInsertOneKey(tableName, primaryKey, entityType, entity, currentRows, newRows);
+
+    $scope.modalClose = function () {
+      $modalInstance.dismiss('close');
+    };
+
+  });
+
 }());
