@@ -8,6 +8,8 @@ Using Keira2, you can edit **Quests**, **Creatures**, **Spawns**, **Loots**, **G
 
 Also you can change the GUI style choosing a different **graphic theme** using the theme-switcher button. There are several themes, light and dark ones.
 
+![Keira2](http://shinworld.altervista.org/images/keira2/Keira2.png "Keira2")
+
 ## Live demo
 
 A live demo is available [here](http://shinworld.altervista.org/Keira2/). You can use it for production but be aware that its database may not be updated to the latest version.
@@ -18,15 +20,13 @@ Keira2 fetches datas from an istance of the [TrinityCore JSON API](https://githu
 
 You can install an istance of the TrinityCore JSON API using [this guide](https://github.com/ShinDarth/TC-JSON-API/blob/3.3.5/INSTALL.md).
 
-Once you have installed the API, simply clone the Keira2 repository inside your web server directory:
+Once you have installed the API, download the [latest release of Keira2](https://github.com/Helias/Keira2/releases) and extract the Keira2 folder and place is inside your web server directory (e.g. /var/www/).
 
-`git clone https://github.com/Helias/Keira2.git`
-
-Then copy the file config.js.dist to config.js, open it and set it properly with the path of the API:
+Then open the Keira2 folder and copy the file config.js.dist to config.js, open it and set it properly with the path of the API:
 
 `app.api = "../TC-JSON-API/public/index.php/";`
 
-which is the address of the API.
+replace "../TC-JSON-API/public/index.php/" with the path of your API istance.
 
 If you have the TrinityCore JSON API on an external machine, you should set it like:
 
@@ -44,7 +44,6 @@ Keira2 is open-sourced software licensed under the [GNU GPL license](https://git
 
 ### Screenshots
 
-![Keira2](http://shinworld.altervista.org/images/keira2/Keira2.png "Keira2")
 ![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-2.png "Keira2")
 ![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-3.png "Keira2")
 ![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-4.png "Keira2")
