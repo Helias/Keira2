@@ -111,7 +111,7 @@
 
       $scope.gameobjectScript = "";
 
-      var whereCondition = "Entry = " + $scope.current_gameobject_template.Entry;
+      var whereCondition = "entry = " + $scope.current_gameobject_template.entry;
 
       $scope.gameobjectScript += app.getUpdateQuery("gameobject_template", whereCondition, $scope.current_gameobject_template, $scope.new_gameobject_template);
     };
