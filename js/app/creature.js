@@ -224,7 +224,7 @@
       $scope.creatureScript += app.getUpdateQuery("creature_template_addon", whereCondition, $scope.current_creature_template_addon, $scope.new_creature_template_addon);
 
       // creature_onkill_reputation
-      $scope.creatureScript += app.getUpdateQuery("creature_onkill_reputation", whereCondition, $scope.current_creature_onkill_reputation, $scope.new_creature_onkill_reputation);
+      $scope.creatureScript += app.getUpdateQuery("creature_onkill_reputation", "creature_id = " + $scope.current_creature_template.entry, $scope.current_creature_onkill_reputation, $scope.new_creature_onkill_reputation);
     };
 
     /* [Function] disactive all tabs */
