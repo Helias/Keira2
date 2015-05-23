@@ -20,7 +20,6 @@
 
     /* Type check */
     $scope.parseValues = function() {
-      $scope.selected.id      = parseInt($scope.selected.id, 10);
       $scope.selected.ench    = parseInt($scope.selected.ench, 10);
       $scope.selected.chance  = parseFloat($scope.selected.chance, 10);
     };
