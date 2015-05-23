@@ -45,6 +45,10 @@ Keira2 is open-sourced software licensed under the [GNU GPL license](https://git
 ### Screenshots
 
 ![Keira2](http://shinworld.altervista.org/images/keira2/Keira2.png "Keira2")
+![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-2.png "Keira2")
+![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-3.png "Keira2")
+![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-4.png "Keira2")
+![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-5.png "Keira2")
 ![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-themes.png "Keira2")
 ![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-themes2.png "Keira2")
 ![Keira2](http://shinworld.altervista.org/images/keira2/Keira2-themes3.png "Keira2")
