@@ -67,6 +67,16 @@
       url: '/character/:id',
       controller: 'CharacterController',
       templateUrl: 'partials/character.html'
+    })
+    .state('sai', {
+      url: '/sai',
+      controller: 'SmartAIController',
+      templateUrl: 'partials/sai.html'
+    })
+    .state('saiSelected', {
+      url: '/sai/:sourceType/:entryOrGuid',
+      controller: 'SmartAIController',
+      templateUrl: 'partials/sai.html'
     });
 
   });
