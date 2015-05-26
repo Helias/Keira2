@@ -1,1 +1,12 @@
-TODO
+<small class="selection-text"><strong>{{ selectionText }}</strong></small>
+<tabset>
+  <tab id="tab-search" heading="Search" active="saiTabs.search">
+    <div ng-include="'partials/sai/search.html'"></div>
+  </tab>
+  <tab heading="SAI Editor" active="saiTabs.saiTemplate">
+    <div ng-include="'partials/sai/editor.html'"></div>
+  </tab>
+  <tab heading="SQL Script" ng-click="generateSAIScript()" active="saiTabs.script">
+    <div ng-include="'partials/sai/sql-script.html'"></div>
+  </tab>
+</tabset>
