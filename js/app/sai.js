@@ -61,6 +61,11 @@
 
       // TODO: search among not-yet-scripted entities
 
+      if (entryOrGuid && !sourceType && entryOrGuid.length < 2) {
+        alert("Please insert an Entry or GUID of at least 2 digits or specific the Source Type");
+        return;
+      }
+
       $http.get( app.api + "/search/smart_scripts/", {
         params: {
           source_type: sourceType,
