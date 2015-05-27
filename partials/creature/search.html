@@ -3,15 +3,15 @@
   <form>
     <div class="form-group col-xs-2">
       <label class="control-label">Entry</label>
-      <input class="form-control" id="entry" type="text" placeholder="Creature Entry" ng-model="creature_template.entry">
+      <input class="form-control" type="text" placeholder="Creature Entry" ng-model="creature_template.entry">
     </div>
     <div class="form-group col-xs-3">
       <label class="control-label">Name</label>
-      <input class="form-control" id="name" type="text" placeholder="Name" ng-model="creature_template.name">
+      <input class="form-control" type="text" placeholder="Name" ng-model="creature_template.name">
     </div>
     <div class="form-group col-xs-3">
       <label class="control-label">Subname</label>
-      <input class="form-control" id="subname" type="text" placeholder="Subname" ng-model="creature_template.subname">
+      <input class="form-control" type="text" placeholder="Subname" ng-model="creature_template.subname">
     </div>
     <div class="col-xs-1">
       <button type="submit" class="btn btn-primary" ng-click="search(creature_template.entry, creature_template.name, creature_template.subname)" style="margin-top: 25px">Search</button>
