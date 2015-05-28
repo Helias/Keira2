@@ -25,11 +25,11 @@
       CREATURE          : 0, 0 : "Creature",
       GAMEOBJECT        : 1, 1 : "GameObject",
       AREATRIGGER       : 2, 2 : "AreaTrigger",
-      EVENT	            : 3, 3 : "Event",
+      EVENT             : 3, 3 : "Event",
       GOSSIP            : 4, 4 : "Gossip",
-      QUEST	            : 5, 5 : "Quest",
-      SPELL	            : 6, 6 : "Spell",
-      TRANSPORT	        : 7, 7 : "Transport",
+      QUEST             : 5, 5 : "Quest",
+      SPELL             : 6, 6 : "Spell",
+      TRANSPORT         : 7, 7 : "Transport",
       INSTANCE          : 8, 8 : "Instance",
       TIMED_ACTIONLIST  : 9, 9 : "Timed Actionlist"
     };
