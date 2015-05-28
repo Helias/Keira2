@@ -20,8 +20,22 @@
       script : false
     };
 
+    /* source_type constants */
+    $scope.sourceTypesConst = {
+      CREATURE          : 0, 0 : "Creature",
+      GAMEOBJECT        : 1, 1 : "GameObject",
+      AREATRIGGER       : 2, 2 : "AreaTrigger",
+      EVENT	            : 3, 3 : "Event",
+      GOSSIP            : 4, 4 : "Gossip",
+      QUEST	            : 5, 5 : "Quest",
+      SPELL	            : 6, 6 : "Spell",
+      TRANSPORT	        : 7, 7 : "Transport",
+      INSTANCE          : 8, 8 : "Instance",
+      TIMED_ACTIONLIST  : 9, 9 : "Timed Actionlist"
+    };
+
     /* Init arrays */
-    $scope.smart_scripts       = [];
+    $scope.smart_scripts  = [];
 
     /* Check if an entity (smart_scripts.source_type AND smart_scripts.entryorguid) is selected */
     if ($stateParams.sourceType && $stateParams.entryOrGuid) {
@@ -39,11 +53,23 @@
       /* Retrieve all smart_scripts datas */
       $http.get( app.api + "smart_scripts/" + $stateParams.sourceType + "/" + $stateParams.entryOrGuid )
         .success(function (data, status, header, config) {
-        $scope.current_smart_scripts = data[0];
+        $scope.current_smart_scripts = data;
         $scope.new_smart_scripts = angular.copy($scope.current_smart_scripts);
 
-        // TODO improve this:
-        $scope.selectionText = $scope.current_smart_scripts.sourceType + "/" + $scope.current_smart_scripts.entryOrGuid;
+        // check if we are editing an existing SAI script or creating a new one
+        if ($scope.current_smart_scripts.length > 0) {
+
+          // editing existing SAI script
+          $scope.selectionText = "Editing the SmartAI script of [" +  $scope.sourceTypesConst[$stateParams.sourceType] + "] " + $stateParams.entryOrGuid;
+
+        } else {
+
+          // creating new SAI script
+          $scope.selectionText = "Creating a new SmartAI script for [" +  $scope.sourceTypesConst[$stateParams.sourceType] + "] " + $stateParams.entryOrGuid;
+
+          // TODO: init array of fields (new_smart_scripts)
+
+        }
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] smart_scripts/" + $stateParams.sourceType + "/" + $stateParams.entryOrGuid + " $http.get request failed");
