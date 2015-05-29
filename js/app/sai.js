@@ -8,9 +8,9 @@
 
   app.controller("SmartAIController", function ($scope, $http, $stateParams, $modal) {
 
+    /* read ONLY values, do NOT bind them with ng-model in the view */
     $scope.sourceType = $stateParams.sourceType;
     $scope.entryOrGuid = $stateParams.sourceType;
-
 
     /* All SAI tabs, disabled by default.
     *  Only one tab can be active at a time */
@@ -66,8 +66,6 @@
 
           // creating new SAI script
           $scope.selectionText = "Creating a new SmartAI script for [" +  $scope.sourceTypesConst[$stateParams.sourceType] + "] " + $stateParams.entryOrGuid;
-
-          // TODO: init array of fields (new_smart_scripts)
 
         }
       })
