@@ -1,0 +1,256 @@
+<p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}smart_scripts"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>smart_scripts</a></p>
+<div class="row">
+  <br>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <form class="form-inline">
+        <div class="form-group">
+          <small>Entry or GUID</small>
+          <input class="form-control input-xs" type="text" ng-value="entryOrGuid">
+        </div>
+        <div class="form-group">
+          <small>Source Type</small>
+          <select class="form-control input-xs">
+            <option value="0" ng-selected="sourceType == 0">CREATURE</option>
+            <option value="1" ng-selected="sourceType == 1">GAMEOBJECT</option>
+            <option value="2" ng-selected="sourceType == 2">AREATRIGGER</option>
+            <option value="9" ng-selected="sourceType == 9">TIMED_ACTIONLIST</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+<div class="row sai-border">
+  <br>
+  <div class="col-xs-3">
+
+    <div class="row">
+      <div class="col-xs-9">
+        <small>Event</small>
+        <select class="form-control input-xs" ng-model="new_smart_scripts[0].event_type">
+          <option value="0">UPDATE_IC</option>
+          <option value="1">UPDATE_OOC</option>
+        </select>
+      </div>
+      <div class="col-xs-3">
+        <br>
+        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].event_type">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-9">
+        <small>Action</small>
+        <select class="form-control input-xs" ng-model="new_smart_scripts[0].action_type">
+          <option value="0">NONE</option>
+          <option value="1">TALK</option>
+        </select>
+      </div>
+      <div class="col-xs-3">
+        <br>
+        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].action_type">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-9">
+        <small>Target</small>
+        <select class="form-control input-xs" ng-model="new_smart_scripts[0].target_type">
+          <option value="0">NONE</option>
+          <option value="1">SELF</option>
+        </select>
+      </div>
+      <div class="col-xs-3">
+        <br>
+        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].target_type">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <small>Id</small>
+        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].id" disabled>
+      </div>
+      <div class="col-xs-3">
+        <small>Link to</small>
+        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].link">
+      </div>
+      <div class="col-xs-3">
+        <small>Phasemask</small>
+        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].event_phase_mask">
+      </div>
+      <div class="col-xs-3">
+        <small>Chance</small>
+        <input class="form-control input-xs" type="number" ng-model="new_smart_scripts[0].event_chance">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <small>Flags</small>
+        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].event_flags">
+      </div>
+      <div class="col-xs-9">
+        <small>Comment</small>
+        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].comment">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-3 text-left">
+    <h5 class="text-left">Event</h5>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>Event1</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param1">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>Event2</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param2">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>Event3</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param3">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>Event4</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param4">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-3 text-left">
+    <h5 class="text-left">Action</h5>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>param1</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param1">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>param2</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param2">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>param3</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param3">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>param4</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param4">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>param5</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param5">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>param6</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param6">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-3 text-left">
+    <h5 class="text-left">Target</h5>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>param1</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_param1">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>param2</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_param2">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>param3</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_param3">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>Target X</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_x">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>Target Y</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_y">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>Target Z</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_z">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <small>Target O</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_o">
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="col-xs-5">
+
+  <div class="row">
+  </div>
+
+</div>
+
+</div>

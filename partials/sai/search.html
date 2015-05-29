@@ -3,7 +3,12 @@
   <form>
     <div class="form-group col-xs-3">
       <label class="control-label">Source Type</label>
-      <input class="form-control" type="text" placeholder="Source Type" ng-model="smart_scripts.source_type">
+      <select ng-model="smart_scripts.source_type" class="form-control">
+        <option value="0">CREATURE</option>
+        <option value="1">GAMEOBJECT</option>
+        <option value="2">AREATRIGGER</option>
+        <option value="9">TIMED_ACTIONLIST</option>
+      </select>
     </div>
     <div class="form-group col-xs-2">
       <label class="control-label">Entry or GUID</label>
