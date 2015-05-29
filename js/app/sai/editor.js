@@ -11,8 +11,8 @@
     /* At start we have no row selected */
     $scope.selectedRow = -1;
 
-    /* The item currently selected by the user (bound to the view) */
-    $scope.selected = {
+    /* Default new row */
+    $scope.defaultNewRow = {
       entryorguid       : parseInt($stateParams.entryOrGuid, 10),
       source_type       : parseInt($stateParams.sourceType, 10),
       id                : 0,
@@ -73,27 +73,10 @@
       $scope.selected.target_o          = parseFloat($scope.selected.target_o, 10);
     };
 
-    /* Select a row from collection */
+    /* Select and edit a row from collection */
     $scope.selectRow = function(rows, index) {
       $scope.selectedRow = index;
-      $scope.selected = angular.copy(rows[index]);
-    };
-
-    /* Edit selected row */
-    $scope.editSelectedRowOf = function(rows, primaryKey2) {
-      if (!$scope.isEntrySelected()) { return; }
-      var i;
-      $scope.parseValues();
-
-      // check primaryKey2 uniqueness
-      for (i = 0; i < rows.length; i++) {
-        if ( (rows[i][primaryKey2] == $scope.selected[primaryKey2]) && (i !== $scope.selectedRow) ) {
-          alert("Duplicate row with `" + primaryKey2 + "` = " + $scope.selected[primaryKey2]);
-          return;
-        }
-      }
-
-      rows.splice($scope.selectedRow, 1, angular.copy($scope.selected));
+      $scope.selected = rows[index];
     };
 
     /* Delete selected row from collection */
@@ -103,21 +86,15 @@
       rows.splice($scope.selectedRow, 1);
     };
 
-    /* Add selected row to collection */
-    $scope.addRowTo = function(rows, primaryKey2) {
+    /* Add a new row to collection */
+    $scope.addNewRow = function(rows) {
+
       if (!$rootScope.isEntrySelected()) { return; }
-      var i;
-      $scope.parseValues();
 
-      // check primaryKey2 uniqueness
-      for (i = 0; i < rows.length; i++) {
-        if (rows[i][primaryKey2] == $scope.selected[primaryKey2]) {
-          alert("Duplicate row with `" + primaryKey2 + "` = " + $scope.selected[primaryKey2]);
-          return;
-        }
-      }
+      var newRow = angular.copy($scope.defaultNewRow);
+      newRow.id = rows.length;
 
-      rows.splice(0, 0, angular.copy($scope.selected));
+      rows.splice(0, 0, angular.copy(newRow));
     };
 
   });
