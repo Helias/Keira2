@@ -62,7 +62,13 @@
   text-align: left;
 }
 
-.sai-border > div {
+.sai-editor-head > div {
   border-left: 1px solid grey;
   border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  min-height: 228px;
+}
+
+.input-margin input {
+  margin-top: 5px;
 }
