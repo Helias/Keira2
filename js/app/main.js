@@ -14,11 +14,11 @@
 
     /* [Funcion] check if entry is selected */
     $rootScope.isEntrySelected = function() {
-      if (!$stateParams.id) {
+      if ( $stateParams.id || ($stateParams.entryOrGuid && $stateParams.sourceType) ) {
+        return true;
+      } else {
         alert("Please use the Search tab and select an entry");
         return false;
-      } else {
-        return true;
       }
     };
 
