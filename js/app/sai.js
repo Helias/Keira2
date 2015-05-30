@@ -111,6 +111,14 @@
 
     };
 
+    /* [Function] Open SQL SAI Script tab */
+    $scope.openScriptTab = function() {
+      $scope.generateSAIScript();
+      $scope.saiTabs.search = false;
+      $scope.saiTabs.editor = false;
+      $scope.saiTabs.script = true;
+    };
+
     /* [Function] Generate SQL SAI Script */
     $scope.generateSAIScript = function() {
 
