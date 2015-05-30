@@ -11,6 +11,9 @@
     /* At start we have no row selected */
     $scope.selectedRow = -1;
 
+    /* Show only basic informations */
+    $scope.showBasicInformations = true;
+
     /* Default new row */
     $scope.defaultNewRow = {
       entryorguid       : parseInt($stateParams.entryOrGuid, 10),
@@ -40,7 +43,7 @@
       target_y          : 0.0,
       target_z          : 0.0,
       target_o          : 0.0,
-      comment           : 'Event Comment'
+      comment           : ''
     };
 
     /* Type check */

@@ -29,7 +29,7 @@
     <div class="row">
       <div class="col-xs-9">
         <small>Event</small>
-        <select class="form-control input-xs" ng-model="new_smart_scripts[0].event_type">
+        <select class="form-control input-xs" ng-model="selected.event_type">
           <option value="0">UPDATE_IC</option>
           <option value="1">UPDATE_OOC</option>
           <option value="2">HEALT_PCT</option>
@@ -112,61 +112,61 @@
       </div>
       <div class="col-xs-3">
         <br>
-        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].event_type">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_type">
       </div>
     </div>
     <div class="row">
       <div class="col-xs-9">
         <small>Action</small>
-        <select class="form-control input-xs" ng-model="new_smart_scripts[0].action_type">
+        <select class="form-control input-xs" ng-model="selected.action_type">
           <option value="0">NONE</option>
           <option value="1">TALK</option>
         </select>
       </div>
       <div class="col-xs-3">
         <br>
-        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].action_type">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_type">
       </div>
     </div>
     <div class="row">
       <div class="col-xs-9">
         <small>Target</small>
-        <select class="form-control input-xs" ng-model="new_smart_scripts[0].target_type">
+        <select class="form-control input-xs" ng-model="selected.target_type">
           <option value="0">NONE</option>
           <option value="1">SELF</option>
         </select>
       </div>
       <div class="col-xs-3">
         <br>
-        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].target_type">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_type">
       </div>
     </div>
     <div class="row">
       <div class="col-xs-3">
         <small>Id</small>
-        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].id" disabled>
+        <input class="form-control input-xs" type="text" ng-model="selected.id" disabled>
       </div>
       <div class="col-xs-3">
         <small>Link to</small>
-        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].link">
+        <input class="form-control input-xs" type="text" ng-model="selected.link">
       </div>
       <div class="col-xs-3">
         <small>Phasemask</small>
-        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].event_phase_mask">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_phase_mask">
       </div>
       <div class="col-xs-3">
         <small>Chance</small>
-        <input class="form-control input-xs" type="number" ng-model="new_smart_scripts[0].event_chance">
+        <input class="form-control input-xs" type="number" ng-model="selected.event_chance">
       </div>
     </div>
     <div class="row">
       <div class="col-xs-3">
         <small>Flags</small>
-        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].event_flags">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_flags">
       </div>
       <div class="col-xs-9">
         <small>Comment</small>
-        <input class="form-control input-xs" type="text" ng-model="new_smart_scripts[0].comment">
+        <input class="form-control input-xs" type="text" ng-model="selected.comment">
       </div>
     </div>
   </div>
@@ -178,15 +178,20 @@
         <small>{{ event_type.param1[new_smart_scripts[0].event_type] != "" ? event_type.param1[new_smart_scripts[0].event_type] : "param1" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param1">
+        <input class="form-control input-xs" type="text" ng-value="selected.event_param1">
       </div>
     </div>
     <div class="row">
+<<<<<<< HEAD
       <div class="col-xs-5">
         <small>{{ event_type.param2[new_smart_scripts[0].event_type] != "" ? event_type.param2[new_smart_scripts[0].event_type] : "param2" }}</small>
+=======
+      <div class="col-xs-4">
+        <small>{{ event_type.param2[selected.event_type] != "" ? event_type.param2[selected.event_type] : "param2" }}</small>
+>>>>>>> origin/3.3.5
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param2">
+        <input class="form-control input-xs" type="text" ng-value="selected.event_param2">
       </div>
     </div>
     <div class="row">
@@ -194,7 +199,7 @@
         <small>{{ event_type.param3[new_smart_scripts[0].event_type] != "" ? event_type.param3[new_smart_scripts[0].event_type] : "param3" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param3">
+        <input class="form-control input-xs" type="text" ng-value="selected.event_param3">
       </div>
     </div>
     <div class="row">
@@ -202,7 +207,7 @@
         <small>{{ event_type.param4[new_smart_scripts[0].event_type] != "" ? event_type.param4[new_smart_scripts[0].event_type] : "param4" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param4">
+        <input class="form-control input-xs" type="text" ng-value="selected.event_param4">
       </div>
     </div>
   </div>
@@ -214,7 +219,7 @@
         <small>param1</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param1">
+        <input class="form-control input-xs" type="text" ng-value="selected.action_param1">
       </div>
     </div>
     <div class="row">
@@ -222,7 +227,7 @@
         <small>param2</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param2">
+        <input class="form-control input-xs" type="text" ng-value="selected.action_param2">
       </div>
     </div>
     <div class="row">
@@ -230,7 +235,7 @@
         <small>param3</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param3">
+        <input class="form-control input-xs" type="text" ng-value="selected.action_param3">
       </div>
     </div>
     <div class="row">
@@ -238,7 +243,7 @@
         <small>param4</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param4">
+        <input class="form-control input-xs" type="text" ng-value="selected.action_param4">
       </div>
     </div>
     <div class="row">
@@ -246,7 +251,7 @@
         <small>param5</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param5">
+        <input class="form-control input-xs" type="text" ng-value="selected.action_param5">
       </div>
     </div>
     <div class="row">
@@ -254,7 +259,7 @@
         <small>param6</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param6">
+        <input class="form-control input-xs" type="text" ng-value="selected.action_param6">
       </div>
     </div>
   </div>
@@ -266,7 +271,7 @@
         <small>param1</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_param1">
+        <input class="form-control input-xs" type="text" ng-value="selected.target_param1">
       </div>
     </div>
     <div class="row">
@@ -274,7 +279,7 @@
         <small>param2</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_param2">
+        <input class="form-control input-xs" type="text" ng-value="selected.target_param2">
       </div>
     </div>
     <div class="row">
@@ -282,7 +287,7 @@
         <small>param3</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_param3">
+        <input class="form-control input-xs" type="text" ng-value="selected.target_param3">
       </div>
     </div>
     <div class="row">
@@ -290,7 +295,7 @@
         <small>Target X</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_x">
+        <input class="form-control input-xs" type="text" ng-value="selected.target_x">
       </div>
     </div>
     <div class="row">
@@ -298,7 +303,7 @@
         <small>Target Y</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_y">
+        <input class="form-control input-xs" type="text" ng-value="selected.target_y">
       </div>
     </div>
     <div class="row">
@@ -306,7 +311,7 @@
         <small>Target Z</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_z">
+        <input class="form-control input-xs" type="text" ng-value="selected.target_z">
       </div>
     </div>
     <div class="row">
@@ -314,7 +319,7 @@
         <small>Target O</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].target_o">
+        <input class="form-control input-xs" type="text" ng-value="selected.target_o">
       </div>
     </div>
   </div>
@@ -339,28 +344,28 @@
       <th class="text-center">id</th>
       <th class="text-center">link</th>
       <th class="text-center">event_type</th>
-      <th class="text-center">event_phase_mask</th>
-      <th class="text-center">event_chance</th>
-      <th class="text-center">event_flags
-      <th class="text-center">event_param1</th>
-      <th class="text-center">event_param2</th>
-      <th class="text-center">event_param3</th>
-      <th class="text-center">event_param4</th>
+      <th class="text-center" ng-show="!showBasicInformations">event_phase_mask</th>
+      <th class="text-center" ng-show="!showBasicInformations">event_chance</th>
+      <th class="text-center" ng-show="!showBasicInformations">event_flags</th>
+      <th class="text-center" ng-show="!showBasicInformations">event_param1</th>
+      <th class="text-center" ng-show="!showBasicInformations">event_param2</th>
+      <th class="text-center" ng-show="!showBasicInformations">event_param3</th>
+      <th class="text-center" ng-show="!showBasicInformations">event_param4</th>
       <th class="text-center">action_type</th>
-      <th class="text-center">action_param1</th>
-      <th class="text-center">action_param2</th>
-      <th class="text-center">action_param3</th>
-      <th class="text-center">action_param4</th>
-      <th class="text-center">action_param5</th>
-      <th class="text-center">action_param6</th>
+      <th class="text-center" ng-show="!showBasicInformations">action_param1</th>
+      <th class="text-center" ng-show="!showBasicInformations">action_param2</th>
+      <th class="text-center" ng-show="!showBasicInformations">action_param3</th>
+      <th class="text-center" ng-show="!showBasicInformations">action_param4</th>
+      <th class="text-center" ng-show="!showBasicInformations">action_param5</th>
+      <th class="text-center" ng-show="!showBasicInformations">action_param6</th>
       <th class="text-center">target_type</th>
-      <th class="text-center">target_param1</th>
-      <th class="text-center">target_param2</th>
-      <th class="text-center">target_param3</th>
-      <th class="text-center">target_x</th>
-      <th class="text-center">target_y</th>
-      <th class="text-center">target_z</th>
-      <th class="text-center">target_o</th>
+      <th class="text-center" ng-show="!showBasicInformations">target_param1</th>
+      <th class="text-center" ng-show="!showBasicInformations">target_param2</th>
+      <th class="text-center" ng-show="!showBasicInformations">target_param3</th>
+      <th class="text-center" ng-show="!showBasicInformations">target_x</th>
+      <th class="text-center" ng-show="!showBasicInformations">target_y</th>
+      <th class="text-center" ng-show="!showBasicInformations">target_z</th>
+      <th class="text-center" ng-show="!showBasicInformations">target_o</th>
       <th class="text-center">comment</th>
     </thead>
     <tr ng-repeat="row in new_smart_scripts track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
@@ -368,28 +373,28 @@
       <td>{{ row.id }}</td>
       <td>{{ row.link }}</td>
       <td>{{ row.event_type }}</td>
-      <td>{{ row.event_phase_mask }}</td>
-      <td>{{ row.event_chance }}</td>
-      <td>{{ row.event_ }}</td>
-      <td>{{ row.event_param1 }}</td>
-      <td>{{ row.event_param2 }}</td>
-      <td>{{ row.event_param3 }}</td>
-      <td>{{ row.event_param4 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.event_phase_mask }}</td>
+      <td ng-show="!showBasicInformations">{{ row.event_chance }}</td>
+      <td ng-show="!showBasicInformations">{{ row.event_flags }}</td>
+      <td ng-show="!showBasicInformations">{{ row.event_param1 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.event_param2 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.event_param3 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.event_param4 }}</td>
       <td>{{ row.action_type }}</td>
-      <td>{{ row.action_param1 }}</td>
-      <td>{{ row.action_param2 }}</td>
-      <td>{{ row.action_param3 }}</td>
-      <td>{{ row.action_param4 }}</td>
-      <td>{{ row.action_param5 }}</td>
-      <td>{{ row.action_param6 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.action_param1 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.action_param2 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.action_param3 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.action_param4 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.action_param5 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.action_param6 }}</td>
       <td>{{ row.target_type }}</td>
-      <td>{{ row.target_param1 }}</td>
-      <td>{{ row.target_param2 }}</td>
-      <td>{{ row.target_param3 }}</td>
-      <td>{{ row.target_x }}</td>
-      <td>{{ row.target_y }}</td>
-      <td>{{ row.target_z }}</td>
-      <td>{{ row.target_o }}</td>
+      <td ng-show="!showBasicInformations">{{ row.target_param1 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.target_param2 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.target_param3 }}</td>
+      <td ng-show="!showBasicInformations">{{ row.target_x }}</td>
+      <td ng-show="!showBasicInformations">{{ row.target_y }}</td>
+      <td ng-show="!showBasicInformations">{{ row.target_z }}</td>
+      <td ng-show="!showBasicInformations">{{ row.target_o }}</td>
       <td>{{ row.comment }}</td>
     </tr>
   </table>
