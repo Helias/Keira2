@@ -78,7 +78,7 @@
     $scope.generateCharacterScript = function() {
 
       if (!$scope.isCharacterSelected) {
-        $scope.characterScript = "# No Character selected";
+        $scope.characterScript = "-- No Character selected";
         return;
       }
 

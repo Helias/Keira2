@@ -105,7 +105,7 @@
     $scope.generateGameobjectScript = function() {
 
       if (!$scope.isGameobjectSelected) {
-        $scope.gameobjectScript = "# No Gameobject selected";
+        $scope.gameobjectScript = "-- No Gameobject selected";
         return;
       }
 

@@ -136,11 +136,16 @@
     $scope.generateSAIScript = function() {
 
       if (!$scope.isEntitySelected) {
-        $scope.SAIScript = "# No entity selected";
+        $scope.SAIScript = "-- No entity selected";
         return;
       }
 
-      // TODO: generate sql full script
+      $scope.SAIScript = "-- SmartAI script of [" +  $scope.sourceTypesConst[$stateParams.sourceType] + "] " + $stateParams.entryOrGuid + "\n\n";
+
+      $scope.SAIScript += "-- TODO: add all non-smart_scripts stuff\n\n";
+
+      $scope.SAIScript += "-- Table smart_scripts\n";
+      $scope.SAIScript += app.getFullDeleteInsertTwoKeys("smart_scripts", "source_type", "entryorguid", $scope.new_smart_scripts);
     };
 
     /* [Function] disactive all tabs */

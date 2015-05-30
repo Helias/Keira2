@@ -141,7 +141,7 @@
     $scope.generateQuestScript = function() {
 
       if (!$scope.isQuestSelected) {
-        $scope.questScript = "# No Quest selected";
+        $scope.questScript = "-- No Quest selected";
         return;
       }
 

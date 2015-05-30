@@ -287,4 +287,44 @@
     return query;
   };
 
+  /* [Function] getFullDeleteInsertTwoKeys
+   *  Description: Generate the full DELETE/INSERT query of a group of rows
+   *  Inputs:
+   *  - tableName -> the name of the table (example: "smart_scripts")
+   *  - primaryKey1 -> first  primary key (example: "source_type")
+   *  - primaryKey2 -> second primary key (example: "entryorguid")
+   *  - newRows -> bound with ng-model to view (group of rows)
+   */
+  app.getFullDeleteInsertTwoKeys = function(tableName, primaryKey1, primaryKey2, newRows) {
+
+    if (newRows === undefined || (Array.isArray(newRows) && newRows.length <= 0) ) { return; }
+
+    var query, i, deleteQuery, insertQuery, cleanedNewRows, tmp;
+
+    // if we have a single object, convert it to array
+    if (!Array.isArray(newRows)) {
+      tmp = [];
+      tmp[0] = newRows;
+      newRows = tmp;
+    }
+
+    deleteQuery = squel.delete().from(tableName).where(primaryKey1 + " = " + newRows[0][primaryKey1] + " AND " + primaryKey2 + " = " + newRows[0][primaryKey2]);
+
+    /* Here we need to remove the $$hashKey field from all newRows objects
+     * because we don't want it inside our query
+     * if we remove $$hashKey field directly from newRows objects we will break the DOM
+     * then we create a copy of newRows without that field
+     * clearedNewRows will be the copy of newRows objects without the $$hashKey field */
+    cleanedNewRows = angular.fromJson(angular.toJson(newRows));
+
+    insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName).setFieldsRows(cleanedNewRows);
+
+    query = deleteQuery.toString() + ";\n";
+    query += insertQuery.toString() + ";\n";
+
+    query = query.replace(") VALUES (", ") VALUES\n(");
+    query = query.replace(/\)\, \(/g, "),\n(");
+
+    return query;
+  };
 }());
