@@ -34,8 +34,15 @@
       TIMED_ACTIONLIST  : 9, 9 : "Timed Actionlist"
     };
 
+    /* Init objects */
+    $scope.event_type = {};
+
     /* Init arrays */
     $scope.smart_scripts  = [];
+    $scope.event_type.param1 = [];
+    $scope.event_type.param2 = ["InitialMax", "InitialMax", "HPMax%", "ManaMax%", " ", "CooldownMax", " ", " ", "School", "MaxDist", "MaxRange", "MapId", "HPMax%", "RepeatMax", "Radius", "RepeatMin", "Radius", "CooldownMin", "ManaMax%", " ", " ", " ", "CooldownMin", "Stacks", "Stacks", " ", "MaxRange", "CooldownMax", "CooldownMax", " ", " ", "School", "MaxDmg", "MaxDmg", "PointID", "CooldownMin", " ", " ", "Value", "pathId (0 any)", "pathId (0 any)", " ", " ", " ", " ", "CooldownMin", " ", " ", " ", " ", " ", " ", "CreatureId (0 any)", "MaxHeal", " ", "pathID (0 any)", "pathID (0 any)", "pathID (0 any)", "pathID (0 any)", " ", "InitialMax", " ", "ID", " ", " ", " ", "effectIndex", "CooldownMax", " ", " ", " ", " ", " ", " ", "maxHpPct", "database entry", "database entry", "value"];
+    $scope.event_type.param3 = [];
+    $scope.event_type.param4 = [];
 
     /* Check if an entity (smart_scripts.source_type AND smart_scripts.entryorguid) is selected */
     if ($stateParams.sourceType && $stateParams.entryOrGuid) {
