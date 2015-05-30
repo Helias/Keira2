@@ -78,15 +78,25 @@
 
         // check if we are editing an existing SAI script or creating a new one
         if ($scope.current_smart_scripts.length > 0) {
-
           // editing existing SAI script
-          $scope.selectionText = "Editing the SmartAI script of [" +  $scope.sourceTypesConst[$stateParams.sourceType] + "] " + $stateParams.entryOrGuid;
-
+          $scope.selectionText = "Editing the SmartAI script of ";
         } else {
-
           // creating new SAI script
-          $scope.selectionText = "Creating a new SmartAI script for [" +  $scope.sourceTypesConst[$stateParams.sourceType] + "] " + $stateParams.entryOrGuid;
+          $scope.selectionText = "Creating a new SmartAI script for ";
+        }
 
+        $scope.selectionText += "[" +  $scope.sourceTypesConst[$stateParams.sourceType] + "] ";
+
+        if ($stateParams.sourceType == 0 || $stateParams.sourceType == 1) {
+          if ($stateParams.entryOrGuid > 0) {
+            $scope.selectionText += "ENTRY ";
+            $scope.selectionText += $stateParams.entryOrGuid;
+          } else {
+            $scope.selectionText += "GUID ";
+            $scope.selectionText += -$stateParams.entryOrGuid;
+          }
+        } else {
+          $scope.selectionText += $stateParams.entryOrGuid;
         }
       })
         .error(function (data, status, header, config) {
