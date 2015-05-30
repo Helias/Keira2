@@ -175,42 +175,37 @@
     <div class="row">
       <p class="h5 text-center">Event</p>
       <div class="col-xs-5">
-        <small>{{ event_type.param1[new_smart_scripts[0].event_type] != "" ? event_type.param1[new_smart_scripts[0].event_type] : "param1" }}</small>
+        <small>{{ event_type.param1[selected.event_type] != "" ? event_type.param1[selected.event_type] : "param1" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.event_param1">
       </div>
     </div>
     <div class="row">
-<<<<<<< HEAD
       <div class="col-xs-5">
-        <small>{{ event_type.param2[new_smart_scripts[0].event_type] != "" ? event_type.param2[new_smart_scripts[0].event_type] : "param2" }}</small>
-=======
-      <div class="col-xs-4">
         <small>{{ event_type.param2[selected.event_type] != "" ? event_type.param2[selected.event_type] : "param2" }}</small>
->>>>>>> origin/3.3.5
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.event_param2">
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-5">
-        <small>{{ event_type.param3[new_smart_scripts[0].event_type] != "" ? event_type.param3[new_smart_scripts[0].event_type] : "param3" }}</small>
+      <div class="row">
+        <div class="col-xs-5">
+          <small>{{ event_type.param3[selected.event_type] != "" ? event_type.param3[selected.event_type] : "param3" }}</small>
+        </div>
+        <div class="col-xs-4">
+          <input class="form-control input-xs" type="text" ng-value="selected.event_param3">
+        </div>
       </div>
-      <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.event_param3">
+      <div class="row">
+        <div class="col-xs-5">
+          <small>{{ event_type.param4[selected.event_type] != "" ? event_type.param4[selected.event_type] : "param4" }}</small>
+        </div>
+        <div class="col-xs-4">
+          <input class="form-control input-xs" type="text" ng-value="selected.event_param4">
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-5">
-        <small>{{ event_type.param4[new_smart_scripts[0].event_type] != "" ? event_type.param4[new_smart_scripts[0].event_type] : "param4" }}</small>
-      </div>
-      <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.event_param4">
-      </div>
-    </div>
-  </div>
 
   <div class="col-xs-3 text-left input-margin">
     <div class="row">
