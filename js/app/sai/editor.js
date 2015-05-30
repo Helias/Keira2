@@ -84,9 +84,19 @@
 
     /* Delete selected row from collection */
     $scope.deleteSelectedRowFrom = function(rows) {
-      if (!$rootScope.isEntrySelected()) { return; }
+      if (!$rootScope.isEntrySelected() || $scope.selectedRow == -1) { return; }
 
       rows.splice($scope.selectedRow, 1);
+
+      if ($scope.selectedRow == 0) {
+        if (rows.length > 0) {
+          $scope.selectRow(rows, $scope.selectedRow);
+        } else {
+          $scope.selectedRow = -1;
+        }
+      } else {
+        $scope.selectRow(rows, $scope.selectedRow - 1);
+      }
     };
 
     /* Add a new row to collection */

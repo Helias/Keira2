@@ -1,5 +1,5 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}smart_scripts"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>smart_scripts</a></p>
-<div class="row sai-editor-head">
+<div class="row sai-editor-head" ng-show="selectedRow != -1">
   <br>
   <div class="col-xs-3">
 
@@ -436,7 +436,7 @@
 <br>
 <div class="row">
   <div class="col-xs-4">
-    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_smart_scripts)"><i class="glyphicon glyphicon-remove"></i> Delete selected row</button>
+    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_smart_scripts)" ng-disabled="selectedRow == -1"><i class="glyphicon glyphicon-remove"></i> Delete selected row</button>
     <button class="btn btn-success" ng-click="addNewRow(new_smart_scripts)"><i class="glyphicon glyphicon-plus"></i> Add new row</button>
   </div>
   <div class="col-xs-2 pull-right">
