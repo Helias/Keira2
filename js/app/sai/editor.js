@@ -11,6 +11,9 @@
     /* At start we have no row selected */
     $scope.selectedRow = -1;
 
+    /* Show only basic informations */
+    $scope.showBasicInformations = true;
+
     /* Default new row */
     $scope.defaultNewRow = {
       entryorguid       : parseInt($stateParams.entryOrGuid, 10),
