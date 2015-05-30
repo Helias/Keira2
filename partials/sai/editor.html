@@ -255,5 +255,66 @@
     <button class="btn btn-primary pull-right" ng-click="alert('TODO')">FULL SmartAI Script</button>
   </div>
 </div>
-
-
+<br>
+<div style="overflow-y: scroll !important;">
+  <table class="table table-striped table-condensed">
+    <thead>
+      <th class="text-center"></th>
+      <th class="text-center">id</th>
+      <th class="text-center">link</th>
+      <th class="text-center">event_type</th>
+      <th class="text-center">event_phase_mask</th>
+      <th class="text-center">event_chance</th>
+      <th class="text-center">event_flags
+      <th class="text-center">event_param1</th>
+      <th class="text-center">event_param2</th>
+      <th class="text-center">event_param3</th>
+      <th class="text-center">event_param4</th>
+      <th class="text-center">action_type</th>
+      <th class="text-center">action_param1</th>
+      <th class="text-center">action_param2</th>
+      <th class="text-center">action_param3</th>
+      <th class="text-center">action_param4</th>
+      <th class="text-center">action_param5</th>
+      <th class="text-center">action_param6</th>
+      <th class="text-center">target_type</th>
+      <th class="text-center">target_param1</th>
+      <th class="text-center">target_param2</th>
+      <th class="text-center">target_param3</th>
+      <th class="text-center">target_x</th>
+      <th class="text-center">target_y</th>
+      <th class="text-center">target_z</th>
+      <th class="text-center">target_o</th>
+      <th class="text-center">comment</th>
+    </thead>
+    <tr ng-repeat="row in new_smart_scripts track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+      <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_smart_scripts, $index)"></i></td>
+      <td>{{ row.id }}</td>
+      <td>{{ row.link }}</td>
+      <td>{{ row.event_type }}</td>
+      <td>{{ row.event_phase_mask }}</td>
+      <td>{{ row.event_chance }}</td>
+      <td>{{ row.event_ }}</td>
+      <td>{{ row.event_param1 }}</td>
+      <td>{{ row.event_param2 }}</td>
+      <td>{{ row.event_param3 }}</td>
+      <td>{{ row.event_param4 }}</td>
+      <td>{{ row.action_type }}</td>
+      <td>{{ row.action_param1 }}</td>
+      <td>{{ row.action_param2 }}</td>
+      <td>{{ row.action_param3 }}</td>
+      <td>{{ row.action_param4 }}</td>
+      <td>{{ row.action_param5 }}</td>
+      <td>{{ row.action_param6 }}</td>
+      <td>{{ row.target_type }}</td>
+      <td>{{ row.target_param1 }}</td>
+      <td>{{ row.target_param2 }}</td>
+      <td>{{ row.target_param3 }}</td>
+      <td>{{ row.target_x }}</td>
+      <td>{{ row.target_y }}</td>
+      <td>{{ row.target_z }}</td>
+      <td>{{ row.target_o }}</td>
+      <td>{{ row.comment }}</td>
+    </tr>
+  </table>
+</div>
