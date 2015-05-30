@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("GameobjectController", function ($scope, $http, $stateParams, $modal) {
+  app.controller("GameobjectController", function ($rootScope, $scope, $http, $stateParams, $modal) {
 
     /* All Gameobject tabs, disabled by default.
     *  Only one tab can be active at a time */
@@ -40,7 +40,7 @@
       /* Retrieve all gameobject_template datas */
       $http.get( app.api + "gameobject/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_gameobject_template = data[0];
+        $scope.current_gameobject_template = $rootScope.fixNumericValues(data[0]);
         $scope.new_gameobject_template = angular.copy($scope.current_gameobject_template);
         $scope.selectionText = "Gameobject " + $scope.current_gameobject_template.entry;
       })
@@ -51,7 +51,7 @@
       /* Retrieve all gameobject_loot_template datas */
       $http.get( app.api + "loot/template/gameobject/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_gameobject_loot_template = data;
+        $scope.current_gameobject_loot_template = $rootScope.fixNumericValues(data);
         $scope.new_gameobject_loot_template = angular.copy($scope.current_gameobject_loot_template);
       })
         .error(function (data, status, header, config) {
@@ -61,7 +61,7 @@
       /* Retrieve all gameobject datas */
       $http.get( app.api + "/gameobject/spawn/id/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_gameobject = data;
+        $scope.current_gameobject = $rootScope.fixNumericValues(data);
         $scope.new_gameobject = angular.copy($scope.current_gameobject);
       })
         .error(function (data, status, header, config) {
@@ -93,7 +93,7 @@
           name: gameobjectName
         }
       }).success(function (data, status, header, config) {
-        $scope.gameobjects = data;
+        $scope.gameobjects = $rootScope.fixNumericValues(data);
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] GAMEOBJECT SEARCH $http.get request failed");

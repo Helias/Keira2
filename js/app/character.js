@@ -7,7 +7,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("CharacterController", function ($scope, $http, $stateParams, $modal) {
+  app.controller("CharacterController", function ($rootScope, $scope, $http, $stateParams, $modal) {
 
     /* All Character tabs, disabled by default.
     *  Only one tab can be active at a time */
@@ -37,7 +37,7 @@
         params: { no_extra_fields : 1 }
       })
         .success(function (data, status, header, config) {
-        $scope.current_characters = data[0];
+        $scope.current_characters = $rootScope.fixNumericValues(data[0]);
         $scope.new_characters = angular.copy($scope.current_characters);
         $scope.selectionText = $scope.current_characters.name + " (" + $scope.current_characters.guid +") ";
       })
@@ -66,7 +66,7 @@
           name: characterName
         }
       }).success(function (data, status, header, config) {
-        $scope.characters = data;
+        $scope.characters = $rootScope.fixNumericValues(data);
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] character SEARCH $http.get request failed");

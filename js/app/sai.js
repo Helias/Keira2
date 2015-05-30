@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("SmartAIController", function ($scope, $http, $stateParams, $modal) {
+  app.controller("SmartAIController", function ($rootScope, $scope, $http, $stateParams, $modal) {
 
     /* read ONLY values, do NOT bind them with ng-model in the view */
     $scope.sourceType = $stateParams.sourceType;
@@ -60,7 +60,7 @@
       /* Retrieve all smart_scripts datas */
       $http.get( app.api + "smart_scripts/" + $stateParams.sourceType + "/" + $stateParams.entryOrGuid )
         .success(function (data, status, header, config) {
-        $scope.current_smart_scripts = data;
+        $scope.current_smart_scripts = $rootScope.fixNumericValues(data);
         $scope.new_smart_scripts = angular.copy($scope.current_smart_scripts);
 
         // check if we are editing an existing SAI script or creating a new one
@@ -103,7 +103,7 @@
           entryorguid: entryOrGuid
         }
       }).success(function (data, status, header, config) {
-        $scope.scripts = data;
+        $scope.scripts = $rootScope.fixNumericValues(data);
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] SMART SCRIPTS SEARCH $http.get request failed");

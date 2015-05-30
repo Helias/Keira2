@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("QuestController", function ($scope, $http, $stateParams, $modal) {
+  app.controller("QuestController", function ($rootScope, $scope, $http, $stateParams, $modal) {
 
     /* All Quest tabs, disabled by default.
     *  Only one tab can be active at a time */
@@ -48,7 +48,7 @@
       /* Retrieve all quest_template datas */
       $http.get( app.api + "quest/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_quest_template = data[0];
+        $scope.current_quest_template = $rootScope.fixNumericValues(data[0]);
         $scope.new_quest_template = angular.copy($scope.current_quest_template);
         $scope.selectionText = $scope.current_quest_template.Title + " (" + $scope.current_quest_template.Id +") ";
       })
@@ -61,7 +61,7 @@
         params : { names : 0 }
       })
         .success(function (data, status, header, config) {
-        $scope.current_creature_queststarter = data;
+        $scope.current_creature_queststarter = $rootScope.fixNumericValues(data);
         $scope.new_creature_queststarter = angular.copy($scope.current_creature_queststarter);
       })
         .error(function (data, status, header, config) {
@@ -73,7 +73,7 @@
         params : { names : 0 }
       })
         .success(function (data, status, header, config) {
-        $scope.current_creature_questender = data;
+        $scope.current_creature_questender = $rootScope.fixNumericValues(data);
         $scope.new_creature_questender = angular.copy($scope.current_creature_questender);
       })
         .error(function (data, status, header, config) {
@@ -85,7 +85,7 @@
         params : { names : 0 }
       })
         .success(function (data, status, header, config) {
-        $scope.current_gameobject_queststarter = data;
+        $scope.current_gameobject_queststarter = $rootScope.fixNumericValues(data);
         $scope.new_gameobject_queststarter = angular.copy($scope.current_gameobject_queststarter);
       })
         .error(function (data, status, header, config) {
@@ -97,7 +97,7 @@
         params : { names : 0 }
       })
         .success(function (data, status, header, config) {
-        $scope.current_gameobject_questender = data;
+        $scope.current_gameobject_questender = $rootScope.fixNumericValues(data);
         $scope.new_gameobject_questender = angular.copy($scope.current_gameobject_questender);
       })
         .error(function (data, status, header, config) {
@@ -129,7 +129,7 @@
           name: questTitle
         }
       }).success(function (data, status, header, config) {
-        $scope.quests = data;
+        $scope.quests = $rootScope.fixNumericValues(data);
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] QUEST SEARCH $http.get request failed");

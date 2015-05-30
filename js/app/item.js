@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("ItemController", function ($scope, $http, $stateParams, $modal) {
+  app.controller("ItemController", function ($rootScope, $scope, $http, $stateParams, $modal) {
 
     /* All Item tabs, disabled by default.
     *  Only one tab can be active at a time */
@@ -49,7 +49,7 @@
       /* Retrieve all item_template datas */
       $http.get( app.api + "item/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_item_template = data[0];
+        $scope.current_item_template = $rootScope.fixNumericValues(data[0]);
         $scope.new_item_template = angular.copy($scope.current_item_template);
         $scope.selectionText = $scope.current_item_template.name + " (" + $scope.current_item_template.entry +") ";
       })
@@ -60,7 +60,7 @@
       /* Retrieve all disenchant_loot_template datas */
       $http.get( app.api + "loot/template/disenchant/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_disenchant_loot_template = data;
+        $scope.current_disenchant_loot_template = $rootScope.fixNumericValues(data);
         $scope.new_disenchant_loot_template = angular.copy($scope.current_disenchant_loot_template);
       })
         .error(function (data, status, header, config) {
@@ -70,7 +70,7 @@
       /* Retrieve all prospecting_loot_template datas */
       $http.get( app.api + "loot/template/prospecting/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_prospecting_loot_template = data;
+        $scope.current_prospecting_loot_template = $rootScope.fixNumericValues(data);
         $scope.new_prospecting_loot_template = angular.copy($scope.current_prospecting_loot_template);
       })
         .error(function (data, status, header, config) {
@@ -80,7 +80,7 @@
       /* Retrieve all milling_loot_template datas */
       $http.get( app.api + "loot/template/milling/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_milling_loot_template = data;
+        $scope.current_milling_loot_template = $rootScope.fixNumericValues(data);
         $scope.new_milling_loot_template = angular.copy($scope.current_milling_loot_template);
       })
         .error(function (data, status, header, config) {
@@ -90,7 +90,7 @@
       /* Retrieve all item_loot_template datas */
       $http.get( app.api + "loot/template/item/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_item_loot_template = data;
+        $scope.current_item_loot_template = $rootScope.fixNumericValues(data);
         $scope.new_item_loot_template = angular.copy($scope.current_item_loot_template);
       })
         .error(function (data, status, header, config) {
@@ -100,7 +100,7 @@
       /* Retrieve all item_enchantment_template datas */
       $http.get( app.api + "item/enchantment/" + $stateParams.id )
         .success(function (data, status, header, config) {
-        $scope.current_item_enchantment_template = data;
+        $scope.current_item_enchantment_template = $rootScope.fixNumericValues(data);
         $scope.new_item_enchantment_template = angular.copy($scope.current_item_enchantment_template);
       })
         .error(function (data, status, header, config) {
@@ -132,7 +132,7 @@
           name: itemName
         }
       }).success(function (data, status, header, config) {
-        $scope.items = data;
+        $scope.items = $rootScope.fixNumericValues(data);
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] ITEM SEARCH $http.get request failed");

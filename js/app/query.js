@@ -6,6 +6,33 @@
 
   var app = angular.module('keira2');
 
+  /* [Function] cleanRows
+   * prepare rows to query generation
+   */
+  app.cleanRows = function(rows) {
+    var cleanedRows, i, key;
+
+    /* Here we need to remove the $$hashKey field from all newRows objects
+     * because we don't want it inside our query
+     * if we remove $$hashKey field directly from newRows objects we will break the DOM
+     * then we create a copy of newRows without that field
+     * clearedNewRows will be the copy of newRows objects without the $$hashKey field */
+    cleanedRows = angular.fromJson(angular.toJson(rows));
+
+    // Convert numeric values
+    for (i = 0; i < cleanedRows.length; i++) {
+      for (key in cleanedRows[i]) {
+        if (cleanedRows[i].hasOwnProperty(key)) {
+          if (!isNaN(cleanedRows[i][key])) {
+            cleanedRows[i][key] = Number(cleanedRows[i][key]);
+          }
+        }
+      }
+    }
+
+    return cleanedRows;
+  };
+
   /* [Function] getUpdateQuery
    *  Description: Tracks difference between two row objects and generate UPDATE query
    *  Inputs:
@@ -91,12 +118,8 @@
       }
     }
 
-    /* Here we need to remove the $$hashKey field from all newRows objects
-     * because we don't want it inside our query
-     * if we remove $$hashKey field directly from newRows objects we will break the DOM
-     * then we create a copy of newRows without that field
-     * clearedNewRows will be the copy of newRows objects without the $$hashKey field */
-    cleanedNewRows = angular.fromJson(angular.toJson(newRows));
+    // prepare rows for query generation
+    cleanedNewRows = app.cleanRows(newRows);
 
     deleteQuery = squel.delete().from(tableName);
     insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName);
@@ -178,13 +201,8 @@
         involvedRows      = [], // -> needed for DELETE
         addedOrEditedRows = []; // -> needed for INSERT
 
-    /* Here we need to remove the $$hashKey field from all newRows objects
-     * because we don't want it inside our query
-     * if we remove $$hashKey field directly from newRows objects we will break the DOM
-     * then we create a copy of newRows without that field
-     * clearedNewRows will be the copy of newRows objects without the $$hashKey field */
-
-    cleanedNewRows = angular.fromJson(angular.toJson(newRows));
+    // prepare rows for query generation
+    cleanedNewRows = app.cleanRows(newRows);
 
     deleteQuery = squel.delete().from(tableName);
     insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName);
@@ -257,7 +275,7 @@
 
     if (newRows === undefined || (Array.isArray(newRows) && newRows.length <= 0) ) { return; }
 
-    var query, i, deleteQuery, insertQuery, cleanedNewRows, tmp;
+    var query, deleteQuery, insertQuery, cleanedNewRows, tmp;
 
     // if we have a single object, convert it to array
     if (!Array.isArray(newRows)) {
@@ -268,12 +286,8 @@
 
     deleteQuery = squel.delete().from(tableName).where(primaryKey1 + " = " + newRows[0][primaryKey1]);
 
-    /* Here we need to remove the $$hashKey field from all newRows objects
-     * because we don't want it inside our query
-     * if we remove $$hashKey field directly from newRows objects we will break the DOM
-     * then we create a copy of newRows without that field
-     * clearedNewRows will be the copy of newRows objects without the $$hashKey field */
-    cleanedNewRows = angular.fromJson(angular.toJson(newRows));
+    // prepare rows for query generation
+    cleanedNewRows = app.cleanRows(newRows);
 
     insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName).setFieldsRows(cleanedNewRows);
 
@@ -299,7 +313,7 @@
 
     if (newRows === undefined || (Array.isArray(newRows) && newRows.length <= 0) ) { return; }
 
-    var query, i, deleteQuery, insertQuery, cleanedNewRows, tmp;
+    var query, deleteQuery, insertQuery, cleanedNewRows, tmp;
 
     // if we have a single object, convert it to array
     if (!Array.isArray(newRows)) {
@@ -310,12 +324,8 @@
 
     deleteQuery = squel.delete().from(tableName).where(primaryKey1 + " = " + newRows[0][primaryKey1] + " AND " + primaryKey2 + " = " + newRows[0][primaryKey2]);
 
-    /* Here we need to remove the $$hashKey field from all newRows objects
-     * because we don't want it inside our query
-     * if we remove $$hashKey field directly from newRows objects we will break the DOM
-     * then we create a copy of newRows without that field
-     * clearedNewRows will be the copy of newRows objects without the $$hashKey field */
-    cleanedNewRows = angular.fromJson(angular.toJson(newRows));
+    // prepare rows for query generation
+    cleanedNewRows = app.cleanRows(newRows);
 
     insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName).setFieldsRows(cleanedNewRows);
 

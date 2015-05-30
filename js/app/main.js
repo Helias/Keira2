@@ -22,6 +22,33 @@
       }
     };
 
+    /* [Funcion] fix numeric values of a collection */
+    $rootScope.fixNumericValues = function(rows) {
+
+      var i, key;
+
+      if (!Array.isArray(rows)) {
+        for (key in rows) {
+          if (rows.hasOwnProperty(key)) {
+            if (!isNaN(rows[key])) {
+              rows[key] = Number(rows[key]);
+            }
+          }
+        }
+      } else {
+        for (i = 0; i < rows.length; i++) {
+          for (key in rows[i]) {
+            if (rows[i].hasOwnProperty(key)) {
+              if (!isNaN(rows[i][key])) {
+                rows[i][key] = Number(rows[i][key]);
+              }
+            }
+          }
+        }
+      }
+      return rows;
+    };
+
     /* Open modal to handle flags params:
      * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
      * TemplateUrl => content of the modal (file html inside the folder "modals")
@@ -70,7 +97,7 @@
         }*/
       });
 
-/*      // When the modal will be closed this function takes the new value to assign
+      /*      // When the modal will be closed this function takes the new value to assign
       modalInstance.result.then(function (Res) {
         object[property] = Res;
       });*/
