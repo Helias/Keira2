@@ -206,7 +206,7 @@
     $scope.generateCreatureScript = function() {
 
       if (!$scope.isCreatureSelected) {
-        $scope.creatureScript = "# No Creature selected";
+        $scope.creatureScript = "-- No Creature selected";
         return;
       }
 

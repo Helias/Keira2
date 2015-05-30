@@ -144,7 +144,7 @@
     $scope.generateItemScript = function() {
 
       if (!$scope.isItemSelected) {
-        $scope.itemScript = "# No Item selected";
+        $scope.itemScript = "-- No Item selected";
         return;
       }
 
