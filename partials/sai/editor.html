@@ -32,6 +32,82 @@
         <select class="form-control input-xs" ng-model="new_smart_scripts[0].event_type">
           <option value="0">UPDATE_IC</option>
           <option value="1">UPDATE_OOC</option>
+          <option value="2">HEALT_PCT</option>
+          <option value="3">MANA_PCT</option>
+          <option value="4">AGGRO</option>
+          <option value="5">KILL</option>
+          <option value="6">DEATH</option>
+          <option value="7">EVADE</option>
+          <option value="8">SPELLHIT</option>
+          <option value="9">RANGE</option>
+          <option value="10">OOC_LOS</option>
+          <option value="11">RESPAWN</option>
+          <option value="12">TARGET_HEALTH_PCT</option>
+          <option value="13">VICTIM_CASTING</option>
+          <option value="14">FRIENDLY_HEALTH</option>
+          <option value="15">FRIENDLY_IS_CC</option>
+          <option value="16">FRIENDLY_MISSING_BUFF</option>
+          <option value="17">SUMMONED_UNIT</option>
+          <option value="18">TARGET_MANA_PCT</option>
+          <option value="19">ACCEPTED_QUEST</option>
+          <option value="20">REWARD_QUEST</option>
+          <option value="21">REACHED_HOME</option>
+          <option value="22">RECEIVE_EMOTE</option>
+          <option value="23">HAS_AURA</option>
+          <option value="24">TARGET_BUFFED</option>
+          <option value="25">RESET</option>
+          <option value="26">IC_LOS</option>
+          <option value="27">PASSENGER_BOARDED</option>
+          <option value="28">PASSENGER_REMOVED</option>
+          <option value="29">CHARMED</option>
+          <option value="30">CHARMED_TARGET</option>
+          <option value="31">SPELLHIT_TARGET</option>
+          <option value="32">DAMAGED</option>
+          <option value="33">DAMAGED_TARGET</option>
+          <option value="34">MOVEMENTINFORM</option>
+          <option value="35">SUMMON_DESPAWNED</option>
+          <option value="36">CORPSE_REMOVED</option>
+          <option value="37">AI_INIT</option>
+          <option value="38">DATA_SET</option>
+          <option value="39">WAYPOINT_START</option>
+          <option value="40">WAYPOINT_REACHED</option>
+          <option value="41">TRANSPORT_ADDPLAYER</option>
+          <option value="42">TRANSPORT_ADDCREATURE</option>
+          <option value="43">TRANSPORT_REMOVE_PLAYER</option>
+          <option value="44">TRANSPORT_RELOCATE</option>
+          <option value="45">INSTANCE_PLAYER_ENTER</option>
+          <option value="46">AREATRIGGER_ONTRIGGER</option>
+          <option value="47">QUEST_ACCEPTED</option>
+          <option value="48">QUEST_OBJ_COPLETETION</option>
+          <option value="49">QUEST_COMPLETION</option>
+          <option value="50">QUEST_REWARDED</option>
+          <option value="51">QUEST_FAIL</option>
+          <option value="52">TEXT_OVER</option>
+          <option value="53">RECEIVE_HEAL</option>
+          <option value="54">JUST_SUMMONED</option>
+          <option value="55">WAYPOINT_PAUSED</option>
+          <option value="56">WAYPOINT_RESUMED</option>
+          <option value="57">WAYPOINT_STOPPED</option>
+          <option value="58">WAYPOINT_ENDED</option>
+          <option value="59">TIMED_EVENT_TRIGGERED</option>
+          <option value="60">UPDATE</option>
+          <option value="61">LINK</option>
+          <option value="62">GOSSIP_SELECT</option>
+          <option value="63">JUST_CREATED</option>
+          <option value="64">GOSSIP_HELLO</option>
+          <option value="65">FOLLOW_COMPLETED</option>
+          <option value="66">DUMMY_EFFECT</option>
+          <option value="67">IS_BEHIND_TARGET</option>
+          <option value="68">GAME_EVENT_START</option>
+          <option value="69">GAME_EVENT_END</option>
+          <option value="70">GO_STATE_CHANGED</option>
+          <option value="71">GO_EVENT_INFORM</option>
+          <option value="72">ACTION_DONE</option>
+          <option value="73">ON_SPELLCLICK</option>
+          <option value="74">FRIENDLY_HEALTH_PCT</option>
+          <option value="75">DISTANCE_CREATURE</option>
+          <option value="76">DISTANCE_GAMEOBJECT</option>
+          <option value="77">COUNTER_SET</option>
         </select>
       </div>
       <div class="col-xs-3">
@@ -99,7 +175,7 @@
     <div class="row">
       <p class="h5 text-center">Event</p>
       <div class="col-xs-4">
-        <small>Event1</small>
+        <small>param1</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param1">
@@ -107,7 +183,7 @@
     </div>
     <div class="row">
       <div class="col-xs-4">
-        <small>Event2</small>
+        <small>{{ event_type.param2[new_smart_scripts[0].event_type] != "" ? event_type.param2[new_smart_scripts[0].event_type] : "param2" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param2">
@@ -115,7 +191,7 @@
     </div>
     <div class="row">
       <div class="col-xs-4">
-        <small>Event3</small>
+        <small>param3</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param3">
@@ -123,7 +199,7 @@
     </div>
     <div class="row">
       <div class="col-xs-4">
-        <small>Event4</small>
+        <small>param4</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param4">
@@ -146,7 +222,7 @@
         <small>param2</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param2">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param2">
       </div>
     </div>
     <div class="row">
@@ -154,7 +230,7 @@
         <small>param3</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param3">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param3">
       </div>
     </div>
     <div class="row">
@@ -162,7 +238,7 @@
         <small>param4</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param4">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param4">
       </div>
     </div>
     <div class="row">
@@ -170,7 +246,7 @@
         <small>param5</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param5">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param5">
       </div>
     </div>
     <div class="row">
@@ -178,7 +254,7 @@
         <small>param6</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].event_param6">
+        <input class="form-control input-xs" type="text" ng-value="new_smart_scripts[0].action_param6">
       </div>
     </div>
   </div>
