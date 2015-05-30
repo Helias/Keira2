@@ -43,7 +43,7 @@
       target_y          : 0.0,
       target_z          : 0.0,
       target_o          : 0.0,
-      comment           : 'Event Comment'
+      comment           : ''
     };
 
     /* Type check */
