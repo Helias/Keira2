@@ -97,7 +97,7 @@
       var newRow = angular.copy($scope.defaultNewRow);
       newRow.id = rows.length;
 
-      rows.splice(0, 0, angular.copy(newRow));
+      rows.splice(rows.length, 0, angular.copy(newRow));
     };
 
   });
