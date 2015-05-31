@@ -16,6 +16,7 @@
     *  Only one tab can be active at a time */
     $scope.saiTabs = {
       search : false,
+      new    : false,
       editor : false,
       script : false
     };
@@ -204,13 +205,11 @@
       /* We have no creature selected and default active tab is search */
       $scope.isEntitySelected = false;
       $scope.saiTabs.search = true;
-      $scope.selectionText = "No entity selected. Please use Search to select one.";
+      $scope.selectionText = "No entity selected. Please use Search or Create new to select one.";
     }
 
     /* [Function] Search */
     $scope.search = function (sourceType, entryOrGuid) {
-
-      // TODO: search among not-yet-scripted entities
 
       if (entryOrGuid && !sourceType && entryOrGuid.length < 2) {
         alert("Please insert an Entry or GUID of at least 2 digits or specific the Source Type");
