@@ -16,7 +16,7 @@
     *  Only one tab can be active at a time */
     $scope.saiTabs = {
       search : false,
-      new    : false,
+      create : false,
       editor : false,
       script : false
     };
@@ -239,7 +239,7 @@
     $scope.openScriptTab = function() {
       $scope.generateSAIScript();
       $scope.saiTabs.search = false;
-      $scope.saiTabs.new    = false;
+      $scope.saiTabs.create = false;
       $scope.saiTabs.editor = false;
       $scope.saiTabs.script = true;
     };
