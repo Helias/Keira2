@@ -7,6 +7,10 @@
   var app = angular.module('keira2');
 
   app.controller("CreateNewSAIController", function ($scope, $rootScope, $stateParams) {
+
+    /* Default selectedSourceType */
+    $scope.selectedSourceType = 0;
+
   });
 
 }());

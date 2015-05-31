@@ -1,0 +1,28 @@
+<br>
+<div class="row">
+  <div class="col-xs-3">
+    <label class="control-label">Source Type</label>
+    <select ng-model="selectedSourceType" class="form-control">
+      <option value="0">0 - CREATURE</option>
+      <option value="1">1 - GAMEOBJECT</option>
+      <option value="2">2 - AREATRIGGER</option>
+      <option value="9">9 - TIMED_ACTIONLIST</option>
+    </select>
+  </div>
+</div>
+
+<div ng-show="selectedSourceType == 0">
+  TODO: Creatures
+</div>
+
+<div ng-show="selectedSourceType == 1">
+  TODO: GameObjects
+</div>
+
+<div ng-show="selectedSourceType == 2">
+  TODO: AreaTriggers
+</div>
+
+<div ng-show="selectedSourceType == 3">
+  TODO: Timed Actionlists
+</div>
