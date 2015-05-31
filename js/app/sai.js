@@ -192,9 +192,11 @@
             break;
 
           case 2: // AreaTrigger
+            $scope.entityEntry = $stateParams.entryOrGuid;
             break;
 
           case 9: // Timed Actionlist
+            $scope.entityEntry = $stateParams.entryOrGuid;
             break;
 
           default:
@@ -268,7 +270,9 @@
           break;
 
         case 2: // AreaTrigger
-          // TODO
+          $scope.SAIScript += "-- Table gameobject_template\n";
+          $scope.SAIScript += "DELETE FROM `areatrigger_scripts` WHERE `entry` = " + $scope.entityEntry + ";\n";
+          $scope.SAIScript += "INSERT INTO `areatrigger_scripts` (`entry`, `ScriptName`) VALUES (" + $scope.entityEntry + ", 'SmartTrigger');\n\n";
           break;
 
         case 9: // Timed Actionlist
