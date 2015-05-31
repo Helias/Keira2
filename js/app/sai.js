@@ -247,10 +247,31 @@
         return;
       }
 
-      $scope.SAIScript = "-- SmartAI script of [" +  $scope.sourceTypesConst[$stateParams.sourceType] + "] " + $stateParams.entryOrGuid + "\n\n";
+      $scope.SAIScript = "-- " + $scope.selectionText + "\n\n";
 
-      $scope.SAIScript += "-- TODO: add all non-smart_scripts stuff\n\n";
+      // non-smart_scripts datas
+      switch (Number($stateParams.sourceType)) {
 
+        case 0: // Creature
+          $scope.SAIScript += "-- Table creature_template\n";
+          $scope.SAIScript += "UPDATE `creature_template` SET `AIName` = 'SmartAI' WHERE `entry` = " + $scope.entityEntry + ";\n\n";
+          break;
+
+        case 1: // GameObject
+          $scope.SAIScript += "-- Table gameobject_template\n";
+          $scope.SAIScript += "UPDATE `gameobject_template` SET `AIName` = 'SmartGameObjectAI' WHERE `entry` = " + $scope.entityEntry + ";\n\n";
+          break;
+
+        case 2: // AreaTrigger
+          // TODO
+          break;
+
+        case 9: // Timed Actionlist
+          // TODO
+          break;
+      }
+
+      // smart_scripts datas
       $scope.SAIScript += "-- Table smart_scripts\n";
       $scope.SAIScript += app.getFullDeleteInsertTwoKeys("smart_scripts", "source_type", "entryorguid", $scope.new_smart_scripts);
     };
