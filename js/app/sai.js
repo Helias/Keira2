@@ -78,6 +78,123 @@
         } else {
           $scope.selectionText += $stateParams.entryOrGuid;
         }
+
+        switch (Number($stateParams.sourceType)) {
+
+          case 0: // Creature
+            if ($stateParams.entryOrGuid < 0) {
+
+              // Creature GUID
+              $scope.entityGuid = -$stateParams.entryOrGuid;
+
+              /* Retrieve creature_template.entry */
+              $http.get( app.api + "creature/spawn/guid/" + $scope.entityGuid)
+                .success(function (data, status, header, config) {
+                if (data.length < 1) {
+                  console.log("[WARNING] creature/spawn/guid/" + $scope.entityGuid + " returned 0 results: unable to find the entry of the creature.");
+                } else {
+                  if (!data[0].hasOwnProperty('id')) {
+                    console.log("[ERROR] creature/spawn/guid/" + $scope.entityGuid + " returned datas, but the attribute 'id' is not present.");
+                  } else {
+                    $scope.entityEntry = data[0].id;
+
+                    /* Retrieve all creature_template datas */
+                    $http.get( app.api + "creature/template/" + $scope.entityEntry )
+                      .success(function (data, status, header, config) {
+                      $scope.current_creature_template = $rootScope.fixNumericValues(data[0]);
+
+                      $scope.selectionText += " (name: " + $scope.current_creature_template.name + ", entry: " + $scope.entityEntry + ")";
+                    })
+                      .error(function (data, status, header, config) {
+                      console.log("[ERROR] creature/template/" + $scope.entityEntry + " $http.get request failed");
+                    });
+                  }
+                }
+              })
+                .error(function (data, status, header, config) {
+                console.log("[ERROR] creature/spawn/guid/" + $scope.entityGuid + " $http.get request failed");
+              });
+
+            } else {
+
+              // Creature ENTRY
+              $scope.entityEntry = $stateParams.entryOrGuid;
+
+              /* Retrieve all creature_template datas */
+              $http.get( app.api + "creature/template/" + $scope.entityEntry )
+                .success(function (data, status, header, config) {
+                $scope.current_creature_template = $rootScope.fixNumericValues(data[0]);
+
+                $scope.selectionText += " (name: " + $scope.current_creature_template.name + ")";
+              })
+                .error(function (data, status, header, config) {
+                console.log("[ERROR] creature/template/" + $scope.entityEntry + " $http.get request failed");
+              });
+            }
+            break;
+
+          case 1: // GameObject
+            if ($stateParams.entryOrGuid < 0) {
+
+              // GameObject GUID
+              $scope.entityGuid = -$stateParams.entryOrGuid;
+
+              /* Retrieve gameobject_template.entry */
+              $http.get( app.api + "gameobject/spawn/guid/" + $scope.entityGuid)
+                .success(function (data, status, header, config) {
+                if (data.length < 1) {
+                  console.log("[WARNING] gameobject/spawn/guid/" + $scope.entityGuid + " returned 0 results: unable to find the entry of the gameobject.");
+                } else {
+                  if (!data[0].hasOwnProperty('id')) {
+                    console.log("[ERROR] gameobject/spawn/guid/" + $scope.entityGuid + " returned datas, but the attribute 'id' is not present.");
+                  } else {
+                    $scope.entityEntry = data[0].id;
+
+                    /* Retrieve all gameobject_template datas */
+                    $http.get( app.api + "gameobject/template/" + $scope.entityEntry )
+                      .success(function (data, status, header, config) {
+                      $scope.current_gameobject_template = $rootScope.fixNumericValues(data[0]);
+
+                      $scope.selectionText += " (name: " + $scope.current_gameobject_template.name + ", entry: " + $scope.entityEntry + ")";
+                    })
+                      .error(function (data, status, header, config) {
+                      console.log("[ERROR] gameobject/template/" + $scope.entityEntry + " $http.get request failed");
+                    });
+                  }
+                }
+              })
+                .error(function (data, status, header, config) {
+                console.log("[ERROR] gameobject/spawn/guid/" + $scope.entityGuid + " $http.get request failed");
+              });
+
+            } else {
+
+              // GameObject ENTRY
+              $scope.entityEntry = $stateParams.entryOrGuid;
+
+              /* Retrieve all gameobject_template datas */
+              $http.get( app.api + "gameobject/template/" + $scope.entityEntry )
+                .success(function (data, status, header, config) {
+                $scope.current_gameobject_template = $rootScope.fixNumericValues(data[0]);
+
+                $scope.selectionText += " (name: " + $scope.current_gameobject_template.name + ")";
+              })
+                .error(function (data, status, header, config) {
+                console.log("[ERROR] gameobject/template/" + $scope.entityEntry + " $http.get request failed");
+              });
+            }
+            break;
+
+          case 2: // AreaTrigger
+            break;
+
+          case 9: // Timed Actionlist
+            break;
+
+          default:
+            console.log("[WARNING] source_type = " + $stateParams.sourceType + " not yet supported");
+        }
+
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] smart_scripts/" + $stateParams.sourceType + "/" + $stateParams.entryOrGuid + " $http.get request failed");
