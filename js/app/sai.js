@@ -36,7 +36,12 @@
     };
 
     /* Init arrays */
-    $scope.smart_scripts  = [];
+    $scope.search_smart_scripts   = [];
+    $scope.new_smart_scripts      = [];
+    $scope.current_smart_scripts  = [];
+
+    /* Default source_type of search */
+    $scope.search_smart_scripts.source_type = 0;
 
     /* Check if an entity (smart_scripts.source_type AND smart_scripts.entryorguid) is selected */
     if ($stateParams.sourceType && $stateParams.entryOrGuid) {
@@ -234,6 +239,7 @@
     $scope.openScriptTab = function() {
       $scope.generateSAIScript();
       $scope.saiTabs.search = false;
+      $scope.saiTabs.new    = false;
       $scope.saiTabs.editor = false;
       $scope.saiTabs.script = true;
     };
