@@ -36,12 +36,16 @@
     };
 
     /* Init arrays */
+    $scope.exactResult            = [];
     $scope.search_smart_scripts   = [];
     $scope.new_smart_scripts      = [];
     $scope.current_smart_scripts  = [];
 
     /* Default source_type of search */
     $scope.search_smart_scripts.source_type = 0;
+
+    /* Do not show exact result div in search by default */
+    $scope.foundExactResult = false;
 
     /* Check if an entity (smart_scripts.source_type AND smart_scripts.entryorguid) is selected */
     if ($stateParams.sourceType && $stateParams.entryOrGuid) {
@@ -218,10 +222,20 @@
     /* [Function] Search */
     $scope.search = function (sourceType, entryOrGuid) {
 
-      if (entryOrGuid && !sourceType && entryOrGuid.length < 2) {
-        alert("Please insert an Entry or GUID of at least 2 digits or specific the Source Type");
-        return;
-      }
+      $http.get( app.api + "/smart_scripts/" + sourceType + "/" + entryOrGuid )
+        .success(function (data, status, header, config) {
+        if (data.length > 0) {
+          $scope.exactResult.entryOrGuid    = data[0].entryorguid;
+          $scope.exactResult.sourceType     = data[0].source_type;
+          $scope.exactResult.sourceTypeName = $scope.sourceTypesConst[sourceType];
+          $scope.foundExactResult = true;
+        } else {
+          $scope.foundExactResult = false;
+        }
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] SMART SCRIPTS EXACT SEARCH $http.get request failed");
+      });
 
       $http.get( app.api + "/search/smart_scripts/", {
         params: {
