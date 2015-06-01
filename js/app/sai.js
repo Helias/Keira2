@@ -282,7 +282,11 @@
 
       // smart_scripts datas
       $scope.SAIScript += "-- Table smart_scripts\n";
-      $scope.SAIScript += app.getFullDeleteInsertTwoKeys("smart_scripts", "source_type", "entryorguid", $scope.new_smart_scripts);
+      if ($scope.new_smart_scripts.length > 0) {
+        $scope.SAIScript += app.getFullDeleteInsertTwoKeys("smart_scripts", "source_type", "entryorguid", $scope.new_smart_scripts);
+      } else {
+        $scope.SAIScript += "DELETE FROM `smart_scripts` WHERE (`source_type` = " + $stateParams.sourceType + " AND `entryorguid` = " + $stateParams.entryOrGuid + ");\n";
+      }
     };
 
     /* [Function] disactive all tabs */
