@@ -287,7 +287,7 @@
     <div class="row">
       <p class="h5 text-center">Event</p>
       <div class="col-xs-7">
-        <small>{{ (event_type.param1[selected.event_type] != "" && event_type.param1[selected.event_type] != null) ? event_type.param1[selected.event_type] : "param1" }}</small>
+        <small>{{ (saiLabels.event_type.param1[selected.event_type] && saiLabels.event_type.param1[selected.event_type] != "") ? saiLabels.event_type.param1[selected.event_type] : "param1" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.event_param1">
@@ -295,7 +295,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (event_type.param2[selected.event_type] != "" && event_type.param2[selected.event_type] != null) ? event_type.param2[selected.event_type] : "param2" }}</small>
+        <small>{{ (saiLabels.event_type.param2[selected.event_type] && saiLabels.event_type.param2[selected.event_type] != "") ? saiLabels.event_type.param2[selected.event_type] : "param2" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.event_param2">
@@ -303,7 +303,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (event_type.param3[selected.event_type] != "" && event_type.param3[selected.event_type] != null) ? event_type.param3[selected.event_type] : "param3" }}</small>
+        <small>{{ (saiLabels.event_type.param3[selected.event_type] && saiLabels.event_type.param3[selected.event_type] != "") ? saiLabels.event_type.param3[selected.event_type] : "param3" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.event_param3">
@@ -311,7 +311,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (event_type.param4[selected.event_type] != "" && event_type.param4[selected.event_type] != null) ? event_type.param4[selected.event_type] : "param4" }}</small>
+        <small>{{ (saiLabels.event_type.param4[selected.event_type] && saiLabels.event_type.param4[selected.event_type] != "") ? saiLabels.event_type.param4[selected.event_type] : "param4" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.event_param4">
@@ -323,7 +323,7 @@
     <div class="row">
       <p class="h5 text-center">Action</p>
       <div class="col-xs-7">
-        <small>{{ (action_type.param1[selected.action_type] != "" && action_type.param1[selected.action_type] != null) ? action_type.param1[selected.action_type] : "param1" }}</small>
+        <small>{{ (saiLabels.action_type.param1[selected.action_type] && saiLabels.action_type.param1[selected.action_type] != "") ? saiLabels.action_type.param1[selected.action_type] : "param1" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.action_param1">
@@ -331,7 +331,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (action_type.param2[selected.action_type] != "" && action_type.param2[selected.action_type] != null) ? action_type.param2[selected.action_type] : "param2" }}</small>
+        <small>{{ (saiLabels.action_type.param2[selected.action_type] && saiLabels.action_type.param2[selected.action_type] != "") ? saiLabels.action_type.param2[selected.action_type] : "param2" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.action_param2">
@@ -339,7 +339,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (action_type.param3[selected.action_type] != "" && action_type.param3[selected.action_type] != null) ? action_type.param3[selected.action_type] : "param3" }}</small>
+        <small>{{ (saiLabels.action_type.param3[selected.action_type] && saiLabels.action_type.param3[selected.action_type] != "") ? saiLabels.action_type.param3[selected.action_type] : "param3" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.action_param3">
@@ -347,7 +347,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (action_type.param4[selected.action_type] != "" && action_type.param4[selected.action_type] != null) ? action_type.param4[selected.action_type] : "param4" }}</small>
+        <small>{{ (saiLabels.action_type.param4[selected.action_type] && saiLabels.action_type.param4[selected.action_type] != "") ? saiLabels.action_type.param4[selected.action_type] : "param4" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.action_param4">
@@ -355,7 +355,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (action_type.param5[selected.action_type] != "" && action_type.param5[selected.action_type] != null) ? action_type.param5[selected.action_type] : "param5" }}</small>
+        <small>{{ (saiLabels.action_type.param5[selected.action_type] && saiLabels.action_type.param5[selected.action_type] != "") ? saiLabels.action_type.param5[selected.action_type] : "param5" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.action_param5">
@@ -363,7 +363,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (action_type.param6[selected.action_type] != "" && action_type.param6[selected.action_type] != null) ? action_type.param6[selected.action_type] : "param6" }}</small>
+        <small>{{ (saiLabels.action_type.param6[selected.action_type] && saiLabels.action_type.param6[selected.action_type] != "") ? saiLabels.action_type.param6[selected.action_type] : "param6" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.action_param6">
@@ -375,7 +375,7 @@
     <div class="row">
       <p class="h5 text-center">Target</p>
       <div class="col-xs-7">
-        <small>{{ (target_type.param1[selected.target_type] != "" && target_type.param1[selected.target_type] != null) ? target_type.param1[selected.target_type] : "param1" }}</small>
+        <small>{{ (saiLabels.target_type.param1[selected.target_type] && saiLabels.target_type.param1[selected.target_type] != "") ? saiLabels.target_type.param1[selected.target_type] : "param1" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.target_param1">
@@ -383,7 +383,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (target_type.param2[selected.target_type] != "" && target_type.param2[selected.target_type] != null) ? target_type.param2[selected.target_type] : "param2" }}</small>
+        <small>{{ (saiLabels.target_type.param2[selected.target_type] && saiLabels.target_type.param2[selected.target_type] != "") ? saiLabels.target_type.param2[selected.target_type] : "param2" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.target_param2">
@@ -391,7 +391,7 @@
     </div>
     <div class="row">
       <div class="col-xs-7">
-        <small>{{ (target_type.param3[selected.target_type] != "" && target_type.param3[selected.target_type] != null) ? target_type.param3[selected.target_type] : "param3" }}</small>
+        <small>{{ (saiLabels.target_type.param3[selected.target_type] && saiLabels.target_type.param3[selected.target_type] != "") ? saiLabels.target_type.param3[selected.target_type] : "param3" }}</small>
       </div>
       <div class="col-xs-4">
         <input class="form-control input-xs" type="text" ng-value="selected.target_param3">
