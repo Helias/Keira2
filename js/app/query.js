@@ -23,7 +23,7 @@
     for (i = 0; i < cleanedRows.length; i++) {
       for (key in cleanedRows[i]) {
         if (cleanedRows[i].hasOwnProperty(key)) {
-          if (!isNaN(cleanedRows[i][key])) {
+          if (!isNaN(cleanedRows[i][key]) && cleanedRows[i][key] != "") {
             cleanedRows[i][key] = Number(cleanedRows[i][key]);
           }
         }
@@ -53,7 +53,7 @@
       if (currentRow[key] !== newRow[key]) {
 
         // Convert numeric values
-        if (!isNaN(currentRow[key]) && !isNaN(newRow[key])) {
+        if (!isNaN(currentRow[key]) && !isNaN(newRow[key]) && newRow[key] != "") {
           newRow[key] = Number(newRow[key]);
         }
 
@@ -157,7 +157,7 @@
 
     // convert any numbers to numeric values
     for (i = 0; i < involvedRows.length; i++) {
-      if (!isNaN(involvedRows[i])) {
+      if (!isNaN(involvedRows[i]) && involvedRows[i] != "") {
         involvedRows[i] = Number(involvedRows[i]);
       }
     }
@@ -240,7 +240,7 @@
 
     // convert any numbers to numeric values
     for (i = 0; i < involvedRows.length; i++) {
-      if (!isNaN(involvedRows[i])) {
+      if (!isNaN(involvedRows[i]) && involvedRows[i] != "") {
         involvedRows[i] = Number(involvedRows[i]);
       }
     }

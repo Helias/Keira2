@@ -1,4 +1,4 @@
-/*jslint browser: true, white: true, plusplus: true*/
+/*jslint browser: true, white: true, plusplus: true, eqeq: true*/
 /*global angular, console, alert, squel*/
 /*jslint es5: true */
 
@@ -30,7 +30,7 @@
       if (!Array.isArray(rows)) {
         for (key in rows) {
           if (rows.hasOwnProperty(key)) {
-            if (!isNaN(rows[key])) {
+            if (!isNaN(rows[key]) && rows[key] != "") {
               rows[key] = Number(rows[key]);
             }
           }
@@ -39,7 +39,7 @@
         for (i = 0; i < rows.length; i++) {
           for (key in rows[i]) {
             if (rows[i].hasOwnProperty(key)) {
-              if (!isNaN(rows[i][key])) {
+              if (!isNaN(rows[i][key]) && rows[i][key] != "") {
                 rows[i][key] = Number(rows[i][key]);
               }
             }
