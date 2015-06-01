@@ -24,11 +24,11 @@
 <table class="table table-striped table-condensed" ts-wrapper>
   <thead>
     <th class="text-center" ts-criteria="source_type|parseInt">SourceType</th>
-    <th class="text-center" ts-criteria="entry|parseInt">EntryOrGuid</th>
+    <th class="text-center" ts-criteria="entryorguid|parseInt">EntryOrGuid</th>
   </thead>
   <tbody>
     <tr ng-repeat="script in scripts" ts-repeat>
-      <td><a ng-href="./#/sai/{{ script.source_type }}/{{ script.entryorguid }}">{{ script.source_type }}</a></td>
+      <td><a>{{ script.source_type }}</a></td>
       <td><a ng-href="./#/sai/{{ script.source_type }}/{{ script.entryorguid }}">{{ script.entryorguid }}</a></td>
     </tr>
   </tbody>
