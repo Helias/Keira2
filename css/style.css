@@ -75,3 +75,8 @@
 .input-margin input {
   margin-top: 5px;
 }
+
+.tooltip-inner {
+    max-width: 300px !important;
+    width: 300px !important;
+}

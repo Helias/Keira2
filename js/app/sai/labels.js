@@ -33,6 +33,22 @@
   app.saiLabels.target_type.param2 = [];
   app.saiLabels.target_type.param3 = [];
 
+  app.saiLabels.action_type.paramTooltip1 = [];
+  app.saiLabels.action_type.paramTooltip2 = [];
+  app.saiLabels.action_type.paramTooltip3 = [];
+  app.saiLabels.action_type.paramTooltip4 = [];
+  app.saiLabels.action_type.paramTooltip5 = [];
+  app.saiLabels.action_type.paramTooltip6 = [];
+
+  app.saiLabels.event_type.paramTooltip1 = [];
+  app.saiLabels.event_type.paramTooltip2 = [];
+  app.saiLabels.event_type.paramTooltip3 = [];
+  app.saiLabels.event_type.paramTooltip4 = [];
+
+  app.saiLabels.target_type.paramTooltip1 = [];
+  app.saiLabels.target_type.paramTooltip2 = [];
+  app.saiLabels.target_type.paramTooltip3 = [];
+
   app.saiLabels.action_type.param1[1]   = "GroupId";
   app.saiLabels.action_type.param1[2]   = "FactionId";
   app.saiLabels.action_type.param1[3]   = "Creature entry";
@@ -397,5 +413,122 @@
   app.saiLabels.target_type.param3[9]  = "Maximum distance";
   app.saiLabels.target_type.param3[13] = "Maximum distance";
   app.saiLabels.target_type.param3[19] = "Must be dead (0/1)";
+
+  app.saiLabels.action_type.paramTooltip1[1]   = "creature_text.groupid";
+  app.saiLabels.action_type.paramTooltip1[20]  = "If set to 0 it means the creature will stop attacking its current target. Otherwise it starts / continues to attack its target.";
+  app.saiLabels.action_type.paramTooltip1[21]  = "If set to 0 it means the creature is no longer able to move AT ALL during combat. If set to 1 it means it's allowed to normally walk during combat.";
+  app.saiLabels.action_type.paramTooltip1[25]  = "Determines whether or not the creature should say something along the lines of \"<name> starts fleeing ...\" when it flees. If 0, it won't say anything (unless set manually). If above 0 it will say the automatic text.";
+  app.saiLabels.action_type.paramTooltip1[28]  = "Amount of charges of said aura to be removed. If 0, the whole aura is removed.";
+  app.saiLabels.action_type.paramTooltip1[36]  = "The creature entry we want to become (creature_template.entry)";
+  app.saiLabels.action_type.paramTooltip1[39]  = "Radius to call for help within";
+  app.saiLabels.action_type.paramTooltip1[53]  = "If set to 0, the creature will follow the path walking at a normal speed. If set to anything above 0 it will be running at a higher speed.";
+  app.saiLabels.action_type.paramTooltip1[55]  = "Time in milliseconds after which the creature despawns when the path was stopped.";
+  app.saiLabels.action_type.paramTooltip1[69]  = "If set to a value, SMART_EVENT_MOVEMENTINFORM will be called with this number when the unit finished moving to this position.";
+  app.saiLabels.action_type.paramTooltip1[71]  = "Entry of creature_equip_template. If left at 0, either parameter 3, 4 or 5 (or all, or just two) must be filled in with item entries to equip.";
+  app.saiLabels.action_type.paramTooltip1[107] = "Group id column in the creature_summon_groups table (world database).";
+
+  app.saiLabels.action_type.paramTooltip2[1]   = "Duration to wait before SMART_EVENT_TEXT_OVER event is triggered";
+  app.saiLabels.action_type.paramTooltip2[4]   = "If 0, everybody within the visibility range will hear the sound";
+  app.saiLabels.action_type.paramTooltip2[18]  = "Determines which unit flag to target; if 0, it targets the default unit flags which is creature_template.unit_flags. If set to 1 or higher, it targets creature_template.unit_flags2 (notice the '2') which has different values.";
+  app.saiLabels.action_type.paramTooltip2[19]  = "Determines which unit flag to target; if 0, it targets the default unit flags which is creature_template.unit_flags. If set to 1 or higher, it targets creature_template.unit_flags2 (notice the '2') which has different values.";
+  app.saiLabels.action_type.paramTooltip2[36]  = "Identifier of which faction the creature should become. If set to 0, it will set the creature's faction to creature_template.faction_a. If anything other than 1 it will be set to creature_template.faction_h.";
+  app.saiLabels.action_type.paramTooltip2[39]  = "Indicator whether or not we should automatically make the creature emote \"<name> calls for help!\" (which is usually blizzlike).";
+  app.saiLabels.action_type.paramTooltip2[53]  = "Entry of the `waypoints` (world database) table to follow.";
+  app.saiLabels.action_type.paramTooltip2[55]  = "Quest entry to count as 'failed' (based on third parameter). Does not have to be set if third parameter is set to 0.";
+  app.saiLabels.action_type.paramTooltip2[71]  = "Slotmask we show. Default is 0 and means all items are shown. If you only want to show one specific item (or two instead of all three), this field should be used as a bitmask starting at 1. Possible bits are 1, 2 and 4.";
+  app.saiLabels.action_type.paramTooltip2[80]  = "The timer update type. If set to 0, the script will only occur out of combat. If set to 1, it will only occur during combat and if set to 2 it will always occur.";
+  app.saiLabels.action_type.paramTooltip2[90]  = "If set to 0, it targets the stand states (stand/sit/sleep/etc.). If set to 1, it targets something talent-related for pets (don't use). If set to 2, it targets the stand flags (creep/untrackable/etc.) and if set to 3 it targets the stand misc. flags (hover/always-stand/etc.).";
+  app.saiLabels.action_type.paramTooltip2[91]  = "If set to 0, it targets the stand states (stand/sit/sleep/etc.). If set to 1, it targets something talent-related for pets (don't use). If set to 2, it targets the stand flags (creep/untrackable/etc.) and if set to 3 it targets the stand misc. flags (hover/always-stand/etc.).";
+  app.saiLabels.action_type.paramTooltip2[92]  = "If left at 0, the core will interrupt the currently being cast spell (based on the with-delay and instant parameters, of course)";
+  app.saiLabels.action_type.paramTooltip2[98]  = "Uses the `id` value from the `npc_text` table in the world database";
+
+  app.saiLabels.action_type.paramTooltip3[12]  = "Duration the creature will be summoned (in milliseconds).";
+  app.saiLabels.action_type.paramTooltip3[29]  = "Default is 0. If it's not 0 it means the follow will finish ONLY once the creature is within interaction distance (5 yards) of the given entry.";
+  app.saiLabels.action_type.paramTooltip3[53]  = "Repeat the path when the it's finished.";
+  app.saiLabels.action_type.paramTooltip3[55]  = "If set to 1, we will mark the quest in parameter 2 to failed for our player targets.";
+  app.saiLabels.action_type.paramTooltip3[71]  = "Item entry one (main hand slot) (only has use if the first parameter is 0)";
+
+  app.saiLabels.action_type.paramTooltip4[12]  = "Identicator whether or not the summoned creature should attack the action invoker (SMART_TARGET_ACTION_INVOKER) when it's summoned. 0 means it won't, 1 means it will attack.";
+  app.saiLabels.action_type.paramTooltip4[29]  = "The creature id that will be given as a quest credit when the follow has finished for whatever reason.";
+  app.saiLabels.action_type.paramTooltip4[53]  = "Quest entry to give credit for once the path has finished. Will use the target type and take all player entities from this list.";
+  app.saiLabels.action_type.paramTooltip4[67]  = "Only set this if the event repeats.";
+  app.saiLabels.action_type.paramTooltip4[71]  = "Item entry two (off hand slot) (only has use if the first parameter is 0)";
+
+  app.saiLabels.action_type.paramTooltip5[29]  = "Requires the 4th parameter to be set and valid; determines whether the entry in parameter 4 is a monster kill or event happening. If you're not sure what they mean, read the quest_template wiki.";
+  app.saiLabels.action_type.paramTooltip5[53]  = "Time in milliseconds to wait after the path ended before we despawn.";
+  app.saiLabels.action_type.paramTooltip5[67]  = "Only set this if the event repeats.";
+  app.saiLabels.action_type.paramTooltip5[71]  = "Item entry three (gun/bow/etc. slot) (only has use if the first parameter is 0)";
+
+  app.saiLabels.action_type.paramTooltip6[53]  = "Reactstate that is set when the waypoint starts.";
+
+  app.saiLabels.event_type.paramTooltip1[0]  = "Timer min";
+  app.saiLabels.event_type.paramTooltip1[1]  = "Timer min";
+  app.saiLabels.event_type.paramTooltip1[2]  = "Timer min";
+  app.saiLabels.event_type.paramTooltip1[3]  = "Timer min";
+  app.saiLabels.event_type.paramTooltip1[8]  = "Spell id that will limit this event to only be triggered if the spell that hit us has this id. If left at 0, it works for EVERY spell.";
+  app.saiLabels.event_type.paramTooltip1[9]  = "Minimum distance to target for the event to be triggered";
+  app.saiLabels.event_type.paramTooltip1[10] = "If 0, we allow only non-hostile units to trigger this event for us. If set to 1, we only allow hostile units to triger this event.";
+  app.saiLabels.event_type.paramTooltip1[11] = "The condition type for this event to trigger. This is used to determine whether we should check if the mapid (parameter 2) or the zoneid (parameter 3) should be checked for correctness.";
+  app.saiLabels.event_type.paramTooltip1[14] = "Health the friendly unit must be at. Warning: this is NOT health percentage!";
+  app.saiLabels.event_type.paramTooltip1[16] = "Spell id for the event to trigger. If the spellid is negative it means the event is reversed and triggered only when the aura is actually active on the friendly unit.";
+  app.saiLabels.event_type.paramTooltip1[17] = "Creature entry that must be summoned in order for this event to trigger. If left at 0 it will be triggered by any creature entry.";
+  app.saiLabels.event_type.paramTooltip1[19] = "Quest id to trigger this event; if the parameter is 0 it means it will be triggered by ANY quest.";
+  app.saiLabels.event_type.paramTooltip1[20] = "Quest id to trigger this event; if the parameter is 0 it means it will be triggered by ANY quest.";
+  app.saiLabels.event_type.paramTooltip1[23] = "Spell id for the event to trigger. If the spellid is negative it means the event is reversed and triggered only when the aura is not present on the creature.";
+  app.saiLabels.event_type.paramTooltip1[24] = "Spell id for the event to trigger. If the spellid is negative it means the event is reversed and triggered only when the aura is not present on the creature.";
+  app.saiLabels.event_type.paramTooltip1[26] = "If 0, we allow only non-hostile units to trigger this event for us. If set to 1, we only allow hostile units to triger this event.";
+  app.saiLabels.event_type.paramTooltip1[32] = "Minimum amount of damage required to trigger this event";
+  app.saiLabels.event_type.paramTooltip1[33] = "Minimum amount of damage required to trigger this event";
+  app.saiLabels.event_type.paramTooltip1[35] = "Creature entry to act as a condition. If left at 0, this event is triggered for any summon that despawn. If an entry is given, it is only triggered when that specific entry despawns.";
+  app.saiLabels.event_type.paramTooltip1[38] = "First parameter of SMART_ACTION_SET_DATA";
+  app.saiLabels.event_type.paramTooltip1[46] = "Entry of the areatrigger to make this event happen. If left at 0 it will trigger for any areatrigger.";
+  app.saiLabels.event_type.paramTooltip1[52] = "The creature_text.groupid value to trigger this event for";
+  app.saiLabels.event_type.paramTooltip1[53] = "Minimum required value the heal effect must be in order to trigger this event";
+  app.saiLabels.event_type.paramTooltip1[59] = "First parameter of SMART_ACTION_CREATE_TIMED_EVENT";
+  app.saiLabels.event_type.paramTooltip1[62] = "This is the gossip_menu.entry identifier";
+  app.saiLabels.event_type.paramTooltip1[70] = "The new state of the gameobject after this event";
+  app.saiLabels.event_type.paramTooltip1[75] = "Guid of the creature we want to check for. Can be left on 0 if the entry is given.";
+  app.saiLabels.event_type.paramTooltip1[76] = "Guid of the gameobject we want to check for. Can be left on 0 if the entry is given.";
+
+  app.saiLabels.event_type.paramTooltip2[0]  = "Timer max";
+  app.saiLabels.event_type.paramTooltip2[1]  = "Timer max";
+  app.saiLabels.event_type.paramTooltip2[2]  = "Timer max";
+  app.saiLabels.event_type.paramTooltip2[3]  = "Timer max";
+  app.saiLabels.event_type.paramTooltip2[9]  = "Maximum distance to target for the event to be triggered";
+  app.saiLabels.event_type.paramTooltip2[32] = "Maximum allowed damage to make this event be able to trigger";
+  app.saiLabels.event_type.paramTooltip2[33] = "Maximum allowed damage to make this event be able to trigger";
+  app.saiLabels.event_type.paramTooltip2[38] = "Second parameter of SMART_ACTION_SET_DATA";
+  app.saiLabels.event_type.paramTooltip2[53] = "Maximum allowed value of the heal effect to allow this event to trigger";
+  app.saiLabels.event_type.paramTooltip2[62] = "This is the gossip_menu_option.id identifier";
+  app.saiLabels.event_type.paramTooltip2[75] = "Entry of the creature we want to check for. Can be left on 0 if the guid is given.";
+  app.saiLabels.event_type.paramTooltip2[76] = "Entry of the gameobject we want to check for. Can be left on 0 if the guid is given.";
+
+  app.saiLabels.event_type.paramTooltip3[0]  = "Repeat timer min";
+  app.saiLabels.event_type.paramTooltip3[1]  = "Repeat timer min";
+  app.saiLabels.event_type.paramTooltip3[2]  = "Repeat timer min";
+  app.saiLabels.event_type.paramTooltip3[3]  = "Repeat timer min";
+  app.saiLabels.event_type.paramTooltip3[5]  = "Indicator if killed unit must be player only; if 0, the 4th parameter must be set to the creature id.";
+  app.saiLabels.event_type.paramTooltip3[9]  = "Timer min";
+  app.saiLabels.event_type.paramTooltip3[13] = "Spell id the target must be casting. If left at 0, it detects ANY spell.";
+  app.saiLabels.event_type.paramTooltip3[75] = "Min distance to the creature that'll make the event trigger";
+  app.saiLabels.event_type.paramTooltip3[76] = "Min distance to the gameobject that'll make the event trigger";
+
+  app.saiLabels.event_type.paramTooltip4[0]  = "Repeat timer max";
+  app.saiLabels.event_type.paramTooltip4[1]  = "Repeat timer max";
+  app.saiLabels.event_type.paramTooltip4[2]  = "Repeat timer max";
+  app.saiLabels.event_type.paramTooltip4[3]  = "Repeat timer max";
+  app.saiLabels.event_type.paramTooltip4[5]  = "Entry of the creature that has to be killed for this event to trigger. Only has effect if third parameter is set to 0.";
+  app.saiLabels.event_type.paramTooltip4[9]  = "Timer max";
+  app.saiLabels.event_type.paramTooltip4[75] = "Timer to check for distance. It's not a good idea to leave this at 0, having a handful of events doing that can slow down your core big time.";
+  app.saiLabels.event_type.paramTooltip4[76] = "Timer to check for distance. It's not a good idea to leave this at 0, having a handful of events doing that can slow down your core big time.";
+
+  app.saiLabels.target_type.paramTooltip1[9]  = "If left at 0, it will target all creatures within the given distance";
+  app.saiLabels.target_type.paramTooltip1[11] = "If left at 0, it will target all creatures within the given distance";
+  app.saiLabels.target_type.paramTooltip1[13] = "If left at 0, it will target all gameobjects within the given distance";
+  app.saiLabels.target_type.paramTooltip1[15] = "If left at 0, it will target all gameobjects within the given distance";
+  app.saiLabels.target_type.paramTooltip1[19] = "If left at 0, it will target the closest creature of ANY entry";
+  app.saiLabels.target_type.paramTooltip1[20] = "If left at 0, it will target the closest creature of ANY entry";
+
+  app.saiLabels.target_type.paramTooltip3[19] = "If set to 0 it will only target alive creatures; if set to 1 it will target only alive creatures";
 
 }());
