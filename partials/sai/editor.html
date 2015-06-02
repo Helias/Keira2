@@ -49,7 +49,7 @@
         <input class="form-control input-xs" type="text" ng-model="selected.link">
       </div>
       <div class="col-xs-3">
-        <small>Phasemask</small>
+        <small>Phase</small>
         <input class="form-control input-xs" type="text" ng-model="selected.event_phase_mask">
       </div>
       <div class="col-xs-3">
@@ -72,6 +72,7 @@
   <div class="col-xs-3 text-left input-margin">
     <div class="row">
       <p class="h5 text-center">Event</p>
+      <p class="text-center" ng-click="toggleMin()" tooltip="{{ saiLabels.event_type.tooltip[selected.event_type] ? saiLabels.event_type.tooltip[selected.event_type] : '' }}"><small>{{ saiLabels.event_type.name[selected.event_type] }}&nbsp; <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></p>
       <div class="col-xs-7">
         <small>{{ (saiLabels.event_type.param1[selected.event_type] && saiLabels.event_type.param1[selected.event_type] != "") ? saiLabels.event_type.param1[selected.event_type] : "param1" }}</small>
       </div>
@@ -108,6 +109,7 @@
   <div class="col-xs-3 text-left input-margin">
     <div class="row">
       <p class="h5 text-center">Action</p>
+      <p class="text-center" ng-click="toggleMin()" tooltip="{{ saiLabels.action_type.tooltip[selected.action_type] ? saiLabels.action_type.tooltip[selected.action_type] : '' }}"><small>{{ saiLabels.action_type.name[selected.action_type] }}&nbsp; <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></p>
       <div class="col-xs-7">
         <small>{{ (saiLabels.action_type.param1[selected.action_type] && saiLabels.action_type.param1[selected.action_type] != "") ? saiLabels.action_type.param1[selected.action_type] : "param1" }}</small>
       </div>
@@ -160,6 +162,7 @@
   <div class="col-xs-3 text-left input-margin">
     <div class="row">
       <p class="h5 text-center">Target</p>
+      <p class="text-center" ng-click="toggleMin()" tooltip="{{ saiLabels.target_type.tooltip[selected.target_type] ? saiLabels.target_type.tooltip[selected.target_type] : '' }}"><small>{{ saiLabels.target_type.name[selected.target_type] }}&nbsp; <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></p>
       <div class="col-xs-7">
         <small>{{ (saiLabels.target_type.param1[selected.target_type] && saiLabels.target_type.param1[selected.target_type] != "") ? saiLabels.target_type.param1[selected.target_type] : "param1" }}</small>
       </div>

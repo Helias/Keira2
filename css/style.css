@@ -65,7 +65,7 @@
 .sai-editor-head > div {
   border-left: 1px solid grey;
   border-top: 1px solid grey;
-  min-height: 228px;
+  min-height: 256px;
 }
 
 .sai-editor-head > div:last-child {
