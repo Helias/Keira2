@@ -4,6 +4,10 @@
   max-width: none !important;
 }
 
+.modal-lg {
+  width: 1170px;
+}
+
 .input-xs {
   height: 22px;
   padding: 2px 5px;
@@ -69,7 +73,7 @@
 }
 
 .sai-editor-head > div:last-child {
- border-right: 1px solid grey;
+  border-right: 1px solid grey;
 }
 
 .input-margin input {
@@ -77,6 +81,6 @@
 }
 
 .tooltip-inner {
-    max-width: 300px !important;
-    width: 300px !important;
+  max-width: 300px !important;
+  width: 300px !important;
 }

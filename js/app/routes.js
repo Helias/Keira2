@@ -6,8 +6,9 @@
 
   var app = angular.module('keira2');
 
-  // routing
-  app.config(function ($stateProvider, $urlRouterProvider) {
+  app.config(function ($stateProvider, $urlRouterProvider, hljsServiceProvider) {
+
+    /* routing */
 
     // default route
     $urlRouterProvider.otherwise("/");
@@ -68,12 +69,12 @@
       controller: 'CharacterController',
       templateUrl: 'partials/character.html'
     })
-    .state('sai', {
+      .state('sai', {
       url: '/sai',
       controller: 'SmartAIController',
       templateUrl: 'partials/sai.html'
     })
-    .state('saiSelected', {
+      .state('saiSelected', {
       url: '/sai/:sourceType/:entryOrGuid',
       controller: 'SmartAIController',
       templateUrl: 'partials/sai.html'
