@@ -236,22 +236,22 @@
       <th class="text-center"></th>
       <th class="text-center">id</th>
       <th class="text-center">link</th>
-      <th class="text-center">event_type</th>
-      <th class="text-center" ng-show="!showBasicInformations">event_phase_mask</th>
-      <th class="text-center" ng-show="!showBasicInformations">event_chance</th>
-      <th class="text-center" ng-show="!showBasicInformations">event_flags</th>
+      <th class="text-center">event</th>
+      <th class="text-center">phase</th>
+      <th class="text-center">chance</th>
+      <th class="text-center">flags</th>
       <th class="text-center" ng-show="!showBasicInformations">event_param1</th>
       <th class="text-center" ng-show="!showBasicInformations">event_param2</th>
       <th class="text-center" ng-show="!showBasicInformations">event_param3</th>
       <th class="text-center" ng-show="!showBasicInformations">event_param4</th>
-      <th class="text-center">action_type</th>
+      <th class="text-center">action</th>
       <th class="text-center" ng-show="!showBasicInformations">action_param1</th>
       <th class="text-center" ng-show="!showBasicInformations">action_param2</th>
       <th class="text-center" ng-show="!showBasicInformations">action_param3</th>
       <th class="text-center" ng-show="!showBasicInformations">action_param4</th>
       <th class="text-center" ng-show="!showBasicInformations">action_param5</th>
       <th class="text-center" ng-show="!showBasicInformations">action_param6</th>
-      <th class="text-center">target_type</th>
+      <th class="text-center">target</th>
       <th class="text-center" ng-show="!showBasicInformations">target_param1</th>
       <th class="text-center" ng-show="!showBasicInformations">target_param2</th>
       <th class="text-center" ng-show="!showBasicInformations">target_param3</th>
@@ -266,9 +266,9 @@
       <td>{{ row.id }}</td>
       <td>{{ row.link }}</td>
       <td>{{ row.event_type }}</td>
-      <td ng-show="!showBasicInformations">{{ row.event_phase_mask }}</td>
-      <td ng-show="!showBasicInformations">{{ row.event_chance }}</td>
-      <td ng-show="!showBasicInformations">{{ row.event_flags }}</td>
+      <td>{{ row.event_phase_mask }}</td>
+      <td>{{ row.event_chance }}</td>
+      <td>{{ row.event_flags }}</td>
       <td ng-show="!showBasicInformations">{{ row.event_param1 }}</td>
       <td ng-show="!showBasicInformations">{{ row.event_param2 }}</td>
       <td ng-show="!showBasicInformations">{{ row.event_param3 }}</td>
