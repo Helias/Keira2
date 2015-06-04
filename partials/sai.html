@@ -1,10 +1,10 @@
 <small class="selection-text"><strong>{{ selectionText }}</strong></small>
 <tabset>
-  <tab id="tab-search" heading="Search" active="saiTabs.search">
+  <tab id="tab-search" heading="Search existing scripts" active="saiTabs.search">
     <div ng-include="'partials/sai/search.html'"></div>
   </tab>
-  <tab heading="Create new" active="saiTabs.create" ng-controller="CreateNewSAIController">
-    <div ng-include="'partials/sai/create-new.html'"></div>
+  <tab heading="Search by entity" active="saiTabs.create" ng-controller="SearchByEntitySAIController">
+    <div ng-include="'partials/sai/search-by-entity.html'"></div>
   </tab>
   <tab heading="SmartAI Editor" active="saiTabs.editor" ng-controller="SmartAIEditorController">
     <div ng-include="'partials/sai/editor.html'"></div>
