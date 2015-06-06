@@ -11,6 +11,8 @@
   /* Init arrays */
   app.constants = [];
   app.saiConstants = [];
+  app.modalConstants = [];
+
 
   /* UNIT_FLAG constants */
   app.constants.unitFlag = {
@@ -402,5 +404,49 @@
     8      : 0x080,
     9      : 0x100
   };
+
+  /* creature family constants */
+  app.modalConstants.family = [];
+  app.modalConstants.family[1] = "Wolf";
+  app.modalConstants.family[2] = "Cat";
+  app.modalConstants.family[3] = "Spider";
+  app.modalConstants.family[4] = "Bear";
+  app.modalConstants.family[5] = "Boar";
+  app.modalConstants.family[6] = "Crocolisk";
+  app.modalConstants.family[7] = "Carrion Bird";
+  app.modalConstants.family[8] = "Crab";
+  app.modalConstants.family[9] = "Gorilla";
+  app.modalConstants.family[11] = "Raptor";
+  app.modalConstants.family[12] = "Tallstrider";
+  app.modalConstants.family[15] = "Felhunter";
+  app.modalConstants.family[16] = "Voidwalker";
+  app.modalConstants.family[17] = "Succubus";
+  app.modalConstants.family[19] = "Doomguard";
+  app.modalConstants.family[20] = "Scorpid";
+  app.modalConstants.family[21] = "Turtle";
+  app.modalConstants.family[23] = "Imp";
+  app.modalConstants.family[24] = "Bat";
+  app.modalConstants.family[25] = "Hyena";
+  app.modalConstants.family[26] = "Bird of Prey";
+  app.modalConstants.family[27] = "Wind Serpent";
+  app.modalConstants.family[28] = "Remote Control";
+  app.modalConstants.family[29] = "Felguard";
+  app.modalConstants.family[30] = "Dragonhawk";
+  app.modalConstants.family[31] = "Ravager";
+  app.modalConstants.family[32] = "Warp Stalker";
+  app.modalConstants.family[33] = "Sporebat";
+  app.modalConstants.family[34] = "Nether Ray";
+  app.modalConstants.family[35] = "Serpent";
+  app.modalConstants.family[37] = "Moth";
+  app.modalConstants.family[38] = "Chimaera";
+  app.modalConstants.family[39] = "Devilsaur";
+  app.modalConstants.family[40] = "Ghoul";
+  app.modalConstants.family[41] = "Silithid";
+  app.modalConstants.family[42] = "Worm";
+  app.modalConstants.family[43] = "Rhino";
+  app.modalConstants.family[44] = "Wasp";
+  app.modalConstants.family[45] = "Core Hound";
+  app.modalConstants.family[46] = "Spirit Beast";
+
 
 }());
