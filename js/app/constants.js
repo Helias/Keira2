@@ -1332,7 +1332,7 @@
   app.modalConstants.race[19] = "NORTHREND_SKELETON (NOT USED)";
   app.modalConstants.race[20] = "ICE_TROLL (NOT USED)";
 
-  /* classes constants */
+  /* creature classes constants */
   app.modalConstants.classes = [];
   app.modalConstants.classes[0] = "WARRIOR";
   app.modalConstants.classes[1] = "PALADIN";
@@ -1345,5 +1345,57 @@
   app.modalConstants.classes[8] = "WARLOCK";
   app.modalConstants.classes[9] = "UNK";
   app.modalConstants.classes[10] = "DRUID";
+
+  /* item classes constants */
+  app.modalConstants.item_class = [];
+  app.modalConstants.item_class[0] = "Consumable";
+  app.modalConstants.item_class[1] = "Container";
+  app.modalConstants.item_class[2] = "Weapon";
+  app.modalConstants.item_class[3] = "Gem";
+  app.modalConstants.item_class[4] = "Armor";
+  app.modalConstants.item_class[5] = "Reagent";
+  app.modalConstants.item_class[6] = "Projectile";
+  app.modalConstants.item_class[7] = "Trade Goods";
+  app.modalConstants.item_class[8] = "Generic (OBSOLETE)";
+  app.modalConstants.item_class[9] = "Recipe";
+  app.modalConstants.item_class[10] = "Money (OBSOLETE)";
+  app.modalConstants.item_class[11] = "Quiver";
+  app.modalConstants.item_class[12] = "Quest";
+  app.modalConstants.item_class[13] = "Key";
+  app.modalConstants.item_class[14] = "Permanent (OBSOLETE)";
+  app.modalConstants.item_class[15] = "Miscellaneous";
+  app.modalConstants.item_class[16] = "Glyph";
+
+  /* InventorType constants */
+  app.modalConstants.InventorType = [];
+  app.modalConstants.InventorType[0] = "Non equipable";
+  app.modalConstants.InventorType[1] = "Head";
+  app.modalConstants.InventorType[2] = "Neck";
+  app.modalConstants.InventorType[3] = "Shoulder";
+  app.modalConstants.InventorType[4] = "Body (Shirt)";
+  app.modalConstants.InventorType[5] = "Chest";
+  app.modalConstants.InventorType[6] = "Waist (Belt)";
+  app.modalConstants.InventorType[7] = "Legs (Pants)";
+  app.modalConstants.InventorType[8] = "Feet (Boots)";
+  app.modalConstants.InventorType[9] = "Wrists (Bracers)";
+  app.modalConstants.InventorType[10] = "Hands (Gloves)";
+  app.modalConstants.InventorType[11] = "Finger (Ring)";
+  app.modalConstants.InventorType[12] = "Trinket";
+  app.modalConstants.InventorType[13] = "WEAPON One Hand";
+  app.modalConstants.InventorType[14] = "WEAPON Off Hand/SHIELD";
+  app.modalConstants.InventorType[15] = "Ranged (Bows)";
+  app.modalConstants.InventorType[16] = "Cloak (Back)";
+  app.modalConstants.InventorType[17] = "2HWEAPON Two-Hand";
+  app.modalConstants.InventorType[18] = "Bag (incl. Quivers)";
+  app.modalConstants.InventorType[19] = "Tabard";
+  app.modalConstants.InventorType[20] = "Robe";
+  app.modalConstants.InventorType[21] = "Main Hand";
+  app.modalConstants.InventorType[22] = "Off Hand (Misc Items)";
+  app.modalConstants.InventorType[23] = "Holdable (Tome)";
+  app.modalConstants.InventorType[24] = "Ammunition";
+  app.modalConstants.InventorType[25] = "Thrown";
+  app.modalConstants.InventorType[26] = "Ranged Right (Gun)";
+  app.modalConstants.InventorType[27] = "Quiver";
+  app.modalConstants.InventorType[28] = "Relic";
 
 }());

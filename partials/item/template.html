@@ -11,7 +11,13 @@
   </div>
   <div class="col-xs-1">
     <small>class</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.class">
+    <div class="input-group">
+      <input class="form-control input-xs" type="text" ng-model="new_item_template.class">
+      <div class="input-group-btn">
+        <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/class.html', new_item_template, 'class')">...</button>
+      </div>
+
+    </div>
   </div>
   <div class="col-xs-1">
     <small>subclass</small>
@@ -65,7 +71,12 @@
   </div>
   <div class="col-xs-1">
     <small>InventorType</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.InventorType">
+    <div class="input-group">
+      <input class="form-control input-xs" type="text" ng-model="new_item_template.InventorType">
+      <div class="input-group-btn">
+        <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/InventorType.html', new_item_template, 'InventorType')">...</button>
+      </div>
+    </div>
   </div>
   <div class="col-xs-1">
     <small>maxcount</small>
