@@ -8,7 +8,7 @@
       <th class="text-left">Value</th>
     </thead>
     <tbody>
-      <tr ng-repeat="inventorytpe in constants.InventorType track by $index" id="{{ $index }}" ng-click="selectModalRow($index)" ng-class="{'tr-selected': $index == selectedRow}" ng-show="inventorytpe !== NULL">
+      <tr ng-repeat="inventorytpe in constants.InventoryType track by $index" id="{{ $index }}" ng-click="selectModalRow($index)" ng-class="{'tr-selected': $index == selectedRow}" ng-show="inventorytpe !== NULL">
         <td>{{ $index }}</td>
         <td>{{ inventorytpe }}</td>
       </tr>
