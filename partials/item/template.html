@@ -86,15 +86,31 @@
     <div class="row">
       <div class="col-xs-4">
         <small>AllowableClass</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableClass">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableClass">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/creature/modals/class.html', new_item_template, 'AllowableClass')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-4">
         <small>AllowableRace</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableRace">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableRace">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/creature/modals/race.html', new_item_template, 'AllowableRace')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-4">
         <small>RequiredReputationFaction</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredReputationFaction">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredReputationFaction">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/creature/modals/faction.html', new_item_template, 'RequiredReputationFaction')">...</button>
+          </div>
+        </div>
+
       </div>
       <div class="col-xs-4">
         <small>ItemLevel</small>

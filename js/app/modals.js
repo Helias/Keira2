@@ -56,7 +56,7 @@
     // importing constants on Controller
     $scope.constants = app.modalConstants;
 
-    $scope.selectedRow = -1;
+    $scope.selectedRow = null;
 
     // Onclick the table row on the modal save the index
     $scope.selectModalRow = function(index) {
@@ -65,7 +65,7 @@
 
     // When click on the modal button "Ok" send the id value selected
     $scope.modalOk = function () {
-      if ($scope.selectedRow !== -1) {
+      if ($scope.selectedRow !== null) {
           $modalInstance.close( $scope.selectedRow );
       }
       else {
