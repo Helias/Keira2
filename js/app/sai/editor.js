@@ -175,15 +175,12 @@
           //! Action type
           fullLine += " - " + app.saiLabels.comment.action[smartScript.action_type];
 
-          console.log(fullLine);
-          console.log(fullLine.indexOf("_actionParamOne_"));
           fullLine = fullLine.replace("_actionParamOne_",   smartScript.action_param1);
           fullLine = fullLine.replace("_actionParamTwo_",   smartScript.action_param2);
           fullLine = fullLine.replace("_actionParamThree_", smartScript.action_param3);
           fullLine = fullLine.replace("_actionParamFour_",  smartScript.action_param4);
           fullLine = fullLine.replace("_actionParamFive_",  smartScript.action_param5);
           fullLine = fullLine.replace("_actionParamSix_",   smartScript.action_param6);
-          console.log(smartScript.action_param1);
 
           // TODO: replace action_param* with the name of the subject
           fullLine = fullLine.replace("_spellNameActionParamOne_",   smartScript.action_param1);
