@@ -6,6 +6,8 @@
 
   var app = angular.module('keira2');
 
+  /* Constants mostly taken from https://github.com/Discover-/SAI-Editor/blob/master/SAI-Editor/Enumerators/PublicEnums.cs */
+
   /* Init arrays */
   app.saiConstants = [];
 

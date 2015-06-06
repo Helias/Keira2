@@ -113,14 +113,132 @@
       rows.splice(rows.length, 0, angular.copy(newRow));
     };
 
-    /* [Function] Generate Comments */
+    /* [Function] Generate Comments
+     * inspired by: https://github.com/Discover-/SAI-Editor/blob/master/SAI-Editor/Classes/CommentGenerator.cs
+     */
     $scope.generateComments = function() {
-      var i;
+
+      var i, fullLine, smartScript, randomEmotes;
 
       for (i = 0; i < $scope.new_smart_scripts.length; i++) {
+
         if ($scope.new_smart_scripts[i].comment == null || $scope.new_smart_scripts[i].comment == "") {
-          // TODO: generate comment for $scope.new_smart_scripts[i]
-          $scope.new_smart_scripts[i].comment = "";
+
+          smartScript = $scope.new_smart_scripts[i];
+          fullLine = "";
+
+          switch (Number($scope.sourceType)) {
+
+            case 0: //! Creature
+              fullLine += $scope.current_creature_template.name + " - ";
+              fullLine += app.saiLabels.comment.event[smartScript.event_type];
+              break;
+
+            case 1: //! Gameobject
+              fullLine += $scope.current_gameobject_template.name + " - ";
+              fullLine += app.saiLabels.comment.event[smartScript.event_type];
+              break;
+
+            case 2: //! Areatrigger
+              fullLine += "Areatrigger - ";
+
+              switch (Number(smartScript.event_type)) {
+                case app.saiLabels.comment.event.AREATRIGGER_ONTRIGGER:
+                case app.saiLabels.comment.event.LINK:
+                  fullLine += "On Trigger";
+                  break;
+                default:
+                  fullLine += "INCORRECT EVENT TYPE";
+                  break;
+              }
+
+              break;
+
+            case 9: //! Actionlist
+              // TODO
+              break;
+          }
+
+          // TODO: replace _previousLineComment_
+
+          fullLine = fullLine.replace("_eventParamOne_",   smartScript.event_param1);
+          fullLine = fullLine.replace("_eventParamTwo_",   smartScript.event_param2);
+          fullLine = fullLine.replace("_eventParamThree_", smartScript.event_param3);
+          fullLine = fullLine.replace("_eventParamFour_",  smartScript.event_param4);
+
+          // TODO: replace event_param* with the name of the subject
+          fullLine = fullLine.replace("_spellNameEventParamOne_", smartScript.event_param1);
+          fullLine = fullLine.replace("_targetCastingSpellName_", smartScript.event_param3);
+          fullLine = fullLine.replace("_questNameEventParamOne_", smartScript.event_param1);
+          fullLine = fullLine.replace("_hasAuraEventParamOne_", smartScript.event_param1);
+
+          //! Action type
+          fullLine += " - " + app.saiLabels.comment.action[smartScript.action_type];
+
+          console.log(fullLine);
+          console.log(fullLine.indexOf("_actionParamOne_"));
+          fullLine = fullLine.replace("_actionParamOne_",   smartScript.action_param1);
+          fullLine = fullLine.replace("_actionParamTwo_",   smartScript.action_param2);
+          fullLine = fullLine.replace("_actionParamThree_", smartScript.action_param3);
+          fullLine = fullLine.replace("_actionParamFour_",  smartScript.action_param4);
+          fullLine = fullLine.replace("_actionParamFive_",  smartScript.action_param5);
+          fullLine = fullLine.replace("_actionParamSix_",   smartScript.action_param6);
+          console.log(smartScript.action_param1);
+
+          // TODO: replace action_param* with the name of the subject
+          fullLine = fullLine.replace("_spellNameActionParamOne_",   smartScript.action_param1);
+          fullLine = fullLine.replace("_spellNameActionParamTwo_",   smartScript.action_param2);
+          fullLine = fullLine.replace("_questNameActionParamOne_",   smartScript.action_param1);
+          fullLine = fullLine.replace("_questNameCastCreatureOrGo_", smartScript.action_param1);
+          fullLine = fullLine.replace("_questNameKillCredit_",       smartScript.action_param1);
+
+          if (fullLine.indexOf("_reactStateParamOne_") > -1) {
+
+            switch (Number(smartScript.action_param1)) {
+              case 0:
+                fullLine = fullLine.replace("_reactStateParamOne_", "Passive");
+                break;
+              case 1:
+                fullLine = fullLine.replace("_reactStateParamOne_", "Defensive");
+                break;
+              case 2:
+                fullLine = fullLine.replace("_reactStateParamOne_", "Aggressive");
+                break;
+              default:
+                fullLine = fullLine.replace("_reactStateParamOne_", "<Unknown Reactstate>");
+                break;
+            }
+          }
+
+          if (fullLine.indexOf("_actionRandomParameters_") > -1) {
+
+            randomEmotes = smartScript.action_param1 + ", " + smartScript.action_param2;
+
+            if (smartScript.action_param3 > 0) {
+              randomEmotes += ", " + smartScript.action_param3;
+            }
+
+            if (smartScript.action_param4 > 0) {
+              randomEmotes += ", " + smartScript.action_param4;
+            }
+
+            if (smartScript.action_param5 > 0) {
+              randomEmotes += ", " + smartScript.action_param5;
+            }
+
+            if (smartScript.action_param6 > 0) {
+              randomEmotes += ", " + smartScript.action_param6;
+            }
+
+            fullLine = fullLine.replace("_actionRandomParameters_", randomEmotes);
+          }
+
+          // TODO: replace action_param* with the name of the subject
+          fullLine = fullLine.replace("_creatureNameActionParamOne_", smartScript.action_param1);
+
+          // TODO [...]
+
+          smartScript.comment = fullLine;
         }
       }
     };

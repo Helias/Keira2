@@ -10,6 +10,7 @@
    *  - all index values correspond to the action_type, event_type, or target_type value
    *  - for example app.saiLabels.action_type.param1[2] will be the label of the action_type param1 when action_type is 2
    *  - most labels are taken from https://github.com/Discover-/SAI-Editor/blob/master/SAI-Editor/sqlite_database.db
+   *  - most comment labels are taken from https://github.com/Discover-/SAI-Editor/blob/master/SAI-Editor/Classes/CommentGenerator.cs
    */
 
   /* INIT ARRAYS */
