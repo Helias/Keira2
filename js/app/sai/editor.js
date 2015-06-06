@@ -76,13 +76,13 @@
       $scope.selected.target_o          = parseFloat($scope.selected.target_o, 10);
     };
 
-    /* Select and edit a row from collection */
+    /* [Function] Select and edit a row from collection */
     $scope.selectRow = function(rows, index) {
       $scope.selectedRow = index;
       $scope.selected = rows[index];
     };
 
-    /* Delete selected row from collection */
+    /* [Function] Delete selected row from collection */
     $scope.deleteSelectedRowFrom = function(rows) {
       if (!$rootScope.isEntrySelected() || $scope.selectedRow == -1) { return; }
 
@@ -99,7 +99,7 @@
       }
     };
 
-    /* Add a new row to collection */
+    /* [Function] Add a new row to collection */
     $scope.addNewRow = function(rows) {
 
       if (!$rootScope.isEntrySelected()) { return; }
@@ -108,6 +108,18 @@
       newRow.id = rows.length;
 
       rows.splice(rows.length, 0, angular.copy(newRow));
+    };
+
+    /* [Function] Generate Comments */
+    $scope.generateComments = function() {
+      var i;
+
+      for (i = 0; i < $scope.new_smart_scripts.length; i++) {
+        if ($scope.new_smart_scripts[i].comment == null || $scope.new_smart_scripts[i].comment == "") {
+          // TODO: generate comment for $scope.new_smart_scripts[i]
+          $scope.new_smart_scripts[i].comment = "";
+        }
+      }
     };
 
     /* Labels */
