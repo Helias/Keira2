@@ -53,7 +53,7 @@
      * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
      * TemplateUrl => content of the modal (file html inside the folder "modals")
      * object      => new_tablename the object responsible of the table (example: new_creature_template)
-     * property    => property of the table to modify (example: npcflag)
+     * property    => field of the table to modify (example: npcflag)
      * numValues   => number of the total values (flag) of the property
     */
     $rootScope.openFlagModal = function (size, TemplateUrl, object, property, numValues) {
@@ -81,26 +81,30 @@
 
     };
 
-    $rootScope.openValueModal = function (size, TemplateUrl) {
+    /* Modal to handle generic values:
+     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
+     * TemplateUrl => content of the modal (file html inside the folder "modals")
+     * object      => new_tablename the object responsible of the table (example: new_creature_template)
+     * property    => field of the table to modify (example: npcflag)
+     * numValues   => number of the total values (flag) of the property
+    */
+    $rootScope.openValueModal = function (size, TemplateUrl, object, property) {
 
       var modalInstance = $modal.open({
         templateUrl: TemplateUrl,
         controller: "ValueModalController",
-        size: size/*,
+        size: size,
         resolve: {
-          propertyVal: function () {
-            return object[property];
-          },
-          numValuesVal: function () {
-            return numValues;
+          property: function () {
+            return property;
           }
-        }*/
+        }
       });
 
-      /*      // When the modal will be closed this function takes the new value to assign
+      // When the modal will be closed this function takes the new value to assign
       modalInstance.result.then(function (Res) {
         object[property] = Res;
-      });*/
+      });
 
     };
 

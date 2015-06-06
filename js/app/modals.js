@@ -47,10 +47,30 @@
 
   });
 
-  app.controller('ValueModalController', function ($scope, $modalInstance) {
+  /* Modal Controller for generic values
+   * params:
+   *  - property: the field name of the table which the modal will return the value
+  */
+  app.controller('ValueModalController', function ($scope, $modalInstance, property) {
 
+    // importing constants on Controller
+    $scope.constants = app.modalConstants;
+
+    $scope.selectedRow = -1;
+
+    // Onclick the table row on the modal save the index
+    $scope.selectModalRow = function(index) {
+      $scope.selectedRow = index;
+    };
+
+    // When click on the modal button "Ok" send the id value selected
     $scope.modalOk = function () {
-      $modalInstance.close();
+      if ($scope.selectedRow !== -1) {
+          $modalInstance.close( $scope.selectedRow );
+      }
+      else {
+        $modalInstance.close();
+      }
     };
 
     $scope.modalCancel = function () {
