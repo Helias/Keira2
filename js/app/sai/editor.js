@@ -14,6 +14,9 @@
     /* Show only basic informations */
     $scope.showBasicInformations = true;
 
+    /* Labels */
+    $scope.saiLabels = app.saiLabels;
+
     /* Default new row */
     $scope.defaultNewRow = {
       entryorguid       : parseInt($stateParams.entryOrGuid, 10),
@@ -121,9 +124,6 @@
         }
       }
     };
-
-    /* Labels */
-    $scope.saiLabels = app.saiLabels;
 
   });
 
