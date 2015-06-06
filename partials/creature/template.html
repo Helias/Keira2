@@ -263,12 +263,18 @@
         <small>faction</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_creature_template.faction">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/creature/modals/faction.html', new_creature_template, 'faction')">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-2">
         <small>type</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_creature_template.type">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/creature/modals/type.html', new_creature_template, 'type')">...</button>
+          </div>
         </div>
       </div>
     </div>
@@ -336,12 +342,18 @@
             <small>trainer_race</small>
             <div class="input-group">
               <input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_race">
+              <div class="input-group-btn">
+                <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/creature/modals/race.html', new_creature_template, 'trainer_race')">...</button>
+              </div>
             </div>
           </div>
           <div class="col-xs-6">
             <small>trainer_class</small>
             <div class="input-group">
               <input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_class">
+              <div class="input-group-btn">
+                <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/creature/modals/class.html', new_creature_template, 'trainer_class')">...</button>
+              </div>
             </div>
           </div>
         </div>
