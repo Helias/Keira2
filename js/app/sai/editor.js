@@ -114,8 +114,73 @@
     };
 
     /* [Function] Get string by target_type */
-    var getStringByTargetType = function(smartScript) {
-      // TODO
+    $scope.getStringByTargetType = function(smartScript) {
+
+      switch (Number(smartScript.target_type)) {
+        case app.saiConstants.target.SELF:
+          return "Self";
+        case app.saiConstants.target.VICTIM:
+          return "Victim";
+        case app.saiConstants.target.HOSTILE_SECOND_AGGRO:
+          return "Second On Threatlist";
+        case app.saiConstants.target.HOSTILE_LAST_AGGRO:
+          return "Last On Threatlist";
+        case app.saiConstants.target.HOSTILE_RANDOM:
+          return "Random On Threatlist";
+        case app.saiConstants.target.HOSTILE_RANDOM_NOT_TOP:
+          return "Random On Threatlist Not Top";
+        case app.saiConstants.target.ACTION_INVOKER:
+          return "Invoker";
+        case app.saiConstants.target.POSITION:
+          return "Position";
+        case app.saiConstants.target.CREATURE_RANGE:
+        case app.saiConstants.target.CREATURE_DISTANCE:
+        case app.saiConstants.target.CLOSEST_CREATURE:
+            // TODO: replace target_param* with subject name
+          return "Closest Creature '" + smartScript.target_param1 + "'";
+        case app.saiConstants.target.CREATURE_GUID:
+            // TODO: replace target_param* with subject name
+          return "Closest Creature '" + smartScript.target_param1 + "'";
+        case app.saiConstants.target.GAMEOBJECT_RANGE:
+        case app.saiConstants.target.GAMEOBJECT_DISTANCE:
+        case app.saiConstants.target.CLOSEST_GAMEOBJECT:
+            // TODO: replace target_param* with subject name
+          return "Closest Gameobject '" + smartScript.target_param1 + "'";
+        case app.saiConstants.target.GAMEOBJECT_GUID:
+            // TODO: replace target_param* with subject name
+          return "Closest Gameobject '" + smartScript.target_param1 + "'";
+        case app.saiConstants.target.INVOKER_PARTY:
+          return "Invoker's Party";
+        case app.saiConstants.target.PLAYER_RANGE:
+        case app.saiConstants.target.PLAYER_DISTANCE:
+        case app.saiConstants.target.CLOSEST_PLAYER:
+          return "Closest Player";
+        case app.saiConstants.target.ACTION_INVOKER_VEHICLE:
+          return "Invoker's Vehicle";
+        case app.saiConstants.target.OWNER_OR_SUMMONER:
+          return "Owner Or Summoner";
+        case app.saiConstants.target.THREAT_LIST:
+          return "First Unit On Threatlist";
+        case app.saiConstants.target.CLOSEST_ENEMY:
+          return "Closest Enemy";
+        case app.saiConstants.target.CLOSEST_FRIENDLY:
+          return "Closest Friendly Unit";
+        default:
+          return "<unsupported target type>";
+
+      }
+    };
+
+    /* [Function] Get previous script of links chain */
+    $scope.getPreviousScriptLink = function(smartScript) {
+      if (smartScript.id == 0) { return null; }
+      var i;
+
+      for (i = 0; i < $scope.new_smart_scripts.length; i++) {
+        if ($scope.new_smart_scripts[i].link == smartScript.id) {
+          return $scope.new_smart_scripts[i];
+        }
+      }
     };
 
     /* [Function] Generate Comments
@@ -123,7 +188,7 @@
      */
     $scope.generateComments = function() {
 
-      var i, fullLine, smartScript, randomEmotes, smartScriptLink, event_phase_mask,
+      var i, fullLine, smartScript, randomEmotes, smartScriptLink, event_phase_mask, event_flags,
           commentUnitFlag, unitFlags,
           commentNpcFlag, npcFlags,
           commentGoFlag, goFlags,
@@ -133,7 +198,8 @@
 
         if ($scope.new_smart_scripts[i].comment == null || $scope.new_smart_scripts[i].comment == "") {
 
-          smartScript = $scope.new_smart_scripts[i];
+          smartScript = angular.copy($scope.new_smart_scripts[i]);
+          smartScriptLink = $scope.getPreviousScriptLink(smartScript);
           fullLine = "";
 
           switch (Number($scope.sourceType)) {
@@ -168,7 +234,16 @@
               break;
           }
 
-          // TODO: replace _previousLineComment_
+          if ((fullLine.indexOf("_previousLineComment_") > -1) && (smartScriptLink != null)) {
+
+            fullLine = fullLine.replace("_previousLineComment_", smartScriptLink.event_type);
+            smartScript.event_param1 = smartScriptLink.event_param1;
+            smartScript.event_param2 = smartScriptLink.event_param2;
+            smartScript.event_param3 = smartScriptLink.event_param3;
+            smartScript.event_param4 = smartScriptLink.event_param4;
+          }
+
+          fullLine = fullLine.replace("_previousLineComment_", "MISSING LINK");
 
           fullLine = fullLine.replace("_eventParamOne_",   smartScript.event_param1);
           fullLine = fullLine.replace("_eventParamTwo_",   smartScript.event_param2);
@@ -456,13 +531,13 @@
                 fullLine = fullLine.replace("_setOrientationTargetType_", smartScript.target_o.ToString());
                 break;
               default:
-                fullLine = fullLine.replace("_setOrientationTargetType_", getStringByTargetType(smartScript));
+                fullLine = fullLine.replace("_setOrientationTargetType_", $scope.getStringByTargetType(smartScript));
                 break;
             }
           }
 
           if (fullLine.indexOf("_getTargetType_") > -1) {
-            fullLine = fullLine.replace("_getTargetType_", getStringByTargetType(smartScript));
+            fullLine = fullLine.replace("_getTargetType_", $scope.getStringByTargetType(smartScript));
           }
 
           if (fullLine.indexOf("_goStateActionParamOne_") > -1) {
@@ -724,11 +799,52 @@
             }
           }
 
-          // TODO: init smartScriptLink
-          // TODO: continue from 'event_phase_mask'
+          // TODO: 'event_phase_mask'
+
+          event_flags = smartScriptLink != null ? smartScriptLink.event_flags : smartScript.event_flags;
+
+          if (event_flags != app.saiConstants.eventFlags.NONE) {
+
+            if (((event_flags & app.saiConstants.eventFlags.NOT_REPEATABLE) != 0)) {
+              fullLine += " (No Repeat)";
+            }
+
+            if (((event_flags & app.saiConstants.eventFlags.NORMAL_DUNGEON) != 0) &&
+                ((event_flags & app.saiConstants.eventFlags.HEROIC_DUNGEON) != 0) &&
+                ((event_flags & app.saiConstants.eventFlags.NORMAL_RAID) != 0)    &&
+                ((event_flags & app.saiConstants.eventFlags.HEROIC_RAID) != 0)) {
+              fullLine += " (Dungeon & Raid)";
+            } else {
+              if (((event_flags & app.saiConstants.eventFlags.NORMAL_DUNGEON) != 0) &&
+                  ((event_flags & app.saiConstants.eventFlags.HEROIC_DUNGEON) != 0)) {
+                fullLine += " (Dungeon)";
+              } else {
+                if (((event_flags & app.saiConstants.eventFlags.NORMAL_DUNGEON) != 0)) {
+                  fullLine += " (Normal Dungeon)";
+                } else if (((event_flags & app.saiConstants.eventFlags.HEROIC_DUNGEON) != 0)) {
+                  fullLine += " (Heroic Dungeon)";
+                }
+              }
+            }
+
+            if (((event_flags & app.saiConstants.eventFlags.NORMAL_RAID) != 0) &&
+                ((event_flags & app.saiConstants.eventFlags.HEROIC_RAID) != 0)) {
+              fullLine += " (Raid)";
+            } else {
+              if (((event_flags & app.saiConstants.eventFlags.NORMAL_RAID) != 0)) {
+                fullLine += " (Normal Raid)";
+              } else if (((event_flags & app.saiConstants.eventFlags.HEROIC_RAID) != 0)) {
+                fullLine += " (Heroic Raid)";
+              }
+            }
+
+            if (((event_flags & app.saiConstants.eventFlags.DEBUG_ONLY) != 0)) {
+              fullLine += " (Debug)";
+            }
+          }
 
           /* Finish */
-          smartScript.comment = fullLine;
+          $scope.new_smart_scripts[i].comment = fullLine;
         }
       }
     };

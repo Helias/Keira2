@@ -392,6 +392,7 @@
     CAGED_NPC_PART  : 5
   };
 
+  /* SAI phase masks */
   app.saiConstants.phaseMask = {
     ALWAYS : 0x000,
     1      : 0x001,
@@ -403,6 +404,17 @@
     7      : 0x040,
     8      : 0x080,
     9      : 0x100
+  };
+
+  /* SAI event flags */
+  app.saiConstants.eventFlags = {
+    NONE           : 0x00,
+    NOT_REPEATABLE : 0x01,
+    NORMAL_DUNGEON : 0x02,
+    HEROIC_DUNGEON : 0x04,
+    NORMAL_RAID    : 0x08,
+    HEROIC_RAID    : 0x10,
+    DEBUG_ONLY     : 0x80
   };
 
   /* creature family constants */
