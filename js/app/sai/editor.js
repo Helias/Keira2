@@ -11,8 +11,11 @@
     /* At start we have no row selected */
     $scope.selectedRow = -1;
 
-    /* Show only basic informations */
-    $scope.showBasicInformations = true;
+    /* Options */
+    $scope.options = {
+      showBasicInformations : true,
+      lockIds : true,
+    };
 
     /* Labels */
     $scope.saiLabels = app.saiLabels;
