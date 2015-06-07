@@ -253,7 +253,7 @@
             fullLine = fullLine.replace("_targetCastingSpellName_", app.synchGetSpellNameById(smartScript.event_param3));
           }
           if (fullLine.indexOf("_questNameEventParamOne_") > -1) {
-            fullLine = fullLine.replace("_questNameEventParamOne_", app.synchGetQuestNameById(smartScript.event_param1));
+            fullLine = fullLine.replace("_questNameEventParamOne_", app.synchGetQuestTitleById(smartScript.event_param1));
           }
           if (fullLine.indexOf("_hasAuraEventParamOne_") > -1) {
             fullLine = fullLine.replace("_hasAuraEventParamOne_",   app.synchGetSpellNameById(smartScript.event_param1));
@@ -276,13 +276,13 @@
             fullLine = fullLine.replace("_spellNameActionParamTwo_",   app.synchGetSpellNameById(smartScript.action_param2));
           }
           if (fullLine.indexOf("_questNameActionParamOne_") > -1) {
-            fullLine = fullLine.replace("_questNameActionParamOne_",   app.synchGetQuestNameById(smartScript.action_param1));
+            fullLine = fullLine.replace("_questNameActionParamOne_",   app.synchGetQuestTitleById(smartScript.action_param1));
           }
           if (fullLine.indexOf("_questNameCastCreatureOrGo_") > -1) {
-            fullLine = fullLine.replace("_questNameCastCreatureOrGo_", app.synchGetQuestNameByCriteria(smartScript.action_param1));
+            fullLine = fullLine.replace("_questNameCastCreatureOrGo_", app.synchGetQuestTitleByCriteriaFunc1(smartScript.action_param1, smartScript.action_param1, smartScript.action_param1, smartScript.action_param1, smartScript.action_param2));
           }
           if (fullLine.indexOf("_questNameKillCredit_") > -1) {
-            fullLine = fullLine.replace("_questNameKillCredit_",       app.synchGetQuestNameByCriteria(smartScript.action_param1));
+            fullLine = fullLine.replace("_questNameKillCredit_",       app.synchGetQuestTitleByCriteriaFunc2(smartScript.action_param1, smartScript.action_param1, smartScript.action_param1, smartScript.action_param1));
           }
 
           if (fullLine.indexOf("_reactStateParamOne_") > -1) {

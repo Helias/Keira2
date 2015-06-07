@@ -60,7 +60,7 @@
     }
   };
 
-  app.synchGetQuestNameById = function(id) {
+  app.synchGetQuestTitleById = function(id) {
     var request, data;
     request = new XMLHttpRequest();
     request.open('GET', app.api + "quest/template/" + id, false);
@@ -75,9 +75,16 @@
     }
   };
 
-  app.synchGetQuestNameByCriteria = function(id) {
+  app.synchGetQuestTitleByCriteriaFunc1 = function(requiredNpcOrGo1, requiredNpcOrGo2, requiredNpcOrGo3, requiredNpcOrGo4) {
     // TODO: implement this
-    return id;
+    // See: https://github.com/Discover-/SAI-Editor/blob/master/SAI-Editor/Classes/Database/WorldDatabase.cs#L344
+    return "";
+  };
+
+  app.synchGetQuestTitleByCriteriaFunc2 = function(requiredNpcOrGo1, requiredNpcOrGo2, requiredNpcOrGo3, requiredNpcOrGo4, requiredSpellCast1) {
+    // TODO: implement this
+    // See: https://github.com/Discover-/SAI-Editor/blob/master/SAI-Editor/Classes/Database/WorldDatabase.cs#L354
+    return "";
   };
 
   app.synchGetItemNameById = function(id) {
