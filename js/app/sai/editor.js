@@ -136,19 +136,15 @@
         case app.saiConstants.target.CREATURE_RANGE:
         case app.saiConstants.target.CREATURE_DISTANCE:
         case app.saiConstants.target.CLOSEST_CREATURE:
-            // TODO: replace target_param* with subject name
-          return "Closest Creature '" + smartScript.target_param1 + "'";
+          return "Closest Creature '" + app.synchGetCreatureNameById(smartScript.target_param1) + "'";
         case app.saiConstants.target.CREATURE_GUID:
-            // TODO: replace target_param* with subject name
-          return "Closest Creature '" + smartScript.target_param1 + "'";
+          return "Closest Creature '" + app.synchGetCreatureNameByGuid(smartScript.target_param1) + "'";
         case app.saiConstants.target.GAMEOBJECT_RANGE:
         case app.saiConstants.target.GAMEOBJECT_DISTANCE:
         case app.saiConstants.target.CLOSEST_GAMEOBJECT:
-            // TODO: replace target_param* with subject name
-          return "Closest Gameobject '" + smartScript.target_param1 + "'";
+          return "Closest Gameobject '" + app.synchGetGameObjectNameById(smartScript.target_param1) + "'";
         case app.saiConstants.target.GAMEOBJECT_GUID:
-            // TODO: replace target_param* with subject name
-          return "Closest Gameobject '" + smartScript.target_param1 + "'";
+          return "Closest Gameobject '" + app.synchGetGameObjectNameByGuid(smartScript.target_param1) + "'";
         case app.saiConstants.target.INVOKER_PARTY:
           return "Invoker's Party";
         case app.saiConstants.target.PLAYER_RANGE:
@@ -250,11 +246,18 @@
           fullLine = fullLine.replace("_eventParamThree_", smartScript.event_param3);
           fullLine = fullLine.replace("_eventParamFour_",  smartScript.event_param4);
 
-          // TODO: replace event_param* with the name of the subject
-          fullLine = fullLine.replace("_spellNameEventParamOne_", smartScript.event_param1);
-          fullLine = fullLine.replace("_targetCastingSpellName_", smartScript.event_param3);
-          fullLine = fullLine.replace("_questNameEventParamOne_", smartScript.event_param1);
-          fullLine = fullLine.replace("_hasAuraEventParamOne_", smartScript.event_param1);
+          if (fullLine.indexOf("_spellNameEventParamOne_") > -1) {
+            fullLine = fullLine.replace("_spellNameEventParamOne_", app.synchGetSpellNameById(smartScript.event_param1));
+          }
+          if (fullLine.indexOf("_targetCastingSpellName_") > -1) {
+            fullLine = fullLine.replace("_targetCastingSpellName_", app.synchGetSpellNameById(smartScript.event_param3));
+          }
+          if (fullLine.indexOf("_questNameEventParamOne_") > -1) {
+            fullLine = fullLine.replace("_questNameEventParamOne_", app.synchGetQuestNameById(smartScript.event_param1));
+          }
+          if (fullLine.indexOf("_hasAuraEventParamOne_") > -1) {
+            fullLine = fullLine.replace("_hasAuraEventParamOne_",   app.synchGetSpellNameById(smartScript.event_param1));
+          }
 
           //! Action type
           fullLine += " - " + app.saiLabels.comment.action[smartScript.action_type];
@@ -266,12 +269,21 @@
           fullLine = fullLine.replace("_actionParamFive_",  smartScript.action_param5);
           fullLine = fullLine.replace("_actionParamSix_",   smartScript.action_param6);
 
-          // TODO: replace action_param* with the name of the subject
-          fullLine = fullLine.replace("_spellNameActionParamOne_",   smartScript.action_param1);
-          fullLine = fullLine.replace("_spellNameActionParamTwo_",   smartScript.action_param2);
-          fullLine = fullLine.replace("_questNameActionParamOne_",   smartScript.action_param1);
-          fullLine = fullLine.replace("_questNameCastCreatureOrGo_", smartScript.action_param1);
-          fullLine = fullLine.replace("_questNameKillCredit_",       smartScript.action_param1);
+          if (fullLine.indexOf("_spellNameActionParamOne_") > -1) {
+            fullLine = fullLine.replace("_spellNameActionParamOne_",   app.synchGetSpellNameById(smartScript.action_param1));
+          }
+          if (fullLine.indexOf("_spellNameActionParamTwo_") > -1) {
+            fullLine = fullLine.replace("_spellNameActionParamTwo_",   app.synchGetSpellNameById(smartScript.action_param2));
+          }
+          if (fullLine.indexOf("_questNameActionParamOne_") > -1) {
+            fullLine = fullLine.replace("_questNameActionParamOne_",   app.synchGetQuestNameById(smartScript.action_param1));
+          }
+          if (fullLine.indexOf("_questNameCastCreatureOrGo_") > -1) {
+            fullLine = fullLine.replace("_questNameCastCreatureOrGo_", app.synchGetQuestNameById(smartScript.action_param1));
+          }
+          if (fullLine.indexOf("_questNameKillCredit_") > -1) {
+            fullLine = fullLine.replace("_questNameKillCredit_",       app.synchGetQuestNameById(smartScript.action_param1));
+          }
 
           if (fullLine.indexOf("_reactStateParamOne_") > -1) {
 
@@ -314,8 +326,9 @@
             fullLine = fullLine.replace("_actionRandomParameters_", randomEmotes);
           }
 
-          // TODO: replace action_param* with the name of the subject
-          fullLine = fullLine.replace("_creatureNameActionParamOne_", smartScript.action_param1);
+          if (fullLine.indexOf("_creatureNameActionParamOne_") > -1) {
+            fullLine = fullLine.replace("_creatureNameActionParamOne_", app.synchGetCreatureNameById(smartScript.action_param1));
+          }
 
           if (fullLine.indexOf("_getUnitFlags_") > -1) {
 
@@ -477,20 +490,16 @@
           }
 
           if (fullLine.indexOf("_gameobjectNameActionParamOne_") > -1) {
+            fullLine = fullLine.replace("_gameobjectNameActionParamOne_", "'" + app.synchGetGameObjectNameById(smartScript.action_param1) + "'");
+          }
 
-            // TODO: replace action_param* with the name of the subject
-            fullLine = fullLine.replace("_gameobjectNameActionParamOne_", "'" + smartScript.action_param1 + "'");
+          if (fullLine.indexOf("_addItemBasedOnActionParams_") > -1) {
+            fullLine = fullLine.replace("_addItemBasedOnActionParams_", "'" + app.synchGetItemNameById(smartScript.action_param1) + "' ");
 
-            if (fullLine.indexOf("_addItemBasedOnActionParams_") > -1) {
-
-              // TODO: replace action_param* with the name of the subject
-              fullLine = fullLine.replace("_addItemBasedOnActionParams_", "'" + smartScript.action_param1 + "' ");
-
-              if (smartScript.action_param2 > 1) {
-                fullLine += smartScript.action_param2 + " Times";
-              } else {
-                fullLine += "1 Time";
-              }
+            if (smartScript.action_param2 > 1) {
+              fullLine += " " + smartScript.action_param2 + " Times";
+            } else {
+              fullLine += " 1 Time";
             }
           }
 
@@ -770,8 +779,7 @@
           if (fullLine.indexOf("_morphToEntryOrModelActionParams_") > -1) {
 
             if (smartScript.action_param1 > 0) {
-              // TODO: replace action_param with the name of the subject
-              fullLine = fullLine.replace("_morphToEntryOrModelActionParams_", "Morph To Creature " + smartScript.action_param1);
+              fullLine = fullLine.replace("_morphToEntryOrModelActionParams_", "Morph To Creature " + app.synchGetCreatureNameById(smartScript.action_param1));
             } else if (smartScript.action_param2 > 0) {
               fullLine = fullLine.replace("_morphToEntryOrModelActionParams_", "Morph To Model " + smartScript.action_param2);
             } else {
@@ -781,8 +789,7 @@
 
           if (fullLine.indexOf("_mountToEntryOrModelActionParams_") > -1) {
             if (smartScript.action_param1 > 0) {
-              // TODO: replace action_param with the name of the subject
-              fullLine = fullLine.replace("_mountToEntryOrModelActionParams_", "Mount To Creature " + smartScript.action_param1);
+              fullLine = fullLine.replace("_mountToEntryOrModelActionParams_", "Mount To Creature " + app.synchGetCreatureNameById(smartScript.action_param1));
             } else if (smartScript.action_param2 > 0) {
               fullLine = fullLine.replace("_mountToEntryOrModelActionParams_", "Mount To Model " + smartScript.action_param2);
             } else {

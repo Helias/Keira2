@@ -12,7 +12,7 @@
     /* TrinityCore Documentation wiki */
     $rootScope.wikiLink = "http://collab.kpsn.org/display/tc/";
 
-    /* [Funcion] check if entry is selected */
+    /* [Function] check if entry is selected */
     $rootScope.isEntrySelected = function() {
       if ( $stateParams.id || ($stateParams.entryOrGuid && $stateParams.sourceType) ) {
         return true;
@@ -22,7 +22,7 @@
       }
     };
 
-    /* [Funcion] fix numeric values of a collection */
+    /* [Function] fix numeric values of a collection */
     $rootScope.fixNumericValues = function(rows) {
 
       var i, key;
