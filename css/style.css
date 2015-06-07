@@ -76,6 +76,15 @@
   border-right: 1px solid grey;
 }
 
+.sai-options-container {
+  min-height: 30px;
+  padding-top: 8px;
+}
+
+.sai-option {
+  margin-left: 8px;
+}
+
 .input-margin input {
   margin-top: 5px;
 }

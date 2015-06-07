@@ -1,7 +1,17 @@
 <div class="row" style="margin-bottom: 10px">
-  <div class="col-xs-10 text-left" style="min-height: 30px; padding-top: 8px;">
-      <input type="checkbox"> TODO
-      <input type="checkbox"> TODO
+  <div class="col-xs-10 text-left sai-options-container">
+    <form class="form-inline">
+      <div class="checkbox">
+        <label class="sai-option">
+          <input type="checkbox" ng-model="options.showBasicInformations"> Show basic informations
+        </label>
+      </div>
+      <div class="checkbox">
+        <label class="sai-option">
+          <input type="checkbox" ng-model="options.lockIds"> Lock IDs
+        </label>
+      </div>
+    </form>
   </div>
   <div class="col-xs-2 pull-right">
     <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}smart_scripts"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>smart_scripts</a></p>
@@ -47,8 +57,8 @@
     </div>
     <div class="row">
       <div class="col-xs-3">
-        <small>Id</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.id" disabled>
+        <small>ID</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.id" ng-disabled="options.lockIds">
       </div>
       <div class="col-xs-3">
         <small>Link to</small>
@@ -252,26 +262,26 @@
       <th class="text-center">phase</th>
       <th class="text-center">chance</th>
       <th class="text-center">flags</th>
-      <th class="text-center" ng-show="!showBasicInformations">event_param1</th>
-      <th class="text-center" ng-show="!showBasicInformations">event_param2</th>
-      <th class="text-center" ng-show="!showBasicInformations">event_param3</th>
-      <th class="text-center" ng-show="!showBasicInformations">event_param4</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">event_param1</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">event_param2</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">event_param3</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">event_param4</th>
       <th class="text-center">action</th>
-      <th class="text-center" ng-show="!showBasicInformations">action_param1</th>
-      <th class="text-center" ng-show="!showBasicInformations">action_param2</th>
-      <th class="text-center" ng-show="!showBasicInformations">action_param3</th>
-      <th class="text-center" ng-show="!showBasicInformations">action_param4</th>
-      <th class="text-center" ng-show="!showBasicInformations">action_param5</th>
-      <th class="text-center" ng-show="!showBasicInformations">action_param6</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">action_param1</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">action_param2</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">action_param3</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">action_param4</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">action_param5</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">action_param6</th>
       <th class="text-center">target</th>
-      <th class="text-center" ng-show="!showBasicInformations">target_param1</th>
-      <th class="text-center" ng-show="!showBasicInformations">target_param2</th>
-      <th class="text-center" ng-show="!showBasicInformations">target_param3</th>
-      <th class="text-center" ng-show="!showBasicInformations">target_x</th>
-      <th class="text-center" ng-show="!showBasicInformations">target_y</th>
-      <th class="text-center" ng-show="!showBasicInformations">target_z</th>
-      <th class="text-center" ng-show="!showBasicInformations">target_o</th>
-      <th class="text-center">comment</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">target_param1</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">target_param2</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">target_param3</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">target_x</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">target_y</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">target_z</th>
+      <th class="text-center" ng-show="!options.showBasicInformations">target_o</th>
+      <th class="text-center" style="min-width: 600px">comment</th>
     </thead>
     <tr ng-repeat="row in new_smart_scripts track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
       <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_smart_scripts, $index)"></i></td>
@@ -281,25 +291,25 @@
       <td>{{ row.event_phase_mask }}</td>
       <td>{{ row.event_chance }}</td>
       <td>{{ row.event_flags }}</td>
-      <td ng-show="!showBasicInformations">{{ row.event_param1 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.event_param2 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.event_param3 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.event_param4 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.event_param1 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.event_param2 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.event_param3 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.event_param4 }}</td>
       <td>{{ row.action_type }}</td>
-      <td ng-show="!showBasicInformations">{{ row.action_param1 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.action_param2 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.action_param3 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.action_param4 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.action_param5 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.action_param6 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.action_param1 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.action_param2 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.action_param3 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.action_param4 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.action_param5 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.action_param6 }}</td>
       <td>{{ row.target_type }}</td>
-      <td ng-show="!showBasicInformations">{{ row.target_param1 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.target_param2 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.target_param3 }}</td>
-      <td ng-show="!showBasicInformations">{{ row.target_x }}</td>
-      <td ng-show="!showBasicInformations">{{ row.target_y }}</td>
-      <td ng-show="!showBasicInformations">{{ row.target_z }}</td>
-      <td ng-show="!showBasicInformations">{{ row.target_o }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.target_param1 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.target_param2 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.target_param3 }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.target_x }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.target_y }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.target_z }}</td>
+      <td ng-show="!options.showBasicInformations">{{ row.target_o }}</td>
       <td>{{ row.comment }}</td>
     </tr>
   </table>
