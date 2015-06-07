@@ -36,6 +36,9 @@
     <small>emote</small>
     <div class="input-group">
       <input class="form-control input-xs" type="text"  ng-model="new_creature_template_addon.emote">
+      <div class="input-group-btn">
+        <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/creature/modals/emote.html', new_creature_template_addon, 'emote')">...</button>
+      </div>
     </div>
   </div>
   <div class="col-xs-2">
