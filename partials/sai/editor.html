@@ -77,7 +77,7 @@
         <small>{{ (saiLabels.event_type.param1[selected.event_type] && saiLabels.event_type.param1[selected.event_type] != "") ? saiLabels.event_type.param1[selected.event_type] : "param1" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.event_param1" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip1[selected.event_type]) ? saiLabels.event_type.paramTooltip1[selected.event_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_param1" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip1[selected.event_type]) ? saiLabels.event_type.paramTooltip1[selected.event_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -85,7 +85,7 @@
         <small>{{ (saiLabels.event_type.param2[selected.event_type] && saiLabels.event_type.param2[selected.event_type] != "") ? saiLabels.event_type.param2[selected.event_type] : "param2" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.event_param2" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip2[selected.event_type]) ? saiLabels.event_type.paramTooltip2[selected.event_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_param2" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip2[selected.event_type]) ? saiLabels.event_type.paramTooltip2[selected.event_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -93,7 +93,7 @@
         <small>{{ (saiLabels.event_type.param3[selected.event_type] && saiLabels.event_type.param3[selected.event_type] != "") ? saiLabels.event_type.param3[selected.event_type] : "param3" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.event_param3" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip3[selected.event_type]) ? saiLabels.event_type.paramTooltip3[selected.event_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_param3" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip3[selected.event_type]) ? saiLabels.event_type.paramTooltip3[selected.event_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -101,7 +101,7 @@
         <small>{{ (saiLabels.event_type.param4[selected.event_type] && saiLabels.event_type.param4[selected.event_type] != "") ? saiLabels.event_type.param4[selected.event_type] : "param4" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.event_param4" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip4[selected.event_type]) ? saiLabels.event_type.paramTooltip4[selected.event_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_param4" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip4[selected.event_type]) ? saiLabels.event_type.paramTooltip4[selected.event_type] : '' }}">
       </div>
     </div>
   </div>
@@ -114,7 +114,7 @@
         <small>{{ (saiLabels.action_type.param1[selected.action_type] && saiLabels.action_type.param1[selected.action_type] != "") ? saiLabels.action_type.param1[selected.action_type] : "param1" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.action_param1" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip1[selected.action_type]) ? saiLabels.action_type.paramTooltip1[selected.action_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param1" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip1[selected.action_type]) ? saiLabels.action_type.paramTooltip1[selected.action_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -122,7 +122,7 @@
         <small>{{ (saiLabels.action_type.param2[selected.action_type] && saiLabels.action_type.param2[selected.action_type] != "") ? saiLabels.action_type.param2[selected.action_type] : "param2" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.action_param2" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip2[selected.action_type]) ? saiLabels.action_type.paramTooltip2[selected.action_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param2" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip2[selected.action_type]) ? saiLabels.action_type.paramTooltip2[selected.action_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -130,7 +130,7 @@
         <small>{{ (saiLabels.action_type.param3[selected.action_type] && saiLabels.action_type.param3[selected.action_type] != "") ? saiLabels.action_type.param3[selected.action_type] : "param3" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.action_param3" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip3[selected.action_type]) ? saiLabels.action_type.paramTooltip3[selected.action_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param3" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip3[selected.action_type]) ? saiLabels.action_type.paramTooltip3[selected.action_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -138,7 +138,7 @@
         <small>{{ (saiLabels.action_type.param4[selected.action_type] && saiLabels.action_type.param4[selected.action_type] != "") ? saiLabels.action_type.param4[selected.action_type] : "param4" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.action_param4" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip4[selected.action_type]) ? saiLabels.action_type.paramTooltip4[selected.action_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param4" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip4[selected.action_type]) ? saiLabels.action_type.paramTooltip4[selected.action_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -146,7 +146,7 @@
         <small>{{ (saiLabels.action_type.param5[selected.action_type] && saiLabels.action_type.param5[selected.action_type] != "") ? saiLabels.action_type.param5[selected.action_type] : "param5" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.action_param5" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip5[selected.action_type]) ? saiLabels.action_type.paramTooltip5[selected.action_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param5" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip5[selected.action_type]) ? saiLabels.action_type.paramTooltip5[selected.action_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -154,7 +154,7 @@
         <small>{{ (saiLabels.action_type.param6[selected.action_type] && saiLabels.action_type.param6[selected.action_type] != "") ? saiLabels.action_type.param6[selected.action_type] : "param6" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.action_param6" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip6[selected.action_type]) ? saiLabels.action_type.paramTooltip6[selected.action_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param6" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip6[selected.action_type]) ? saiLabels.action_type.paramTooltip6[selected.action_type] : '' }}">
       </div>
     </div>
   </div>
@@ -167,7 +167,7 @@
         <small>{{ (saiLabels.target_type.param1[selected.target_type] && saiLabels.target_type.param1[selected.target_type] != "") ? saiLabels.target_type.param1[selected.target_type] : "param1" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.target_param1" ng-click="toggleMin()" tooltip="{{ (saiLabels.target_type.paramTooltip1[selected.target_type]) ? saiLabels.target_type.paramTooltip1[selected.target_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_param1" ng-click="toggleMin()" tooltip="{{ (saiLabels.target_type.paramTooltip1[selected.target_type]) ? saiLabels.target_type.paramTooltip1[selected.target_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -175,7 +175,7 @@
         <small>{{ (saiLabels.target_type.param2[selected.target_type] && saiLabels.target_type.param2[selected.target_type] != "") ? saiLabels.target_type.param2[selected.target_type] : "param2" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.target_param2" ng-click="toggleMin()" tooltip="{{ (saiLabels.target_type.paramTooltip2[selected.target_type]) ? saiLabels.target_type.paramTooltip2[selected.target_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_param2" ng-click="toggleMin()" tooltip="{{ (saiLabels.target_type.paramTooltip2[selected.target_type]) ? saiLabels.target_type.paramTooltip2[selected.target_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -183,7 +183,7 @@
         <small>{{ (saiLabels.target_type.param3[selected.target_type] && saiLabels.target_type.param3[selected.target_type] != "") ? saiLabels.target_type.param3[selected.target_type] : "param3" }}</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.target_param3" ng-click="toggleMin()" tooltip="{{ (saiLabels.target_type.paramTooltip3[selected.target_type]) ? saiLabels.target_type.paramTooltip3[selected.target_type] : '' }}">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_param3" ng-click="toggleMin()" tooltip="{{ (saiLabels.target_type.paramTooltip3[selected.target_type]) ? saiLabels.target_type.paramTooltip3[selected.target_type] : '' }}">
       </div>
     </div>
     <div class="row">
@@ -191,7 +191,7 @@
         <small>Target X</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.target_x">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_x">
       </div>
     </div>
     <div class="row">
@@ -199,7 +199,7 @@
         <small>Target Y</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.target_y">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_y">
       </div>
     </div>
     <div class="row">
@@ -207,7 +207,7 @@
         <small>Target Z</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.target_z">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_z">
       </div>
     </div>
     <div class="row">
@@ -215,7 +215,7 @@
         <small>Target O</small>
       </div>
       <div class="col-xs-4">
-        <input class="form-control input-xs" type="text" ng-value="selected.target_o">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_o">
       </div>
     </div>
   </div>
