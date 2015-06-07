@@ -16,7 +16,6 @@
       <div class="input-group-btn">
         <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/class.html', new_item_template, 'class')">...</button>
       </div>
-
     </div>
   </div>
   <div class="col-xs-1">
@@ -167,11 +166,21 @@
     <div class="row">
       <div class="col-xs-6">
         <small>itemset</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.itemset">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.itemset">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/itemset.html', new_item_template, 'itemset')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-6">
         <small>bonding</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.bonding">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.bonding">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/bonding.html', new_item_template, 'bonding')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-6">
         <small>armor</small>
