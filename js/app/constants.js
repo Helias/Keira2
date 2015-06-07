@@ -2247,5 +2247,146 @@
   app.modalConstants.bonding[4] = "Quest Item";
   app.modalConstants.bonding[5] = "Quest Item1";
 
+  /* item material constants */
+  app.modalConstants.material = [];
+  app.modalConstants.material[-1] = "Consumables (food, reagents, etc.)";
+  app.modalConstants.material[0] = "Not Defined";
+  app.modalConstants.material[1] = "Metal";
+  app.modalConstants.material[2] = "Wood";
+  app.modalConstants.material[3] = "Liquid";
+  app.modalConstants.material[4] = "Jewelry";
+  app.modalConstants.material[5] = "Chain";
+  app.modalConstants.material[6] = "Plate";
+  app.modalConstants.material[7] = "Cloth";
+  app.modalConstants.material[8] = "Leather";
+
+  /* item stat type */
+  app.modalConstants.statType = [];
+  app.modalConstants.statType[0] = "MANA/POWER";
+  app.modalConstants.statType[1] = "HEALTH";
+  app.modalConstants.statType[3] = "AGILITY";
+  app.modalConstants.statType[4] = "STRENGTH";
+  app.modalConstants.statType[5] = "INTELLECT";
+  app.modalConstants.statType[6] = "SPIRIT";
+  app.modalConstants.statType[7] = "STAMINA";
+  app.modalConstants.statType[12] = "DEFENSE_SKILL_RATING";
+  app.modalConstants.statType[13] = "DODGE_RATING";
+  app.modalConstants.statType[14] = "PARRY_RATING";
+  app.modalConstants.statType[15] = "BLOCK_RATING";
+  app.modalConstants.statType[16] = "MELEE_HIT_RATING";
+  app.modalConstants.statType[17] = "RANGED_HIT_RATING";
+  app.modalConstants.statType[18] = "SPELL_HIT_RATING";
+  app.modalConstants.statType[19] = "CRIT_MELEE_RATING";
+  app.modalConstants.statType[20] = "CRIT_RANGED_RATING";
+  app.modalConstants.statType[21] = "CRIT_SPELL_RATING";
+  app.modalConstants.statType[22] = "HIT_TAKEN_MELEE_RATING";
+  app.modalConstants.statType[23] = "HIT_TAKEN_RANGED_RATING";
+  app.modalConstants.statType[24] = "HIT_TAKEN_SPELL_RATING";
+  app.modalConstants.statType[25] = "CRIT_TAKEN_MELEE_RATING";
+  app.modalConstants.statType[26] = "CRIT_TAKEN_RANGED_RATING";
+  app.modalConstants.statType[27] = "CRIT_TAKEN_SPELL_RATING";
+  app.modalConstants.statType[28] = "HASTE_MELEE_RATING";
+  app.modalConstants.statType[29] = "HASTE_RANGED_RATING";
+  app.modalConstants.statType[30] = "HASTE_SPELL_RATING";
+  app.modalConstants.statType[31] = "HIT_RATING";
+  app.modalConstants.statType[32] = "CRIT_RATING";
+  app.modalConstants.statType[33] = "HIT_TAKEN_RATING";
+  app.modalConstants.statType[34] = "CRIT_TAKEN_RATING";
+  app.modalConstants.statType[35] = "RESILIENCE_RATING";
+  app.modalConstants.statType[36] = "HASTE_RATING";
+  app.modalConstants.statType[37] = "EXPERTISE_RATING";
+  app.modalConstants.statType[38] = "ATTACK_POWER";
+  app.modalConstants.statType[39] = "RANGED_ATTACK_POWER";
+  app.modalConstants.statType[40] = "FERAL_ATTACK_POWER (not used as of v3.3)";
+  app.modalConstants.statType[41] = "SPELL_HEALING_DONE";
+  app.modalConstants.statType[42] = "SPELL_DAMAGE_DONE";
+  app.modalConstants.statType[43] = "MANA_REGENERATION";
+  app.modalConstants.statType[44] = "ARMOR_PENETRATION_RATING";
+  app.modalConstants.statType[45] = "SPELL_POWER";
+  app.modalConstants.statType[46] = "HEALTH_REGEN";
+  app.modalConstants.statType[47] = "SPELL_PENETRATION";
+  app.modalConstants.statType[48] = "BLOCK_VALUE";
+
+  /* PageTextMaterial constants */
+  app.modalConstants.PageTextMaterial = [];
+  app.modalConstants.PageTextMaterial[1] = "Parchment";
+  app.modalConstants.PageTextMaterial[2] = "Stone";
+  app.modalConstants.PageTextMaterial[3] = "Marble";
+  app.modalConstants.PageTextMaterial[4] = "Silver";
+  app.modalConstants.PageTextMaterial[5] = "Bronze";
+  app.modalConstants.PageTextMaterial[6] = "Valentine";
+  app.modalConstants.PageTextMaterial[7] = "Illidan";
+
+  /* item BagFamily constants */
+  app.modalConstants.bagFamily = [];
+  app.modalConstants.bagFamily[0] = "None";
+  app.modalConstants.bagFamily[1] = "Arrows";
+  app.modalConstants.bagFamily[2] = "Bullets";
+  app.modalConstants.bagFamily[4] = "Soul Shards";
+  app.modalConstants.bagFamily[8] = "Leatherworking Supplies";
+  app.modalConstants.bagFamily[16] = "Inscription Supplies";
+  app.modalConstants.bagFamily[32] = "Herbs";
+  app.modalConstants.bagFamily[64] = "Enchanting Supplies";
+  app.modalConstants.bagFamily[128] = "Engineering Supplies";
+  app.modalConstants.bagFamily[256] = "Keys";
+  app.modalConstants.bagFamily[512] = "Gems";
+  app.modalConstants.bagFamily[1024] = "Mining Supplies";
+  app.modalConstants.bagFamily[2048] = "Soulbound Equipment";
+  app.modalConstants.bagFamily[4096] = "Vanity Pets";
+  app.modalConstants.bagFamily[8192] = "Currency Tokens";
+  app.modalConstants.bagFamily[16384] = "QuestItems";
+
+  /* item sheath constants */
+  app.modalConstants.sheath = [];
+  app.modalConstants.sheath[0] = "NONE";
+  app.modalConstants.sheath[1] = "2H Weapon - Accross the back pointing down";
+  app.modalConstants.sheath[2] = "Staff - Diagonally accross the back poiting up";
+  app.modalConstants.sheath[3] = "One Handed - To the side";
+  app.modalConstants.sheath[4] = "Shield - On the back in the middle";
+  app.modalConstants.sheath[5] = "Enchanter's Rod ";
+  app.modalConstants.sheath[6] = "Off hand - On the other side of One Handed";
+
+  /* PetFoodType constants */
+  app.modalConstants.foodType = [];
+  app.modalConstants.foodType[1] = "Meat";
+  app.modalConstants.foodType[2] = "Fish";
+  app.modalConstants.foodType[3] = "Cheese";
+  app.modalConstants.foodType[4] = "Bread";
+  app.modalConstants.foodType[5] = "Fungus";
+  app.modalConstants.foodType[6] = "Fruit";
+  app.modalConstants.foodType[7] = "Raw Meat";
+  app.modalConstants.foodType[8] = "Raw Fish";
+
+  /* item dmgType constants */
+  app.modalConstants.dmgType = [];
+  app.modalConstants.dmgType[0] = "Physical";
+  app.modalConstants.dmgType[1] = "Holy";
+  app.modalConstants.dmgType[2] = "Fire";
+  app.modalConstants.dmgType[3] = "Nature";
+  app.modalConstants.dmgType[4] = "Frost";
+  app.modalConstants.dmgType[5] = "Shadow";
+  app.modalConstants.dmgType[6] = "Arcane";
+
+  /* Languages constants */
+  app.modalConstants.languages = [];
+  app.modalConstants.languages[0] = "Universal";
+  app.modalConstants.languages[1] = "Orcish";
+  app.modalConstants.languages[2] = "Darnassian";
+  app.modalConstants.languages[3] = "Taurahe";
+  app.modalConstants.languages[6] = "Dwarvish";
+  app.modalConstants.languages[7] = "Common";
+  app.modalConstants.languages[8] = "Demonic";
+  app.modalConstants.languages[9] = "Titan";
+  app.modalConstants.languages[10] = "Thalassian";
+  app.modalConstants.languages[11] = "Draconic";
+  app.modalConstants.languages[12] = "Kalimag";
+  app.modalConstants.languages[13] = "Gnomish";
+  app.modalConstants.languages[14] = "Troll";
+  app.modalConstants.languages[33] = "Gutterspeak";
+  app.modalConstants.languages[35] = "Draenei";
+  app.modalConstants.languages[36] = "Zombie";
+  app.modalConstants.languages[37] = "Gnomish Binary";
+  app.modalConstants.languages[38] = "Goblin Binary";
+  app.modalConstants.languages[39] = "Addon";
 
 }());
