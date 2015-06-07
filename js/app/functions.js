@@ -30,6 +30,36 @@
     }
   };
 
+  app.synchGetCreatureNameByGuid = function(guid) {
+    var request, data, id;
+    request = new XMLHttpRequest();
+    request.open('GET', app.api + "creature/spawn/guid/" + guid, false);
+    request.send(null);
+
+    if (request.status === 200) {
+
+      data = JSON.parse(request.responseText);
+      if (!Array.isArray(data) || data.length < 1) { return guid; }
+      id = data[0].id;
+
+      request = new XMLHttpRequest();
+      request.open('GET', app.api + "creature/template/" + id, false);
+      request.send(null);
+
+      if (!Array.isArray(data) || request.status === 200) {
+
+        data = JSON.parse(request.responseText);
+        if (data.length < 1) { return guid; }
+        return data[0].name;
+
+      } else {
+        return guid;
+      }
+    } else {
+      return guid;
+    }
+  };
+
   app.synchGetQuestNameById = function(id) {
     var request, data;
     request = new XMLHttpRequest();
@@ -43,6 +73,11 @@
     } else {
       return id;
     }
+  };
+
+  app.synchGetQuestNameByCriteria = function(id) {
+    // TODO: implement this
+    return id;
   };
 
   app.synchGetItemNameById = function(id) {
@@ -75,21 +110,6 @@
     }
   };
 
-  app.synchGetSpellNameById = function(id) {
-    var request, data;
-    request = new XMLHttpRequest();
-    request.open('GET', app.api + "/dbc/spells_wotlk/" + id, false);
-    request.send(null);
-
-    if (request.status === 200) {
-      data = JSON.parse(request.responseText);
-      if (!Array.isArray(data) || data.length < 1) { return id; }
-      return data[0].spellName;
-    } else {
-      return id;
-    }
-  };
-
   app.synchGetGameObjectNameByGuid = function(guid) {
     var request, data, id;
     request = new XMLHttpRequest();
@@ -117,6 +137,21 @@
       }
     } else {
       return guid;
+    }
+  };
+
+  app.synchGetSpellNameById = function(id) {
+    var request, data;
+    request = new XMLHttpRequest();
+    request.open('GET', app.api + "/dbc/spells_wotlk/" + id, false);
+    request.send(null);
+
+    if (request.status === 200) {
+      data = JSON.parse(request.responseText);
+      if (!Array.isArray(data) || data.length < 1) { return id; }
+      return data[0].spellName;
+    } else {
+      return id;
     }
   };
 

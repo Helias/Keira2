@@ -279,10 +279,10 @@
             fullLine = fullLine.replace("_questNameActionParamOne_",   app.synchGetQuestNameById(smartScript.action_param1));
           }
           if (fullLine.indexOf("_questNameCastCreatureOrGo_") > -1) {
-            fullLine = fullLine.replace("_questNameCastCreatureOrGo_", app.synchGetQuestNameById(smartScript.action_param1));
+            fullLine = fullLine.replace("_questNameCastCreatureOrGo_", app.synchGetQuestNameByCriteria(smartScript.action_param1));
           }
           if (fullLine.indexOf("_questNameKillCredit_") > -1) {
-            fullLine = fullLine.replace("_questNameKillCredit_",       app.synchGetQuestNameById(smartScript.action_param1));
+            fullLine = fullLine.replace("_questNameKillCredit_",       app.synchGetQuestNameByCriteria(smartScript.action_param1));
           }
 
           if (fullLine.indexOf("_reactStateParamOne_") > -1) {
