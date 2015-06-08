@@ -289,10 +289,6 @@
           $scope.SAIScript += "DELETE FROM `areatrigger_scripts` WHERE `entry` = " + $scope.entityEntry + ";\n";
           $scope.SAIScript += "INSERT INTO `areatrigger_scripts` (`entry`, `ScriptName`) VALUES (" + $scope.entityEntry + ", 'SmartTrigger');\n\n";
           break;
-
-        case 9: // Timed Actionlist
-          // TODO
-          break;
       }
 
       // smart_scripts datas

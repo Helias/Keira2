@@ -236,7 +236,7 @@
               break;
 
             case 9: //! Actionlist
-              // TODO
+              // TODO: comment generation of actionlist scripts
               break;
           }
 
