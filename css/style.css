@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.modal-body input {
+.modal-body input[type='checkbox'] {
    max-height: 16px;
 }
 

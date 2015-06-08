@@ -66,7 +66,55 @@
     // When click on the modal button "Ok" send the id value selected
     $scope.modalOk = function () {
       if ($scope.selectedRow !== null) {
-          $modalInstance.close( $scope.selectedRow );
+        $modalInstance.close( $scope.selectedRow );
+      }
+      else {
+        $modalInstance.close();
+      }
+    };
+
+    $scope.modalCancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+
+  });
+
+  app.controller('SearchModalController', function ($scope, $modalInstance, $http, $rootScope, property, search_param) {
+
+    /* [Function] Search */
+    $scope.search = function (id, name) {
+
+      $http.get( app.api + "search/dbc/" + search_param + "/", {
+        params: {
+          id: id,
+          name: name
+        }
+      }).success(function (data, status, header, config) {
+        $scope.datas = $rootScope.fixNumericValues(data);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] MODAL SEARCH $http.get request failed");
+      });
+
+    };
+
+    $scope.selectedRow = null;
+
+    // Onclick the table row on the modal save the index
+    $scope.selectModalRow = function(index) {
+      $scope.selectedRow = index;
+    };
+
+    // When click on the modal button "Ok" send the id value selected
+    $scope.modalOk = function (Res) {
+
+      if ($scope.selectedRow !== null) {
+
+        // first property of the object data
+        var first_property = Object.keys( $scope.datas[$scope.selectedRow] )[0];
+
+        // return the id of the data selected
+        $modalInstance.close( $scope.datas[$scope.selectedRow][first_property] );
       }
       else {
         $modalInstance.close();

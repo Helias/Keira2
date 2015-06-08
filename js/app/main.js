@@ -110,6 +110,31 @@
 
     };
 
+    $rootScope.openSearchModal = function (size, TemplateUrl, object, property, search_param) {
+
+      if ( !$rootScope.isEntrySelected() ) { return; }
+
+      var modalInstance = $modal.open({
+        templateUrl: TemplateUrl,
+        controller: "SearchModalController",
+        size: size,
+        resolve: {
+          property: function () {
+            return property;
+          },
+          search_param: function () {
+            return search_param;
+          }
+        }
+      });
+
+      // When the modal will be closed this function takes the new value to assign
+      modalInstance.result.then(function (Res) {
+        object[property] = Res;
+      });
+
+    };
+
 
     /* Open modal to show Full SQL Script */
     $rootScope.openFullScriptModal = function(rows, tableName, primaryKey1) {
