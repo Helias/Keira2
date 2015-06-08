@@ -81,6 +81,11 @@
 
   app.controller('SearchModalController', function ($scope, $modalInstance, $http, $rootScope, property, search_param) {
 
+    // init datas object properties
+    var datas_properties = [];
+
+    $scope.modalTitle = property;
+
     /* [Function] Search */
     $scope.search = function (id, name) {
 
@@ -90,7 +95,14 @@
           name: name
         }
       }).success(function (data, status, header, config) {
+
         $scope.datas = $rootScope.fixNumericValues(data);
+
+        // properties of the object datas
+        datas_properties = Object.keys($scope.datas[0]);
+
+        $scope.ID    = datas_properties[0];
+        $scope.Value = datas_properties[1];
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] MODAL SEARCH $http.get request failed");
@@ -109,12 +121,8 @@
     $scope.modalOk = function (Res) {
 
       if ($scope.selectedRow !== null) {
-
-        // first property of the object data
-        var first_property = Object.keys( $scope.datas[$scope.selectedRow] )[0];
-
         // return the id of the data selected
-        $modalInstance.close( $scope.datas[$scope.selectedRow][first_property] );
+        $modalInstance.close( $scope.datas[$scope.selectedRow][datas_properties[0]] );
       }
       else {
         $modalInstance.close();

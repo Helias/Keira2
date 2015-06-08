@@ -4,28 +4,12 @@
   max-width: none !important;
 }
 
-.modal-lg {
-  width: 1170px;
-}
-
 .input-xs {
   height: 22px;
   padding: 2px 5px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px !important;
-}
-
-.modal-body * {
-  padding-left: 10px;
-}
-
-.modal-body tr, .modal-body label {
-  cursor: pointer;
-}
-
-.modal-body input[type='checkbox'] {
-   max-height: 16px;
 }
 
 .pointer { cursor: pointer; }
@@ -37,11 +21,6 @@
 .doc-link {
   margin-top: 8px;
   margin-bottom: 2px;
-}
-
-.modal-overflow {
-  height: 400px;
-  overflow: auto;
 }
 
 .lh {
@@ -61,6 +40,17 @@
   margin-top: 8px;
 }
 
+.input-margin input {
+  margin-top: 5px;
+}
+
+.tooltip-inner {
+  max-width: 300px !important;
+  width: 300px !important;
+}
+
+/* Info CSS */
+
 .info-table {
   max-width: 400px;
   margin: auto;
@@ -73,6 +63,35 @@
 .info-table tr td:last-child {
   text-align: left;
 }
+
+/* Modal CSS */
+
+.modal-lg {
+  width: 1170px;
+}
+
+.modal-title {
+  text-transform: capitalize;
+}
+
+.modal-body * {
+  padding-left: 10px;
+}
+
+.modal-body tr, .modal-body label {
+  cursor: pointer;
+}
+
+.modal-body input[type='checkbox'] {
+  max-height: 16px;
+}
+
+.modal-overflow {
+  height: 400px;
+  overflow: auto;
+}
+
+/* SAI CSS */
 
 .sai-editor-head > div {
   border-left: 1px solid grey;
@@ -91,13 +110,4 @@
 
 .sai-option {
   margin-left: 8px;
-}
-
-.input-margin input {
-  margin-top: 5px;
-}
-
-.tooltip-inner {
-  max-width: 300px !important;
-  width: 300px !important;
 }
