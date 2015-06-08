@@ -60,25 +60,32 @@
         <small>ID</small>
         <input class="form-control input-xs" type="text" ng-model="selected.id" ng-disabled="options.lockIds">
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <small>Link to</small>
         <input class="form-control input-xs" type="text" ng-model="selected.link" ng-click="toggleMin()" tooltip="Simple event linking, example: if id = 0 and link = 1; id 1 will only be able to occur if id = 0 was triggered">
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-5">
         <small>Phase</small>
         <input class="form-control input-xs" type="text" ng-model="selected.event_phase_mask" ng-click="toggleMin()" tooltip="There are 10 (9+1) different phases: 1, 2, ... 9 and the default 0">
       </div>
-      <div class="col-xs-3">
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <small>Flags</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.event_flags" ng-click="toggleMin()" tooltip="Sets if the event should not repeat or should only happen in a given instance/dungeon difficulty. Values can be added together (bitwise math)">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/sai/modals/flags.html', selected, 'event_flags', 8)">...</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6">
         <small>Chance</small>
         <input class="form-control input-xs" type="number" ng-model="selected.event_chance" ng-click="toggleMin()" tooltip="This is the probability of the event to occur as a percentage from 0-100. So, if you want the event to occur roughly half of the time, then set this to 50">
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-3">
-        <small>Flags</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.event_flags" ng-click="toggleMin()" tooltip="Sets if the event should not repeat or should only happen in a given instance/dungeon difficulty. Values can be added together (bitwise math)">
-      </div>
-      <div class="col-xs-9">
+      <div class="col-xs-12">
         <small>Comment</small>
         <input class="form-control input-xs" type="text" ng-model="selected.comment">
       </div>
