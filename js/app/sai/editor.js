@@ -223,8 +223,8 @@
               fullLine += "Areatrigger - ";
 
               switch (Number(smartScript.event_type)) {
-                case app.saiLabels.comment.event.AREATRIGGER_ONTRIGGER:
-                case app.saiLabels.comment.event.LINK:
+                case app.saiConstants.event.AREATRIGGER_ONTRIGGER:
+                case app.saiConstants.event.LINK:
                   fullLine += "On Trigger";
                   break;
                 default:
