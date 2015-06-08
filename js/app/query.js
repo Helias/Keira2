@@ -6,6 +6,13 @@
 
   var app = angular.module('keira2');
 
+  app.globalQueryConfig = {
+    replaceSingleQuotes : true,
+    singleQuoteReplacement : "\\'",
+    autoQuoteTableNames: true,
+    autoQuoteFieldNames: true
+  };
+
   /* [Function] cleanRows
    * prepare rows to query generation
    */
@@ -45,7 +52,7 @@
 
     var key,
         diff = false,
-        query = squel.update({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" });
+        query = squel.update(app.globalQueryConfig);
 
     query.table(tableName);
 
@@ -111,8 +118,8 @@
       } else {
 
         // all rows were deleted
-        query = query = "-- DIFF `" + tableName + "` of " + primaryKey1 + " " + currentRows[0][primaryKey1] + "\n";
-        query += "DELETE * FROM " + tableName + " WHERE " + primaryKey1 + " = " + currentRows[0][primaryKey1] + ";";
+        query = "-- DIFF `" + tableName + "` of " + primaryKey1 + " " + currentRows[0][primaryKey1] + "\n";
+        query += "DELETE * FROM `" + tableName + "` WHERE `" + primaryKey1 + "` = " + currentRows[0][primaryKey1] + ";";
 
         return query;
       }
@@ -121,8 +128,8 @@
     // prepare rows for query generation
     cleanedNewRows = app.cleanRows(newRows);
 
-    deleteQuery = squel.delete().from(tableName);
-    insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName);
+    deleteQuery = squel.delete(app.globalQueryConfig).from(tableName);
+    insertQuery = squel.insert(app.globalQueryConfig).into(tableName);
 
     // find deleted or edited rows
     for (i = 0; i < currentRows.length; i++) {
@@ -168,7 +175,7 @@
     insertQuery.setFieldsRows(addedOrEditedRows);
 
     // compose final query
-    query = query = "-- DIFF `" + tableName + "` of " + primaryKey1 + " " + newRows[0][primaryKey1] + "\n";
+    query = "-- DIFF `" + tableName + "` of " + primaryKey1 + " " + newRows[0][primaryKey1] + "\n";
     query += deleteQuery.toString() + ";\n";
 
     if (addedOrEditedRows.length > 0) {
@@ -204,8 +211,8 @@
     // prepare rows for query generation
     cleanedNewRows = app.cleanRows(newRows);
 
-    deleteQuery = squel.delete().from(tableName);
-    insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName);
+    deleteQuery = squel.delete(app.globalQueryConfig).from(tableName);
+    insertQuery = squel.insert(app.globalQueryConfig).into(tableName);
 
     // find deleted or edited rows
     for (i = 0; i < currentRows.length; i++) {
@@ -250,7 +257,7 @@
     insertQuery.setFieldsRows(addedOrEditedRows);
 
     // compose final query
-    query = query = "-- DIFF `" + tableName + "` of " + entityType + " " + entity + "\n";
+    query = "-- DIFF `" + tableName + "` of " + entityType + " " + entity + "\n";
     query += deleteQuery.toString() + ";\n";
 
     if (addedOrEditedRows.length > 0) {
@@ -284,12 +291,12 @@
       newRows = tmp;
     }
 
-    deleteQuery = squel.delete().from(tableName).where(primaryKey1 + " = " + newRows[0][primaryKey1]);
+    deleteQuery = squel.delete(app.globalQueryConfig).from(tableName).where(primaryKey1 + " = " + newRows[0][primaryKey1]);
 
     // prepare rows for query generation
     cleanedNewRows = app.cleanRows(newRows);
 
-    insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName).setFieldsRows(cleanedNewRows);
+    insertQuery = squel.insert(app.globalQueryConfig).into(tableName).setFieldsRows(cleanedNewRows);
 
     query = "-- FULL `" + tableName + "` of " + primaryKey1 + " " + newRows[0][primaryKey1] + "\n";
     query += deleteQuery.toString() + ";\n";
@@ -322,12 +329,12 @@
       newRows = tmp;
     }
 
-    deleteQuery = squel.delete().from(tableName).where(primaryKey1 + " = " + newRows[0][primaryKey1] + " AND " + primaryKey2 + " = " + newRows[0][primaryKey2]);
+    deleteQuery = squel.delete(app.globalQueryConfig).from(tableName).where(primaryKey1 + " = " + newRows[0][primaryKey1] + " AND " + primaryKey2 + " = " + newRows[0][primaryKey2]);
 
     // prepare rows for query generation
     cleanedNewRows = app.cleanRows(newRows);
 
-    insertQuery = squel.insert({ replaceSingleQuotes : true, singleQuoteReplacement : "\\'" }).into(tableName).setFieldsRows(cleanedNewRows);
+    insertQuery = squel.insert(app.globalQueryConfig).into(tableName).setFieldsRows(cleanedNewRows);
 
     query = deleteQuery.toString() + ";\n";
     query += insertQuery.toString() + ";\n";
