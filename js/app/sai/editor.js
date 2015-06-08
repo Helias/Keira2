@@ -235,7 +235,7 @@
 
           if ((fullLine.indexOf("_previousLineComment_") > -1) && (smartScriptLink != null)) {
 
-            fullLine = fullLine.replace("_previousLineComment_", smartScriptLink.event_type);
+            fullLine = fullLine.replace("_previousLineComment_", app.saiLabels.comment.event[smartScriptLink.event_type]);
             smartScript.event_param1 = smartScriptLink.event_param1;
             smartScript.event_param2 = smartScriptLink.event_param2;
             smartScript.event_param3 = smartScriptLink.event_param3;
