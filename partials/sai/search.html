@@ -14,8 +14,12 @@
       <label class="control-label">Entry or GUID</label>
       <input class="form-control" type="text" placeholder="Entry or GUID" ng-model="search_smart_scripts.entryorguid">
     </div>
+    <div class="form-group col-xs-3">
+      <label class="control-label">Comment</label>
+      <input class="form-control" type="text" placeholder="Comment" ng-model="search_smart_scripts.comment">
+    </div>
     <div class="col-xs-1">
-      <button type="submit" class="btn btn-primary" ng-click="search(search_smart_scripts.source_type, search_smart_scripts.entryorguid)" style="margin-top: 25px">Search</button>
+      <button type="submit" class="btn btn-primary" ng-click="search(search_smart_scripts.source_type, search_smart_scripts.entryorguid, search_smart_scripts.comment)" style="margin-top: 25px">Search</button>
     </div>
   </form>
   <div class="col-xs-6" ng-show="foundExactResult">
