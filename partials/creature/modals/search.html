@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h3 class="modal-title">Map</h3>
+  <h3 class="modal-title">{{ modalTitle }}</h3>
 </div>
 <div class="modal-body modal-overflow">
   <div class="row">
@@ -7,14 +7,14 @@
     <form>
       <div class="form-group col-xs-3">
         <label class="control-label">ID</label>
-        <input class="form-control" type="text" placeholder="map id" pattern="[0-9]{1,}" title="Please enter an Entry!" ng-model="map.id">
+        <input class="form-control" type="text" placeholder="Id" pattern="[0-9]{1,}" title="Please enter an Id!" ng-model="param.id">
       </div>
       <div class="form-group col-xs-6">
         <label class="control-label">Name</label>
-        <input class="form-control" type="text" placeholder="Name" ng-model="map.name">
+        <input class="form-control" type="text" placeholder="Name" ng-model="param.name">
       </div>
       <div class="col-xs-3">
-        <button type="submit" class="btn btn-primary" ng-click="search(map.id, map.name)" style="margin-top: 25px">Search</button>
+        <button type="submit" class="btn btn-primary" ng-click="search(param.id, param.name)" style="margin-top: 25px">Search</button>
       </div>
     </form>
   </div>
@@ -25,9 +25,9 @@
       <th class="text-center" ts-criteria="name|lowercase">Name</th>
     </thead>
     <tbody>
-      <tr ng-repeat="map in datas" ng-click="selectModalRow($index)" ng-class="{'tr-selected': $index == selectedRow}" ts-repeat>
-        <td>{{ map.m_ID }}</td>
-        <td>{{ map.m_MapName_lang1 }}</td>
+      <tr ng-repeat="data in datas" ng-click="selectModalRow($index)" ng-class="{'tr-selected': $index == selectedRow}" ts-repeat>
+        <td>{{ data[ID] }}</td>
+        <td>{{ data[Value] }}</td>
       </tr>
     </tbody>
   </table>
