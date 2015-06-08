@@ -20,6 +20,10 @@
   padding-left: 10px;
 }
 
+.modal-body tr {
+  cursor: pointer;
+}
+
 .pointer { cursor: pointer; }
 
 .tr-selected {
