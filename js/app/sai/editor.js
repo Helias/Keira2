@@ -177,7 +177,13 @@
 
       for (i = 0; i < $scope.new_smart_scripts.length; i++) {
         if ($scope.new_smart_scripts[i].link == smartScript.id) {
-          return $scope.new_smart_scripts[i];
+
+          // if previous is LINK, return previous of previous
+          if ($scope.new_smart_scripts[i].event_type == app.saiConstants.event.LINK) {
+            return $scope.getPreviousScriptLink($scope.new_smart_scripts[i]);
+          } else {
+            return $scope.new_smart_scripts[i];
+          }
         }
       }
     };
