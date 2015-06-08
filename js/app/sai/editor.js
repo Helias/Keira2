@@ -14,7 +14,7 @@
     /* Options */
     $scope.options = {
       showBasicInformations : true,
-      lockIds : true,
+      lockIds : true
     };
 
     /* Labels */
@@ -426,7 +426,7 @@
 
           if (fullLine.indexOf("_enableDisableActionParamOne_") > -1) {
 
-            if (smartScript.action_param1() == "0") {
+            if (smartScript.action_param1 == "0") {
               fullLine = fullLine.replace("_enableDisableActionParamOne_", "Disable");
             } else { //! Even if above 1 or below 0 we start attacking/allow-combat-movement
               fullLine = fullLine.replace("_enableDisableActionParamOne_", "Enable");
@@ -435,9 +435,9 @@
 
           if (fullLine.indexOf("_incrementOrDecrementActionParamOne_") > -1) {
 
-            if (smartScript.action_param1() == "1") {
+            if (smartScript.action_param1 == "1") {
               fullLine = fullLine.replace("_incrementOrDecrementActionParamOne_", "Increment");
-            } else if (smartScript.action_param2() == "1") {
+            } else if (smartScript.action_param2 == "1") {
               fullLine = fullLine.replace("_incrementOrDecrementActionParamOne_", "Decrement");
             }
             //else //? What to do?
@@ -473,7 +473,7 @@
           if (fullLine.indexOf("_invincibilityHpActionParamsOneTwo_") > -1) {
 
             if (smartScript.action_param1 > 0) {
-              fullLine = fullLine.replace("_invincibilityHpActionParamsOneTwo_", "Set Invincibility Hp " + smartScript.action_param1());
+              fullLine = fullLine.replace("_invincibilityHpActionParamsOneTwo_", "Set Invincibility Hp " + smartScript.action_param1);
             } else if (smartScript.action_param2 > 0) {
               fullLine = fullLine.replace("_invincibilityHpActionParamsOneTwo_", "Set Invincibility Hp " + smartScript.action_param2 + "%");
             } else if (smartScript.action_param1 == 0 && smartScript.action_param2 == 0) {
