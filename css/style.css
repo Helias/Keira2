@@ -20,8 +20,12 @@
   padding-left: 10px;
 }
 
-.modal-body tr {
+.modal-body tr, .modal-body label {
   cursor: pointer;
+}
+
+.modal-body input {
+   max-height: 16px;
 }
 
 .pointer { cursor: pointer; }
