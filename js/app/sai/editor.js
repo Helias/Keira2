@@ -194,6 +194,7 @@
     $scope.generateComments = function() {
 
       var i, fullLine, smartScript, randomEmotes, smartScriptLink, event_phase_mask, event_flags,
+          arrayOfSplitPhases, event_phase_mask2, log2, l2, power,
           commentUnitFlag, unitFlags,
           commentNpcFlag, npcFlags,
           commentGoFlag, goFlags,
@@ -815,7 +816,41 @@
             }
           }
 
-          // TODO: 'event_phase_mask'
+          event_phase_mask = smartScriptLink != null ? smartScriptLink.event_phase_mask : smartScript.event_phase_mask;
+
+          if (event_phase_mask != app.saiConstants.phaseMask.ALWAYS)
+          {
+            arrayOfSplitPhases = [];
+
+            event_phase_mask2 = event_phase_mask;
+            log2 = 0;
+
+            while (event_phase_mask2 >= 2)
+            {
+              event_phase_mask2 /= 2;
+              log2++;
+            }
+
+            for (l2 = log2; l2 >= 0; l2--)
+            {
+              power = Math.pow(2, l2);
+
+              if (event_phase_mask >= power)
+              {
+                event_phase_mask -= power;
+                arrayOfSplitPhases.push(power);
+              }
+            }
+
+            Array.reverse(arrayOfSplitPhases); //! Reverse them so they are ascending
+            fullLine += " (Phase";
+
+            if (arrayOfSplitPhases.length > 1) {
+              fullLine += "s";
+            }
+
+            fullLine += " " + arrayOfSplitPhases.join(" & ") + ")";
+          }
 
           event_flags = smartScriptLink != null ? smartScriptLink.event_flags : smartScript.event_flags;
 
