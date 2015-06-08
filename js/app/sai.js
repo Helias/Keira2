@@ -220,7 +220,7 @@
     }
 
     /* [Function] Search */
-    $scope.search = function (sourceType, entryOrGuid) {
+    $scope.search = function (sourceType, entryOrGuid, comment) {
 
       $http.get( app.api + "/smart_scripts/" + sourceType + "/" + entryOrGuid )
         .success(function (data, status, header, config) {
@@ -239,8 +239,9 @@
 
       $http.get( app.api + "/search/smart_scripts/", {
         params: {
-          source_type: sourceType,
-          entryorguid: entryOrGuid
+          source_type : sourceType,
+          entryorguid : entryOrGuid,
+          comment     : comment
         }
       }).success(function (data, status, header, config) {
         $scope.scripts = $rootScope.fixNumericValues(data);
