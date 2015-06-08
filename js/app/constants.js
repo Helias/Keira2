@@ -2319,22 +2319,22 @@
 
   /* item BagFamily constants */
   app.modalConstants.bagFamily = [];
-  app.modalConstants.bagFamily[0] = "None";
-  app.modalConstants.bagFamily[1] = "Arrows";
-  app.modalConstants.bagFamily[2] = "Bullets";
-  app.modalConstants.bagFamily[4] = "Soul Shards";
-  app.modalConstants.bagFamily[8] = "Leatherworking Supplies";
-  app.modalConstants.bagFamily[16] = "Inscription Supplies";
-  app.modalConstants.bagFamily[32] = "Herbs";
-  app.modalConstants.bagFamily[64] = "Enchanting Supplies";
-  app.modalConstants.bagFamily[128] = "Engineering Supplies";
-  app.modalConstants.bagFamily[256] = "Keys";
-  app.modalConstants.bagFamily[512] = "Gems";
-  app.modalConstants.bagFamily[1024] = "Mining Supplies";
-  app.modalConstants.bagFamily[2048] = "Soulbound Equipment";
-  app.modalConstants.bagFamily[4096] = "Vanity Pets";
-  app.modalConstants.bagFamily[8192] = "Currency Tokens";
-  app.modalConstants.bagFamily[16384] = "QuestItems";
+  app.modalConstants.bagFamily[0] = { id : 0,     name : "None" };
+  app.modalConstants.bagFamily[1] = { id : 1,     name : "Arrows" };
+  app.modalConstants.bagFamily[2] = { id : 2,     name : "Bullets" };
+  app.modalConstants.bagFamily[3] = { id : 4,     name : "Soul Shards" };
+  app.modalConstants.bagFamily[4] = { id : 8,     name : "Leatherworking Supplies" };
+  app.modalConstants.bagFamily[5] = { id : 16,    name : "Inscription Supplies" };
+  app.modalConstants.bagFamily[6] = { id : 32,    name : "Herbs" };
+  app.modalConstants.bagFamily[7] = { id : 64,    name : "Enchanting Supplies" };
+  app.modalConstants.bagFamily[8] = { id : 128,   name : "Engineering Supplies" };
+  app.modalConstants.bagFamily[9] = { id : 256,   name : "Keys" };
+  app.modalConstants.bagFamily[10] = { id : 512,   name : "Gems" };
+  app.modalConstants.bagFamily[11] = { id : 1024,  name : "Mining Supplies" };
+  app.modalConstants.bagFamily[12] = { id : 2048,  name : "Soulbound Equipment" };
+  app.modalConstants.bagFamily[13] = { id : 4096,  name : "Vanity Pets" };
+  app.modalConstants.bagFamily[14] = { id : 8192,  name : "Currency Tokens" };
+  app.modalConstants.bagFamily[15] = { id : 16384, name : "QuestItems" };
 
   /* item sheath constants */
   app.modalConstants.sheath = [];

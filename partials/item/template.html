@@ -340,13 +340,13 @@
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type1"><br class="lh">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/dmgType.html', new_item_template, 'dmg_type1')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/dmg-type.html', new_item_template, 'dmg_type1')">...</button>
           </div>
         </div>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type2"><br class="lh">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/dmgType.html', new_item_template, 'dmg_type2')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/dmg-type.html', new_item_template, 'dmg_type2')">...</button>
           </div>
         </div>
       </div>
@@ -465,14 +465,16 @@
       </div>
       <div class="col-xs-1">
         <small>FoodType</small>
-        <div class="btn-group">
+        <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_item_template.FoodType">
           <div class="input-group-btn">
             <button class="btn btn-info input-xs" ng-click="openValueModal('', 'partials/item/modals/food-type.html', new_item_template, 'FoodType')">...</button>
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="row">
       <div class="col-xs-1">
         <small>sheath</small>
         <div class="input-group">

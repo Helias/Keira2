@@ -8,9 +8,9 @@
       <th class="text-left">Value</th>
     </thead>
     <tbody>
-      <tr ng-repeat="bagFamily in constants.bagFamily track by $index" id="{{ $index }}" ng-click="selectModalRow($index)" ng-class="{'tr-selected': $index == selectedRow}" ng-show="bagFamily !== NULL">
-        <td>{{ $index }}</td>
-        <td>{{ bagFamily }}</td>
+      <tr ng-repeat="bagFamily in constants.bagFamily" id="{{ bagFamily.id }}" ng-click="selectModalRow(bagFamily.id)" ng-class="{'tr-selected': bagFamily.id == selectedRow}" ng-show="bagFamily.id !== NULL">
+        <td>{{ bagFamily.id}}</td>
+        <td>{{ bagFamily.name }}</td>
       </tr>
     </tbody>
   </table>
