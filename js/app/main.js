@@ -110,12 +110,12 @@
 
     };
 
-    $rootScope.openSearchModal = function (size, TemplateUrl, object, property, search_param) {
+    $rootScope.openSearchModal = function (size, object, property, search_param) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $modal.open({
-        templateUrl: TemplateUrl,
+        templateUrl: "partials/creature/modals/search.html",
         controller: "SearchModalController",
         size: size,
         resolve: {
