@@ -8,7 +8,7 @@
       <th class="text-left">Value</th>
     </thead>
     <tbody>
-      <tr ng-repeat="bagFamily in constants.bagFamily" id="{{ bagFamily.id }}" ng-click="selectModalRow(bagFamily.id)" ng-class="{'tr-selected': bagFamily.id == selectedRow}" ng-show="bagFamily.id !== NULL">
+      <tr ng-repeat="bagFamily in constants.bagFamily" ng-click="selectModalRow(bagFamily.id)" ng-class="{'tr-selected': bagFamily.id == selectedRow}" ng-show="bagFamily.id !== NULL">
         <td>{{ bagFamily.id}}</td>
         <td>{{ bagFamily.name }}</td>
       </tr>

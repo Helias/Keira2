@@ -50,8 +50,44 @@
   /* Modal Controller for generic values
    * params:
    *  - property: the field name of the table which the modal will return the value
+   *  - constant: name of the constants (property of app.modalConstants[])
   */
-  app.controller('ValueModalController', function ($scope, $modalInstance, property) {
+  app.controller('ValueModalController', function ($scope, $modalInstance, property, constant) {
+
+    // importing constants on Controller
+    $scope.constants = app.modalConstants[constant];
+
+    $scope.modalTitle = property;
+
+    $scope.selectedRow = null;
+
+    // Onclick the table row on the modal save the index
+    $scope.selectModalRow = function(index) {
+      $scope.selectedRow = index;
+    };
+
+    // When click on the modal button "Ok" send the id value selected
+    $scope.modalOk = function () {
+      if ($scope.selectedRow !== null) {
+        $modalInstance.close( $scope.selectedRow );
+      }
+      else {
+        $modalInstance.close();
+      }
+    };
+
+    $scope.modalCancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+
+  });
+
+  /* Modal Controller for generic values
+   * params:
+   *  - property: the field name of the table which the modal will return the value
+   *  - constant: name of the constants (property of app.modalConstants[])
+  */
+  app.controller('BagFamilyModalController', function ($scope, $modalInstance, property, constant) {
 
     // importing constants on Controller
     $scope.constants = app.modalConstants;
