@@ -90,6 +90,8 @@
     */
     $rootScope.openValueModal = function (size, TemplateUrl, object, property) {
 
+      if ( !$rootScope.isEntrySelected() ) { return; }
+
       var modalInstance = $modal.open({
         templateUrl: TemplateUrl,
         controller: "ValueModalController",
