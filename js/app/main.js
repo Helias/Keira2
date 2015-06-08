@@ -82,23 +82,74 @@
     };
 
     /* Modal to handle generic values:
-     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
-     * TemplateUrl => content of the modal (file html inside the folder "modals")
      * object      => new_tablename the object responsible of the table (example: new_creature_template)
      * property    => field of the table to modify (example: npcflag)
      * numValues   => number of the total values (flag) of the property
+     * constant    => name of the constant that will be passed to ValueModalController
+     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
     */
-    $rootScope.openValueModal = function (size, TemplateUrl, object, property) {
+    $rootScope.openValueModal = function (object, property, constant, size) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
 
+      if(constant == null) {
+        constant = property;
+      }
+
+      if(size == null) {
+       size = ''; // default size
+      }
+
       var modalInstance = $modal.open({
-        templateUrl: TemplateUrl,
+        templateUrl: "partials/modals/value.html",
         controller: "ValueModalController",
         size: size,
         resolve: {
           property: function () {
             return property;
+          },
+          constant: function () {
+           return constant;
+          }
+        }
+      });
+
+      // When the modal will be closed this function takes the new value to assign
+      modalInstance.result.then(function (Res) {
+        object[property] = Res;
+      });
+
+    };
+
+/* Modal to handle generic values:
+     * object      => new_tablename the object responsible of the table (example: new_creature_template)
+     * property    => field of the table to modify (example: npcflag)
+     * numValues   => number of the total values (flag) of the property
+     * constant    => name of the constant that will be passed to ValueModalController
+     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
+    */
+    $rootScope.openBagFamilyModal = function (object, property, constant, size) {
+
+      if ( !$rootScope.isEntrySelected() ) { return; }
+
+      if(constant == null) {
+        constant = property;
+      }
+
+      if(size == null) {
+       size = ''; // default size
+      }
+
+      var modalInstance = $modal.open({
+        templateUrl: "partials/item/modals/bag-family.html",
+        controller: "BagFamilyModalController",
+        size: size,
+        resolve: {
+          property: function () {
+            return property;
+          },
+          constant: function () {
+           return constant;
           }
         }
       });
@@ -115,7 +166,7 @@
       if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $modal.open({
-        templateUrl: "partials/creature/modals/search.html",
+        templateUrl: "partials/modals/search.html",
         controller: "SearchModalController",
         size: size,
         resolve: {
