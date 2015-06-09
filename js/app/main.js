@@ -161,7 +161,7 @@
 
     };
 
-    $rootScope.openSearchModal = function (size, object, property, search_param) {
+    $rootScope.openSearchModal = function (object, property, search_param, size) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
 
