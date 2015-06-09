@@ -283,6 +283,9 @@
         <small>rank</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_creature_template.rank">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'rank')">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-2">
@@ -328,6 +331,9 @@
             <small>trainer_type</small>
             <div class="input-group">
               <input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_type">
+              <div class="input-group-btn">
+                <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'trainer_type')">...</button>
+              </div>
             </div>
           </div>
           <div class="col-xs-6">

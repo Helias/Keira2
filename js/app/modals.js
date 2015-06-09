@@ -131,7 +131,13 @@
     /* [Function] Search */
     $scope.search = function (id, name) {
 
-      $http.get( app.api + "search/dbc/" + search_param + "/", {
+      if ( (id === "" || isNaN(id)) && name === "")
+      {
+        alert('Fill at least one field!');
+        return;
+      }
+
+      $http.get( app.api + "search/" + search_param + "/", {
         params: {
           id: id,
           name: name

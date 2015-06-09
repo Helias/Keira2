@@ -136,7 +136,12 @@
       </div>
       <div class="col-xs-4">
         <small>RequiredSkill</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredSkill">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredSkill">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'RequiredSkill', 'dbc/skills_wotlk')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-4">
         <small>RequiredSkillRank</small>
@@ -148,7 +153,12 @@
       </div>
       <div class="col-xs-4">
         <small>requiredspell</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.requiredspell">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.requiredspell">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'requiredspell', 'dbc/spells_wotlk')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-4">
         <small>requiredhonorrank</small>
@@ -275,11 +285,42 @@
     <div class="row">
       <div class="col-xs-2">
         <small>spellid</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_3"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_4"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_5"><br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_1">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_1', 'dbc/spells_wotlk')">...</button>
+          </div>
+        </div>
+        <br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_2">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_2', 'dbc/spells_wotlk')">...</button>
+          </div>
+        </div>
+        <br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_3">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_3', 'dbc/spells_wotlk')">...</button>
+          </div>
+        </div>
+        <br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_4">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_4', 'dbc/spells_wotlk')">...</button>
+          </div>
+        </div>
+        <br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_5">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_5', 'dbc/spells_wotlk')">...</button>
+          </div>
+        </div>
+        <br class="lh">
+
       </div>
       <div class="col-xs-2">
         <small>trigger</small>
@@ -509,7 +550,12 @@
       </div>
       <div class="col-xs-2">
         <small>Map</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.Map">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.Map">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'Map', 'dbc/maps_wotlk')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-2">
         <small>lockid</small>

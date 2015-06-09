@@ -2251,4 +2251,19 @@
   app.modalConstants.languages[38] = "Goblin Binary";
   app.modalConstants.languages[39] = "Addon";
 
+  /* rank constants */
+  app.modalConstants.rank = [];
+  app.modalConstants.rank[0] = "Normal";
+  app.modalConstants.rank[1] = "Elite";
+  app.modalConstants.rank[2] = "Rare Elite";
+  app.modalConstants.rank[3] = "Boss";
+  app.modalConstants.rank[4] = "Rare";
+
+  /* trainer type constants */
+  app.modalConstants.trainer_type = [];
+  app.modalConstants.trainer_type[0] = "CLASS";
+  app.modalConstants.trainer_type[1] = "MOUNTS";
+  app.modalConstants.trainer_type[2] = "TRADESKILLS";
+  app.modalConstants.trainer_type[3] = "PET";
+
 }());
