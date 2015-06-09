@@ -14,6 +14,8 @@ Also you can change the GUI style choosing a different **graphic theme** using t
 
 A live demo is available [here](http://shinworld.altervista.org/Keira2/). You can use it for production but be aware that its database may not be updated to the latest version.
 
+Also you can **help us** by testing the development version **without installing it**, simply using our [development live demo](http://keira2.altervista.org/Keira2-dev/). Remember to **clear your browser cache** before testing it and [report any bug or suggestion](https://github.com/Helias/Keira2/issues/new).
+
 ## Installation
 
 Keira2 fetches datas from an istance of the [TrinityCore JSON API](https://github.com/ShinDarth/TC-JSON-API/), it can be installed either on the same machine or on an external one.
@@ -35,7 +37,8 @@ If you have the TrinityCore JSON API on an external machine, you should set it l
 
 ### Contribute
 
-- Report any bug or suggestions by [opening a new issue](https://github.com/Helias/Keira2/issues/new).
+- You can help us even without installing your own Keira2 instance by testing our [development live demo](http://keira2.altervista.org/Keira2-dev/).
+- Report any bug or suggestion by [opening a new issue](https://github.com/Helias/Keira2/issues/new).
 - Check our [documentation](https://github.com/Helias/Keira2/wiki) to understand how the source is structured.
 
 ### License
