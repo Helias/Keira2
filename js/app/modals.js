@@ -117,6 +117,12 @@
 
   app.controller('SearchModalController', function ($scope, $modalInstance, $http, $rootScope, property, search_param) {
 
+    /* init object of search param */
+    $scope.param = {
+      id : "",
+      name : ""
+    };
+
     // init datas object properties
     var datas_properties = [];
 

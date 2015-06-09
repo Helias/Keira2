@@ -19,13 +19,13 @@
     </form>
   </div>
   <br>
-  <table class="table table-striped table-condensed" ts-wrapper>
+  <table class="table table-striped table-condensed">
     <thead>
-      <th class="text-center" ts-criteria="id|parseInt">ID</th>
-      <th class="text-center" ts-criteria="name|lowercase">Name</th>
+      <th class="text-center">ID</th>
+      <th class="text-center">Name</th>
     </thead>
     <tbody>
-      <tr ng-repeat="data in datas" ng-click="selectModalRow($index)" ng-class="{'tr-selected': $index == selectedRow}" ts-repeat>
+      <tr ng-repeat="data in datas | orderBy:data[ID]" ng-click="selectModalRow($index)" ng-class="{'tr-selected': $index == selectedRow}">
         <td>{{ data[ID] }}</td>
         <td>{{ data[Value] }}</td>
       </tr>
