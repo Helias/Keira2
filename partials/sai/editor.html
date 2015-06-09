@@ -17,6 +17,9 @@
     <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}smart_scripts"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>smart_scripts</a></p>
   </div>
 </div>
+<div ng-show="selectedRow == -1 && isEntitySelected">
+  <p class="lead">Please select a row <i class="glyphicon glyphicon-edit"></i></p>
+</div>
 <div class="row sai-editor-head" ng-show="selectedRow != -1">
   <div class="col-xs-3">
     <div class="row">

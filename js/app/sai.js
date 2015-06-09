@@ -216,7 +216,7 @@
       /* We have no creature selected and default active tab is search */
       $scope.isEntitySelected = false;
       $scope.saiTabs.search = true;
-      $scope.selectionText = "No entity selected. Please use Search or Create new to select one.";
+      $scope.selectionText = "No entity selected. Please use Search and select one.";
     }
 
     /* [Function] Search */
