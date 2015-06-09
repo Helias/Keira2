@@ -11,6 +11,12 @@
     /* At start we have no row selected */
     $scope.selectedRow = -1;
 
+    /* Select the first row after a script is loaded */
+    $scope.$on('saiLoaded', function(e) {
+      $scope.selectedRow = 0;
+      $scope.selected = $scope.new_smart_scripts[0];
+    });
+
     /* Options */
     $scope.options = {
       showBasicInformations : true,

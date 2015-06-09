@@ -12,6 +12,9 @@
     $scope.sourceType = $stateParams.sourceType;
     $scope.entryOrGuid = $stateParams.sourceType;
 
+    /* Just to know we didn't try to fetch data yet */
+    $scope.loadAttempt = false;
+
     /* All SAI tabs, disabled by default.
     *  Only one tab can be active at a time */
     $scope.saiTabs = {
@@ -70,6 +73,7 @@
         if ($scope.current_smart_scripts.length > 0) {
           // editing existing SAI script
           $scope.selectionText = "Editing the SmartAI script of ";
+          $scope.$broadcast ('saiLoaded');
         } else {
           // creating new SAI script
           $scope.selectionText = "Creating a new SmartAI script for ";
@@ -207,9 +211,11 @@
             console.log("[WARNING] source_type = " + $stateParams.sourceType + " not yet supported");
         }
 
+        $scope.loadAttempt = true;
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] smart_scripts/" + $stateParams.sourceType + "/" + $stateParams.entryOrGuid + " $http.get request failed");
+        $scope.loadAttempt = true;
       });
 
     } else {
