@@ -2,9 +2,9 @@
 
 This software is a Database Editor web application for the [TrinityCore MMORPG framework](https://github.com/TrinityCore/TrinityCore) built with [AngularJS](https://angularjs.org/) and using the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/) to retrieve database datas.
 
-Keira2 allows the user to **edit the database via GUI** and **generates automatically the SQL code** for him/her. It is inspired by the old **Quice/Truice** database editor, originally developed by **indomit**.
+Keira2 allows the user to **edit the database via GUI** and **generates automatically the SQL code** for him/her. It is inspired by the old **Quice/Truice** database editor, originally developed by **indomit**, and by the [Discover-'s SAI Editor](https://github.com/Discover-/SAI-Editor).
 
-Using Keira2, you can edit **Quests**, **Creatures**, **Spawns**, **Loots**, **GameObjects**, **Items**, **Characters**, etc...
+Using Keira2, you can edit **SmartAI**, **Quests**, **Creatures**, **Spawns**, **Loots**, **GameObjects**, **Items**, **Characters**, etc...
 
 Also you can change the GUI style choosing a different **graphic theme** using the theme-switcher button. There are several themes, light and dark ones.
 
