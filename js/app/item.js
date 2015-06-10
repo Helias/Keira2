@@ -40,13 +40,13 @@
       $scope.isItemSelected = true;
       $scope.itemTabs.template = true;
 
-      /*  Following lines retrieve all Item datas
+      /*  Following lines retrieve all Item data
        *  current_* mantains the database state
        *  new_*     mantains the editor state
        *  we will use those two objects to generate the SQL queries
        */
 
-      /* Retrieve all item_template datas */
+      /* Retrieve all item_template data */
       $http.get( app.api + "item/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_item_template = $rootScope.fixNumericValues(data[0]);
@@ -57,7 +57,7 @@
         console.log("[ERROR] item/template/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all disenchant_loot_template datas */
+      /* Retrieve all disenchant_loot_template data */
       $http.get( app.api + "loot/template/disenchant/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_disenchant_loot_template = $rootScope.fixNumericValues(data);
@@ -67,7 +67,7 @@
         console.log("[ERROR] loot/template/disenchant/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all prospecting_loot_template datas */
+      /* Retrieve all prospecting_loot_template data */
       $http.get( app.api + "loot/template/prospecting/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_prospecting_loot_template = $rootScope.fixNumericValues(data);
@@ -77,7 +77,7 @@
         console.log("[ERROR] loot/template/prospecting/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all milling_loot_template datas */
+      /* Retrieve all milling_loot_template data */
       $http.get( app.api + "loot/template/milling/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_milling_loot_template = $rootScope.fixNumericValues(data);
@@ -87,7 +87,7 @@
         console.log("[ERROR] loot/template/item/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all item_loot_template datas */
+      /* Retrieve all item_loot_template data */
       $http.get( app.api + "loot/template/item/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_item_loot_template = $rootScope.fixNumericValues(data);
@@ -97,7 +97,7 @@
         console.log("[ERROR] loot/template/item/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all item_enchantment_template datas */
+      /* Retrieve all item_enchantment_template data */
       $http.get( app.api + "item/enchantment/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_item_enchantment_template = $rootScope.fixNumericValues(data);

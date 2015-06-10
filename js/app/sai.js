@@ -57,13 +57,13 @@
       $scope.isEntitySelected = true;
       $scope.saiTabs.editor = true;
 
-      /*  Following lines retrieve all SAI datas
+      /*  Following lines retrieve all SAI data
        *  current_* mantains the database state
        *  new_*     mantains the editor state
        *  we will use those two objects to generate the SQL queries
        */
 
-      /* Retrieve all smart_scripts datas */
+      /* Retrieve all smart_scripts data */
       $http.get( app.api + "smart_scripts/" + $stateParams.sourceType + "/" + $stateParams.entryOrGuid )
         .success(function (data, status, header, config) {
         $scope.current_smart_scripts = $rootScope.fixNumericValues(data);
@@ -108,11 +108,11 @@
                   console.log("[WARNING] creature/spawn/guid/" + $scope.entityGuid + " returned 0 results: unable to find the entry of the creature.");
                 } else {
                   if (!data[0].hasOwnProperty('id')) {
-                    console.log("[ERROR] creature/spawn/guid/" + $scope.entityGuid + " returned datas, but the attribute 'id' is not present.");
+                    console.log("[ERROR] creature/spawn/guid/" + $scope.entityGuid + " returned data, but the attribute 'id' is not present.");
                   } else {
                     $scope.entityEntry = data[0].id;
 
-                    /* Retrieve all creature_template datas */
+                    /* Retrieve all creature_template data */
                     $http.get( app.api + "creature/template/" + $scope.entityEntry )
                       .success(function (data, status, header, config) {
                       $scope.current_creature_template = $rootScope.fixNumericValues(data[0]);
@@ -134,7 +134,7 @@
               // Creature ENTRY
               $scope.entityEntry = $stateParams.entryOrGuid;
 
-              /* Retrieve all creature_template datas */
+              /* Retrieve all creature_template data */
               $http.get( app.api + "creature/template/" + $scope.entityEntry )
                 .success(function (data, status, header, config) {
                 $scope.current_creature_template = $rootScope.fixNumericValues(data[0]);
@@ -160,11 +160,11 @@
                   console.log("[WARNING] gameobject/spawn/guid/" + $scope.entityGuid + " returned 0 results: unable to find the entry of the gameobject.");
                 } else {
                   if (!data[0].hasOwnProperty('id')) {
-                    console.log("[ERROR] gameobject/spawn/guid/" + $scope.entityGuid + " returned datas, but the attribute 'id' is not present.");
+                    console.log("[ERROR] gameobject/spawn/guid/" + $scope.entityGuid + " returned data, but the attribute 'id' is not present.");
                   } else {
                     $scope.entityEntry = data[0].id;
 
-                    /* Retrieve all gameobject_template datas */
+                    /* Retrieve all gameobject_template data */
                     $http.get( app.api + "gameobject/template/" + $scope.entityEntry )
                       .success(function (data, status, header, config) {
                       $scope.current_gameobject_template = $rootScope.fixNumericValues(data[0]);
@@ -186,7 +186,7 @@
               // GameObject ENTRY
               $scope.entityEntry = $stateParams.entryOrGuid;
 
-              /* Retrieve all gameobject_template datas */
+              /* Retrieve all gameobject_template data */
               $http.get( app.api + "gameobject/template/" + $scope.entityEntry )
                 .success(function (data, status, header, config) {
                 $scope.current_gameobject_template = $rootScope.fixNumericValues(data[0]);
@@ -279,7 +279,7 @@
 
       $scope.SAIScript = "-- " + $scope.selectionText + "\n\n";
 
-      // non-smart_scripts datas
+      // non-smart_scripts data
       switch (Number($stateParams.sourceType)) {
 
         case 0: // Creature
@@ -299,7 +299,7 @@
           break;
       }
 
-      // smart_scripts datas
+      // smart_scripts data
       $scope.SAIScript += "-- Table smart_scripts\n";
       if ($scope.new_smart_scripts.length > 0) {
         $scope.SAIScript += app.getFullDeleteInsertTwoKeys("smart_scripts", "source_type", "entryorguid", $scope.new_smart_scripts);

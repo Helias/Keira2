@@ -39,13 +39,13 @@
       $scope.isQuestSelected = true;
       $scope.questTabs.part1 = true;
 
-      /*  Following lines retrieve all Quest datas
+      /*  Following lines retrieve all Quest data
        *  current_* mantains the database state
        *  new_*     mantains the editor state
        *  we will use those two objects to generate the SQL queries
        */
 
-      /* Retrieve all quest_template datas */
+      /* Retrieve all quest_template data */
       $http.get( app.api + "quest/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_quest_template = $rootScope.fixNumericValues(data[0]);
@@ -56,7 +56,7 @@
         console.log("[ERROR] quest/template/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all creature_queststarter datas */
+      /* Retrieve all creature_queststarter data */
       $http.get( app.api + "creature/queststarter/quest/" + $stateParams.id, {
         params : { names : 0 }
       })
@@ -68,7 +68,7 @@
         console.log("[ERROR] creature/queststarter/quest/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all creature_questender datas */
+      /* Retrieve all creature_questender data */
       $http.get( app.api + "creature/questender/quest/" + $stateParams.id, {
         params : { names : 0 }
       })
@@ -80,7 +80,7 @@
         console.log("[ERROR] creature/questender/quest/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all gameobject_queststarter datas */
+      /* Retrieve all gameobject_queststarter data */
       $http.get( app.api + "gameobject/queststarter/quest/" + $stateParams.id, {
         params : { names : 0 }
       })
@@ -92,7 +92,7 @@
         console.log("[ERROR] gameobject/queststarter/quest/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all gameobject_questender datas */
+      /* Retrieve all gameobject_questender data */
       $http.get( app.api + "gameobject/questender/quest/" + $stateParams.id, {
         params : { names : 0 }
       })

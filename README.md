@@ -1,6 +1,6 @@
 ## Keira2 the TrinityCore Database Web-Editor
 
-This software is a Database Editor web application for the [TrinityCore MMORPG framework](https://github.com/TrinityCore/TrinityCore) built with [AngularJS](https://angularjs.org/) and using the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/) to retrieve database datas.
+This software is a Database Editor web application for the [TrinityCore MMORPG framework](https://github.com/TrinityCore/TrinityCore) built with [AngularJS](https://angularjs.org/) and using the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/) to retrieve database data.
 
 Keira2 allows the user to **edit the database via GUI** and **generates automatically the SQL code** for him/her. It is inspired by the old **Quice/Truice** database editor, originally developed by **indomit**, and by the [Discover-'s SAI Editor](https://github.com/Discover-/SAI-Editor).
 
@@ -18,7 +18,7 @@ Also you can **help us** by testing the development version **without installing
 
 ## Installation
 
-Keira2 fetches datas from an istance of the [TrinityCore JSON API](https://github.com/ShinDarth/TC-JSON-API/), it can be installed either on the same machine or on an external one.
+Keira2 fetches data from an istance of the [TrinityCore JSON API](https://github.com/ShinDarth/TC-JSON-API/), it can be installed either on the same machine or on an external one.
 
 You can install an istance of the TrinityCore JSON API using [this guide](https://github.com/ShinDarth/TC-JSON-API/blob/3.3.5/INSTALL.md).
 

@@ -31,13 +31,13 @@
       $scope.isGameobjectSelected = true;
       $scope.gameobjectTabs.template = true;
 
-      /*  Following lines retrieve all Gameobject datas
+      /*  Following lines retrieve all Gameobject data
        *  current_* mantains the database state
        *  new_*     mantains the editor state
        *  we will use those two objects to generate the SQL queries
        */
 
-      /* Retrieve all gameobject_template datas */
+      /* Retrieve all gameobject_template data */
       $http.get( app.api + "gameobject/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_gameobject_template = $rootScope.fixNumericValues(data[0]);
@@ -48,7 +48,7 @@
         console.log("[ERROR] gameobject/template/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all gameobject_loot_template datas */
+      /* Retrieve all gameobject_loot_template data */
       $http.get( app.api + "loot/template/gameobject/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_gameobject_loot_template = $rootScope.fixNumericValues(data);
@@ -58,7 +58,7 @@
         console.log("[ERROR] loot/template/gameobject/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all gameobject datas */
+      /* Retrieve all gameobject data */
       $http.get( app.api + "/gameobject/spawn/id/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_gameobject = $rootScope.fixNumericValues(data);

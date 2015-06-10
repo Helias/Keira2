@@ -47,13 +47,13 @@
       $scope.isCreatureSelected = true;
       $scope.creatureTabs.creatureTemplate = true;
 
-      /*  Following lines retrieve all Creature datas
+      /*  Following lines retrieve all Creature data
        *  current_* mantains the database state
        *  new_*     mantains the editor state
        *  we will use those two objects to generate the SQL queries
        */
 
-      /* Retrieve all creature_template datas */
+      /* Retrieve all creature_template data */
       $http.get( app.api + "creature/template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_template = $rootScope.fixNumericValues(data[0]);
@@ -64,7 +64,7 @@
         console.log("[ERROR] creature/template/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all creature_equip_template datas */
+      /* Retrieve all creature_equip_template data */
       $http.get( app.api + "creature/equip_template/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_equip_template = $rootScope.fixNumericValues(data[0]);
@@ -74,7 +74,7 @@
         console.log("[ERROR] creature/equip_template/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all creature_template_addon datas */
+      /* Retrieve all creature_template_addon data */
       $http.get( app.api + "creature/template_addon/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_template_addon = $rootScope.fixNumericValues(data[0]);
@@ -84,7 +84,7 @@
         console.log("[ERROR] creature/template_addon/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all creature_onkill_reputation datas */
+      /* Retrieve all creature_onkill_reputation data */
       $http.get( app.api + "creature/onkill_reputation/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_onkill_reputation = $rootScope.fixNumericValues(data[0]);
@@ -94,7 +94,7 @@
         console.log("[ERROR] creature/onkill_reputation/ $http.get request failed");
       });
 
-      /* Retrieve all creature_template_loot datas */
+      /* Retrieve all creature_template_loot data */
       $http.get( app.api + "loot/template/creature/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_creature_loot_template = $rootScope.fixNumericValues(data);
@@ -104,7 +104,7 @@
         console.log("[ERROR] loot/template/creature/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all skinning_template_loot datas */
+      /* Retrieve all skinning_template_loot data */
       $http.get( app.api + "loot/template/skinning/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_skinning_loot_template = $rootScope.fixNumericValues(data);
@@ -114,7 +114,7 @@
         console.log("[ERROR] loot/template/skinning/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all pickpocketing_template_loot datas */
+      /* Retrieve all pickpocketing_template_loot data */
       $http.get( app.api + "loot/template/pickpocketing/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_pickpocketing_loot_template = $rootScope.fixNumericValues(data);

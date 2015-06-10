@@ -26,13 +26,13 @@
       $scope.isCharacterSelected      = true;
       $scope.characterTabs.character  = true;
 
-      /*  Following lines retrieve all character datas
+      /*  Following lines retrieve all character data
        *  current_* mantains the database state
        *  new_*     mantains the editor state
        *  we will use those two objects to generate the SQL queries
        */
 
-      /* Retrieve all characters datas */
+      /* Retrieve all characters data */
       $http.get( app.api + "characters/" + $stateParams.id, {
         params: { no_extra_fields : 1 }
       })
