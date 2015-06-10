@@ -2229,6 +2229,43 @@
   app.modalConstants.dmgType[5] = "Shadow";
   app.modalConstants.dmgType[6] = "Arcane";
 
+  /* item Quality constants */
+  app.modalConstants.Quality = [];
+  app.modalConstants.Quality[0] = "Grey Poor";
+  app.modalConstants.Quality[1] = "White Common";
+  app.modalConstants.Quality[2] = "Green Uncommon";
+  app.modalConstants.Quality[3] = "Blue Rare";
+  app.modalConstants.Quality[4] = "Purple Epic";
+  app.modalConstants.Quality[5] = "Orange Legendary";
+  app.modalConstants.Quality[6] = "Red Artifact";
+  app.modalConstants.Quality[7] = "Gold Heirloom (Bind to Account)";
+
+  /* item RequiredReputationRank constants */
+  app.modalConstants.reputationRank = [];
+  app.modalConstants.reputationRank[0] = "HATED";
+  app.modalConstants.reputationRank[1] = "HOSTILE";
+  app.modalConstants.reputationRank[2] = "UNFRIENDLY";
+  app.modalConstants.reputationRank[3] = "NEUTRAL";
+  app.modalConstants.reputationRank[4] = "FRIENDLY";
+  app.modalConstants.reputationRank[5] = "HONORED";
+  app.modalConstants.reputationRank[6] = "REVERED";
+  app.modalConstants.reputationRank[7] = "EXALTED";
+
+  /* item flags Custom constants */
+  app.modalConstants.flagsCustom = [];
+  app.modalConstants.flagsCustom[1] = "DURATION_REAL_TIME (Item duration will tick even if player is offline)";
+  app.modalConstants.flagsCustom[2] = "IGNORE_QUEST_STATUS (No quest status will be checked when this item drops)";
+  app.modalConstants.flagsCustom[4] = "FOLLOW_LOOT_RULES (Item will always follow group/master/need before greed looting rules)";
+
+  /* spell Trigger constants */
+  app.modalConstants.spellTrigger = [];
+  app.modalConstants.spellTrigger[0] = "On Use";
+  app.modalConstants.spellTrigger[1] = "On Equip";
+  app.modalConstants.spellTrigger[2] = "Chance on Hit";
+  app.modalConstants.spellTrigger[4] = "Soulstone";
+  app.modalConstants.spellTrigger[5] = "Use with no delay";
+  app.modalConstants.spellTrigger[6] = "Learn Spell ID";
+
   /* Languages constants */
   app.modalConstants.languages = [];
   app.modalConstants.languages[0] = "Universal";
@@ -2272,5 +2309,43 @@
   app.modalConstants.MovementType[1] = "Random (in radius)";
   app.modalConstants.MovementType[2] = "Waypoint movement";
 
+  /* GameObject Type constants */
+  app.modalConstants.GameObjectType = [];
+  app.modalConstants.GameObjectType[0] = "DOOR";
+  app.modalConstants.GameObjectType[1] = "BUTTON";
+  app.modalConstants.GameObjectType[2] = "QUESTGIVER";
+  app.modalConstants.GameObjectType[3] = "CHEST";
+  app.modalConstants.GameObjectType[4] = "BINDER";
+  app.modalConstants.GameObjectType[5] = "GENERIC";
+  app.modalConstants.GameObjectType[6] = "TRAP";
+  app.modalConstants.GameObjectType[7] = "CHAIR";
+  app.modalConstants.GameObjectType[8] = "SPELL_FOCUS";
+  app.modalConstants.GameObjectType[9] = "TEXT";
+  app.modalConstants.GameObjectType[10] = "GOOBER";
+  app.modalConstants.GameObjectType[11] = "TRANSPORT";
+  app.modalConstants.GameObjectType[12] = "AREADAMAGE";
+  app.modalConstants.GameObjectType[13] = "CAMERA";
+  app.modalConstants.GameObjectType[14] = "MAP_OBJECT";
+  app.modalConstants.GameObjectType[15] = "MO_TRANSPORT";
+  app.modalConstants.GameObjectType[16] = "DUEL_ARBITER";
+  app.modalConstants.GameObjectType[17] = "FISHINGNODE";
+  app.modalConstants.GameObjectType[18] = "SUMMONING_RITUAL";
+  app.modalConstants.GameObjectType[19] = "MAILBOX";
+  app.modalConstants.GameObjectType[20] = "AUCTIONHOUSE (DO_NOT_USE)";
+  app.modalConstants.GameObjectType[21] = "GUARDPOST";
+  app.modalConstants.GameObjectType[22] = "SPELLCASTER";
+  app.modalConstants.GameObjectType[23] = "MEETINGSTONE";
+  app.modalConstants.GameObjectType[24] = "FLAGSTAND";
+  app.modalConstants.GameObjectType[25] = "FISHINGHOLE";
+  app.modalConstants.GameObjectType[26] = "FLAGDROP";
+  app.modalConstants.GameObjectType[27] = "MINI_GAME";
+  app.modalConstants.GameObjectType[28] = "LOTTERY_KIOSK (DO_NOT_USE)";
+  app.modalConstants.GameObjectType[29] = "CAPTURE_POINT";
+  app.modalConstants.GameObjectType[30] = "AURA_GENERATOR";
+  app.modalConstants.GameObjectType[31] = "DUNGEON_DIFFICULTY";
+  app.modalConstants.GameObjectType[32] = "BARBER_CHAIR";
+  app.modalConstants.GameObjectType[33] = "DESTRUCTIBLE_BUILDING";
+  app.modalConstants.GameObjectType[34] = "GUILD_BANK";
+  app.modalConstants.GameObjectType[35] = "TRAPDOOR (REMOVED?)";
 
 }());

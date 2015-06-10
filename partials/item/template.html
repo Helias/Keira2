@@ -41,7 +41,12 @@
   </div>
   <div class="col-xs-1">
     <small>Quality</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.Quality">
+    <div class="input-group">
+      <input class="form-control input-xs" type="text" ng-model="new_item_template.Quality">
+      <div class="input-group-btn">
+        <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'Quality')">...</button>
+      </div>
+    </div>
   </div>
   <div class="col-xs-2">
     <small>Flags</small>
@@ -132,7 +137,12 @@
       </div>
       <div class="col-xs-4">
         <small>RequiredReputationRank</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredReputationRank">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredReputationRank">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'RequiredReputationRank', 'reputationRank')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-4">
         <small>RequiredSkill</small>
@@ -324,11 +334,41 @@
       </div>
       <div class="col-xs-2">
         <small>trigger</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_3"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_4"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_5"><br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_1">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_1', 'spellTrigger')">...</button>
+          </div>
+        </div>
+        <br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_2">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_2', 'spellTrigger')">...</button>
+          </div>
+        </div>
+        <br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_3">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_3', 'spellTrigger')">...</button>
+          </div>
+        </div>
+        <br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_4">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_4', 'spellTrigger')">...</button>
+          </div>
+        </div>
+        <br class="lh">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_5">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_5', 'spellTrigger')">...</button>
+          </div>
+        </div>
+        <br class="lh">
       </div>
       <div class="col-xs-2">
         <small>charges</small>
@@ -486,12 +526,7 @@
       </div>
       <div class="col-xs-2">
         <small>PageText</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.PageText">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'PageText', 'PageTextMaterial')">...</button>
-          </div>
-        </div>
+        <input class="form-control input-xs" type="text" ng-model="new_item_template.PageText">
       </div>
       <div class="col-xs-2">
         <small>Duration</small>
@@ -499,7 +534,12 @@
       </div>
       <div class="col-xs-2">
         <small>area</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.area">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.area">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'area', 'dbc/areas_and_zones_wotlk')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-2">
         <small>startquest</small>
@@ -572,7 +612,12 @@
 
       <div class="col-xs-1">
         <small>PageMaterial</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.PageMaterial">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.PageMaterial">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'PageText', 'PageTextMaterial')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-1">
         <small>TotemCategory</small>
@@ -613,7 +658,12 @@
       </div>
       <div class="col-xs-2">
         <small>flagsCustom</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.flagsCustom">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.flagsCustom">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'flagsCustom')">...</button>
+          </div>
+        </div>
       </div>
 
     </div>

@@ -19,7 +19,12 @@
       </div>
       <div class="col-xs-3">
         <small>type</small>
-        <input class="form-control input-xs" type="text" ng-model="new_gameobject_template.type">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="new_gameobject_template.type">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_gameobject_template, 'type', 'GameObjectType')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-2">
         <small>size</small>
@@ -33,7 +38,12 @@
       </div>
       <div class="col-xs-3 text-left">
         <small>faction</small>
-        <input type="text" class="form-control input-xs" ng-model="new_gameobject_template.faction">
+        <div class="input-group">
+          <input type="text" class="form-control input-xs" ng-model="new_gameobject_template.faction">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_gameobject_template, 'faction')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-3 text-left">
         <small>flags</small>
