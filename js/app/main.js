@@ -97,7 +97,7 @@
       }
 
       if(size == null) {
-       size = ''; // default size
+        size = ''; // default size
       }
 
       var modalInstance = $modal.open({
@@ -109,7 +109,7 @@
             return property;
           },
           constant: function () {
-           return constant;
+            return constant;
           }
         }
       });
@@ -121,7 +121,7 @@
 
     };
 
-/* Modal to handle generic values:
+    /* Modal to handle generic values:
      * object      => new_tablename the object responsible of the table (example: new_creature_template)
      * property    => field of the table to modify (example: npcflag)
      * numValues   => number of the total values (flag) of the property
@@ -137,7 +137,7 @@
       }
 
       if(size == null) {
-       size = ''; // default size
+        size = ''; // default size
       }
 
       var modalInstance = $modal.open({
@@ -149,7 +149,7 @@
             return property;
           },
           constant: function () {
-           return constant;
+            return constant;
           }
         }
       });
@@ -164,6 +164,10 @@
     $rootScope.openSearchModal = function (object, property, search_param, size) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
+
+      if (!search_param) {
+        search_param = property;
+      }
 
       var modalInstance = $modal.open({
         templateUrl: "partials/modals/search.html",

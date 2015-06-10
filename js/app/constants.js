@@ -2266,4 +2266,11 @@
   app.modalConstants.trainer_type[2] = "TRADESKILLS";
   app.modalConstants.trainer_type[3] = "PET";
 
+  /* creature MovementType constants */
+  app.modalConstants.MovementType = [];
+  app.modalConstants.MovementType[0] = "Idle (stay in place)";
+  app.modalConstants.MovementType[1] = "Random (in radius)";
+  app.modalConstants.MovementType[2] = "Waypoint movement";
+
+
 }());

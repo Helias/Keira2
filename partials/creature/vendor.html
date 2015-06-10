@@ -5,7 +5,12 @@
     <div class="row">
       <div class="col-xs-3">
         <small>item</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.item">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.item">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(selected, 'item')">...</button>
+          </div>
+        </div>
       </div>
       <div class="col-xs-3">
         <small>slot</small>
