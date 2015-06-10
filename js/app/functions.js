@@ -76,15 +76,59 @@
   };
 
   app.synchGetQuestTitleByCriteriaFunc1 = function(requiredNpcOrGo1, requiredNpcOrGo2, requiredNpcOrGo3, requiredNpcOrGo4) {
-    // TODO: implement this
-    // See: https://github.com/Discover-/SAI-Editor/blob/master/SAI-Editor/Classes/Database/WorldDatabase.cs#L344
-    return "";
+    if (requiredNpcOrGo1 == undefined) { requiredNpcOrGo1 = ""; }
+    if (requiredNpcOrGo2 == undefined) { requiredNpcOrGo2 = ""; }
+    if (requiredNpcOrGo3 == undefined) { requiredNpcOrGo3 = ""; }
+    if (requiredNpcOrGo4 == undefined) { requiredNpcOrGo4 = ""; }
+    var request, data;
+    request = new XMLHttpRequest();
+    request.open(
+      'GET',
+      app.api + "/custom/GetQuestTitleByCriteria/?"
+      + "RequiredNpcOrGo1=" + requiredNpcOrGo1 + "&"
+      + "RequiredNpcOrGo1=" + requiredNpcOrGo2 + "&"
+      + "RequiredNpcOrGo1=" + requiredNpcOrGo3 + "&"
+      + "RequiredNpcOrGo1=" + requiredNpcOrGo4,
+      false
+    );
+    request.send(null);
+
+    if (request.status === 200) {
+      data = JSON.parse(request.responseText);
+      if (!Array.isArray(data) || data.length < 1) { return ""; }
+      return data[0].title;
+    } else {
+      return "";
+    }
   };
 
   app.synchGetQuestTitleByCriteriaFunc2 = function(requiredNpcOrGo1, requiredNpcOrGo2, requiredNpcOrGo3, requiredNpcOrGo4, requiredSpellCast1) {
-    // TODO: implement this
-    // See: https://github.com/Discover-/SAI-Editor/blob/master/SAI-Editor/Classes/Database/WorldDatabase.cs#L354
-    return "";
+    if (requiredNpcOrGo1 == undefined) { requiredNpcOrGo1 = ""; }
+    if (requiredNpcOrGo2 == undefined) { requiredNpcOrGo2 = ""; }
+    if (requiredNpcOrGo3 == undefined) { requiredNpcOrGo3 = ""; }
+    if (requiredNpcOrGo4 == undefined) { requiredNpcOrGo4 = ""; }
+    if (requiredSpellCast1 == undefined) { requiredSpellCast1 = ""; }
+    var request, data;
+    request = new XMLHttpRequest();
+    request.open(
+      'GET',
+      app.api + "/custom/GetQuestTitleByCriteria/?"
+      + "RequiredNpcOrGo1=" + requiredNpcOrGo1 + "&"
+      + "RequiredNpcOrGo1=" + requiredNpcOrGo2 + "&"
+      + "RequiredNpcOrGo1=" + requiredNpcOrGo3 + "&"
+      + "RequiredNpcOrGo1=" + requiredNpcOrGo4 + "&"
+      + "RequiredSpellCast1=" + requiredSpellCast1,
+      false
+    );
+    request.send(null);
+
+    if (request.status === 200) {
+      data = JSON.parse(request.responseText);
+      if (!Array.isArray(data) || data.length < 1) { return ""; }
+      return data[0].title;
+    } else {
+      return "";
+    }
   };
 
   app.synchGetItemNameById = function(id) {
