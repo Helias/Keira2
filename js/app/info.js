@@ -12,7 +12,7 @@
     $scope.errorText = "";
 
     // Keira version
-    $scope.keiraVersion = "DEV";
+    $scope.keiraVersion = "2.1.1";
     $scope.keiraBranch  = "3.3.5";
 
     // API min required version
