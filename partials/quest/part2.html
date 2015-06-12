@@ -168,10 +168,16 @@
         <small>RequiredFactionId1</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RequiredFactionId1">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'RequiredFactionId1', 'faction')">...</button>
+          </div>
         </div>
         <small>RequiredFactionId2</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RequiredFactionId2">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'RequiredFactionId2', 'faction')">...</button>
+          </div>
         </div>
         <small>ReqFactionValue1</small>
         <div class="input-group">
@@ -190,6 +196,9 @@
         <small>PointMapId</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.PointMapId">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'PointMapId', 'dbc/maps_wotlk')">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-3">
@@ -216,22 +225,37 @@
         <small>DetailsEmote1</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.DetailsEmote1">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'DetailsEmote1', 'emote')">...</button>
+          </div>
         </div>
         <small>DetailsEmote2</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.DetailsEmote2">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'DetailsEmote2', 'emote')">...</button>
+          </div>
         </div>
         <small>DetailsEmote3</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.DetailsEmote3">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'DetailsEmote3', 'emote')">...</button>
+          </div>
         </div>
         <small>DetailsEmote4</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.DetailsEmote4">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'DetailsEmote4', 'emote')">...</button>
+          </div>
         </div>
         <small>EmoteOnComplete</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.EmoteOnComplete">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'EmoteOnComplete', 'emote')">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-3">
@@ -254,24 +278,39 @@
         <small>EmoteOnIncomplete</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.EmoteOnIncomplete">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'EmoteOnIncomplete', 'emote')">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-3">
         <small>OfferRewardEmote1</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.OfferRewardEmote1">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'OfferRewardEmote1', 'emote')">...</button>
+          </div>
         </div>
         <small>OfferRewardEmote2</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.OfferRewardEmote2">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'OfferRewardEmote2', 'emote')">...</button>
+          </div>
         </div>
         <small>OfferRewardEmote3</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.OfferRewardEmote3">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'OfferRewardEmote3', 'emote')">...</button>
+          </div>
         </div>
         <small>OfferRewardEmote4</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.OfferRewardEmote4">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'OfferRewardEmote4', 'emote')">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-3">
@@ -301,26 +340,44 @@
         <small>RewardChoiceItem1</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardChoiceItemId1">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardChoiceItemId1', 'item')">...</button>
+          </div>
         </div>
         <small>RewardChoiceItem2</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardChoiceItemId2">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardChoiceItemId2', 'item')">...</button>
+          </div>
         </div>
         <small>RewardChoiceItem3</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardChoiceItemId3">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardChoiceItemId3', 'item')">...</button>
+          </div>
         </div>
         <small>RewardChoiceItem4</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardChoiceItemId4">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardChoiceItemId4', 'item')">...</button>
+          </div>
         </div>
         <small>RewardChoiceItem5</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardChoiceItemId5">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardChoiceItemId5', 'item')">...</button>
+          </div>
         </div>
         <small>RewardChoiceItem6</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardChoiceItemId6">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardChoiceItemId6', 'item')">...</button>
+          </div>
         </div>
         <small>RewMailTemplateId</small>
         <div class="input-group">
@@ -333,22 +390,36 @@
         <small>RewardFactionId1</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardFactionId1">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'RewardFactionId1', 'faction')">...</button>
+          </div>
         </div>
         <small>RewardFactionId2</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardFactionId2">
+          <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardFactionId2">                 <div class="input-group-btn">
+          <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'RewardFactionId2', 'faction')">...</button>
+          </div>
         </div>
         <small>RewardFactionId3</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardFactionId3">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'RewardFactionId3', 'faction')">...</button>
+          </div>
         </div>
         <small>RewardFactionId4</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardFactionId4">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'RewardFactionId4', 'faction')">...</button>
+          </div>
         </div>
         <small>RewardFactionId5</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardFactionId5">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'RewardFactionId5', 'faction')">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-3">
@@ -409,18 +480,30 @@
         <small>RewardItemId1</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardItemId1">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardItemId1', 'item')">...</button>
+          </div>
         </div>
         <small>RewardItemId2</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardItemId2">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardItemId2', 'item')">...</button>
+          </div>
         </div>
         <small>RewardItemId3</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardItemId3">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardItemId3', 'item')">...</button>
+          </div>
         </div>
         <small>RewardItemId4</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardItemId4">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardItemId4', 'item')">...</button>
+          </div>
         </div>
         <small>RewOrReqMoney</small>
         <div class="input-group">
@@ -479,10 +562,16 @@
         <small>RewardSpell</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardSpell">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardSpell', 'dbc/spells_wotlk')">...</button>
+          </div>
         </div>
         <small>RewardSpellCast</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardSpellCast">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardSpellCast', 'dbc/spells_wotlk')">...</button>
+          </div>
         </div>
         <small>RewardTitleId</small>
         <div class="input-group">

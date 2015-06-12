@@ -19,12 +19,18 @@
         <small>race</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_characters.race">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_characters, 'race')">...</button>
+          </div>
         </div>
       </div>
       <div class="col-xs-3">
         <small>class</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_characters.class">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_characters, 'class', 'classes')">...</button>
+          </div>
         </div>
       </div>
     </div>
