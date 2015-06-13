@@ -1,4 +1,4 @@
-/*jslint browser: true, white: true, plusplus: true, es5: true*/
+/*jslint browser: true, white: true, plusplus: true, es5: true, eqeq: true*/
 /*global angular, console, alert, squel*/
 
 (function () {
@@ -14,6 +14,7 @@
     // Keira version
     $scope.keiraVersion = "2.1.1";
     $scope.keiraBranch  = "3.3.5";
+    $scope.keiraTag     = "v" + $scope.keiraVersion;
 
     // API min required version
     $scope.apiRequiredVersion = 0.4;
@@ -43,6 +44,25 @@
       .error(function (data, status, header, config) {
       console.log("[ERROR] /version/ $http.get request failed");
     });
+
+    // Check for newer versions
+    $scope.updateAvaialable = false;
+
+    if ($scope.keiraVersion != "DEV") {
+      $http.get( "https://api.github.com/repos/Helias/Keira2/releases" )
+        .success(function (data, status, header, config) {
+
+        var latestReleaseTag = data[0].tag_name;
+
+        if ($scope.keiraTag != latestReleaseTag) {
+          $scope.updateAvaialable = true;
+        }
+
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] https://api.github.com/repos/Helias/Keira2/releases $http.get request failed");
+      });
+    }
 
   });
 
