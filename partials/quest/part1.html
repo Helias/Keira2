@@ -5,11 +5,11 @@
     <h5>Keys</h5>
     <div class="row">
       <div class="col-xs-6">
-        <small>Id</small>
+        <small>ID</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.Id">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ID">
           <div class="input-group-btn">
-            <a ng-href="#/quest/{{ new_quest_template.Id }}"><button class="btn btn-info btn-xs">→</button></a>
+            <a ng-href="#/quest/{{ new_quest_template.ID }}"><button class="btn btn-info btn-xs">→</button></a>
           </div>
         </div>
       </div>
@@ -62,9 +62,9 @@
     <h5>Zone, Sort, Level, Flags</h5>
     <div class="row">
       <div class="col-xs-6">
-        <small>ZoneOrSort</small>
+        <small>QuestSortID</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ZoneOrSort">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.QuestSortID">
         </div>
       </div>
       <div class="col-xs-6">
@@ -88,17 +88,17 @@
         </div>
       </div>
       <div class="col-xs-4">
-        <small>Level</small>
+        <small>QuestLevel</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="number"  ng-model="new_quest_template.Level">
+          <input class="form-control input-xs" type="number"  ng-model="new_quest_template.QuestLevel">
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-4">
-        <small>Type</small>
+        <small>QuestType</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.Type">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.QuestType">
         </div>
       </div>
       <div class="col-xs-4">
@@ -217,23 +217,23 @@
 </div>
 <div class="row" style="margin-top: 12px">
   <div class="col-xs-4">
-    <small class="text-left">Title</small>
+    <small class="text-left">LogTitle</small>
     <div>
-      <input class="form-control input-xs" type="text"  ng-model="new_quest_template.Title">
+      <input class="form-control input-xs" type="text"  ng-model="new_quest_template.LogTitle">
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-4">
-    <small class="text-left">Details</small>
+    <small class="text-left">QuestDescription</small>
     <div>
-      <textarea class="form-control input-xs" rows="8" type="text"  ng-model="new_quest_template.Details"></textarea>
+      <textarea class="form-control input-xs" rows="8" type="text"  ng-model="new_quest_template.QuestDescription"></textarea>
     </div>
   </div>
   <div class="col-xs-4">
-    <small class="text-left">Objectives</small>
+    <small class="text-left">LogDescription</small>
     <div>
-      <textarea class="form-control input-xs" rows="8" type="text"  ng-model="new_quest_template.Objectives"></textarea>
+      <textarea class="form-control input-xs" rows="8" type="text"  ng-model="new_quest_template.LogDescription"></textarea>
     </div>
   </div>
   <div class="col-xs-4">
@@ -241,9 +241,9 @@
     <div>
       <textarea class="form-control input-xs" rows="6" type="text"  ng-model="new_quest_template.EndText"></textarea>
     </div>
-    <small class="text-left">CompletedText</small>
+    <small class="text-left">QuestCompletionLog</small>
     <div>
-      <input class="form-control input-xs" type="text"  ng-model="new_quest_template.CompletedText">
+      <input class="form-control input-xs" type="text"  ng-model="new_quest_template.QuestCompletionLog">
     </div>
   </div>
 </div>
