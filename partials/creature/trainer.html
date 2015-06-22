@@ -63,18 +63,18 @@
 <table class="table table-striped table-condensed">
   <thead>
     <th class="text-center"></th>
-    <th class="text-center">spell</th>
-    <th class="text-center">spellcost</th>
-    <th class="text-center">reqskill</th>
-    <th class="text-center">reqskillvalue</th>
-    <th class="text-center">reqlevel</th>
+    <th class="text-center">SpellID</th>
+    <th class="text-center">MoneyCost</th>
+    <th class="text-center">ReqSkillLine</th>
+    <th class="text-center">ReqSkillRank</th>
+    <th class="text-center">ReqLevel</th>
   </thead>
   <tr ng-repeat="trainer in new_npc_trainer track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
     <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_npc_trainer, $index)"></i></td>
-    <td>{{ trainer.spell }}</td>
-    <td>{{ trainer.spellcost }}</td>
-    <td>{{ trainer.reqskill }}</td>
-    <td>{{ trainer.reqskillvalue }}</td>
-    <td>{{ trainer.reqlevel }}</td>
+    <td>{{ trainer.SpellID }}</td>
+    <td>{{ trainer.MoneyCost }}</td>
+    <td>{{ trainer.ReqSkillLine }}</td>
+    <td>{{ trainer.ReqSkillRank }}</td>
+    <td>{{ trainer.ReqLevel }}</td>
   </tr>
 </table>

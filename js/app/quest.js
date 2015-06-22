@@ -50,7 +50,7 @@
         .success(function (data, status, header, config) {
         $scope.current_quest_template = $rootScope.fixNumericValues(data[0]);
         $scope.new_quest_template = angular.copy($scope.current_quest_template);
-        $scope.selectionText = $scope.current_quest_template.Title + " (" + $scope.current_quest_template.Id +") ";
+        $scope.selectionText = $scope.current_quest_template.LogTitle + " (" + $scope.current_quest_template.ID +") ";
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] quest/template/" + $stateParams.id + " $http.get request failed");
@@ -147,7 +147,7 @@
 
       $scope.questScript = "";
 
-      var whereCondition = "Id = " + $scope.current_quest_template.Id;
+      var whereCondition = "Id = " + $scope.current_quest_template.ID;
 
 
       $scope.questScript += app.getUpdateQuery("quest_template", whereCondition, $scope.current_quest_template, $scope.new_quest_template);
