@@ -147,7 +147,7 @@
 
       $scope.questScript = "";
 
-      var whereCondition = "Id = " + $scope.current_quest_template.ID;
+      var whereCondition = "ID = " + $scope.current_quest_template.ID;
 
 
       $scope.questScript += app.getUpdateQuery("quest_template", whereCondition, $scope.current_quest_template, $scope.new_quest_template);

@@ -1,41 +1,41 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}creature_equip_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>creature_equip_template</a></p>
 <div class="row">
   <div class="col-xs-2">
-    <small>entry</small>
+    <small>CreatureID</small>
     <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.entry">
+      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.CreatureID">
     </div>
   </div>
   <div class="col-xs-2">
-    <small>id</small>
+    <small>ID</small>
     <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.id">
+      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.ID">
     </div>
   </div>
   <div class="col-xs-2">
-    <small>itemEntry1</small>
+    <small>ItemID1</small>
     <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.itemEntry1">
+      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.ItemID1">
       <div class="input-group-btn">
-        <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_equip_template, 'itemEntry1', 'item')">...</button>
+        <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_equip_template, 'ItemID1', 'item')">...</button>
       </div>
     </div>
   </div>
   <div class="col-xs-2">
-    <small>itemEntry2</small>
+    <small>ItemID2</small>
     <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.itemEntry2">
+      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.ItemID2">
       <div class="input-group-btn">
-        <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_equip_template, 'itemEntry2', 'item')">...</button>
+        <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_equip_template, 'ItemID2', 'item')">...</button>
       </div>
     </div>
   </div>
   <div class="col-xs-2">
-    <small>itemEntry3</small>
+    <small>ItemID3</small>
     <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.itemEntry3">
+      <input class="form-control input-xs" type="text" ng-model="new_creature_equip_template.ItemID3">
       <div class="input-group-btn">
-        <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_equip_template, 'itemEntry3', 'item')">...</button>
+        <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_equip_template, 'ItemID3', 'item')">...</button>
       </div>
     </div>
   </div>
@@ -53,6 +53,6 @@
     <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
   </div>
   <div class="col-xs-2 pull-right">
-    <button class="btn btn-primary" ng-click="openFullScriptModal(new_creature_equip_template, 'creature_equip_template', 'entry')">FULL SQL Script</button>
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_creature_equip_template, 'creature_equip_template', 'CreatureID')">FULL SQL Script</button>
   </div>
 </div>

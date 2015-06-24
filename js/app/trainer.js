@@ -13,22 +13,22 @@
 
     /* The item currently selected by the user (bound to the view) */
     $scope.selected = {
-      entry          : parseInt($stateParams.id, 10),
-	  spell          : 0,
-	  spellcost      : 0,
-	  reqskill       : 0,
-	  reqskillvalue  : 0,
-	  reqlevel       : 0
+      ID           : parseInt($stateParams.id, 10),
+	  SpellID      : 0,
+	  MoneyCost    : 0,
+	  ReqSkillLine : 0,
+	  ReqSkillRank : 0,
+	  ReqLevel     : 0
     };
 
     /* Type check */
     $scope.parseValues = function() {
 
-      $scope.selected.spell         = parseInt($scope.selected.spell, 10);
-      $scope.selected.spellcost     = parseInt($scope.selected.spellcost, 10);
-      $scope.selected.reqskill      = parseInt($scope.selected.reqskill, 10);
-      $scope.selected.reqskillvalue = parseInt($scope.selected.reqskillvalue, 10);
-      $scope.selected.reqlevel      = parseInt($scope.selected.reqlevel, 10);
+      $scope.selected.SpellID       = parseInt($scope.selected.SpellID, 10);
+      $scope.selected.MoneyCost     = parseInt($scope.selected.MoneyCost, 10);
+      $scope.selected.ReqSkillLine  = parseInt($scope.selected.ReqSkillLine, 10);
+      $scope.selected.ReqSkillRank  = parseInt($scope.selected.ReqSkillRank, 10);
+      $scope.selected.ReqLevel      = parseInt($scope.selected.ReqLevel, 10);
     };
 
     /* Select a row from collection */
