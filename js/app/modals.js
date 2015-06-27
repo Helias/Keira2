@@ -1,4 +1,4 @@
-/*jslint browser: true, white: true, plusplus: true*/
+/*jslint browser: true, white: true, plusplus: true, eqeq: true*/
 /*global angular, console, alert, squel*/
 /*jslint es5: true */
 
@@ -14,18 +14,28 @@
    */
   app.controller('FlagModalController', function ($scope, $modalInstance, propertyVal, numValuesVal) {
 
-    propertyVal = String(parseInt(propertyVal, 10).toString(2));
-    propertyVal = propertyVal.split("").reverse().join("");
-
+    var i = 0;
     $scope.values = [];
 
-    var i = 0;
-    for (i = 0; i < numValuesVal; i++)
+    if (propertyVal != -1)
     {
-      if(parseInt(propertyVal[i], 10) !== 1) {
-        $scope.values[i] = false;
-      } else {
-        $scope.values[i] = true;
+      propertyVal = String(parseInt(propertyVal, 10).toString(2));
+      propertyVal = propertyVal.split("").reverse().join("");
+
+      for (i = 0; i < numValuesVal; i++)
+      {
+        if(parseInt(propertyVal[i], 10) !== 1) {
+          $scope.values[i] = false;
+        } else {
+          $scope.values[i] = true;
+        }
+      }
+    }
+    else
+    {
+      for (i = 0; i < numValuesVal; i++)
+      {
+          $scope.values[i] = true;
       }
     }
 

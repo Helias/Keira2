@@ -104,7 +104,7 @@
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableClass">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'AllowableClass', 'classes')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/item/modals/class.html', new_item_template, 'AllowableClass', 11)">...</button>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableRace">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'AllowableRace', 'race')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('', 'partials/item/modals/races.html', new_item_template, 'AllowableRace', 21)">...</button>
           </div>
         </div>
       </div>
