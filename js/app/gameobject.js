@@ -68,6 +68,17 @@
         console.log("[ERROR] /gameobject/spawn/id/" + $stateParams.id + " $http.get request failed");
       });
 
+      /* Retrieve all gameobject questitems */
+      $http.get( app.api + "gameobject/questitem/" + $stateParams.id )
+        .success(function (data, status, header, config) {
+        $scope.current_gameobject_questitem = $rootScope.fixNumericValues(data);
+        $scope.new_gameobject_questitem = angular.copy($scope.current_gameobject_questitem);
+        console.log($scope.new_gameobject_questitem);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] gameobject/questitem/" + $stateParams.id + " $http.get request failed");
+      });
+
     } else {
       /* We have no gameobject selected and default active tab is search */
       $scope.isGameobjectSelected = false;

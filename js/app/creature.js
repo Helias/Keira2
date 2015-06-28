@@ -164,6 +164,16 @@
         console.log("[ERROR] npc_trainer/creature/" + $stateParams.id + " $http.get request failed");
       });
 
+      /* Retrieve all creature questitems */
+      $http.get( app.api + "creature/questitem/" + $stateParams.id )
+        .success(function (data, status, header, config) {
+        $scope.current_creature_questitem = $rootScope.fixNumericValues(data);
+        $scope.new_creature_questitem = angular.copy($scope.current_creature_questitem);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] creature/questitem/" + $stateParams.id + " $http.get request failed");
+      });
+
     } else {
       /* We have no creature selected and default active tab is search */
       $scope.isCreatureSelected = false;
