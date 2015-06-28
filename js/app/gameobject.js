@@ -11,11 +11,12 @@
     /* All Gameobject tabs, disabled by default.
     *  Only one tab can be active at a time */
     $scope.gameobjectTabs = {
-      search    : false,
-      template  : false,
-      spawns    : false,
-      loot      : false,
-      script    : false
+      search     : false,
+      questItems : false,
+      template   : false,
+      spawns     : false,
+      loot       : false,
+      script     : false
     };
 
     /* Init arrays */

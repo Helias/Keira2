@@ -12,7 +12,8 @@
     *  Only one tab can be active at a time */
     $scope.creatureTabs = {
       search            : false,
-      creatureTemplate  : false,
+      template          : false,
+      questItems        : false,
       templateAddon     : false,
       equipTemplate     : false,
       onKillReputation  : false,
@@ -43,9 +44,9 @@
     /* Check if a creature is selected */
     if ($stateParams.id) {
 
-      /* We have a creature selected and default active tab is creatureTemplate */
+      /* We have a creature selected and default active tab is template */
       $scope.isCreatureSelected = true;
-      $scope.creatureTabs.creatureTemplate = true;
+      $scope.creatureTabs.template = true;
 
       /*  Following lines retrieve all Creature data
        *  current_* mantains the database state

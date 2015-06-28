@@ -53,7 +53,7 @@
     /* Check if an entity (smart_scripts.source_type AND smart_scripts.entryorguid) is selected */
     if ($stateParams.sourceType && $stateParams.entryOrGuid) {
 
-      /* We have a creature selected and default active tab is creatureTemplate */
+      /* We have a creature selected and default active tab is template */
       $scope.isEntitySelected = true;
       $scope.saiTabs.editor = true;
 
