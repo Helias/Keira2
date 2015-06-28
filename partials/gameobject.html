@@ -7,7 +7,7 @@
     <div ng-include="'partials/gameobject/template.html'"></div>
   </tab>
   <tab heading="Quest Items" active="gameobjectTabs.questItems">
-    <div ng-include="'partials/gameobject/quest-items.html'"></div>
+    <div ng-include="'partials/gameobject/quest-items.html'" ng-controller="GameObjectQuestItemsController"></div>
   </tab>
   <tab heading="GO Loot" active="gameobjectTabs.loot" ng-controller="LootController">
     <div ng-include="'partials/gameobject/loot.html'"></div>

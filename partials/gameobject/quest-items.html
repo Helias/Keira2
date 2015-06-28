@@ -1,1 +1,45 @@
-<p class="lead">TODO</p>
+<p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}gameobject_questitem"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>gameobject_questitem</a></p>
+<br>
+<div class="row">
+  <div class="col-xs-offset-1 col-xs-2">
+    <small>Idx</small>
+    <input class="form-control input-xs" type="text" ng-model="selected.Idx">
+  </div>
+  <div class="col-xs-offset-1 col-xs-2">
+    <small>ItemId</small>
+    <input class="form-control input-xs" type="text" ng-model="selected.ItemId">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-4">
+    <br>
+    <button class="btn btn-primary" ng-click="editSelectedRowOf(new_gameobject_questitem, 'Idx')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_gameobject_questitem)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+    <button class="btn btn-success" ng-click="addRowTo(new_gameobject_questitem, 'Idx')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <br>
+    <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_gameobject_questitem, 'gameobject_questitem', 'GameObjectEntry')">FULL Loot Script</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <br>
+    <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('gameobject_questitem', 'GameObjectEntry', 'Idx', current_gameobject_questitem, new_gameobject_questitem)">DIFF Loot Script</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 col-xs-offset-1">
+    <br>
+    <table class="table table-striped table-condensed" style="max-width: 160px">
+      <thead>
+        <th class="text-center"></th>
+        <th class="text-center">Idx</th>
+        <th class="text-center">ItemId</th>
+      </thead>
+      <tr ng-repeat="gameobject in new_gameobject_questitem track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+        <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_gameobject_questitem, $index)"></i></td>
+        <td>{{ gameobject.Idx }}</td>
+        <td>{{ gameobject.ItemId }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

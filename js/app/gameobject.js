@@ -74,7 +74,6 @@
         .success(function (data, status, header, config) {
         $scope.current_gameobject_questitem = $rootScope.fixNumericValues(data);
         $scope.new_gameobject_questitem = angular.copy($scope.current_gameobject_questitem);
-        console.log($scope.new_gameobject_questitem);
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] gameobject/questitem/" + $stateParams.id + " $http.get request failed");

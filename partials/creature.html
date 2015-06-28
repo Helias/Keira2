@@ -6,7 +6,7 @@
   <tab heading="Creature Template" active="creatureTabs.template">
     <div ng-include="'partials/creature/template.html'"></div>
   </tab>
-  <tab heading="Quest Items" active="creatureTabs.questItems">
+  <tab heading="Quest Items" active="creatureTabs.questItems" ng-controller="CreatureQuestItemsController">
     <div ng-include="'partials/creature/quest-items.html'"></div>
   </tab>
   <tab heading="Template Addon" active="creatureTabs.templateAddon">
