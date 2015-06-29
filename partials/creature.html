@@ -3,8 +3,11 @@
   <tab id="tab-search" heading="Search" active="creatureTabs.search">
     <div ng-include="'partials/creature/search.html'"></div>
   </tab>
-  <tab heading="Creature Template" active="creatureTabs.creatureTemplate">
+  <tab heading="Creature Template" active="creatureTabs.template">
     <div ng-include="'partials/creature/template.html'"></div>
+  </tab>
+  <tab heading="Quest Items" active="creatureTabs.questItems" ng-controller="CreatureQuestItemsController">
+    <div ng-include="'partials/creature/quest-items.html'"></div>
   </tab>
   <tab heading="Template Addon" active="creatureTabs.templateAddon">
     <div ng-include="'partials/creature/template-addon.html'"></div>
