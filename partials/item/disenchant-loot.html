@@ -92,7 +92,7 @@
         <th class="text-center">MaxCount</th>
         <th class="text-center">Comment</th>
       </thead>
-      <tr ng-repeat="loot in new_disenchant_loot_template track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+      <tr ng-repeat="loot in new_disenchant_loot_template track by $index" ng-click="selectRow(new_disenchant_loot_template, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
         <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_disenchant_loot_template, $index)"></i></td>
         <td>{{ loot.Item }}</td>
         <td>{{ loot.Reference }}</td>

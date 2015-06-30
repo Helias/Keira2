@@ -29,7 +29,7 @@
         <th class="text-center"></th>
         <th class="text-center">id</th>
       </thead>
-      <tr ng-repeat="creature in new_gameobject_queststarter track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+      <tr ng-repeat="creature in new_gameobject_queststarter track by $index" ng-click="selectRow(new_gameobject_queststarter, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
         <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_gameobject_queststarter, $index)"></i></td>
         <td>{{ creature.id }}</td>
       </tr>

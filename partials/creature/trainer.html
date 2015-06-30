@@ -69,7 +69,7 @@
     <th class="text-center">ReqSkillRank</th>
     <th class="text-center">ReqLevel</th>
   </thead>
-  <tr ng-repeat="trainer in new_npc_trainer track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+  <tr ng-repeat="trainer in new_npc_trainer track by $index" ng-click="selectRow(new_npc_trainer, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
     <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_npc_trainer, $index)"></i></td>
     <td>{{ trainer.SpellID }}</td>
     <td>{{ trainer.MoneyCost }}</td>

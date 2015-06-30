@@ -34,7 +34,7 @@
         <th class="text-center">ench</th>
         <th class="text-center">chance</th>
       </thead>
-      <tr ng-repeat="creature in new_item_enchantment_template track by $index" ng-class="{'tr-selected': $index == selectedRow}" ench="{{ $index }}">
+      <tr ng-repeat="creature in new_item_enchantment_template track by $index" ng-click="selectRow(new_item_enchantment_template, $index)" ng-class="{'tr-selected': $index == selectedRow}" ench="{{ $index }}">
         <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_item_enchantment_template, $index)"></i></td>
         <td>{{ creature.ench }}</td>
         <td>{{ creature.chance }}</td>

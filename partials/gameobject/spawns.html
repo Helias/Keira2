@@ -160,7 +160,7 @@
       <th class="text-center">state</th>
       <th class="text-center">VerifiedBuild</th>
     </thead>
-    <tr ng-repeat="spawn in new_gameobject track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+    <tr ng-repeat="spawn in new_gameobject track by $index" ng-click="selectRow(new_gameobject, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
       <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_gameobject, $index)"></i></td>
       <td>{{ spawn.guid }}</td>
       <td>{{ spawn.map }}</td>

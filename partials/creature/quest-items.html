@@ -35,7 +35,7 @@
         <th class="text-center">Idx</th>
         <th class="text-center">ItemId</th>
       </thead>
-      <tr ng-repeat="creature in new_creature_questitem track by $index" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+      <tr ng-repeat="creature in new_creature_questitem track by $index" ng-click="selectRow(new_creature_questitem, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
         <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_creature_questitem, $index)"></i></td>
         <td>{{ creature.Idx }}</td>
         <td>{{ creature.ItemId }}</td>
