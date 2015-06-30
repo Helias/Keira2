@@ -50,15 +50,17 @@
     };
 
     /* Open modal to handle flags params:
-     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
      * TemplateUrl => content of the modal (file html inside the folder "modals")
      * object      => new_tablename the object responsible of the table (example: new_creature_template)
      * property    => field of the table to modify (example: npcflag)
      * numValues   => number of the total values (flag) of the property
+     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
     */
-    $rootScope.openFlagModal = function (size, TemplateUrl, object, property, numValues) {
+    $rootScope.openFlagModal = function (TemplateUrl, object, property, numValues, size) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
+
+      if (size == null) { size = ''; }
 
       var modalInstance = $modal.open({
         templateUrl: TemplateUrl,
