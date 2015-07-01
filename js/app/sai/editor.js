@@ -23,12 +23,6 @@
       lockIds : true
     };
 
-    $scope.enlargeinfo = false;
-    $scope.EnlargeSaiTable = function()
-    {
-      $scope.enlargeinfo = !($scope.enlargeinfo);
-    };
-
     /* Labels */
     $scope.saiLabels = app.saiLabels;
 

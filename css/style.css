@@ -115,16 +115,17 @@
 .sai-table {
   transition: 1s linear;
   overflow-x: auto;
-  position: relative;
-  left: 0px;
-  right: 0px;
-  width: 100%;
+  width: 1170px;
+  display: inline-block;
 }
 
 .sai-table-large {
   transition: 1s linear;
+  width: 98vw;
+}
+
+.sai-table-box {
+  left: 0px;
   position: absolute;
-  left: 1% !important;
-  right: 1% !important;
-  width: 98%;
+  width: 100vw;
 }

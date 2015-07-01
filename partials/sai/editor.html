@@ -3,7 +3,7 @@
     <form class="form-inline">
       <div class="checkbox">
         <label class="sai-option">
-          <input type="checkbox" ng-model="options.showBasicInformations" ng-click="EnlargeSaiTable()"> Show basic informations
+          <input type="checkbox" ng-model="options.showBasicInformations"> Show basic informations
         </label>
       </div>
       <div class="checkbox">
@@ -262,67 +262,69 @@
   </div>
 </div>
 <br>
-<div class="sai-table" ng-class="{'sai-table-large': enlargeinfo}">
-  <table class="table table-striped table-condensed">
-    <thead>
-      <th class="text-center"></th>
-      <th class="text-center">id</th>
-      <th class="text-center">link</th>
-      <th class="text-center">event</th>
-      <th class="text-center">phase</th>
-      <th class="text-center">chance</th>
-      <th class="text-center">flags</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">event_param1</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">event_param2</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">event_param3</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">event_param4</th>
-      <th class="text-center">action</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">action_param1</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">action_param2</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">action_param3</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">action_param4</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">action_param5</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">action_param6</th>
-      <th class="text-center">target</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">target_param1</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">target_param2</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">target_param3</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">target_x</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">target_y</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">target_z</th>
-      <th class="text-center" ng-show="!options.showBasicInformations">target_o</th>
-      <th class="text-center" style="min-width: 600px">comment</th>
-    </thead>
-    <tr ng-repeat="row in new_smart_scripts track by $index" ng-click="selectRow(new_smart_scripts, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
-      <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_smart_scripts, $index)"></i></td>
-      <td>{{ row.id }}</td>
-      <td>{{ row.link }}</td>
-      <td>{{ row.event_type }}</td>
-      <td>{{ row.event_phase_mask }}</td>
-      <td>{{ row.event_chance }}</td>
-      <td>{{ row.event_flags }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.event_param1 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.event_param2 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.event_param3 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.event_param4 }}</td>
-      <td>{{ row.action_type }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.action_param1 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.action_param2 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.action_param3 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.action_param4 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.action_param5 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.action_param6 }}</td>
-      <td>{{ row.target_type }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.target_param1 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.target_param2 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.target_param3 }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.target_x }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.target_y }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.target_z }}</td>
-      <td ng-show="!options.showBasicInformations">{{ row.target_o }}</td>
-      <td>{{ row.comment }}</td>
-    </tr>
-  </table>
+<div class="sai-table-box">
+  <div class="sai-table" ng-class="{'sai-table-large': !options.showBasicInformations}">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th class="text-center"></th>
+        <th class="text-center">id</th>
+        <th class="text-center">link</th>
+        <th class="text-center">event</th>
+        <th class="text-center">phase</th>
+        <th class="text-center">chance</th>
+        <th class="text-center">flags</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">event_param1</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">event_param2</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">event_param3</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">event_param4</th>
+        <th class="text-center">action</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param1</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param2</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param3</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param4</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param5</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param6</th>
+        <th class="text-center">target</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_param1</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_param2</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_param3</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_x</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_y</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_z</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_o</th>
+        <th class="text-center" style="min-width: 600px">comment</th>
+      </thead>
+      <tr ng-repeat="row in new_smart_scripts track by $index" ng-click="selectRow(new_smart_scripts, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+        <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_smart_scripts, $index)"></i></td>
+        <td>{{ row.id }}</td>
+        <td>{{ row.link }}</td>
+        <td>{{ row.event_type }}</td>
+        <td>{{ row.event_phase_mask }}</td>
+        <td>{{ row.event_chance }}</td>
+        <td>{{ row.event_flags }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.event_param1 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.event_param2 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.event_param3 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.event_param4 }}</td>
+        <td>{{ row.action_type }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param1 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param2 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param3 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param4 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param5 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param6 }}</td>
+        <td>{{ row.target_type }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_param1 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_param2 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_param3 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_x }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_y }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_z }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_o }}</td>
+        <td>{{ row.comment }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
 <br>
 <br>
