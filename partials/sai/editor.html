@@ -3,7 +3,7 @@
     <form class="form-inline">
       <div class="checkbox">
         <label class="sai-option">
-          <input type="checkbox" ng-model="options.showBasicInformations"> Show basic informations
+          <input type="checkbox" ng-model="options.showBasicInformations" ng-click="EnlargeSaiTable()"> Show basic informations
         </label>
       </div>
       <div class="checkbox">
@@ -262,7 +262,7 @@
   </div>
 </div>
 <br>
-<div style="overflow-y: scroll !important;">
+<div class="sai-table" ng-class="{'sai-table-large': enlargeinfo}">
   <table class="table table-striped table-condensed">
     <thead>
       <th class="text-center"></th>
@@ -324,3 +324,5 @@
     </tr>
   </table>
 </div>
+<br>
+<br>

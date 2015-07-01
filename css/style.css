@@ -111,3 +111,20 @@
 .sai-option {
   margin-left: 8px;
 }
+
+.sai-table {
+  transition: 1s linear;
+  overflow-x: auto;
+  position: relative;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+}
+
+.sai-table-large {
+  transition: 1s linear;
+  position: absolute;
+  left: 1% !important;
+  right: 1% !important;
+  width: 98%;
+}
