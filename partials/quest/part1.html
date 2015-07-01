@@ -14,11 +14,11 @@
         </div>
       </div>
       <div class="col-xs-6">
-        <small>PrevQuestId</small>
+        <small>PrevQuestID</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.PrevQuestId">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.PrevQuestID">
           <div class="input-group-btn">
-            <a ng-href="#/quest/{{ new_quest_template.PrevQuestId }}"><button class="btn btn-info btn-xs">→</button></a>
+            <a ng-href="#/quest/{{ new_quest_template_addon.PrevQuestID }}"><button class="btn btn-info btn-xs">→</button></a>
           </div>
         </div>
       </div>
@@ -27,15 +27,15 @@
       <div class="col-xs-6">
         <small>ExclusiveGroup</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ExclusiveGroup">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.ExclusiveGroup">
         </div>
       </div>
       <div class="col-xs-6">
-        <small>NextQuestId</small>
+        <small>NextQuestID</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.NextQuestId">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.NextQuestID">
           <div class="input-group-btn">
-            <a ng-href="#/quest/{{ new_quest_template.NextQuestId }}"><button class="btn btn-info btn-xs">→</button></a>
+            <a ng-href="#/quest/{{ new_quest_template_addon.NextQuestID }}"><button class="btn btn-info btn-xs">→</button></a>
           </div>
         </div>
       </div>
@@ -68,9 +68,9 @@
         </div>
       </div>
       <div class="col-xs-6">
-        <small>RequiredSkillId</small>
+        <small>RequiredSkillID</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredSkillId">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.RequiredSkillID">
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@
       <div class="col-xs-4">
         <small>MaxLevel</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="number"  ng-model="new_quest_template.MaxLevel">
+          <input class="form-control input-xs" type="number"  ng-model="new_quest_template_addon.MaxLevel">
         </div>
       </div>
       <div class="col-xs-4">
@@ -122,6 +122,21 @@
     <h5>Requirements to begin quest</h5>
     <div class="row">
       <div class="col-xs-4">
+        <small>RequiredSkillPoints</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.RequiredSkillPoints">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <small>AllowableClasses</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.AllowableClasses">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/quest/modals/classes.html', new_quest_template_addon, 'AllowableClasses', 11)">...</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
         <small>RequiredRaces</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredRaces">
@@ -130,36 +145,21 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-4">
-        <small>RequiredClasses</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredClasses">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/quest/modals/classes.html', new_quest_template, 'RequiredClasses', 11)">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-4">
-        <small>RequiredSkillPoints</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredSkillPoints">
-        </div>
-      </div>
     </div>
     <div class="row">
       <div class="col-xs-5">
         <small>RequiredMinRepFaction</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredMinRepFaction">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.RequiredMinRepFaction">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'RequiredMinRepFaction', 'faction')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template_addon, 'RequiredMinRepFaction', 'faction')">...</button>
           </div>
         </div>
       </div>
       <div class="col-xs-5">
         <small>RequiredMinRepValue</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredMinRepValue">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.RequiredMinRepValue">
         </div>
       </div>
     </div>
@@ -167,16 +167,16 @@
       <div class="col-xs-5">
         <small>RequiredMaxReqFaction</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredMaxRepFaction">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.RequiredMaxRepFaction">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'RequiredMaxRepFaction', 'faction')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template_addon, 'RequiredMaxRepFaction', 'faction')">...</button>
           </div>
         </div>
       </div>
       <div class="col-xs-5">
         <small>RequiredMaxRepValue</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredMaxRepValue">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.RequiredMaxRepValue">
         </div>
       </div>
     </div>
@@ -196,19 +196,19 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <small>SourceItemCount</small>
+        <small>ProvidedItemCount</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.SourceItemCount">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.ProvidedItemCount">
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <small>SourceSpellId</small>
+        <small>SourceSpellID</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.SourceSpellId">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template_addon.SourceSpellID">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'SourceSpellId', 'dbc/spells')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template_addon, 'SourceSpellID', 'dbc/spells')">...</button>
           </div>
         </div>
       </div>
@@ -285,7 +285,10 @@
     <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
   </div>
   <div class="col-xs-2 pull-right">
-    <button class="btn btn-primary" ng-click="openFullScriptModal(new_quest_template, 'quest_template', 'ID')">FULL SQL Script</button>
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_quest_template, 'quest_template', 'ID')">FULL Template SQL</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_quest_template_addon, 'quest_template_addon', 'ID')">FULL Addon SQL</button>
   </div>
 </div>
 <br>
