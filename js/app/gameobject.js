@@ -25,6 +25,9 @@
     $scope.current_gameobject_loot_template = [];
     $scope.new_gameobject_loot_template     = [];
 
+    /* importing constants */
+    $scope.constants = app.goConstants;
+
     /* Check if a gameobject is selected */
     if ($stateParams.id) {
 

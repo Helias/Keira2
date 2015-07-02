@@ -417,6 +417,233 @@
     DEBUG_ONLY     : 0x80
   };
 
+  /* GO constants */
+  app.goConstants = {};
+
+  app.goConstants.data0     = [];
+  app.goConstants.data0[0]  = "startOpen";
+  app.goConstants.data0[1]  = "startOpen";
+  app.goConstants.data0[2]  = "open";
+  app.goConstants.data0[3]  = "open";
+  app.goConstants.data0[5]  = "floatingTooltip";
+  app.goConstants.data0[6]  = "open";
+  app.goConstants.data0[7]  = "chairslots";
+  app.goConstants.data0[8]  = "spellFocusType";
+  app.goConstants.data0[9]  = "pageID";
+  app.goConstants.data0[10] = "open";
+  app.goConstants.data0[13] = "open";
+  app.goConstants.data0[15] = "taxiPathID";
+  app.goConstants.data0[18] = "casters";
+  app.goConstants.data0[20] = "actionHouseID";
+  app.goConstants.data0[21] = "CreatureID";
+  app.goConstants.data0[22] = "spell";
+  app.goConstants.data0[23] = "minLevel";
+  app.goConstants.data0[24] = "open";
+  app.goConstants.data0[25] = "radius";
+  app.goConstants.data0[26] = "open";
+  app.goConstants.data0[27] = "areatrigger_teleport.id";
+  app.goConstants.data0[29] = "radius";
+  app.goConstants.data0[30] = "startOpen";
+  app.goConstants.data0[31] = "mapID";
+  app.goConstants.data0[33] = "intactNumHits";
+  app.goConstants.data0[35] = "whenToPause";
+
+  app.goConstants.data1     = [];
+  app.goConstants.data1[0]  = "open";
+  app.goConstants.data1[1]  = "open";
+  app.goConstants.data1[2]  = "questList";
+  app.goConstants.data1[3]  = "che stLoot";
+  app.goConstants.data1[5]  = "highlight";
+  app.goConstants.data1[6]  = "level";
+  app.goConstants.data1[7]  = "chairorientation";
+  app.goConstants.data1[8]  = "diameter";
+  app.goConstants.data1[9]  = "language";
+  app.goConstants.data1[10] = "questID";
+  app.goConstants.data1[13] = "camera";
+  app.goConstants.data1[15] = "moveSpeed";
+  app.goConstants.data1[18] = "spell";
+  app.goConstants.data1[21] = "unk";
+  app.goConstants.data1[22] = "charges";
+  app.goConstants.data1[23] = "maxLevel";
+  app.goConstants.data1[24] = "pickupSpell";
+  app.goConstants.data1[25] = "chestLoot";
+  app.goConstants.data1[26] = "eventID";
+  app.goConstants.data1[29] = "spell";
+  app.goConstants.data1[30] = "radius";
+  app.goConstants.data1[31] = "difficulty";
+  app.goConstants.data1[33] = "creditProxyCreature";
+  app.goConstants.data1[35] = "startOpen";
+
+  app.goConstants.data2     = [];
+  app.goConstants.data2[0]  = "autoClose";
+  app.goConstants.data2[1]  = "autoClose";
+  app.goConstants.data2[2]  = "pageMaterial";
+  app.goConstants.data2[3]  = "chestRestockTime";
+  app.goConstants.data2[5]  = "serverOnly";
+  app.goConstants.data2[6]  = "diameter";
+  app.goConstants.data2[8]  = "linkedTrap";
+  app.goConstants.data2[9]  = "pageMaterial";
+  app.goConstants.data2[10] = "eventID";
+  app.goConstants.data2[15] = "accelRate";
+  app.goConstants.data2[18] = "animSpell";
+  app.goConstants.data2[22] = "partyOnly";
+  app.goConstants.data2[23] = "areaID";
+  app.goConstants.data2[24] = "radius";
+  app.goConstants.data2[25] = "minRestock";
+  app.goConstants.data2[26] = "pickupSpell";
+  app.goConstants.data2[29] = "worldState1";
+  app.goConstants.data2[30] = "auraID1";
+  app.goConstants.data2[33] = "state1Name";
+  app.goConstants.data2[35] = "autoClose";
+
+
+  app.goConstants.data3     = [];
+  app.goConstants.data3[0]  = "noDamageImmune";
+  app.goConstants.data3[1]  = "linkedTrap";
+  app.goConstants.data3[2]  = "gossipID";
+  app.goConstants.data3[3]  = "consumable";
+  app.goConstants.data3[5]  = "large";
+  app.goConstants.data3[6]  = "spell";
+  app.goConstants.data3[8]  = "serverOnly";
+  app.goConstants.data3[18] = "ritualPersistent";
+  app.goConstants.data3[24] = "returnAura";
+  app.goConstants.data3[25] = "maxRestock";
+  app.goConstants.data3[26] = "noDamageImmune";
+  app.goConstants.data3[29] = "worldstate2";
+  app.goConstants.data3[30] = "conditionID1";
+  app.goConstants.data3[33] = "intactEvent";
+
+  app.goConstants.data4     = [];
+  app.goConstants.data4[0]  = "openTextID";
+  app.goConstants.data4[1]  = "noDamageImmune";
+  app.goConstants.data4[2]  = "customAnim";
+  app.goConstants.data4[3]  = "minRestock";
+  app.goConstants.data4[5]  = "floatOnWater";
+  app.goConstants.data4[6]  = "type";
+  app.goConstants.data4[8]  = "questID";
+  app.goConstants.data4[10] = "customAnim";
+  app.goConstants.data4[18] = "casterTargetSpell";
+  app.goConstants.data4[24] = "returnSpell";
+  app.goConstants.data4[29] = "winEventID1";
+  app.goConstants.data4[33] = "damagedDisplayId";
+
+  app.goConstants.data5     = [];
+  app.goConstants.data5[0]  = "closeTextID";
+  app.goConstants.data5[1]  = "large";
+  app.goConstants.data5[2]  = "noDamageImmune";
+  app.goConstants.data5[3]  = "maxRestock";
+  app.goConstants.data5[5]  = "questID";
+  app.goConstants.data5[6]  = "cooldown";
+  app.goConstants.data5[8]  = "large";
+  app.goConstants.data5[10] = "consumable";
+  app.goConstants.data5[18] = "casterTargetSpellTargets";
+  app.goConstants.data5[24] = "noDamageImmune";
+  app.goConstants.data5[29] = "winEventID2";
+  app.goConstants.data5[33] = "damagedNumHits";
+
+  app.goConstants.data6     = [];
+  app.goConstants.data6[1]  = "openTextID";
+  app.goConstants.data6[2]  = "openTextID";
+  app.goConstants.data6[3]  = "lootedEvent";
+  app.goConstants.data6[8]  = "floatingTooltip";
+  app.goConstants.data6[10] = "cooldown";
+  app.goConstants.data6[18] = "castersGrouped";
+  app.goConstants.data6[29] = "contestedEventID1";
+  app.goConstants.data6[33] = "empty3";
+
+  app.goConstants.data7     = [];
+  app.goConstants.data7[1]  = "closeTextID";
+  app.goConstants.data7[2]  = "losOK";
+  app.goConstants.data7[3]  = "linkedTrap";
+  app.goConstants.data7[6]  = "startDelay";
+  app.goConstants.data7[10] = "pageID";
+  app.goConstants.data7[24] = "losOK";
+  app.goConstants.data7[29] = "contestedEventID2";
+  app.goConstants.data7[33] = "empty4";
+
+  app.goConstants.data8     = [];
+  app.goConstants.data8[1]  = "losOK";
+  app.goConstants.data8[2]  = "allowMounted";
+  app.goConstants.data8[3]  = "questID";
+  app.goConstants.data8[6]  = "serverOnly";
+  app.goConstants.data8[10] = "language";
+  app.goConstants.data8[29] = "progressEventID1";
+  app.goConstants.data8[33] = "empty5";
+
+  app.goConstants.data9     = [];
+  app.goConstants.data9[2]  = "large";
+  app.goConstants.data9[3]  = "level";
+  app.goConstants.data9[6]  = "stealthed";
+  app.goConstants.data9[10] = "pageMaterial";
+  app.goConstants.data9[29] = "progressEventID2";
+  app.goConstants.data9[33] = "damagedEvent";
+
+  app.goConstants.data10     = [];
+  app.goConstants.data10[3]  = "losOK";
+  app.goConstants.data10[6]  = "large";
+  app.goConstants.data10[10] = "spell";
+  app.goConstants.data10[29] = "neutralEventID1";
+  app.goConstants.data10[33] = "destroyedDisplayId";
+
+  app.goConstants.data11     = [];
+  app.goConstants.data11[3]  = "leaveLoot";
+  app.goConstants.data11[6]  = "stealthAffected";
+  app.goConstants.data11[10] = "noDamageImmune";
+  app.goConstants.data11[29] = "neutralEventID2";
+  app.goConstants.data11[33] = "empty7";
+
+  app.goConstants.data12     = [];
+  app.goConstants.data12[3]  = "notInCombat";
+  app.goConstants.data12[6]  = "openTextID";
+  app.goConstants.data12[10] = "linkedTrap";
+  app.goConstants.data12[29] = "neutralPercent";
+  app.goConstants.data12[33] = "empty8";
+
+  app.goConstants.data13     = [];
+  app.goConstants.data13[3]  = "log loot";
+  app.goConstants.data13[10] = "large";
+  app.goConstants.data13[29] = "worldstate3";
+  app.goConstants.data13[33] = "empty9";
+
+  app.goConstants.data14     = [];
+  app.goConstants.data14[3]  = "openTextID";
+  app.goConstants.data14[10] = "openTextID";
+  app.goConstants.data14[29] = "minSuperiority";
+  app.goConstants.data14[33] = "destroyedEvent";
+
+  app.goConstants.data15     = [];
+  app.goConstants.data15[3]  = "use group loot rules";
+  app.goConstants.data15[10] = "closeTextID";
+  app.goConstants.data15[29] = "maxSuperiority";
+  app.goConstants.data15[33] = "empty10";
+
+  app.goConstants.data16     = [];
+  app.goConstants.data16[10] = "losOK";
+  app.goConstants.data16[29] = "minTime";
+  app.goConstants.data16[33] = "debuildingTimeSecs";
+
+  app.goConstants.data17     = [];
+  app.goConstants.data17[29] = "maxTime";
+  app.goConstants.data17[33] = "empty11";
+
+  app.goConstants.data18     = [];
+  app.goConstants.data18[29] = "large";
+  app.goConstants.data18[33] = "destructibleData";
+
+  app.goConstants.data19   = [];
+  app.goConstants.data19[10] = "gossipID";
+  app.goConstants.data19[33] = "rebuildingEvent";
+
+  app.goConstants.data20   = [];
+  app.goConstants.data20[33] = "empty12";
+
+  app.goConstants.data21   = [];
+  app.goConstants.data21[33] = "empty13";
+
+  app.goConstants.data22   = [];
+  app.goConstants.data22[33] = "damageEvent";
+
+
   /* creature family constants */
   app.modalConstants.family = [];
   app.modalConstants.family[1]  = "Wolf";
