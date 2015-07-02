@@ -56,6 +56,16 @@
         console.log("[ERROR] quest/template/" + $stateParams.id + " $http.get request failed");
       });
 
+      /* Retrieve all quest_template_addon data */
+      $http.get( app.api + "quest/template/addon/" + $stateParams.id )
+        .success(function (data, status, header, config) {
+        $scope.current_quest_template_addon = $rootScope.fixNumericValues(data[0]);
+        $scope.new_quest_template_addon = angular.copy($scope.current_quest_template_addon);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] quest/template/addon/" + $stateParams.id + " $http.get request failed");
+      });
+
       /* Retrieve all creature_queststarter data */
       $http.get( app.api + "creature/queststarter/quest/" + $stateParams.id, {
         params : { names : 0 }
@@ -151,6 +161,8 @@
 
 
       $scope.questScript += app.getUpdateQuery("quest_template", whereCondition, $scope.current_quest_template, $scope.new_quest_template);
+
+      $scope.questScript += app.getUpdateQuery("quest_template_addon", whereCondition, $scope.current_quest_template_addon, $scope.new_quest_template_addon);
     };
 
     /* [Function] disactive all tabs */

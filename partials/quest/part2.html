@@ -379,9 +379,9 @@
             <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'RewardChoiceItemID6', 'item')">...</button>
           </div>
         </div>
-        <small>RewMailTemplateId</small>
+        <small>RewardMailTemplateID</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardMailTemplateId">
+          <input class="form-control input-xs" type="text" ng-model="new_quest_template_addon.RewardMailTemplateID">
         </div>
         <small>RewardArenaPoints</small>
         <div class="input-group">
@@ -449,7 +449,7 @@
         </div>
         <small>RewardMailDelay</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_quest_template.RewardMailDelay">
+          <input class="form-control input-xs" type="text" ng-model="new_quest_template_addon.RewardMailDelay">
         </div>
         <small>RewardHonor</small>
         <div class="input-group">
@@ -584,9 +584,9 @@
       <div class="col-xs-3 col-xs-offset-3">
         <small>SpecialFlags</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_quest_template.SpecialFlags">
+          <input class="form-control input-xs" type="text" ng-model="new_quest_template_addon.SpecialFlags">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/quest/modals/special-flags.html', new_quest_template, 'SpecialFlags', 6)">...</button>
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/quest/modals/special-flags.html', new_quest_template_addon, 'SpecialFlags', 6)">...</button>
           </div>
         </div>
         <small>Method</small>
@@ -619,7 +619,10 @@
     <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
   </div>
   <div class="col-xs-2 pull-right">
-    <button class="btn btn-primary" ng-click="openFullScriptModal(new_quest_template, 'quest_template', 'ID')">FULL SQL Script</button>
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_quest_template, 'quest_template', 'ID')">FULL Template SQL</button>
+  </div>
+  <div class="col-xs-2 pull-right">
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_quest_template_addon, 'quest_template_addon', 'ID')">FULL Addon SQL</button>
   </div>
 </div>
 <br>
