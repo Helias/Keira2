@@ -46,7 +46,7 @@
         .success(function (data, status, header, config) {
         $scope.current_gameobject_template = $rootScope.fixNumericValues(data[0]);
         $scope.new_gameobject_template = angular.copy($scope.current_gameobject_template);
-        $scope.selectionText = "Gameobject " + $scope.current_gameobject_template.entry;
+        $scope.selectionText = $scope.current_gameobject_template.name + " (" + $scope.current_gameobject_template.entry + ")";
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] gameobject/template/" + $stateParams.id + " $http.get request failed");
