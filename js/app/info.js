@@ -20,7 +20,7 @@
     $scope.apiRequiredVersion = 0.4;
 
     // API version
-    $http.get(app.api + "/api")
+    $http.get(app.api + "api")
       .success(function (data, status, header, config) {
       $scope.apiVersion = data.api_version;
       $scope.apiBranch  = data.api_branch;
@@ -35,7 +35,7 @@
     });
 
     // Database world version
-    $http.get(app.api + "/version")
+    $http.get(app.api + "version")
       .success(function (data, status, header, config) {
       $scope.databaseVersion  = data[0].db_version;
       $scope.coreVersion      = data[0].core_version;

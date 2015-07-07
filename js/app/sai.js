@@ -229,7 +229,7 @@
     $scope.search = function (sourceType, entryOrGuid, comment) {
 
       if (sourceType != null && entryOrGuid != null) {
-        $http.get( app.api + "/smart_scripts/" + sourceType + "/" + entryOrGuid )
+        $http.get( app.api + "smart_scripts/" + sourceType + "/" + entryOrGuid )
           .success(function (data, status, header, config) {
           if (data.length > 0) {
             $scope.exactResult.entryOrGuid    = data[0].entryorguid;
@@ -245,7 +245,7 @@
         });
       }
 
-      $http.get( app.api + "/search/smart_scripts/", {
+      $http.get( app.api + "search/smart_scripts/", {
         params: {
           source_type : sourceType,
           entryorguid : entryOrGuid,

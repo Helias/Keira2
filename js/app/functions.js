@@ -84,7 +84,7 @@
     request = new XMLHttpRequest();
     request.open(
       'GET',
-      app.api + "/custom/GetQuestTitleByCriteria/?"
+      app.api + "custom/GetQuestTitleByCriteria/?"
       + "RequiredNpcOrGo1=" + requiredNpcOrGo1 + "&"
       + "RequiredNpcOrGo1=" + requiredNpcOrGo2 + "&"
       + "RequiredNpcOrGo1=" + requiredNpcOrGo3 + "&"
@@ -112,7 +112,7 @@
     request = new XMLHttpRequest();
     request.open(
       'GET',
-      app.api + "/custom/GetQuestTitleByCriteria/?"
+      app.api + "custom/GetQuestTitleByCriteria/?"
       + "RequiredNpcOrGo1=" + requiredNpcOrGo1 + "&"
       + "RequiredNpcOrGo1=" + requiredNpcOrGo2 + "&"
       + "RequiredNpcOrGo1=" + requiredNpcOrGo3 + "&"
@@ -194,7 +194,7 @@
   app.synchGetSpellNameById = function(id) {
     var request, data;
     request = new XMLHttpRequest();
-    request.open('GET', app.api + "/dbc/spells/" + id, false);
+    request.open('GET', app.api + "dbc/spells/" + id, false);
     request.send(null);
 
     if (request.status === 200) {

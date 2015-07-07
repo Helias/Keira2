@@ -60,7 +60,7 @@
         return;
       }
 
-      $http.get( app.api + "/search/character/", {
+      $http.get( app.api + "search/character/", {
         params: {
           guid: characterGuid,
           name: characterName

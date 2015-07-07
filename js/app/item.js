@@ -126,7 +126,7 @@
         return;
       }
 
-      $http.get( app.api + "/search/item/", {
+      $http.get( app.api + "search/item/", {
         params: {
           id: itemEntry,
           name: itemName

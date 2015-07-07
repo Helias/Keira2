@@ -63,13 +63,13 @@
       });
 
       /* Retrieve all gameobject data */
-      $http.get( app.api + "/gameobject/spawn/id/" + $stateParams.id )
+      $http.get( app.api + "gameobject/spawn/id/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_gameobject = $rootScope.fixNumericValues(data);
         $scope.new_gameobject = angular.copy($scope.current_gameobject);
       })
         .error(function (data, status, header, config) {
-        console.log("[ERROR] /gameobject/spawn/id/" + $stateParams.id + " $http.get request failed");
+        console.log("[ERROR] gameobject/spawn/id/" + $stateParams.id + " $http.get request failed");
       });
 
       /* Retrieve all gameobject questitems */
@@ -101,7 +101,7 @@
         return;
       }
 
-      $http.get( app.api + "/search/gameobject/", {
+      $http.get( app.api + "search/gameobject/", {
         params: {
           id: gameobjectEntry,
           name: gameobjectName

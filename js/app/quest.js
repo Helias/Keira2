@@ -133,7 +133,7 @@
         return;
       }
 
-      $http.get( app.api + "/search/quest/", {
+      $http.get( app.api + "search/quest/", {
         params: {
           id: questId,
           name: questTitle

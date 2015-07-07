@@ -198,7 +198,7 @@
         return;
       }
 
-      $http.get( app.api + "/search/creature/", {
+      $http.get( app.api + "search/creature/", {
         params: {
           id: creatureEntry,
           name: creatureName,
