@@ -30,7 +30,7 @@
     for (i = 0; i < cleanedRows.length; i++) {
       for (key in cleanedRows[i]) {
         if (cleanedRows[i].hasOwnProperty(key)) {
-          if (!isNaN(cleanedRows[i][key]) && cleanedRows[i][key] != "") {
+          if (!isNaN(cleanedRows[i][key]) && cleanedRows[i][key] != null && cleanedRows[i][key] != "") {
             cleanedRows[i][key] = Number(cleanedRows[i][key]);
           }
         }
