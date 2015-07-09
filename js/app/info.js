@@ -12,7 +12,7 @@
     $scope.errorText = "";
 
     // Keira version
-    $scope.keiraVersion = "2.1.1";
+    $scope.keiraVersion = "2.1.2";
     $scope.keiraBranch  = "3.3.5";
     $scope.keiraTag     = "v" + $scope.keiraVersion;
 
