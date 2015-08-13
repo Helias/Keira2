@@ -6,7 +6,13 @@
 
   var app = angular.module('keira2');
 
-  app.controller("ThemeController", function ($scope, $http, $localStorage, $location) {
+  app.controller("VersionAndThemeController", function ($scope, $http, $localStorage, $location, $rootScope) {
+
+    /* Versions */
+    $scope.versions = [
+      { name: "3.3.5" },
+      { name: "6.x" }
+      ];
 
     /* Themes */
     $scope.themes = [
@@ -35,6 +41,9 @@
       theme: {
         name: $scope.themes[0].name,
         url: $scope.themes[0].urls
+      },
+      version: {
+        name: $scope.versions[0].name
       }
     });
 
@@ -49,8 +58,17 @@
       }
     };
 
-    // initialize the theme - pull from localStorage (which gets the default if none is set)
-    $scope.theme = $scope.$storage.theme;
+    // the version switching method
+    $scope.setVersion = function(version) {
+      // set the model so the directive updates
+      $scope.version = version;
+      // save the new version to localStorage
+      $scope.$storage.version = version;
+    };
+
+    // initialize theme and version - pull from localStorage (which gets the default if none is set)
+    $scope.theme   = $scope.$storage.theme;
+    $rootScope.version = $scope.$storage.version;
   });
 
 }());

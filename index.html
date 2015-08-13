@@ -26,7 +26,7 @@
     <!-- Keira2 Core -->
     <script src="js/app/main.js"></script>
     <script src="config.js"></script>
-    <script src="js/app/theme.js"></script>
+    <script src="js/app/VersionAndTheme.js"></script>
     <script src="js/app/constants.js"></script>
     <script src="js/app/functions.js"></script>
     <script src="js/app/info.js"></script>
@@ -66,13 +66,13 @@
 <![endif]-->
   </head>
 
-  <body ng-controller="ThemeController">
+  <body ng-controller="VersionAndThemeController">
     <div class="container text-center">
       <p class="h5">Keira2 Database Editor</p>
       <a ng-href="#/quest"><button class="btn-primary btn-lg">Quest</button></a>
       <a ng-href="#/creature"><button class="btn-primary btn-lg">Creature</button></a>
       <a ng-href="#/gameobject"><button class="btn-primary btn-lg">Game Object</button></a>
-      <a ng-href="#/item"><button class="btn-primary btn-lg">Item</button></a>
+      <a ng-href="#/item" ng-hide="version.name == '6.x'"><button class="btn-primary btn-lg">Item</button></a>
       <a ng-href="#/character"><button class="btn-primary btn-lg">Character</button></a>
       <a ng-href="#/sai"><button class="btn-primary btn-lg">SmartAI</button></a>
       <a ng-href="#/"><button class="btn-primary btn-lg">Info</button></a>
@@ -83,9 +83,22 @@
             Theme {{ theme.name }} <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu">
-            <li class="pointer" ng-repeat="theme in themes"><a ng-href="{{currentLocation}}" ng-click="setTheme(theme)">{{theme.name}}</a></li>
+            <li class="pointer" ng-repeat="theme in themes">
+              <a ng-href="{{currentLocation}}" ng-click="setTheme(theme)">{{theme.name}}</a>
+            </li>
           </ul>
           <br>
+        </div>
+      </div>
+      <br>
+      <div class="btn-group pull-right" dropdown style="margin-right: 10px;">
+        <div class="btn-group" dropdown>
+          <button type="button" class="btn-danger btn" dropdown-toggle ng-disabled="disabled">Version {{version.name}}</button>
+          <ul class="dropdown-menu" role="menu">
+            <li class="pointer" ng-repeat="version in versions">
+              <a ng-href="{{currentLocation}}" ng-click="setVersion(version)">{{version.name}}</a>
+            </li>
+          </ul>
         </div>
       </div>
       <hr class="hr">
