@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("VersionAndThemeController", function ($scope, $http, $localStorage, $location, $rootScope) {
+  app.controller("SwitcherController", function ($scope, $http, $localStorage, $location, $rootScope) {
 
     /* Versions */
     $scope.versions = [
