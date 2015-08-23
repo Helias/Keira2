@@ -66,16 +66,6 @@
         console.log("[ERROR] quest/template/addon/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all quest_details data */
-      $http.get( app.api + "quest/details/" + $stateParams.id )
-        .success(function (data, status, header, config) {
-        $scope.current_quest_details = $rootScope.fixNumericValues(data[0]);
-        $scope.new_quest_details = angular.copy($scope.current_quest_details);
-      })
-        .error(function (data, status, header, config) {
-        console.log("[ERROR] quest/details/" + $stateParams.id + " $http.get request failed");
-      });
-
       /* Retrieve all quest_offer_reward data */
       $http.get( app.api + "quest/offer_reward/" + $stateParams.id )
         .success(function (data, status, header, config) {
@@ -183,8 +173,6 @@
       $scope.questScript += app.getUpdateQuery("quest_template", whereCondition, $scope.current_quest_template, $scope.new_quest_template);
 
       $scope.questScript += app.getUpdateQuery("quest_template_addon", whereCondition, $scope.current_quest_template_addon, $scope.new_quest_template_addon);
-
-      $scope.questScript += app.getUpdateQuery("quest_details", whereCondition, $scope.current_quest_details, $scope.new_quest_details);
 
       $scope.questScript += app.getUpdateQuery("quest_offer_reward", whereCondition, $scope.current_quest_offer_reward, $scope.new_quest_offer_reward);
     };
