@@ -86,6 +86,15 @@
         console.log("[ERROR] quest/offer_reward/" + $stateParams.id + " $http.get request failed");
       });
 
+      /* Retrieve all quest_offer_reward data */
+      $http.get( app.api + "quest/request_items/" + $stateParams.id )
+        .success(function (data, status, header, config) {
+        $scope.current_quest_request_items = $rootScope.fixNumericValues(data[0]);
+        $scope.new_quest_request_items = angular.copy($scope.current_quest_request_items);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] quest/request_items/" + $stateParams.id + " $http.get request failed");
+      });
 
       /* Retrieve all creature_queststarter data */
       $http.get( app.api + "creature/queststarter/quest/" + $stateParams.id, {
@@ -188,6 +197,8 @@
       $scope.questScript += app.getUpdateQuery("quest_details", whereCondition, $scope.current_quest_details, $scope.new_quest_details);
 
       $scope.questScript += app.getUpdateQuery("quest_offer_reward", whereCondition, $scope.current_quest_offer_reward, $scope.new_quest_offer_reward);
+
+      $scope.questScript += app.getUpdateQuery("quest_request_items", whereCondition, $scope.current_quest_request_items, $scope.new_quest_request_items);
 
     };
 

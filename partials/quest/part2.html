@@ -252,9 +252,9 @@
         </div>
         <small>EmoteOnComplete</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_quest_template.EmoteOnComplete">
+          <input class="form-control input-xs" type="text" ng-model="new_quest_request_items.EmoteOnComplete">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'EmoteOnComplete', 'emote')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_request_items, 'EmoteOnComplete', 'emote')">...</button>
           </div>
         </div>
       </div>
@@ -277,9 +277,9 @@
         </div>
         <small>EmoteOnIncomplete</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_quest_template.EmoteOnIncomplete">
+          <input class="form-control input-xs" type="text" ng-model="new_quest_request_items.EmoteOnIncomplete">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_template, 'EmoteOnIncomplete', 'emote')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_request_items, 'EmoteOnIncomplete', 'emote')">...</button>
           </div>
         </div>
       </div>
@@ -312,6 +312,10 @@
             <button class="btn btn-info input-xs" ng-click="openValueModal(new_quest_offer_reward, 'Emote4', 'emote')">...</button>
           </div>
         </div>
+        <div ng-show="version.name == '6.x'">
+          <small>EmoteOnCompleteDelay</small>
+          <input class="form-control input-xs" type="text" ng-model="new_quest_request_items.EmoteOnCompleteDelay">
+        </div>
       </div>
       <div class="col-xs-3">
         <small>OfferRewEmDelay1</small>
@@ -329,6 +333,10 @@
         <small>OfferRewEmDelay4</small>
         <div class="input-group">
           <input class="form-control input-xs" type="text" ng-model="new_quest_offer_reward.EmoteDelay4">
+        </div>
+        <div ng-show="version.name == '6.x'">
+          <small>EmoteOnIncompleteDelay</small>
+          <input class="form-control input-xs" type="text" ng-model="new_quest_request_items.EmoteOnIncompleteDelay">
         </div>
       </div>
     </div>
