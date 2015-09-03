@@ -553,7 +553,7 @@
                 fullLine = fullLine.replace("_setOrientationTargetType_", "Home Position");
                 break;
               case app.saiConstants.target.POSITION:
-                fullLine = fullLine.replace("_setOrientationTargetType_", smartScript.target_o.ToString());
+                fullLine = fullLine.replace("_setOrientationTargetType_", smartScript.target_o);
                 break;
               default:
                 fullLine = fullLine.replace("_setOrientationTargetType_", $scope.getStringByTargetType(smartScript));
