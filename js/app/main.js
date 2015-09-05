@@ -203,7 +203,7 @@
       if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $modal.open({
-        templateUrl: "partials/sql-script-modal.html",
+        templateUrl: "partials/modals/sql-script-modal.html",
         controller: "FullScriptModalController",
         size: 'lg',
         resolve: {
@@ -226,7 +226,7 @@
       if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $modal.open({
-        templateUrl: "partials/sql-script-modal.html",
+        templateUrl: "partials/modals/sql-script-modal.html",
         controller: "DiffScriptModalController",
         size: 'lg',
         resolve: {
@@ -255,7 +255,7 @@
       if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $modal.open({
-        templateUrl: "partials/sql-script-modal.html",
+        templateUrl: "partials/modals/sql-script-modal.html",
         controller: "DiffOneKeyScriptModalController",
         size: 'lg',
         resolve: {
