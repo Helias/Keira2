@@ -285,10 +285,7 @@
     <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
   </div>
   <div class="col-xs-2 pull-right">
-    <button class="btn btn-primary" ng-click="openFullScriptModal(new_quest_template, 'quest_template', 'ID')">FULL Template SQL</button>
-  </div>
-  <div class="col-xs-2 pull-right">
-    <button class="btn btn-primary" ng-click="openFullScriptModal(new_quest_template_addon, 'quest_template_addon', 'ID')">FULL Addon SQL</button>
+    <button class="btn btn-primary" ng-click="openFullScriptModal([new_quest_template, new_quest_template_addon, new_quest_details, new_quest_request_items, new_quest_offer_reward], ['quest_template', 'quest_template_addon', 'quest_details', 'quest_request_items', 'quest_offer_reward'], ['ID', 'ID', 'ID', 'ID', 'ID'])">FULL Quest SQL</button>
   </div>
 </div>
 <br>

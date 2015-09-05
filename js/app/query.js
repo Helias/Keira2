@@ -280,31 +280,55 @@
    */
   app.getFullDeleteInsert = function(tableName, primaryKey1, newRows) {
 
-    if (newRows === undefined || (Array.isArray(newRows) && newRows.length <= 0) ) { return; }
+    if (newRows === undefined || (Array.isArray(newRows) && !Array.isArray(primaryKey1) && newRows.length <= 0) ) { return; }
 
-    var query, deleteQuery, insertQuery, cleanedNewRows, tmp;
+    var query = "", deleteQuery, insertQuery, cleanedNewRows, tmp, i = 0, len = newRows.length;
 
-    // if we have a single object, convert it to array
-    if (!Array.isArray(newRows)) {
-      tmp = [];
-      tmp[0] = newRows;
-      newRows = tmp;
+    if (!Array.isArray(primaryKey1)) {
+      len = 1;
+
+      tmp = tableName;
+      tableName = [];
+      tableName[0] = tmp;
+
+      tmp = primaryKey1;
+      primaryKey1 = [];
+      primaryKey1[0] = tmp;
+
+      tmp = newRows;
+      newRows = [];
+      newRows[0] = tmp;
     }
 
-    deleteQuery = squel.delete(app.globalQueryConfig).from(tableName).where(primaryKey1 + " = " + newRows[0][primaryKey1]);
+    for (i = 0; i < len; i++)
+    {
+      // if we have a single object, convert it to array
+      if (!Array.isArray(newRows[i])) {
+        tmp = [];
+        tmp[0] = newRows[i];
+        newRows[i] = tmp;
+      }
 
-    // prepare rows for query generation
-    cleanedNewRows = app.cleanRows(newRows);
+      // Execute the code only if the quest is present in the table, otherwise skip
+      if (newRows[i][0])
+      {
+        deleteQuery = squel.delete(app.globalQueryConfig).from(tableName[i]).where(primaryKey1[i] + " = " + newRows[i][0][primaryKey1[i]]);
 
-    insertQuery = squel.insert(app.globalQueryConfig).into(tableName).setFieldsRows(cleanedNewRows);
+        // prepare rows for query generation
+        cleanedNewRows = app.cleanRows(newRows[i]);
 
-    query = "-- FULL `" + tableName + "` of " + primaryKey1 + " " + newRows[0][primaryKey1] + "\n";
-    query += deleteQuery.toString() + ";\n";
-    query += insertQuery.toString() + ";\n";
+        insertQuery = squel.insert(app.globalQueryConfig).into(tableName[i]).setFieldsRows(cleanedNewRows);
 
-    query = query.replace(") VALUES (", ") VALUES\n(");
-    query = query.replace(/\)\, \(/g, "),\n(");
+        if (i != 0) { query += "\n\n"; }
 
+        query += "-- FULL `" + tableName[i] + "` of " + primaryKey1[i] + " " + newRows[i][0][primaryKey1[i]] + "\n";
+        query += deleteQuery.toString() + ";\n";
+        query += insertQuery.toString() + ";\n";
+
+        query = query.replace(") VALUES (", ") VALUES\n(");
+        query = query.replace(/\)\, \(/g, "),\n(");
+      }
+    }
     return query;
   };
 
