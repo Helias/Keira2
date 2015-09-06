@@ -133,8 +133,8 @@
       name : ""
     };
 
-    // init datas object properties
-    var datas_properties = [];
+    // init data object properties
+    var data_properties = [];
 
     $scope.modalTitle = property;
 
@@ -154,13 +154,13 @@
         }
       }).success(function (data, status, header, config) {
 
-        $scope.datas = $rootScope.fixNumericValues(data);
+        $scope.data = $rootScope.fixNumericValues(data);
 
-        // properties of the object datas
-        datas_properties = Object.keys($scope.datas[0]);
+        // properties of the object data
+        data_properties = Object.keys($scope.data[0]);
 
-        $scope.ID    = datas_properties[0];
-        $scope.Value = datas_properties[1];
+        $scope.ID    = data_properties[0];
+        $scope.Value = data_properties[1];
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] MODAL SEARCH $http.get request failed");
@@ -180,7 +180,7 @@
 
       if ($scope.selectedRow !== null) {
         // return the id of the data selected
-        $modalInstance.close( $scope.datas[$scope.selectedRow][datas_properties[0]] );
+        $modalInstance.close( $scope.data[$scope.selectedRow][data_properties[0]] );
       }
       else {
         $modalInstance.close();
@@ -204,8 +204,8 @@
       continuos: 0
     };
 
-    // init datas object properties
-    var datas_properties = [];
+    // init data object properties
+    var data_properties = [];
 
     $scope.modalTitle = property;
 
