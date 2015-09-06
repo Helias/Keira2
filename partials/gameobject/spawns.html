@@ -4,7 +4,12 @@
     <div class="row">
       <div class="col-xs-3">
         <small>guid</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.guid">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.guid">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openUnusuedGuidModal(selected, 'guid', 'gameobject')">...</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -287,6 +287,7 @@
     if (!Array.isArray(primaryKey1)) {
       len = 1;
 
+      // converting tableName, primaryKey1, newRows in Array
       tmp = tableName;
       tableName = [];
       tableName[0] = tmp;
