@@ -35,7 +35,7 @@
     {
       for (i = 0; i < numValuesVal; i++)
       {
-          $scope.values[i] = true;
+        $scope.values[i] = true;
       }
     }
 
@@ -192,6 +192,75 @@
     };
 
   });
+
+
+  app.controller('UnusuedGuidModalController', function ($scope, $modalInstance, $http, $rootScope, property, table) {
+
+    /* init object of search param */
+    $scope.param = {
+      startid : "",
+      numguid : "",
+      table : table,
+      continuos: 0
+    };
+
+    // init datas object properties
+    var datas_properties = [];
+
+    $scope.modalTitle = property;
+
+    /* [Function] searchGuid */
+    $scope.searchGuid = function (startid, numguid, table, continuos) {
+
+      if ( (startid === "" || isNaN(startid)) && (numguid === "" || isNaN(numguid)) )
+      {
+        alert('Fill startid and numguid field!');
+        return;
+      }
+
+      $http.get( app.api + "search/guid/", {
+        params: {
+          startid: startid,
+          numguid: numguid,
+          table: table,
+          continuos: continuos
+        }
+      }).success(function (data, status, header, config) {
+
+        $scope.guid = data.guid;
+
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] MODAL UNUSUED GUID SEARCH $http.get request failed");
+      });
+
+    };
+
+    $scope.selectedRow = null;
+
+    // Onclick the table row on the modal save the index
+    $scope.selectModalRow = function(index) {
+      $scope.selectedRow = index;
+    };
+
+    // When click on the modal button "Ok" send the id value selected
+    $scope.modalOk = function (Res) {
+
+      if ($scope.selectedRow !== null) {
+        // return the id of the data selected
+        $modalInstance.close( $scope.guid[$scope.selectedRow] );
+      }
+      else {
+        $modalInstance.close();
+      }
+    };
+
+    $scope.modalCancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+
+  });
+
 
   app.controller('FullScriptModalController', function ($scope, $modalInstance, rows, tableName, primaryKey1) {
 

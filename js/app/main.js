@@ -80,8 +80,8 @@
       modalInstance.result.then(function (Res) {
         // if all the flags are choosen assign -1 to Res
         if (Res == (Math.pow(2, numValues)-1)) {
-            Res = -1;
-          }
+          Res = -1;
+        }
         object[property] = Res;
       });
 
@@ -185,6 +185,31 @@
           },
           search_param: function () {
             return search_param;
+          }
+        }
+      });
+
+      // When the modal will be closed this function takes the new value to assign
+      modalInstance.result.then(function (Res) {
+        object[property] = Res;
+      });
+
+    };
+
+    $rootScope.openUnusuedGuidModal = function (object, property, table, size) {
+
+      if ( !$rootScope.isEntrySelected() ) { return; }
+
+      var modalInstance = $modal.open({
+        templateUrl: "partials/modals/unusued-guid-search.html",
+        controller: "UnusuedGuidModalController",
+        size: size,
+        resolve: {
+          property: function () {
+            return property;
+          },
+          table: function () {
+            return table;
           }
         }
       });
