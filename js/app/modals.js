@@ -201,7 +201,7 @@
       startid : "",
       numguid : "",
       table : table,
-      continuos: 0
+      continuous: ""
     };
 
     // init data object properties
@@ -210,7 +210,7 @@
     $scope.modalTitle = property;
 
     /* [Function] searchGuid */
-    $scope.searchGuid = function (startid, numguid, table, continuos) {
+    $scope.searchGuid = function (startid, numguid, table, continuous) {
 
       if ( (startid === "" || isNaN(startid)) && (numguid === "" || isNaN(numguid)) )
       {
@@ -218,12 +218,14 @@
         return;
       }
 
+      if (continuous) { continuous = 1; }
+
       $http.get( app.api + "search/guid/", {
         params: {
           startid: startid,
           numguid: numguid,
           table: table,
-          continuos: continuos
+          continuous: continuous
         }
       }).success(function (data, status, header, config) {
 
