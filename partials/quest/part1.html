@@ -42,18 +42,18 @@
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <small>NextQuestIdChain</small>
+        <small>RewardNextQuest</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.NextQuestIdChain">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RewardNextQuest">
           <div class="input-group-btn">
-            <a ng-href="#/quest/{{ new_quest_template.NextQuestIdChain }}"><button class="btn btn-info btn-xs">→</button></a>
+            <a ng-href="#/quest/{{ new_quest_template.RewardNextQuest }}"><button class="btn btn-info btn-xs">→</button></a>
           </div>
         </div>
       </div>
       <div class="col-xs-6">
-        <small>RewardXPId</small>
+        <small>RewardXPDifficulty</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RewardXPId">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RewardXPDifficulty">
         </div>
       </div>
     </div>
@@ -111,9 +111,9 @@
         </div>
       </div>
       <div class="col-xs-4">
-        <small>LimitTime</small>
+        <small>TimeAllowed</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.LimitTime">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.TimeAllowed">
         </div>
       </div>
     </div>
@@ -137,11 +137,11 @@
         </div>
       </div>
       <div class="col-xs-4">
-        <small>RequiredRaces</small>
+        <small>AllowableRaces</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.RequiredRaces">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.AllowableRaces">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/quest/modals/required-races.html', new_quest_template, 'RequiredRaces', 23)">...</button>
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/quest/modals/required-races.html', new_quest_template, 'AllowableRaces', 23)">...</button>
           </div>
         </div>
       </div>
@@ -185,11 +185,11 @@
     <h5 class="text-left">Source for quest</h5>
     <div class="row">
       <div class="col-xs-12">
-        <small>SourceItemId</small>
+        <small>StartItem</small>
         <div class="input-group">
-          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.SourceItemId">
+          <input class="form-control input-xs" type="text"  ng-model="new_quest_template.StartItem">
           <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'SourceItemId', 'item')">...</button>
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_quest_template, 'StartItem', 'item')">...</button>
           </div>
         </div>
       </div>
@@ -237,9 +237,9 @@
     </div>
   </div>
   <div class="col-xs-4">
-    <small class="text-left">EndText</small>
+    <small class="text-left">AreaDescription</small>
     <div>
-      <textarea class="form-control input-xs" rows="6" type="text"  ng-model="new_quest_template.EndText"></textarea>
+      <textarea class="form-control input-xs" rows="6" type="text"  ng-model="new_quest_template.AreaDescription"></textarea>
     </div>
     <small class="text-left">QuestCompletionLog</small>
     <div>
