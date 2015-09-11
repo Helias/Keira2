@@ -30,6 +30,8 @@
     $scope.new_gameobject_queststarter      = [];
     $scope.current_gameobject_questender    = [];
     $scope.new_gameobject_questender        = [];
+    $scope.current_quest_objectives         = [];
+    $scope.new_quest_objectives             = [];
 
 
     /* Check if a quest is selected */
@@ -86,11 +88,21 @@
         console.log("[ERROR] quest/offer_reward/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all quest_offer_reward data */
+      /* Retrieve all quest_request_items data */
       $http.get( app.api + "quest/request_items/" + $stateParams.id )
         .success(function (data, status, header, config) {
         $scope.current_quest_request_items = $rootScope.fixNumericValues(data[0]);
         $scope.new_quest_request_items = angular.copy($scope.current_quest_request_items);
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] quest/request_items/" + $stateParams.id + " $http.get request failed");
+      });
+
+      /* Retrieve all quest_request_objectives data */
+      $http.get( app.api + "quest/objectives/" + $stateParams.id )
+        .success(function (data, status, header, config) {
+        $scope.current_quest_objectives = $rootScope.fixNumericValues(data);
+        $scope.new_quest_objectives = angular.copy($scope.current_quest_objectives);
       })
         .error(function (data, status, header, config) {
         console.log("[ERROR] quest/request_items/" + $stateParams.id + " $http.get request failed");

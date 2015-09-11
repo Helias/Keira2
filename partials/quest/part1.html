@@ -260,23 +260,15 @@
       <textarea class="form-control input-xs" rows="6" type="text"  ng-model="new_quest_request_items.CompletionText"></textarea>
     </div>
   </div>
-  <div class="col-xs-4">
+  <div class="col-xs-4" ng-show="version.name == '3.3.5'">
     <small class="text-left">ObjectiveText1</small>
-    <div>
-      <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ObjectiveText1">
-    </div>
+    <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ObjectiveText1">
     <small class="text-left">ObjectiveText2</small>
-    <div>
-      <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ObjectiveText2">
-    </div>
+    <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ObjectiveText2">
     <small class="text-left">ObjectiveText3</small>
-    <div>
-      <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ObjectiveText3">
-    </div>
+    <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ObjectiveText3">
     <small class="text-left">ObjectiveText4</small>
-    <div>
-      <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ObjectiveText4">
-    </div>
+    <input class="form-control input-xs" type="text"  ng-model="new_quest_template.ObjectiveText4">
   </div>
 </div>
 <br>

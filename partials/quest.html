@@ -12,6 +12,9 @@
   <tab heading="Quest Part 3" active="questTabs.part3">
     <div ng-include="'partials/quest/part3.html'"></div>
   </tab>
+  <tab heading="Quest Objectives" active="questTabs.objectives" ng-show="version.name == '6.x'">
+    <div ng-include="'partials/quest/quest_objectives.html'"></div>
+  </tab>
   <tab heading="Creature Starters" active="questTabs.creatureStarters" ng-controller="StartersEndersController">
     <div ng-include="'partials/quest/creature-starters.html'"></div>
   </tab>
