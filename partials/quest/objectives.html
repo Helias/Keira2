@@ -9,20 +9,16 @@
       <input class="form-control input-xs" type="text" ng-model="selected.ID">
     </div>
     <div class="col-xs-1">
-      <small>ObjectID</small>
-      <input class="form-control input-xs" type="text" ng-model="selected.ObjectID">
-    </div>
-    <div class="col-xs-3">
-      <small>Description</small>
-      <input class="form-control input-xs" type="text" ng-model="selected.Description">
-    </div>
-    <div class="col-xs-1">
       <small>Type</small>
       <input class="form-control input-xs" type="text" ng-model="selected.Type">
     </div>
     <div class="col-xs-1">
       <small>StorageIndex</small>
       <input class="form-control input-xs" type="text" ng-model="selected.StorageIndex">
+    </div>
+    <div class="col-xs-1">
+      <small>ObjectID</small>
+      <input class="form-control input-xs" type="text" ng-model="selected.ObjectID">
     </div>
     <div class="col-xs-1">
       <small>Amount</small>
@@ -36,6 +32,10 @@
       <small>UnkFloat</small>
       <input class="form-control input-xs" type="text" ng-model="selected.UnkFloat">
     </div>
+    <div class="col-xs-3">
+      <small>Description</small>
+      <input class="form-control input-xs" type="text" ng-model="selected.Description">
+    </div>
     <div class="col-xs-1">
       <small>VerifiedBuild</small>
       <input class="form-control input-xs" type="text" ng-model="selected.VerifiedBuild">
@@ -45,9 +45,9 @@
   <div class="row">
     <div class="col-xs-4">
       <br>
-      <button class="btn btn-primary" ng-click="editSelectedRowOf(new_quest_objectives, 'ObjectID')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+      <button class="btn btn-primary" ng-click="editSelectedRowOf(new_quest_objectives, 'ID')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
       <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_quest_objectives)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
-      <button class="btn btn-success" ng-click="addRowTo(new_quest_objectives, 'ObjectID')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+      <button class="btn btn-success" ng-click="addRowTo(new_quest_objectives, 'ID')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
     </div>
     <div class="col-xs-2 pull-right">
       <br>
@@ -55,7 +55,7 @@
     </div>
     <div class="col-xs-2 pull-right">
       <br>
-      <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('quest_objectives', 'QuestID', 'ObjectID', current_quest_objectives, new_quest_objectives)">DIFF Objectives Script</button>
+      <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('quest_objectives', 'QuestID', 'ID', current_quest_objectives, new_quest_objectives)">DIFF Objectives Script</button>
     </div>
   </div>
   <div class="row">
@@ -65,25 +65,25 @@
         <thead>
           <th class="text-center"></th>
           <th class="text-center">ID</th>
-          <th class="text-center">ObjectID</th>
-          <th class="text-center">Description</th>
           <th class="text-center">Type</th>
           <th class="text-center">StorageIndex</th>
+          <th class="text-center">ObjectID</th>
           <th class="text-center">Amount</th>
           <th class="text-center">Flags</th>
           <th class="text-center">UnkFloat</th>
+          <th class="text-center">Description</th>
           <th class="text-center">VerifiedBuild</th>
         </thead>
         <tr ng-repeat="objective in new_quest_objectives track by $index" ng-click="selectRow(new_quest_objectives, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
           <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_quest_objectives, $index)"></i></td>
           <td>{{ objective.ID }}</td>
-          <td>{{ objective.ObjectID }}</td>
-          <td>{{ objective.Description }}</td>
           <td>{{ objective.Type }}</td>
           <td>{{ objective.StorageIndex }}</td>
+          <td>{{ objective.ObjectID }}</td>
           <td>{{ objective.Amount }}</td>
           <td>{{ objective.Flags }}</td>
           <td>{{ objective.UnkFloat }}</td>
+          <td>{{ objective.Description }}</td>
           <td>{{ objective.VerifiedBuild }}</td>
         </tr>
       </table>
