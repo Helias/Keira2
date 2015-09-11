@@ -7,7 +7,7 @@
 
   var app = angular.module('keira2', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'tableSort', 'jdf.ngThemeSwitcher', 'ngStorage', 'hljs']);
 
-  app.run(function($rootScope, $modal, $stateParams) {
+  app.run(function($rootScope, $modal, $stateParams, $localStorage) {
 
     /* TrinityCore Documentation wiki */
     $rootScope.wikiLink = "http://collab.kpsn.org/display/tc/";
@@ -305,6 +305,13 @@
         }
       });
     };
+
+    //set default version
+    $rootScope.$storage = $localStorage.$default({
+      version: {
+        name: app.defaultVersion
+      }
+    });
   });
 
 }());

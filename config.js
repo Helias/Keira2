@@ -1,0 +1,9 @@
+(function () {
+  var app = angular.module('keira2');
+
+  /* Edit with path of TC-JSON-API */
+  app.api = "../TC-JSON-API/public/index.php/";
+
+  app.defaultVersion = "6.x";
+
+})();

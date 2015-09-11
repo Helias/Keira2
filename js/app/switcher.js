@@ -37,7 +37,7 @@
     ];
 
     // initialize localStorage with default theme
-    $scope.$storage = $localStorage.$default({
+    $rootScope.$storage = $localStorage.$default({
       theme: {
         name: $scope.themes[0].name,
         url: $scope.themes[0].urls
