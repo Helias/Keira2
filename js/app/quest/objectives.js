@@ -13,17 +13,18 @@
 
     /* The item currently selected by the user (bound to the view) */
     $scope.selected = {
-      QuestID       : parseInt($stateParams.id, 10),
       ID            : 0,
+      QuestID       : parseInt($stateParams.id, 10),
       Type          : 0,
       StorageIndex  : 0,
       ObjectID      : 0,
       Amount        : 0,
       Flags         : 0,
-      Description   : '',
       UnkFloat      : 0,
+      Description   : '',
       VerifiedBuild : 0
     };
+    console.log($scope.selected);
 
     /* Type check */
     $scope.parseValues = function() {
@@ -42,6 +43,7 @@
     $scope.selectRow = function(rows, index) {
       $scope.selectedRow = index;
       $scope.selected = angular.copy(rows[index]);
+      console.log($scope.selected);
     };
 
     /* Edit selected row */
