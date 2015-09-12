@@ -7,10 +7,25 @@
 
   var app = angular.module('keira2', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'tableSort', 'jdf.ngThemeSwitcher', 'ngStorage', 'hljs']);
 
-  app.run(function($rootScope, $modal, $stateParams) {
+  app.run(function($rootScope, $modal, $stateParams, $localStorage) {
+
+    if (!app.api) {
+      if ($localStorage.api) {
+        app.api = $localStorage.api;
+      } else {
+        app.api = app.defaultAPI;
+      }
+    }
 
     /* TrinityCore Documentation wiki */
     $rootScope.wikiLink = "http://collab.kpsn.org/display/tc/";
+
+    // set the default version
+    $rootScope.$storage = $localStorage.$default({
+      version: {
+        name: app.defaultVersion
+      }
+    });
 
     /* [Function] check if entry is selected */
     $rootScope.isEntrySelected = function() {
@@ -305,6 +320,7 @@
         }
       });
     };
+
   });
 
 }());

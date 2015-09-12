@@ -98,16 +98,6 @@
         console.log("[ERROR] quest/request_items/" + $stateParams.id + " $http.get request failed");
       });
 
-      /* Retrieve all quest_request_objectives data */
-      $http.get( app.api + "quest/objectives/" + $stateParams.id )
-        .success(function (data, status, header, config) {
-        $scope.current_quest_objectives = $rootScope.fixNumericValues(data);
-        $scope.new_quest_objectives = angular.copy($scope.current_quest_objectives);
-      })
-        .error(function (data, status, header, config) {
-        console.log("[ERROR] quest/request_items/" + $stateParams.id + " $http.get request failed");
-      });
-
       /* Retrieve all creature_queststarter data */
       $http.get( app.api + "creature/queststarter/quest/" + $stateParams.id, {
         params : { names : 0 }
@@ -155,6 +145,18 @@
         .error(function (data, status, header, config) {
         console.log("[ERROR] gameobject/questender/quest/" + $stateParams.id + " $http.get request failed");
       });
+
+      if ($rootScope.$storage.version.name == "6.x") {
+        /* Retrieve all quest_request_objectives data */
+        $http.get( app.api + "quest/objectives/" + $stateParams.id )
+          .success(function (data, status, header, config) {
+          $scope.current_quest_objectives = $rootScope.fixNumericValues(data);
+          $scope.new_quest_objectives = angular.copy($scope.current_quest_objectives);
+        })
+          .error(function (data, status, header, config) {
+          console.log("[ERROR] quest/request_items/" + $stateParams.id + " $http.get request failed");
+        });
+      }
 
     } else {
       /* We have no quest selected and default active tab is search */

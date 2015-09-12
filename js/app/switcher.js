@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("SwitcherController", function ($scope, $http, $localStorage, $location, $rootScope) {
+  app.controller("SwitcherController", function ($scope, $http, $localStorage, $location, $rootScope, $state) {
 
     /* Versions */
     $scope.versions = [
@@ -37,7 +37,7 @@
     ];
 
     // initialize localStorage with default theme
-    $scope.$storage = $localStorage.$default({
+    $rootScope.$storage = $localStorage.$default({
       theme: {
         name: $scope.themes[0].name,
         url: $scope.themes[0].urls
@@ -64,6 +64,12 @@
       $scope.version = version;
       // save the new version to localStorage
       $scope.$storage.version = version;
+
+      if (app.apiInstances[version.name]) {
+        $localStorage.api = app.api = app.apiInstances[version.name];
+        $state.reload();
+      }
+      console.log("[INFO] API path changed: " + app.api);
     };
 
     // initialize theme and version - pull from localStorage (which gets the default if none is set)
