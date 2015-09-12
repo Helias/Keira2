@@ -5,6 +5,6 @@
   app.api = "../TC-JSON-API/public/index.php/";
   
   /* Edit the default version of Keira2 */
-  app.defaultVersion = "6.x";
+  app.defaultVersion = "3.3.5";
 
 })();
