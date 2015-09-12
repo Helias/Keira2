@@ -66,7 +66,7 @@
       $scope.$storage.version = version;
 
       if (app.apiInstances[version.name]) {
-        app.api = app.apiInstances[version.name];
+        $localStorage.api = app.api = app.apiInstances[version.name];
         $state.reload();
       }
       console.log("[INFO] API path changed: " + app.api);

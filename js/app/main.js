@@ -9,6 +9,14 @@
 
   app.run(function($rootScope, $modal, $stateParams, $localStorage) {
 
+    if (!app.api) {
+      if ($localStorage.api) {
+        app.api = $localStorage.api;
+      } else {
+        app.api = app.defaultAPI;
+      }
+    }
+
     /* TrinityCore Documentation wiki */
     $rootScope.wikiLink = "http://collab.kpsn.org/display/tc/";
 
