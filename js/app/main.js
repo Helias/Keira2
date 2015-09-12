@@ -12,6 +12,13 @@
     /* TrinityCore Documentation wiki */
     $rootScope.wikiLink = "http://collab.kpsn.org/display/tc/";
 
+    // set the default version
+    $rootScope.$storage = $localStorage.$default({
+      version: {
+        name: app.defaultVersion
+      }
+    });
+
     /* [Function] check if entry is selected */
     $rootScope.isEntrySelected = function() {
       if ( $stateParams.id || ($stateParams.entryOrGuid && $stateParams.sourceType) ) {
@@ -306,12 +313,6 @@
       });
     };
 
-    //set default version
-    $rootScope.$storage = $localStorage.$default({
-      version: {
-        name: app.defaultVersion
-      }
-    });
   });
 
 }());
