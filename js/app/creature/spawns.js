@@ -20,6 +20,8 @@
       areaId          : 0,
       spawnMask       : 1,
       phaseMask       : 2,
+      PhaseId         : 0,
+      PhaseGroup      : 0,
       modelid         : 0,
       equipment_id    : 0,
       position_x      : 0,
