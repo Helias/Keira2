@@ -24,6 +24,7 @@
       Description   : '',
       VerifiedBuild : 0
     };
+    console.log($scope.selected);
 
     /* Type check */
     $scope.parseValues = function() {
@@ -42,6 +43,7 @@
     $scope.selectRow = function(rows, index) {
       $scope.selectedRow = index;
       $scope.selected = angular.copy(rows[index]);
+      console.log($scope.selected);
     };
 
     /* Edit selected row */

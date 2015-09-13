@@ -48,11 +48,19 @@
   </div>
   <div class="col-xs-6">
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-xs-3" ng-show="version.name == '3.3.5'">
         <small>phaseMask</small>
         <input class="form-control input-xs" type="text" ng-model="selected.phaseMask">
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-2" ng-show="version.name == '6.x'">
+        <small>PhaseId</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.PhaseId">
+      </div>
+      <div class="col-xs-2" ng-show="version.name == '6.x'">
+        <small>PhaseGroup</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.PhaseGroup">
+      </div>
+      <div class="col-xs-2">
         <small>modelid</small>
         <input class="form-control input-xs" type="text" ng-model="selected.modelid">
       </div>
@@ -182,7 +190,9 @@
       <th class="text-center">zoneId</th>
       <th class="text-center">areaId</th>
       <th class="text-center">spawnMask</th>
-      <th class="text-center">phaseMask</th>
+      <th class="text-center" ng-show="version.name == '3.3.5'">phaseMask</th>
+      <th class="text-center" ng-show="version.name == '6.x'">PhaseId</th>
+      <th class="text-center" ng-show="version.name == '6.x'">PhaseGroup<th>
       <th class="text-center">modelid</th>
       <th class="text-center">equipment_id</th>
       <th class="text-center">position_x</th>
@@ -207,7 +217,9 @@
       <td>{{ spawn.zoneId }}</td>
       <td>{{ spawn.areaId }}</td>
       <td>{{ spawn.spawnMask }}</td>
-      <td>{{ spawn.phaseMask }}</td>
+      <td ng-show="version.name == '3.3.5'">{{ spawn.phaseMask }}</td>
+      <td ng-show="version.name == '6.x'">{{ spawn.PhaseId }}</td>
+      <td ng-show="version.name == '6.x'">{{ spawn.PhaseGroup }}</td>
       <td>{{ spawn.modelid }}</td>
       <td>{{ spawn.equipment_id }}</td>
       <td>{{ spawn.position_x }}</td>

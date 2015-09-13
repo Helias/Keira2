@@ -19,7 +19,6 @@
       zoneId          : 0,
       areaId          : 0,
       spawnMask       : 1,
-      phaseMask       : 2,
       modelid         : 0,
       equipment_id    : 0,
       position_x      : 0,
@@ -38,6 +37,14 @@
       VerifiedBuild   : 0
     };
 
+    if ($rootScope.$storage.version.name == "6.x") {
+      $scope.selected.PhaseId    = 0;
+      $scope.selected.PhaseGroup = 0;
+    }
+    else {
+      $scope.selected.phaseMask = 2;
+    }
+
     /* Type check */
     $scope.parseValues = function() {
 
@@ -48,6 +55,8 @@
       $scope.selected.areaId          = parseInt($scope.selected.areaId, 10);
       $scope.selected.spawnMask       = parseInt($scope.selected.spawnMask, 10);
       $scope.selected.phaseMask       = parseInt($scope.selected.phaseMask, 10);
+      $scope.selected.PhaseId         = parseInt($scope.selected.PhaseId, 10);
+      $scope.selected.PhaseGroup      = parseInt($scope.selected.PhaseGroup, 10);
       $scope.selected.modelid         = parseInt($scope.selected.modelid, 10);
       $scope.selected.equipment_id    = parseInt($scope.selected.equipment_id, 10);
       $scope.selected.position_x      = parseFloat($scope.selected.position_x, 10);

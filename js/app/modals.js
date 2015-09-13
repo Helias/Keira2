@@ -150,7 +150,8 @@
       $http.get( app.api + "search/" + search_param + "/", {
         params: {
           id: id,
-          name: name
+          name: name,
+          version: $rootScope.$storage.version.name
         }
       }).success(function (data, status, header, config) {
 
