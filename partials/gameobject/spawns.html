@@ -159,7 +159,9 @@
       <th class="text-center">zoneId</th>
       <th class="text-center">areaId</th>
       <th class="text-center">spawnMask</th>
-      <th class="text-center">phaseMask</th>
+      <th class="text-center" ng-show="version.name == '3.3.5'">phaseMask</th>
+      <th class="text-center" ng-show="version.name == '6.x'">PhaseId</th>
+      <th class="text-center" ng-show="version.name == '6.x'">PhaseGroup<th>
       <th class="text-center">position_x</th>
       <th class="text-center">position_y</th>
       <th class="text-center">position_z</th>
@@ -180,7 +182,9 @@
       <td>{{ spawn.zoneId }}</td>
       <td>{{ spawn.areaId }}</td>
       <td>{{ spawn.spawnMask }}</td>
-      <td>{{ spawn.phaseMask }}</td>
+      <td ng-show="version.name == '3.3.5'">{{ spawn.phaseMask }}</td>
+      <td ng-show="version.name == '6.x'">{{ spawn.PhaseId }}</td>
+      <td ng-show="version.name == '6.x'">{{ spawn.PhaseGroup }}</td>
       <td>{{ spawn.position_x }}</td>
       <td>{{ spawn.position_y }}</td>
       <td>{{ spawn.position_z }}</td>
