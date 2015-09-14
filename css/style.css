@@ -49,6 +49,12 @@
   width: 300px !important;
 }
 
+.borders {
+  padding: 0px 20px 10px 10px;
+  margin-bottom: 5px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
 /* Info CSS */
 
 .info-table {

@@ -1,6 +1,6 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}creature_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>creature_template</a></p>
 <div class="row">
-  <div class="col-xs-5">
+  <div class="col-xs-5 borders">
 
     <h5 class="text-left">Creature I</h5>
     <div class="row">
@@ -183,9 +183,11 @@
     <br>
     <div class="row">
 
-      <div class="col-xs-4 text-left">
+      <div class="col-xs-3 text-left">
         <small>RacialLeader</small>
         <input type="text" class="form-control input-xs" ng-model="new_creature_template.RacialLeader">
+      </div>
+      <div class="col-xs-3 text-left">
         <small>mechanic_immune_mask</small>
         <div class="input-group">
           <input type="text" class="form-control input-xs" ng-model="new_creature_template.mechanic_immune_mask">
@@ -193,10 +195,8 @@
             <button class="btn btn-info input-xs" ng-click="openFlagModal( 'partials/creature/modals/mechanic.html', new_creature_template, 'mechanic_immune_mask', 31)">...</button>
           </div>
         </div>
-        <div ng-show="version.name == '3.3.5'">
-          <small>PetSpellDataId</small>
-          <input type="text" class="form-control input-xs" ng-model="new_creature_template.PetSpellDataId">
-        </div>
+      </div>
+      <div class="col-xs-3 text-left">
         <small>flags_extra</small>
         <div class="input-group">
           <input type="text" class="form-control input-xs" ng-model="new_creature_template.flags_extra">
@@ -205,10 +205,16 @@
           </div>
         </div>
       </div>
+      <div class="col-xs-3 text-left">
+        <div ng-show="version.name == '3.3.5'">
+          <small>PetSpellDataId</small>
+          <input type="text" class="form-control input-xs" ng-model="new_creature_template.PetSpellDataId">
+        </div>
+      </div>
     </div>
 
   </div>
-  <div class="col-xs-7">
+  <div class="col-xs-7 borders">
     <div class="row">
       <h5 class="text-left">&nbsp;&nbsp;Creature II</h5>
       <div class="col-xs-2">
@@ -597,17 +603,15 @@
         </div>
       </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-xs-3 col-xs-offset-5">
-        <button class="btn btn-primary" ng-click="openFullScriptModal(new_creature_template, 'creature_template', 'entry')">FULL SQL Script</button>
-      </div>
-      <div class="col-xs-3">
-        <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
-      </div>
-    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-2 col-xs-offset-8">
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_creature_template, 'creature_template', 'entry')">FULL SQL Script</button>
+  </div>
+  <div class="col-xs-2">
+    <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
   </div>
 </div>
 <br><br><br><br>
+

@@ -34,7 +34,21 @@
         <small>ExtendedCost</small>
         <input class="form-control input-xs" type="text" ng-model="selected.ExtendedCost">
       </div>
-      <div class="col-xs-3">
+      <div ng-show="version.name == '6.x'">
+        <div class="col-xs-2">
+          <small>type</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.type">
+        </div>
+        <div class="col-xs-3">
+          <small>PlayerConditionID</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.PlayerConditionID">
+        </div>
+        <div class="col-xs-2">
+          <small>IgnoreFiltering</small>
+          <input class="form-control input-xs" type="text" ng-model="selected.IgnoreFiltering">
+        </div>
+      </div>
+      <div class="col-xs-2">
         <small>VerifiedBuild</small>
         <input class="form-control input-xs" type="text" ng-model="selected.VerifiedBuild">
       </div>
@@ -67,6 +81,9 @@
     <th class="text-center">maxcount</th>
     <th class="text-center">incrtime</th>
     <th class="text-center">ExtendedCost</th>
+    <th class="text-center" ng-show="version.name == '6.x'">type</th>
+    <th class="text-center" ng-show="version.name == '6.x'">PlayerConditionID</th>
+    <th class="text-center" ng-show="version.name == '6.x'">IgnoreFiltering</th>
     <th class="text-center">VerifiedBuild</th>
   </thead>
   <tr ng-repeat="vendor in new_npc_vendor track by $index" ng-click="selectRow(new_npc_vendor, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
@@ -76,6 +93,9 @@
     <td>{{ vendor.maxcount }}</td>
     <td>{{ vendor.incrtime }}</td>
     <td>{{ vendor.ExtendedCost }}</td>
+    <td ng-show="version.name == '6.x'">{{ vendor.type }}</td>
+    <td ng-show="version.name == '6.x'">{{ vendor.PlayerConditionID }}</td>
+    <td ng-show="version.name == '6.x'">{{ vendor.IgnoreFiltering }}</td>
     <td>{{ vendor.VerifiedBuild }}</td>
   </tr>
 </table>
