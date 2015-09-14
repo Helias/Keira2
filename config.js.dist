@@ -13,8 +13,13 @@
 
 
   /* [OPTIONAL] Multiple API instances
+   *
    * If you have one separated instance TC-JSON-API for each game version
    * you can specify them by un-commenting and setting properly the following variables
+   *
+   * WARNING: un-comment the lines below *ONLY* if you are going to set *BOTH OF THEM* properly
+   * if you just want to use Keira2 for one game version only, do *NOT* touch the lines below
+   *
    */
 
    app.apiInstances = {};
