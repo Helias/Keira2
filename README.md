@@ -20,7 +20,7 @@ Also you can **help us** by testing the development version **without installing
 
 Keira2 fetches data from an istance of the [TrinityCore JSON API](https://github.com/ShinDarth/TC-JSON-API/), it can be installed either on the same machine or on an external one.
 
-You can install an istance of the TrinityCore JSON API using [this guide](https://github.com/ShinDarth/TC-JSON-API/blob/3.3.5/INSTALL.md).
+You can install an istance of the TrinityCore JSON API using [this guide](https://github.com/ShinDarth/TC-JSON-API/blob/master/INSTALL.md).
 
 Once you have installed the API, download the [latest release of Keira2](https://github.com/Helias/Keira2/releases) and extract the Keira2 folder and place is inside your web server directory (e.g. /var/www/).
 
