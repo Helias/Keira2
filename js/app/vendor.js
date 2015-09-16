@@ -22,15 +22,24 @@
       VerifiedBuild : 0
     };
 
+    if ($rootScope.$storage.version.name == "6.x") {
+      $scope.selected.type              = 0;
+      $scope.selected.PlayerConditionID = 0;
+      $scope.selected.IgnoreFiltering   = 0;
+    }
+
     /* Type check */
     $scope.parseValues = function() {
 
-      $scope.selected.slot          = parseInt($scope.selected.slot, 10);
-      $scope.selected.item          = parseInt($scope.selected.item, 10);
-      $scope.selected.maxcount      = parseInt($scope.selected.maxcount, 10);
-      $scope.selected.incrtime      = parseInt($scope.selected.incrtime, 10);
-      $scope.selected.ExtendedCost  = parseInt($scope.selected.ExtendedCost, 10);
-      $scope.selected.VerifiedBuild = parseInt($scope.selected.VerifiedBuild, 10);
+      $scope.selected.slot              = parseInt($scope.selected.slot, 10);
+      $scope.selected.item              = parseInt($scope.selected.item, 10);
+      $scope.selected.maxcount          = parseInt($scope.selected.maxcount, 10);
+      $scope.selected.incrtime          = parseInt($scope.selected.incrtime, 10);
+      $scope.selected.ExtendedCost      = parseInt($scope.selected.ExtendedCost, 10);
+      $scope.selected.type              = parseInt($scope.selected.type, 10);
+      $scope.selected.PlayerConditionID = parseInt($scope.selected.PlayerConditionID, 10);
+      $scope.selected.IgnoreFiltering   = parseInt($scope.selected.IgnoreFiltering, 10);
+      $scope.selected.VerifiedBuild     = parseInt($scope.selected.VerifiedBuild, 10);
     };
 
     /* Select a row from collection */

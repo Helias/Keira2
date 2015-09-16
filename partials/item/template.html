@@ -1,5 +1,5 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}item_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>item_template</a></p>
-<div class="row">
+<div class="row borders">
   <div class="col-xs-2">
     <small>entry</small>
     <div class="input-group">
@@ -96,7 +96,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-5">
+  <div class="col-xs-5 borders">
     <h5 class="text-left">requirements</h5>
     <div class="row">
       <div class="col-xs-4">
@@ -180,7 +180,7 @@
       </div>
     </div>
   </div>
-  <div class="col-xs-3">
+  <div class="col-xs-3 borders">
 
     <h5 class="text-left">weapons</h5>
     <div class="row">
@@ -229,7 +229,7 @@
     </div>
 
   </div>
-  <div class="col-xs-2">
+  <div class="col-xs-2 borders">
 
     <h5 class="text-left">resistance</h5>
     <div class="row">
@@ -260,7 +260,7 @@
     </div>
 
   </div>
-  <div class="col-xs-2">
+  <div class="col-xs-2 borders">
 
     <h5 class="text-left">socket</h5>
     <div class="row">
@@ -290,7 +290,7 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-7">
+  <div class="col-xs-7 borders">
     <h5 class="text-left">spell</h5>
     <div class="row">
       <div class="col-xs-2">
@@ -414,32 +414,34 @@
   </div>
 
   <div class="col-xs-3">
-    <h5 class="text-left">damage</h5>
-    <div class="row">
-      <div class="col-xs-4">
-        <small>dmg_type</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type1"><br class="lh">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'dmg_type1', 'dmgType')">...</button>
+    <div class="borders">
+      <h5 class="text-left">damage</h5>
+      <div class="row">
+        <div class="col-xs-4">
+          <small>dmg_type</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type1"><br class="lh">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'dmg_type1', 'dmgType')">...</button>
+            </div>
+          </div>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type2"><br class="lh">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'dmg_type2', 'dmgType')">...</button>
+            </div>
           </div>
         </div>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type2"><br class="lh">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'dmg_type2', 'dmgType')">...</button>
-          </div>
+        <div class="col-xs-4">
+          <small>dmg_min</small>
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_min1">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_min2">
         </div>
-      </div>
-      <div class="col-xs-4">
-        <small>dmg_min</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_min1">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_min2">
-      </div>
-      <div class="col-xs-4">
-        <small>dmg_max</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_max1">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_max2">
+        <div class="col-xs-4">
+          <small>dmg_max</small>
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_max1">
+          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_max2">
+        </div>
       </div>
 
       <div class="col-xs-12">
@@ -454,7 +456,7 @@
 
   </div>
 
-  <div class="col-xs-2">
+  <div class="col-xs-2 borders" style="border-bottom: none;">
     <h5 class="text-left">stats</h5>
     <div class="row">
       <div class="col-xs-6">
@@ -512,7 +514,7 @@
 <div class="row">
 
   <h6 class="text-left lh">other</h6>
-  <div class="col-xs-10">
+  <div class="col-xs-10 borders">
     <div class="row">
 
       <div class="col-xs-1">
@@ -669,7 +671,7 @@
     </div>
   </div>
 
-  <div class="col-xs-2">
+  <div class="col-xs-2 borders" style="border-top: none;">
     <div class="row">
       <div class="col-xs-6">
         <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value6"><br class="lh">
