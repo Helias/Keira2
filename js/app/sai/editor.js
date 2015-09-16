@@ -208,8 +208,6 @@
 
       for (i = 0; i < $scope.new_smart_scripts.length; i++) {
 
-        if ($scope.new_smart_scripts[i].comment == null || $scope.new_smart_scripts[i].comment == "") {
-
           smartScript = angular.copy($scope.new_smart_scripts[i]);
           smartScriptLink = $scope.getPreviousScriptLink(smartScript);
           fullLine = "";
@@ -902,7 +900,6 @@
 
           /* Finish */
           $scope.new_smart_scripts[i].comment = fullLine;
-        }
       }
     };
 
