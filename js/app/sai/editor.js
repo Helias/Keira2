@@ -450,6 +450,8 @@
               fullLine = fullLine.replace("_incrementOrDecrementActionParamOne_", "Increment");
             } else if (smartScript.action_param2 == "1") {
               fullLine = fullLine.replace("_incrementOrDecrementActionParamOne_", "Decrement");
+            } else {
+              fullLine = fullLine.replace("_incrementOrDecrementActionParamOne_", "Increment or Decrement");
             }
             //else //? What to do?
           }
