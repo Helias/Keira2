@@ -1,4 +1,8 @@
+/*jslint browser: true, white: true, plusplus: true*/
+/*global angular, console, alert*/
+
 (function () {
+  'use strict';
   var app = angular.module('keira2');
 
   /* Edit with path of TC-JSON-API */
@@ -26,4 +30,4 @@
    //app.apiInstances['3.3.5']  = "../TC-JSON-API/public/index.php/";
    //app.apiInstances['6.x']    = "../TC-JSON-API-6/public/index.php/";
 
-})();
+}());
