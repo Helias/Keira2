@@ -12,7 +12,7 @@
     $scope.errorText = "";
 
     // Keira version
-    $scope.keiraVersion = "2.2.0";
+    $scope.keiraVersion = "DEV";
     $scope.keiraTag     = "v" + $scope.keiraVersion;
 
     // API min required version
@@ -30,7 +30,7 @@
     })
       .error(function (data, status, header, config) {
       $scope.errorText = "ERROR: API not found, please edit your config.js file and set the path of your TrinityCore JSON API istance.";
-      console.log("[ERROR] /version/ $http.get request failed");
+      console.log("[ERROR] /api/ $http.get request failed");
     });
 
     // Database world version
