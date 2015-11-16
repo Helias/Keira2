@@ -31,7 +31,7 @@
       </thead>
       <tr ng-repeat="creature in new_creature_queststarter track by $index" ng-click="selectRow(new_creature_queststarter, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
         <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_creature_queststarter, $index)"></i></td>
-        <td>{{ creature.id }}</td>
+        <td><a ng-href="#/creature/{{creature.id}}">{{creature.id}}</a></td>
       </tr>
     </table>
   </div>

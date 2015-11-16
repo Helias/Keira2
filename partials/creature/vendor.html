@@ -88,7 +88,7 @@
   </thead>
   <tr ng-repeat="vendor in new_npc_vendor track by $index" ng-click="selectRow(new_npc_vendor, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
     <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_npc_vendor, $index)"></i></td>
-    <td>{{ vendor.item }}</td>
+    <td><a ng-href="#/item/{{vendor.item}}">{{vendor.item}}</a></td>
     <td>{{ vendor.slot }}</td>
     <td>{{ vendor.maxcount }}</td>
     <td>{{ vendor.incrtime }}</td>

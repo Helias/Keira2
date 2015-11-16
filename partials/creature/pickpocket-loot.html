@@ -94,7 +94,7 @@
       </thead>
       <tr ng-repeat="loot in new_pickpocketing_loot_template track by $index" ng-click="selectRow(new_pickpocketing_loot_template, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
         <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_pickpocketing_loot_template, $index)"></i></td>
-        <td>{{ loot.Item }}</td>
+        <td><a ng-href="#/item/{{loot.Item}}">{{ loot.Reference == 0 ? loot.Item : "" }}</a>{{ loot.Reference != 0 ? loot.Item : "" }}</td>
         <td>{{ loot.Reference }}</td>
         <td>{{ loot.Chance }}</td>
         <td>{{ loot.QuestRequired }}</td>
