@@ -43,7 +43,7 @@ If you have the TrinityCore JSON API on an external machine, you should set it l
 
 ### License
 
-Keira2 is open-sourced software licensed under the [GNU GPL license](https://github.com/Helias/Keira2/blob/master/LICENSE).
+Keira2 is open-sourced software licensed under the [GNU AGPL license](https://github.com/Helias/Keira2/blob/master/LICENSE).
 
 ### Screenshots
 
