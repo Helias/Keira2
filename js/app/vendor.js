@@ -36,10 +36,13 @@
       $scope.selected.maxcount          = parseInt($scope.selected.maxcount, 10);
       $scope.selected.incrtime          = parseInt($scope.selected.incrtime, 10);
       $scope.selected.ExtendedCost      = parseInt($scope.selected.ExtendedCost, 10);
-      $scope.selected.type              = parseInt($scope.selected.type, 10);
-      $scope.selected.PlayerConditionID = parseInt($scope.selected.PlayerConditionID, 10);
-      $scope.selected.IgnoreFiltering   = parseInt($scope.selected.IgnoreFiltering, 10);
       $scope.selected.VerifiedBuild     = parseInt($scope.selected.VerifiedBuild, 10);
+    
+      if ($rootScope.$storage.version.name == "6.x") {
+        $scope.selected.type              = parseInt($scope.selected.type, 10);
+        $scope.selected.PlayerConditionID = parseInt($scope.selected.PlayerConditionID, 10);
+        $scope.selected.IgnoreFiltering   = parseInt($scope.selected.IgnoreFiltering, 10);
+      }
     };
 
     /* Select a row from collection */
