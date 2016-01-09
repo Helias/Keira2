@@ -20,7 +20,12 @@
   </div>
   <div class="col-xs-1">
     <small>subclass</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.subclass">
+    <div class="input-group">
+      <input class="form-control input-xs" type="text" ng-model="new_item_template.subclass">
+      <div class="input-group-btn">
+        <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'subclass', 'item_subclass['+new_item_template.class+']')">...</button>
+      </div>
+    </div>
   </div>
   <div class="col-xs-3">
     <small>name</small>

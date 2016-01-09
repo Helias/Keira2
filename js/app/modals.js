@@ -64,8 +64,24 @@
   */
   app.controller('ValueModalController', function ($scope, $modalInstance, property, constant) {
 
+    var arr;
+
+    // if constant is an array
+    if (constant.indexOf("[") > -1)
+    {
+      arr = constant.substr(constant.indexOf("[")+1, 4);
+      arr = arr.replace("]", "");
+      constant = constant.substr(0, constant.indexOf("["));
+    }
+
     // importing constants on Controller
-    $scope.constants = app.modalConstants[constant];
+    if (arr == null) {
+      $scope.constants = app.modalConstants[constant];
+    }
+    else {
+      $scope.constants = app.modalConstants[constant][arr];
+    }
+
 
     $scope.modalTitle = property;
 
