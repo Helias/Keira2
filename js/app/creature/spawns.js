@@ -72,10 +72,10 @@
       $scope.selected.VerifiedBuild   = parseInt($scope.selected.VerifiedBuild, 10);
       
       if ($rootScope.$storage.version.name == "6.x") {
-        $scope.selected.PhaseId         = parseInt($scope.selected.PhaseId, 10);
-        $scope.selected.PhaseGroup      = parseInt($scope.selected.PhaseGroup, 10);
+        $scope.selected.PhaseId       = parseInt($scope.selected.PhaseId, 10);
+        $scope.selected.PhaseGroup    = parseInt($scope.selected.PhaseGroup, 10);
       } else {
-       $scope.selected.phaseMask       = parseInt($scope.selected.phaseMask, 10); 
+       $scope.selected.phaseMask      = parseInt($scope.selected.phaseMask, 10); 
       }
 
     };

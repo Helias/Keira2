@@ -67,8 +67,7 @@
     var arr;
 
     // if constant is an array
-    if (constant.indexOf("[") > -1)
-    {
+    if (constant.indexOf("[") > -1) {
       arr = constant.substr(constant.indexOf("[")+1, 4);
       arr = arr.replace("]", "");
       constant = constant.substr(0, constant.indexOf("["));
@@ -77,8 +76,7 @@
     // importing constants on Controller
     if (arr == null) {
       $scope.constants = app.modalConstants[constant];
-    }
-    else {
+    } else {
       $scope.constants = app.modalConstants[constant][arr];
     }
 

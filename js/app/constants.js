@@ -1608,8 +1608,9 @@
   /* item subclass constants */
   app.modalConstants.item_subclass = [];
 
-  for (var i = 0; i < 17; i++)
+  for (var i = 0; i < 17; i++) {
     app.modalConstants.item_subclass[i] = [];
+  }
 
   app.modalConstants.item_subclass[0][0]    = "Consumable (Usability in combat is decided by the spell assigned)";
   app.modalConstants.item_subclass[0][1]    = "Potion";
