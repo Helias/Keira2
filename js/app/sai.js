@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("SmartAIController", function ($rootScope, $scope, $http, $stateParams, $modal) {
+  app.controller("SmartAIController", function ($rootScope, $scope, $http, $stateParams, $uibModal) {
 
 	/* read ONLY values, do NOT bind them with ng-model in the view */
 	$scope.sourceType = $stateParams.sourceType;

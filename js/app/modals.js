@@ -12,7 +12,7 @@
    * - links checkbox values with flag values
    * - allows user to edit flag values through checkboxes
    */
-  app.controller('FlagModalController', function ($scope, $modalInstance, propertyVal, numValuesVal) {
+  app.controller('FlagModalController', function ($scope, $uibModalInstance, propertyVal, numValuesVal) {
 
 	var i = 0;
 	$scope.values = [];
@@ -48,11 +48,11 @@
 		  Res += Math.pow(2, i);
 		}
 	  }
-	  $modalInstance.close(Res);
+	  $uibModalInstance.close(Res);
 	};
 
 	$scope.modalCancel = function () {
-	  $modalInstance.dismiss('cancel');
+	  $uibModalInstance.dismiss('cancel');
 	};
 
   });
@@ -62,7 +62,7 @@
    *  - property: the field name of the table which the modal will return the value
    *  - constant: name of the constants (property of app.modalConstants[])
   */
-  app.controller('ValueModalController', function ($scope, $modalInstance, property, constant) {
+  app.controller('ValueModalController', function ($scope, $uibModalInstance, property, constant) {
 
 	var arr;
 
@@ -93,15 +93,15 @@
 	// When click on the modal button "Ok" send the id value selected
 	$scope.modalOk = function () {
 	  if ($scope.selectedRow !== null) {
-		$modalInstance.close( $scope.selectedRow );
+		$uibModalInstance.close( $scope.selectedRow );
 	  }
 	  else {
-		$modalInstance.close();
+		$uibModalInstance.close();
 	  }
 	};
 
 	$scope.modalCancel = function () {
-	  $modalInstance.dismiss('cancel');
+	  $uibModalInstance.dismiss('cancel');
 	};
 
   });
@@ -111,7 +111,7 @@
    *  - property: the field name of the table which the modal will return the value
    *  - constant: name of the constants (property of app.modalConstants[])
   */
-  app.controller('BagFamilyModalController', function ($scope, $modalInstance, property, constant) {
+  app.controller('BagFamilyModalController', function ($scope, $uibModalInstance, property, constant) {
 
 	// importing constants on Controller
 	$scope.constants = app.modalConstants;
@@ -126,20 +126,20 @@
 	// When click on the modal button "Ok" send the id value selected
 	$scope.modalOk = function () {
 	  if ($scope.selectedRow !== null) {
-		$modalInstance.close( $scope.selectedRow );
+		$uibModalInstance.close( $scope.selectedRow );
 	  }
 	  else {
-		$modalInstance.close();
+		$uibModalInstance.close();
 	  }
 	};
 
 	$scope.modalCancel = function () {
-	  $modalInstance.dismiss('cancel');
+	  $uibModalInstance.dismiss('cancel');
 	};
 
   });
 
-  app.controller('SearchModalController', function ($scope, $modalInstance, $http, $rootScope, property, search_param) {
+  app.controller('SearchModalController', function ($scope, $uibModalInstance, $http, $rootScope, property, search_param) {
 
 	/* init object of search param */
 	$scope.param = {
@@ -195,21 +195,21 @@
 
 	  if ($scope.selectedRow !== null) {
 		// return the id of the data selected
-		$modalInstance.close( $scope.data[$scope.selectedRow][data_properties[0]] );
+		$uibModalInstance.close( $scope.data[$scope.selectedRow][data_properties[0]] );
 	  }
 	  else {
-		$modalInstance.close();
+		$uibModalInstance.close();
 	  }
 	};
 
 	$scope.modalCancel = function () {
-	  $modalInstance.dismiss('cancel');
+	  $uibModalInstance.dismiss('cancel');
 	};
 
   });
 
 
-  app.controller('UnusuedGuidModalController', function ($scope, $modalInstance, $http, $rootScope, property, table) {
+  app.controller('UnusuedGuidModalController', function ($scope, $uibModalInstance, $http, $rootScope, property, table) {
 
 	/* init object of search param */
 	$scope.param = {
@@ -265,47 +265,47 @@
 
 	  if ($scope.selectedRow !== null) {
 		// return the id of the data selected
-		$modalInstance.close( $scope.guid[$scope.selectedRow] );
+		$uibModalInstance.close( $scope.guid[$scope.selectedRow] );
 	  }
 	  else {
-		$modalInstance.close();
+		$uibModalInstance.close();
 	  }
 	};
 
 	$scope.modalCancel = function () {
-	  $modalInstance.dismiss('cancel');
+	  $uibModalInstance.dismiss('cancel');
 	};
 
   });
 
 
-  app.controller('FullScriptModalController', function ($scope, $modalInstance, rows, tableName, primaryKey1) {
+  app.controller('FullScriptModalController', function ($scope, $uibModalInstance, rows, tableName, primaryKey1) {
 
 	$scope.SQLCode = app.getFullDeleteInsert(tableName, primaryKey1, rows);
 
 	$scope.modalClose = function () {
-	  $modalInstance.dismiss('close');
+	  $uibModalInstance.dismiss('close');
 	};
 
   });
 
 
-  app.controller('DiffScriptModalController', function ($scope, $modalInstance, tableName, primaryKey1, primaryKey2, currentRows, newRows) {
+  app.controller('DiffScriptModalController', function ($scope, $uibModalInstance, tableName, primaryKey1, primaryKey2, currentRows, newRows) {
 
 	$scope.SQLCode = app.getDiffDeleteInsert(tableName, primaryKey1, primaryKey2, currentRows, newRows);
 
 	$scope.modalClose = function () {
-	  $modalInstance.dismiss('close');
+	  $uibModalInstance.dismiss('close');
 	};
 
   });
 
-  app.controller('DiffOneKeyScriptModalController', function ($scope, $modalInstance, tableName, primaryKey, entityType, entity, currentRows, newRows) {
+  app.controller('DiffOneKeyScriptModalController', function ($scope, $uibModalInstance, tableName, primaryKey, entityType, entity, currentRows, newRows) {
 
 	$scope.SQLCode = app.getDiffDeleteInsertOneKey(tableName, primaryKey, entityType, entity, currentRows, newRows);
 
 	$scope.modalClose = function () {
-	  $modalInstance.dismiss('close');
+	  $uibModalInstance.dismiss('close');
 	};
 
   });

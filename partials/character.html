@@ -1,12 +1,12 @@
 <small class="selection-text"><strong>{{ selectionText }}</strong></small>
-<tabset>
-  <tab id="tab-search" heading="Search" active="characterTabs.search">
+<uib-tabset>
+  <uib-tab  id="tab-search" heading="Search" active="characterTabs.search">
 	<div ng-include="'partials/character/search.html'"></div>
-  </tab>
-  <tab heading="Character" active="characterTabs.character">
+  </uib-tab>
+  <uib-tab  heading="Character" active="characterTabs.character">
 	<div ng-include="'partials/character/character.html'"></div>
-  </tab>
-  <tab heading="Update SQL Script" active="characterTabs.script" ng-click="generateCharacterScript()">
+  </uib-tab>
+  <uib-tab  heading="Update SQL Script" active="characterTabs.script" ng-click="generateCharacterScript()">
 	<div ng-include="'partials/character/sql-script.html'"></div>
-  </tab>
-</tabset>
+  </uib-tab>
+</uib-tabset>

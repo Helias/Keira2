@@ -7,7 +7,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("CharacterController", function ($rootScope, $scope, $http, $stateParams, $modal) {
+  app.controller("CharacterController", function ($rootScope, $scope, $http, $stateParams, $uibModal) {
 
 	/* All Character tabs, disabled by default.
 	*  Only one tab can be active at a time */

@@ -1,21 +1,21 @@
 <small class="selection-text"><strong>{{ selectionText }}</strong></small>
-<tabset>
-  <tab heading="Search" active="gameobjectTabs.search">
+<uib-tabset>
+  <uib-tab  heading="Search" active="gameobjectTabs.search">
 	<div ng-include="'partials/gameobject/search.html'"></div>
-  </tab>
-  <tab heading="GO Template" active="gameobjectTabs.template">
+  </uib-tab>
+  <uib-tab  heading="GO Template" active="gameobjectTabs.template">
 	<div ng-include="'partials/gameobject/template.html'"></div>
-  </tab>
-  <tab heading="Quest Items" active="gameobjectTabs.questItems">
+  </uib-tab>
+  <uib-tab  heading="Quest Items" active="gameobjectTabs.questItems">
 	<div ng-include="'partials/gameobject/quest-items.html'" ng-controller="GameObjectQuestItemsController"></div>
-  </tab>
-  <tab heading="GO Loot" active="gameobjectTabs.loot" ng-controller="LootController">
+  </uib-tab>
+  <uib-tab  heading="GO Loot" active="gameobjectTabs.loot" ng-controller="LootController">
 	<div ng-include="'partials/gameobject/loot.html'"></div>
-  </tab>
-  <tab heading="Spawns" active="gameobjectTabs.spawns" ng-controller="GameobjectSpawnsController">
+  </uib-tab>
+  <uib-tab  heading="Spawns" active="gameobjectTabs.spawns" ng-controller="GameobjectSpawnsController">
 	<div ng-include="'partials/gameobject/spawns.html'"></div>
-  </tab>
-  <tab heading="SQL Update Script" active="gameobjectTabs.script"  ng-click="generateGameobjectScript()">
+  </uib-tab>
+  <uib-tab  heading="SQL Update Script" active="gameobjectTabs.script"  ng-click="generateGameobjectScript()">
 	<div ng-include="'partials/gameobject/sql-script.html'"></div>
-  </tab>
-</tabset>
+  </uib-tab>
+</uib-tabset>

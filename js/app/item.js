@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("ItemController", function ($rootScope, $scope, $http, $stateParams, $modal) {
+  app.controller("ItemController", function ($rootScope, $scope, $http, $stateParams, $uibModal) {
 
 	/* All Item tabs, disabled by default.
 	*  Only one tab can be active at a time */

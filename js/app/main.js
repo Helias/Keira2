@@ -7,7 +7,7 @@
 
   var app = angular.module('keira2', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'tableSort', 'jdf.ngThemeSwitcher', 'ngStorage', 'hljs']);
 
-  app.run(function($rootScope, $modal, $stateParams, $localStorage) {
+  app.run(function($rootScope, $uibModal, $stateParams, $localStorage) {
 
 	if (!app.api) {
 	  if ($localStorage.api) {
@@ -77,7 +77,7 @@
 
 	  if (size == null) { size = ''; }
 
-	  var modalInstance = $modal.open({
+	  var modalInstance = $uibModal.open({
 		templateUrl: TemplateUrl,
 		controller: "FlagModalController",
 		size: size,
@@ -121,7 +121,7 @@
 		size = ''; // default size
 	  }
 
-	  var modalInstance = $modal.open({
+	  var modalInstance = $uibModal.open({
 		templateUrl: "partials/modals/value.html",
 		controller: "ValueModalController",
 		size: size,
@@ -161,7 +161,7 @@
 		size = ''; // default size
 	  }
 
-	  var modalInstance = $modal.open({
+	  var modalInstance = $uibModal.open({
 		templateUrl: "partials/item/modals/bag-family.html",
 		controller: "BagFamilyModalController",
 		size: size,
@@ -190,7 +190,7 @@
 		search_param = property;
 	  }
 
-	  var modalInstance = $modal.open({
+	  var modalInstance = $uibModal.open({
 		templateUrl: "partials/modals/search.html",
 		controller: "SearchModalController",
 		size: size,
@@ -215,7 +215,7 @@
 
 	  if ( !$rootScope.isEntrySelected() ) { return; }
 
-	  var modalInstance = $modal.open({
+	  var modalInstance = $uibModal.open({
 		templateUrl: "partials/modals/unusued-guid-search.html",
 		controller: "UnusuedGuidModalController",
 		size: size,
@@ -242,7 +242,7 @@
 
 	  if ( !$rootScope.isEntrySelected() ) { return; }
 
-	  var modalInstance = $modal.open({
+	  var modalInstance = $uibModal.open({
 		templateUrl: "partials/modals/sql-script-modal.html",
 		controller: "FullScriptModalController",
 		size: 'lg',
@@ -265,7 +265,7 @@
 
 	  if ( !$rootScope.isEntrySelected() ) { return; }
 
-	  var modalInstance = $modal.open({
+	  var modalInstance = $uibModal.open({
 		templateUrl: "partials/modals/sql-script-modal.html",
 		controller: "DiffScriptModalController",
 		size: 'lg',
@@ -294,7 +294,7 @@
 
 	  if ( !$rootScope.isEntrySelected() ) { return; }
 
-	  var modalInstance = $modal.open({
+	  var modalInstance = $uibModal.open({
 		templateUrl: "partials/modals/sql-script-modal.html",
 		controller: "DiffOneKeyScriptModalController",
 		size: 'lg',

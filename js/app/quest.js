@@ -6,7 +6,7 @@
 
   var app = angular.module('keira2');
 
-  app.controller("QuestController", function ($rootScope, $scope, $http, $stateParams, $modal) {
+  app.controller("QuestController", function ($rootScope, $scope, $http, $stateParams, $uibModal) {
 
 	/* All Quest tabs, disabled by default.
 	*  Only one tab can be active at a time */

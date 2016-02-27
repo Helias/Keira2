@@ -80,13 +80,13 @@
 	  <a ng-href="#/character"><button class="btn-primary btn-lg">Character</button></a>
 	  <a ng-href="#/sai"><button class="btn-primary btn-lg">SmartAI</button></a>
 	  <a ng-href="#/"><button class="btn-primary btn-lg">Info</button></a>
-	  <div class="btn-group pull-right" dropdown>
+	  <div class="btn-group pull-right" uib-dropdown>
 		<theme-switcher urls="[theme.url]"></theme-switcher>
-		<div class="btn-group" dropdown is-open="status.isopen">
-		  <button type="button" class="btn-success btn" dropdown-toggle ng-disabled="disabled">
+		<div class="btn-group" uib-dropdown is-open="status.isopen">
+		  <button type="button" class="btn-success btn" uib-dropdown-toggle ng-disabled="disabled">
 			Theme {{ theme.name }} <span class="caret"></span>
 		  </button>
-		  <ul class="dropdown-menu" role="menu">
+		  <ul class="uib-dropdown-menu" role="menu">
 			<li class="pointer" ng-repeat="theme in themes">
 			  <a ng-href="{{currentLocation}}" ng-click="setTheme(theme)">{{theme.name}}</a>
 			</li>
@@ -95,10 +95,10 @@
 		</div>
 	  </div>
 	  <br>
-	  <div class="btn-group pull-right" dropdown style="margin-right: 10px;">
-		<div class="btn-group" dropdown>
-		  <button type="button" class="btn-danger btn" dropdown-toggle ng-disabled="disabled">Version {{version.name}}</button>
-		  <ul class="dropdown-menu" role="menu">
+	  <div class="btn-group pull-right" uib-dropdown style="margin-right: 10px;">
+		<div class="btn-group" uib-dropdown>
+		  <button type="button" class="btn-danger btn" uib-dropdown-toggle ng-disabled="disabled">Version {{version.name}}</button>
+		  <ul class="uib-dropdown-menu" role="menu">
 			<li class="pointer" ng-repeat="version in versions">
 			  <a ng-href="{{currentLocation}}" ng-click="setVersion(version)">{{version.name}}</a>
 			</li>

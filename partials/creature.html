@@ -1,45 +1,45 @@
 <small class="selection-text"><strong>{{ selectionText }}</strong></small>
-<tabset>
-  <tab id="tab-search" heading="Search" active="creatureTabs.search">
+<uib-tabset>
+  <uib-tab  id="tab-search" heading="Search" active="creatureTabs.search">
 	<div ng-include="'partials/creature/search.html'"></div>
-  </tab>
-  <tab heading="Creature Template" active="creatureTabs.template">
+  </uib-tab>
+  <uib-tab  heading="Creature Template" active="creatureTabs.template">
 	<div ng-include="'partials/creature/template.html'"></div>
-  </tab>
-  <tab heading="Quest Items" active="creatureTabs.questItems" ng-controller="CreatureQuestItemsController">
+  </uib-tab>
+  <uib-tab  heading="Quest Items" active="creatureTabs.questItems" ng-controller="CreatureQuestItemsController">
 	<div ng-include="'partials/creature/quest-items.html'"></div>
-  </tab>
-  <tab heading="Template Addon" active="creatureTabs.templateAddon">
+  </uib-tab>
+  <uib-tab  heading="Template Addon" active="creatureTabs.templateAddon">
 	<div ng-include="'partials/creature/template-addon.html'"></div>
-  </tab>
-  <tab heading="Equip Template" active="creatureTabs.equipTemplate">
+  </uib-tab>
+  <uib-tab  heading="Equip Template" active="creatureTabs.equipTemplate">
 	<div ng-include="'partials/creature/equip-template.html'"></div>
-  </tab>
-  <tab heading="On Kill Reputation" active="creatureTabs.onKillReputation">
+  </uib-tab>
+  <uib-tab  heading="On Kill Reputation" active="creatureTabs.onKillReputation">
 	<div ng-include="'partials/creature/on-kill-reputation.html'"></div>
-  </tab>
-  <tab heading="Creature Loot" active="creatureTabs.creatureLoot">
+  </uib-tab>
+  <uib-tab  heading="Creature Loot" active="creatureTabs.creatureLoot">
 	<div ng-include="'partials/creature/creature-loot.html'" ng-controller="LootController"></div>
-  </tab>
-  <tab heading="Pickpocketing Loot" active="creatureTabs.pickpocketLoot" ng-controller="LootController">
+  </uib-tab>
+  <uib-tab  heading="Pickpocketing Loot" active="creatureTabs.pickpocketLoot" ng-controller="LootController">
 	<div ng-include="'partials/creature/pickpocket-loot.html'"></div>
-  </tab>
-  <tab heading="Skinning Loot" active="creatureTabs.skinLoot" ng-controller="LootController">
+  </uib-tab>
+  <uib-tab  heading="Skinning Loot" active="creatureTabs.skinLoot" ng-controller="LootController">
 	<div ng-include="'partials/creature/skinning-loot.html'"></div>
-  </tab>
-  <tab heading="Vendor" active="creatureTabs.vendor" ng-controller="VendorController">
+  </uib-tab>
+  <uib-tab  heading="Vendor" active="creatureTabs.vendor" ng-controller="VendorController">
 	<div ng-include="'partials/creature/vendor.html'"></div>
-  </tab>
-   <tab heading="Trainer" active="creatureTabs.trainer" ng-controller="TrainerController">
+  </uib-tab>
+   <uib-tab  heading="Trainer" active="creatureTabs.trainer" ng-controller="TrainerController">
 	<div ng-include="'partials/creature/trainer.html'"></div>
-  </tab>
-  <tab heading="Spawns" active="creatureTabs.spawns" ng-controller="CreatureSpawnsController">
+  </uib-tab>
+  <uib-tab  heading="Spawns" active="creatureTabs.spawns" ng-controller="CreatureSpawnsController">
 	<div ng-include="'partials/creature/spawns.html'"></div>
-  </tab>
-  <tab heading="Spawns Addon" active="creatureTabs.spawnsAddon" ng-controller="SpawnsAddonController">
+  </uib-tab>
+  <uib-tab  heading="Spawns Addon" active="creatureTabs.spawnsAddon" ng-controller="SpawnsAddonController">
 	<div ng-include="'partials/creature/spawns-addon.html'"></div>
-  </tab>
-  <tab heading="SQL Update Script" ng-click="generateCreatureScript()" active="creatureTabs.script">
+  </uib-tab>
+  <uib-tab  heading="SQL Update Script" ng-click="generateCreatureScript()" active="creatureTabs.script">
 	<div ng-include="'partials/creature/sql-script.html'"></div>
-  </tab>
-</tabset>
+  </uib-tab>
+</uib-tabset>
