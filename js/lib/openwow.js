@@ -12,32 +12,24 @@ function onDOMReady(func){if(typeof jQuery!="undefined"){jQuery(func);return}/in
 this.init=function(){if(external){$oWoW.ae(headtag,$oWoW.ce("link",{type:"text/css",href:$oWoW.cdnUrl+"/style/global.css",rel:"stylesheet"}));}
 attachEvent();onDOMReady(function(){if(typeof openwowTooltips!="undefined"){for(var i=0;i<document.links.length;i++){var link=document.links[i];scanElement(link);}}});};function updateCursorPos(e){var pos=$oWoW.getCursorPos(e);cursorX=pos.x;cursorY=pos.y;}
 function scanElement(t,e){if(t.nodeName!="A"&&t.nodeName!="AREA"){return-9999;}
-if (!t.getAttribute("data-openwow") != null)
-{
-	t.setAttribute("data-openwow", "");
-	if(t.href.indexOf("#/creature/") > -1) { var id = t.href.substr(t.href.indexOf("#/creature/"), t.href.length).replace("#/creature/", ""); t.setAttribute("data-openwow", "http://wotlk.openwow.com/npc="+id); }
-	else if(t.href.indexOf("#/quest/") > -1) { var id = t.href.substr(t.href.indexOf("#/quest/"), t.href.length).replace("#/quest/", ""); t.setAttribute("data-openwow", "http://wotlk.openwow.com/quest="+id); }
-	//else if(t.href.indexOf("#/gameobject/") > -1) { var id = t.href.substr(t.href.indexOf("#/gameobject/"), t.href.length).replace("#/gameobject/", ""); t.setAttribute("data-openwow", "http://wotlk.openwow.com/object="+id); }
-	else if(t.href.indexOf("#/item/") > -1) { var id = t.href.substr(t.href.indexOf("#/item/"), t.href.length).replace("#/item/", ""); t.setAttribute("data-openwow", "http://wotlk.openwow.com/item="+id); }
-}
-if(!t.getAttribute("data-openwow").length&&!t.rel){return;}
+if(!t.href.length&&!t.rel){return;}
 if(t.rel&&t.rel.indexOf("np")!=-1&&t.rel.indexOf("np")!=t.rel.indexOf("npc=")){return;}
 var
 i0,i1,i2,url,params={};currentParams=params;var p=function(url,k,v){if(k=="buff"||k=="sock"||k=="map"){params[k]=true;}
 else if(k=="rand"||k=="ench"||k=="lvl"||k=="c"||k=="transmog"){params[k]=parseInt(v);}
 else if(k=="gems"||k=="pcs"||k=="know"){params[k]=v.split(":");}
-else if(k=="text"){params[k]=true;}};if(method.type&1){i1=2;i2=3;if(t.getAttribute("data-openwow").indexOf("http://")==0||t.getAttribute("data-openwow").indexOf("https://")==0){i0=1;url=t.getAttribute("data-openwow").match(/^https?:\/\/(www|classic|tbc|wotlk|cata|mop|wod)?\.?openwow\.com\/.?(item|quest|spell|achievement|npc|object)=([0-9]+)/);}
-else{url=t.getAttribute("data-openwow").match(/()\?(item|quest|spell|achievement|npc|object)=([0-9]+)/);}}
+else if(k=="text"){params[k]=true;}};if(method.type&1){i1=2;i2=3;if(t.href.indexOf("http://")==0||t.href.indexOf("https://")==0){i0=1;url=t.href.match(/^https?:\/\/(www|classic|tbc|wotlk|cata|mop|wod)?\.?openwow\.com\/.?(item|quest|spell|achievement|npc|object)=([0-9]+)/);}
+else{url=t.href.match(/()\?(item|quest|spell|achievement|npc|object)=([0-9]+)/);}}
 if(url==null&&t.rel&&(method.type&2)){i0=0;i1=1;i2=2;url=t.rel.match(/(item|quest|spell|achievement|npc|object).?([0-9]+)/);}
-t.getAttribute("data-openwow").replace(/([a-zA-Z]+)=?([a-zA-Z0-9:-]*)/g,p);if(t.rel){t.rel.replace(/([a-zA-Z]+)=?([a-zA-Z0-9:-]*)/g,p);}
+t.href.replace(/([a-zA-Z]+)=?([a-zA-Z0-9:-]*)/g,p);if(t.rel){t.rel.replace(/([a-zA-Z]+)=?([a-zA-Z0-9:-]*)/g,p);}
 if(params.gems&&params.gems.length>0){var i;for(i=Math.min(3,params.gems.length- 1);i>=0;--i){if(parseInt(params.gems[i])){break;}}
 ++i;if(i==0){delete params.gems;}
 else if(i<params.gems.length){params.gems=params.gems.slice(0,i);}}
 if(url){var
 locale,domain="www",expansion="wotlk";currentA=t;if(i0&&url[i0]){domain=url[i0].split(".")[0];}
-locale=$oWoW.getLocaleFromDomain(domain);expansion=$oWoW.getExpansionFromDomain(domain);currentDomain=domain;if(t.getAttribute("data-openwow").indexOf("#")!=-1&&document.location.href.indexOf(url[i1]+"="+ url[i2])!=-1){return;}
+locale=$oWoW.getLocaleFromDomain(domain);expansion=$oWoW.getExpansionFromDomain(domain);currentDomain=domain;if(t.href.indexOf("#")!=-1&&document.location.href.indexOf(url[i1]+"="+ url[i2])!=-1){return;}
 mode=t.parentNode.className.indexOf("icon")==0&&t.parentNode.nodeName=="DIV"?1:0;if(!t.onmouseout){if(mode==0){t.onmousemove=onMouseMove;}
-t.onmouseout=onMouseOut; t.onclick=onMouseOut;}
+t.onmouseout=onMouseOut;}
 if(e){updateCursorPos(e);}
 var
 type=$oWoW.getIdFromTypeName(url[i1]),typeId=url[i2];display(type,typeId,locale,params,expansion);if(e||typeof openwowTooltips=="undefined"){return;}
