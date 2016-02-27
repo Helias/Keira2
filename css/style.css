@@ -1,15 +1,18 @@
 /* Remove responsive from container */
 .container {
-  width: 1170px;
+  width: 1170px !important;
   max-width: none !important;
 }
 
 .input-xs {
-  height: 22px;
-  padding: 2px 5px;
+  padding: 2px 5px !important;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px !important;
+}
+
+input.input-xs, button.input-xs {
+	height: 22px;
 }
 
 .pointer { cursor: pointer; }
