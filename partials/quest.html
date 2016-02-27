@@ -1,33 +1,33 @@
 <small class="selection-text"><strong>{{ selectionText }}</strong></small>
 <tabset>
   <tab heading="Search" active="questTabs.search">
-    <div ng-include="'partials/quest/search.html'"></div>
+	<div ng-include="'partials/quest/search.html'"></div>
   </tab>
   <tab heading="Quest Part 1" active="questTabs.part1">
-    <div ng-include="'partials/quest/part1.html'"></div>
+	<div ng-include="'partials/quest/part1.html'"></div>
   </tab>
   <tab heading="Quest Part 2" active="questTabs.part2">
-    <div ng-include="'partials/quest/part2.html'"></div>
+	<div ng-include="'partials/quest/part2.html'"></div>
   </tab>
   <tab heading="Quest Part 3" active="questTabs.part3">
-    <div ng-include="'partials/quest/part3.html'"></div>
+	<div ng-include="'partials/quest/part3.html'"></div>
   </tab>
   <tab heading="Quest Objectives" active="questTabs.objectives" ng-controller="QuestObjectivesController" ng-show="version.name == '6.x'">
-    <div ng-include="'partials/quest/objectives.html'"></div>
+	<div ng-include="'partials/quest/objectives.html'"></div>
   </tab>
   <tab heading="Creature Starters" active="questTabs.creatureStarters" ng-controller="StartersEndersController">
-    <div ng-include="'partials/quest/creature-starters.html'"></div>
+	<div ng-include="'partials/quest/creature-starters.html'"></div>
   </tab>
   <tab heading="Creature Enders" active="questTabs.creatureEnders" ng-controller="StartersEndersController">
-    <div ng-include="'partials/quest/creature-enders.html'"></div>
+	<div ng-include="'partials/quest/creature-enders.html'"></div>
   </tab>
   <tab heading="Gameobject Starters" active="questTabs.gameobjectStarters" ng-controller="StartersEndersController">
-    <div ng-include="'partials/quest/gameobject-starters.html'"></div>
+	<div ng-include="'partials/quest/gameobject-starters.html'"></div>
   </tab>
   <tab heading="Gameobject Enders" active="questTabs.gameobjectEnders" ng-controller="StartersEndersController">
-    <div ng-include="'partials/quest/gameobject-enders.html'"></div>
+	<div ng-include="'partials/quest/gameobject-enders.html'"></div>
   </tab>
   <tab heading="SQL Update Script" active="questTabs.script" ng-click="generateQuestScript()">
-    <div ng-include="'partials/quest/sql-script.html'"></div>
+	<div ng-include="'partials/quest/sql-script.html'"></div>
   </tab>
 </tabset>

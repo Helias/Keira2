@@ -2,100 +2,100 @@
 <br>
 <div class="row">
   <div class="col-xs-6">
-    <div class="row">
-      <div class="col-xs-3">
-        <small>item</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="selected.item">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(selected, 'item')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-3">
-        <small>slot</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.slot">
-      </div>
-      <div class="col-xs-3">
-        <small>maxcount</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.maxcount">
-      </div>
-      <div class="col-xs-3">
-        <small>incrtime</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="selected.incrtime">
-        </div>
-      </div>
-    </div>
+	<div class="row">
+	  <div class="col-xs-3">
+		<small>item</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="selected.item">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(selected, 'item')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-3">
+		<small>slot</small>
+		<input class="form-control input-xs" type="text" ng-model="selected.slot">
+	  </div>
+	  <div class="col-xs-3">
+		<small>maxcount</small>
+		<input class="form-control input-xs" type="text" ng-model="selected.maxcount">
+	  </div>
+	  <div class="col-xs-3">
+		<small>incrtime</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="selected.incrtime">
+		</div>
+	  </div>
+	</div>
   </div>
   <div class="col-xs-6">
-    <div class="row">
-      <div class="col-xs-3">
-        <small>ExtendedCost</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.ExtendedCost">
-      </div>
-      <div ng-show="version.name == '6.x'">
-        <div class="col-xs-2">
-          <small>type</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.type">
-        </div>
-        <div class="col-xs-3">
-          <small>PlayerConditionID</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.PlayerConditionID">
-        </div>
-        <div class="col-xs-2">
-          <small>IgnoreFiltering</small>
-          <input class="form-control input-xs" type="text" ng-model="selected.IgnoreFiltering">
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <small>VerifiedBuild</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.VerifiedBuild">
-      </div>
-    </div>
+	<div class="row">
+	  <div class="col-xs-3">
+		<small>ExtendedCost</small>
+		<input class="form-control input-xs" type="text" ng-model="selected.ExtendedCost">
+	  </div>
+	  <div ng-show="version.name == '6.x'">
+		<div class="col-xs-2">
+		  <small>type</small>
+		  <input class="form-control input-xs" type="text" ng-model="selected.type">
+		</div>
+		<div class="col-xs-3">
+		  <small>PlayerConditionID</small>
+		  <input class="form-control input-xs" type="text" ng-model="selected.PlayerConditionID">
+		</div>
+		<div class="col-xs-2">
+		  <small>IgnoreFiltering</small>
+		  <input class="form-control input-xs" type="text" ng-model="selected.IgnoreFiltering">
+		</div>
+	  </div>
+	  <div class="col-xs-2">
+		<small>VerifiedBuild</small>
+		<input class="form-control input-xs" type="text" ng-model="selected.VerifiedBuild">
+	  </div>
+	</div>
   </div>
 </div>
 <br>
 <div class="row">
   <div class="col-xs-4">
-    <br>
-    <button class="btn btn-primary" ng-click="editSelectedRowOf(new_npc_vendor, 'item')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
-    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_npc_vendor)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
-    <button class="btn btn-success" ng-click="addRowTo(new_npc_vendor, 'item')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+	<br>
+	<button class="btn btn-primary" ng-click="editSelectedRowOf(new_npc_vendor, 'item')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+	<button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_npc_vendor)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+	<button class="btn btn-success" ng-click="addRowTo(new_npc_vendor, 'item')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
   </div>
   <div class="col-xs-2 pull-right">
-    <br>
-    <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_npc_vendor, 'npc_vendor', 'entry')">FULL Vendor Script</button>
+	<br>
+	<button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_npc_vendor, 'npc_vendor', 'entry')">FULL Vendor Script</button>
   </div>
   <div class="col-xs-2 pull-right">
-    <br>
-    <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('npc_vendor', 'entry', 'item', current_npc_vendor, new_npc_vendor)">DIFF Vendor Script</button>
+	<br>
+	<button class="btn btn-success pull-right" ng-click="openDiffScriptModal('npc_vendor', 'entry', 'item', current_npc_vendor, new_npc_vendor)">DIFF Vendor Script</button>
   </div>
 </div>
 <br>
 <table class="table table-striped table-condensed">
   <thead>
-    <th class="text-center"></th>
-    <th class="text-center">item</th>
-    <th class="text-center">slot</th>
-    <th class="text-center">maxcount</th>
-    <th class="text-center">incrtime</th>
-    <th class="text-center">ExtendedCost</th>
-    <th class="text-center" ng-show="version.name == '6.x'">type</th>
-    <th class="text-center" ng-show="version.name == '6.x'">PlayerConditionID</th>
-    <th class="text-center" ng-show="version.name == '6.x'">IgnoreFiltering</th>
-    <th class="text-center">VerifiedBuild</th>
+	<th class="text-center"></th>
+	<th class="text-center">item</th>
+	<th class="text-center">slot</th>
+	<th class="text-center">maxcount</th>
+	<th class="text-center">incrtime</th>
+	<th class="text-center">ExtendedCost</th>
+	<th class="text-center" ng-show="version.name == '6.x'">type</th>
+	<th class="text-center" ng-show="version.name == '6.x'">PlayerConditionID</th>
+	<th class="text-center" ng-show="version.name == '6.x'">IgnoreFiltering</th>
+	<th class="text-center">VerifiedBuild</th>
   </thead>
   <tr ng-repeat="vendor in new_npc_vendor track by $index" ng-click="selectRow(new_npc_vendor, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
-    <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_npc_vendor, $index)"></i></td>
-    <td><a ng-href="#/item/{{vendor.item}}">{{vendor.item}}</a></td>
-    <td>{{ vendor.slot }}</td>
-    <td>{{ vendor.maxcount }}</td>
-    <td>{{ vendor.incrtime }}</td>
-    <td>{{ vendor.ExtendedCost }}</td>
-    <td ng-show="version.name == '6.x'">{{ vendor.type }}</td>
-    <td ng-show="version.name == '6.x'">{{ vendor.PlayerConditionID }}</td>
-    <td ng-show="version.name == '6.x'">{{ vendor.IgnoreFiltering }}</td>
-    <td>{{ vendor.VerifiedBuild }}</td>
+	<td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_npc_vendor, $index)"></i></td>
+	<td><a ng-href="#/item/{{vendor.item}}">{{vendor.item}}</a></td>
+	<td>{{ vendor.slot }}</td>
+	<td>{{ vendor.maxcount }}</td>
+	<td>{{ vendor.incrtime }}</td>
+	<td>{{ vendor.ExtendedCost }}</td>
+	<td ng-show="version.name == '6.x'">{{ vendor.type }}</td>
+	<td ng-show="version.name == '6.x'">{{ vendor.PlayerConditionID }}</td>
+	<td ng-show="version.name == '6.x'">{{ vendor.IgnoreFiltering }}</td>
+	<td>{{ vendor.VerifiedBuild }}</td>
   </tr>
 </table>

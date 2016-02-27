@@ -2,82 +2,82 @@
 <br>
 <div class="row">
   <div class="col-xs-6">
-    <div class="row">
-      <div class="col-xs-3">
-        <small>guid</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.guid">
-      </div>
-      <div class="col-xs-3">
-        <small>path_id</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.path_id">
-      </div>
-      <div class="col-xs-3">
-        <small>mount</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.mount">
-      </div>
-      <div class="col-xs-3">
-        <small>bytes1</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="selected.bytes1">
-        </div>
-      </div>
-    </div>
+	<div class="row">
+	  <div class="col-xs-3">
+		<small>guid</small>
+		<input class="form-control input-xs" type="text" ng-model="selected.guid">
+	  </div>
+	  <div class="col-xs-3">
+		<small>path_id</small>
+		<input class="form-control input-xs" type="text" ng-model="selected.path_id">
+	  </div>
+	  <div class="col-xs-3">
+		<small>mount</small>
+		<input class="form-control input-xs" type="text" ng-model="selected.mount">
+	  </div>
+	  <div class="col-xs-3">
+		<small>bytes1</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="selected.bytes1">
+		</div>
+	  </div>
+	</div>
   </div>
   <div class="col-xs-6">
-    <div class="row">
-      <div class="col-xs-3">
-        <small>bytes2</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.bytes2">
-      </div>
-      <div class="col-xs-3">
-        <small>emote</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="selected.emote">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(selected, 'emote')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-3">
-        <small>auras</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.auras">
-      </div>
-    </div>
+	<div class="row">
+	  <div class="col-xs-3">
+		<small>bytes2</small>
+		<input class="form-control input-xs" type="text" ng-model="selected.bytes2">
+	  </div>
+	  <div class="col-xs-3">
+		<small>emote</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="selected.emote">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(selected, 'emote')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-3">
+		<small>auras</small>
+		<input class="form-control input-xs" type="text" ng-model="selected.auras">
+	  </div>
+	</div>
   </div>
 </div>
 <br>
 <div class="row">
   <div class="col-xs-4">
-    <br>
-    <button class="btn btn-primary" ng-click="editSelectedRowOf(new_creature_addon, 'guid')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
-    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_creature_addon)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
-    <button class="btn btn-success" ng-click="addRowTo(new_creature_addon, 'guid')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+	<br>
+	<button class="btn btn-primary" ng-click="editSelectedRowOf(new_creature_addon, 'guid')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+	<button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_creature_addon)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+	<button class="btn btn-success" ng-click="addRowTo(new_creature_addon, 'guid')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
   </div>
   <div class="col-xs-2 pull-right">
-    <br>
-    <button class="btn btn-success pull-right" ng-click="openDiffOneKeyScriptModal('creature_addon', 'guid', 'Creature', current_creature_template.entry, current_creature_addon, new_creature_addon)">DIFF Addon Script</button>
+	<br>
+	<button class="btn btn-success pull-right" ng-click="openDiffOneKeyScriptModal('creature_addon', 'guid', 'Creature', current_creature_template.entry, current_creature_addon, new_creature_addon)">DIFF Addon Script</button>
   </div>
 </div>
 <br>
 <table class="table table-striped table-condensed">
   <thead>
-    <th class="text-center"></th>
-    <th class="text-center">guid</th>
-    <th class="text-center">path_id</th>
-    <th class="text-center">mount</th>
-    <th class="text-center">bytes1</th>
-    <th class="text-center">bytes2</th>
-    <th class="text-center">emote</th>
-    <th class="text-center">auras</th>
+	<th class="text-center"></th>
+	<th class="text-center">guid</th>
+	<th class="text-center">path_id</th>
+	<th class="text-center">mount</th>
+	<th class="text-center">bytes1</th>
+	<th class="text-center">bytes2</th>
+	<th class="text-center">emote</th>
+	<th class="text-center">auras</th>
   </thead>
   <tr ng-repeat="spawn in new_creature_addon track by $index" ng-click="selectRow(new_creature_addon, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
-    <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_creature_addon, $index)"></i></td>
-    <td>{{ spawn.guid }}</td>
-    <td>{{ spawn.path_id }}</td>
-    <td>{{ spawn.mount }}</td>
-    <td>{{ spawn.bytes1 }}</td>
-    <td>{{ spawn.bytes2 }}</td>
-    <td>{{ spawn.emote }}</td>
-    <td>{{ spawn.auras }}</td>
+	<td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_creature_addon, $index)"></i></td>
+	<td>{{ spawn.guid }}</td>
+	<td>{{ spawn.path_id }}</td>
+	<td>{{ spawn.mount }}</td>
+	<td>{{ spawn.bytes1 }}</td>
+	<td>{{ spawn.bytes2 }}</td>
+	<td>{{ spawn.emote }}</td>
+	<td>{{ spawn.auras }}</td>
   </tr>
 </table>

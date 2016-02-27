@@ -1,15 +1,15 @@
 <small class="selection-text"><strong>{{ selectionText }}</strong></small>
 <tabset>
   <tab id="tab-search" heading="Search existing scripts" active="saiTabs.search">
-    <div ng-include="'partials/sai/search.html'"></div>
+	<div ng-include="'partials/sai/search.html'"></div>
   </tab>
   <tab heading="Search by entity" active="saiTabs.create" ng-controller="SearchByEntitySAIController">
-    <div ng-include="'partials/sai/search-by-entity.html'"></div>
+	<div ng-include="'partials/sai/search-by-entity.html'"></div>
   </tab>
   <tab heading="SmartAI Editor" active="saiTabs.editor" ng-controller="SmartAIEditorController">
-    <div ng-include="'partials/sai/editor.html'"></div>
+	<div ng-include="'partials/sai/editor.html'"></div>
   </tab>
   <tab heading="SQL Script" ng-click="generateSAIScript()" active="saiTabs.script">
-    <div ng-include="'partials/sai/sql-script.html'"></div>
+	<div ng-include="'partials/sai/sql-script.html'"></div>
   </tab>
 </tabset>

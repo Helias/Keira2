@@ -1,517 +1,517 @@
 <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}item_template"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>item_template</a></p>
 <div class="row borders">
   <div class="col-xs-2">
-    <small>entry</small>
-    <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_item_template.entry">
-      <div class="input-group-btn">
-        <a ng-href="#/item/{{ new_item_template.entry }}"><button class="btn btn-info btn-xs">→</button></a>
-      </div>
-    </div>
+	<small>entry</small>
+	<div class="input-group">
+	  <input class="form-control input-xs" type="text" ng-model="new_item_template.entry">
+	  <div class="input-group-btn">
+		<a ng-href="#/item/{{ new_item_template.entry }}"><button class="btn btn-info btn-xs">→</button></a>
+	  </div>
+	</div>
   </div>
   <div class="col-xs-1">
-    <small>class</small>
-    <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_item_template.class">
-      <div class="input-group-btn">
-        <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'class', 'item_class')">...</button>
-      </div>
-    </div>
+	<small>class</small>
+	<div class="input-group">
+	  <input class="form-control input-xs" type="text" ng-model="new_item_template.class">
+	  <div class="input-group-btn">
+		<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'class', 'item_class')">...</button>
+	  </div>
+	</div>
   </div>
   <div class="col-xs-1">
-    <small>subclass</small>
-    <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_item_template.subclass">
-      <div class="input-group-btn">
-        <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'subclass', 'item_subclass['+new_item_template.class+']')">...</button>
-      </div>
-    </div>
+	<small>subclass</small>
+	<div class="input-group">
+	  <input class="form-control input-xs" type="text" ng-model="new_item_template.subclass">
+	  <div class="input-group-btn">
+		<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'subclass', 'item_subclass['+new_item_template.class+']')">...</button>
+	  </div>
+	</div>
   </div>
   <div class="col-xs-3">
-    <small>name</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.name">
+	<small>name</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.name">
   </div>
   <div class="col-xs-3">
-    <small>description</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.description">
+	<small>description</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.description">
   </div>
   <div class="col-xs-2">
-    <small>StatsCount</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.StatsCount">
+	<small>StatsCount</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.StatsCount">
   </div>
 
   <div class="col-xs-1">
-    <small>displayid</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.displayid">
+	<small>displayid</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.displayid">
   </div>
   <div class="col-xs-1">
-    <small>Quality</small>
-    <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_item_template.Quality">
-      <div class="input-group-btn">
-        <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'Quality')">...</button>
-      </div>
-    </div>
+	<small>Quality</small>
+	<div class="input-group">
+	  <input class="form-control input-xs" type="text" ng-model="new_item_template.Quality">
+	  <div class="input-group-btn">
+		<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'Quality')">...</button>
+	  </div>
+	</div>
   </div>
   <div class="col-xs-2">
-    <small>Flags</small>
-    <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_item_template.Flags">
-      <div class="input-group-btn">
-        <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/item/modals/flags.html', new_item_template, 'Flags', 32)">...</button>
-      </div>
-    </div>
+	<small>Flags</small>
+	<div class="input-group">
+	  <input class="form-control input-xs" type="text" ng-model="new_item_template.Flags">
+	  <div class="input-group-btn">
+		<button class="btn btn-info input-xs" ng-click="openFlagModal('partials/item/modals/flags.html', new_item_template, 'Flags', 32)">...</button>
+	  </div>
+	</div>
   </div>
   <div class="col-xs-1">
-    <small>FlagsExtra</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.FlagsExtra">
+	<small>FlagsExtra</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.FlagsExtra">
   </div>
   <div class="col-xs-1">
-    <small>BuyCount</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.BuyCount">
+	<small>BuyCount</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.BuyCount">
   </div>
   <div class="col-xs-1">
-    <small>BuyPrice</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.BuyPrice">
+	<small>BuyPrice</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.BuyPrice">
   </div>
   <div class="col-xs-1">
-    <small>SellPrice</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.SellPrice">
+	<small>SellPrice</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.SellPrice">
   </div>
   <div class="col-xs-1">
-    <small>InventoryType</small>
-    <div class="input-group">
-      <input class="form-control input-xs" type="text" ng-model="new_item_template.InventoryType">
-      <div class="input-group-btn">
-        <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'InventoryType')">...</button>
-      </div>
-    </div>
+	<small>InventoryType</small>
+	<div class="input-group">
+	  <input class="form-control input-xs" type="text" ng-model="new_item_template.InventoryType">
+	  <div class="input-group-btn">
+		<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'InventoryType')">...</button>
+	  </div>
+	</div>
   </div>
   <div class="col-xs-1">
-    <small>maxcount</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.maxcount">
+	<small>maxcount</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.maxcount">
   </div>
   <div class="col-xs-1">
-    <small>stackable</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.stackable">
+	<small>stackable</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.stackable">
   </div>
   <div class="col-xs-1">
-    <small>ContainerSlots</small>
-    <input class="form-control input-xs" type="text" ng-model="new_item_template.ContainerSlots">
+	<small>ContainerSlots</small>
+	<input class="form-control input-xs" type="text" ng-model="new_item_template.ContainerSlots">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-5 borders">
-    <h5 class="text-left">requirements</h5>
-    <div class="row">
-      <div class="col-xs-4">
-        <small>AllowableClass</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableClass">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/item/modals/class.html', new_item_template, 'AllowableClass', 11)">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-4">
-        <small>AllowableRace</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableRace">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/item/modals/races.html', new_item_template, 'AllowableRace', 21)">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-4">
-        <small>RequiredReputationFaction</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredReputationFaction">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'RequiredReputationFaction', 'faction')">...</button>
-          </div>
-        </div>
+	<h5 class="text-left">requirements</h5>
+	<div class="row">
+	  <div class="col-xs-4">
+		<small>AllowableClass</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableClass">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openFlagModal('partials/item/modals/class.html', new_item_template, 'AllowableClass', 11)">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-4">
+		<small>AllowableRace</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.AllowableRace">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openFlagModal('partials/item/modals/races.html', new_item_template, 'AllowableRace', 21)">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-4">
+		<small>RequiredReputationFaction</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredReputationFaction">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'RequiredReputationFaction', 'faction')">...</button>
+		  </div>
+		</div>
 
-      </div>
-      <div class="col-xs-4">
-        <small>ItemLevel</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.ItemLevel">
-      </div>
-      <div class="col-xs-4">
-        <small>RequiredLevel</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredLevel">
-      </div>
-      <div class="col-xs-4">
-        <small>RequiredReputationRank</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredReputationRank">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'RequiredReputationRank', 'reputationRank')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-4">
-        <small>RequiredSkill</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredSkill">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'RequiredSkill', 'dbc/skills')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-4">
-        <small>RequiredSkillRank</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredSkillRank">
-      </div>
-      <div class="col-xs-4">
-        <small>RequiredCityRank</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredCityRank">
-      </div>
-      <div class="col-xs-4">
-        <small>requiredspell</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.requiredspell">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'requiredspell', 'dbc/spells')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-4">
-        <small>requiredhonorrank</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.requiredhonorrank">
-      </div>
-      <div class="col-xs-4">
-        <small>RequiredDisenchantSkill</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredDisenchantSkill">
-      </div>
-    </div>
+	  </div>
+	  <div class="col-xs-4">
+		<small>ItemLevel</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.ItemLevel">
+	  </div>
+	  <div class="col-xs-4">
+		<small>RequiredLevel</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredLevel">
+	  </div>
+	  <div class="col-xs-4">
+		<small>RequiredReputationRank</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredReputationRank">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'RequiredReputationRank', 'reputationRank')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-4">
+		<small>RequiredSkill</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredSkill">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'RequiredSkill', 'dbc/skills')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-4">
+		<small>RequiredSkillRank</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredSkillRank">
+	  </div>
+	  <div class="col-xs-4">
+		<small>RequiredCityRank</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredCityRank">
+	  </div>
+	  <div class="col-xs-4">
+		<small>requiredspell</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.requiredspell">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'requiredspell', 'dbc/spells')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-4">
+		<small>requiredhonorrank</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.requiredhonorrank">
+	  </div>
+	  <div class="col-xs-4">
+		<small>RequiredDisenchantSkill</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.RequiredDisenchantSkill">
+	  </div>
+	</div>
   </div>
   <div class="col-xs-3 borders">
 
-    <h5 class="text-left">weapons</h5>
-    <div class="row">
-      <div class="col-xs-6">
-        <small>itemset</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.itemset">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'itemset')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-6">
-        <small>bonding</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.bonding">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'bonding')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-6">
-        <small>armor</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.armor">
-      </div>
-      <div class="col-xs-6">
-        <small>block</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.block">
-      </div>
-      <div class="col-xs-6">
-        <small>delay</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.delay">
-      </div>
-      <div class="col-xs-6">
-        <small>RangedModRange</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RangedModRange">
-      </div>
-      <div class="col-xs-6">
-        <small>ammo_type</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.ammo_type">
-      </div>
-      <div class="col-xs-6">
-        <small>MaxDurability</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.MaxDurability">
-      </div>
-    </div>
+	<h5 class="text-left">weapons</h5>
+	<div class="row">
+	  <div class="col-xs-6">
+		<small>itemset</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.itemset">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'itemset')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-6">
+		<small>bonding</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.bonding">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'bonding')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-6">
+		<small>armor</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.armor">
+	  </div>
+	  <div class="col-xs-6">
+		<small>block</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.block">
+	  </div>
+	  <div class="col-xs-6">
+		<small>delay</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.delay">
+	  </div>
+	  <div class="col-xs-6">
+		<small>RangedModRange</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.RangedModRange">
+	  </div>
+	  <div class="col-xs-6">
+		<small>ammo_type</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.ammo_type">
+	  </div>
+	  <div class="col-xs-6">
+		<small>MaxDurability</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.MaxDurability">
+	  </div>
+	</div>
 
   </div>
   <div class="col-xs-2 borders">
 
-    <h5 class="text-left">resistance</h5>
-    <div class="row">
-      <div class="col-xs-6">
-        <small>holy_res</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.holy_res">
-      </div>
-      <div class="col-xs-6">
-        <small>frost_res</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.frost_res">
-      </div>
-      <div class="col-xs-6">
-        <small>fire_res</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.fire_res">
-      </div>
-      <div class="col-xs-6">
-        <small>shadow_res</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.shadow_res">
-      </div>
-      <div class="col-xs-6">
-        <small>nature_res</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.nature_res">
-      </div>
-      <div class="col-xs-6">
-        <small>arcane_res</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.arcane_res">
-      </div>
-    </div>
+	<h5 class="text-left">resistance</h5>
+	<div class="row">
+	  <div class="col-xs-6">
+		<small>holy_res</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.holy_res">
+	  </div>
+	  <div class="col-xs-6">
+		<small>frost_res</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.frost_res">
+	  </div>
+	  <div class="col-xs-6">
+		<small>fire_res</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.fire_res">
+	  </div>
+	  <div class="col-xs-6">
+		<small>shadow_res</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.shadow_res">
+	  </div>
+	  <div class="col-xs-6">
+		<small>nature_res</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.nature_res">
+	  </div>
+	  <div class="col-xs-6">
+		<small>arcane_res</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.arcane_res">
+	  </div>
+	</div>
 
   </div>
   <div class="col-xs-2 borders">
 
-    <h5 class="text-left">socket</h5>
-    <div class="row">
-      <div class="col-xs-6">
-        <small>socketColor</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.socketColor_1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.socketColor_2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.socketColor_3"><br class="lh">
-      </div>
-      <div class="col-xs-6">
-        <small>socketContent</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.socketContent_1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.socketContent_2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.socketContent_3"><br class="lh">
-      </div>
-      <div class="col-xs-12">
-        <small>socketBonus</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.socketBonus">
-      </div>
-      <div class="col-xs-12">
-        <small>GemProperties</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.GemProperties">
-      </div>
-    </div>
+	<h5 class="text-left">socket</h5>
+	<div class="row">
+	  <div class="col-xs-6">
+		<small>socketColor</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.socketColor_1"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.socketColor_2"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.socketColor_3"><br class="lh">
+	  </div>
+	  <div class="col-xs-6">
+		<small>socketContent</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.socketContent_1"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.socketContent_2"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.socketContent_3"><br class="lh">
+	  </div>
+	  <div class="col-xs-12">
+		<small>socketBonus</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.socketBonus">
+	  </div>
+	  <div class="col-xs-12">
+		<small>GemProperties</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.GemProperties">
+	  </div>
+	</div>
 
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-7 borders">
-    <h5 class="text-left">spell</h5>
-    <div class="row">
-      <div class="col-xs-2">
-        <small>spellid</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_1">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_1', 'dbc/spells')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_2">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_2', 'dbc/spells')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_3">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_3', 'dbc/spells')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_4">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_4', 'dbc/spells')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_5">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_5', 'dbc/spells')">...</button>
-          </div>
-        </div>
-        <br class="lh">
+	<h5 class="text-left">spell</h5>
+	<div class="row">
+	  <div class="col-xs-2">
+		<small>spellid</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_1">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_1', 'dbc/spells')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_2">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_2', 'dbc/spells')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_3">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_3', 'dbc/spells')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_4">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_4', 'dbc/spells')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spellid_5">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'spellid_5', 'dbc/spells')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
 
-      </div>
-      <div class="col-xs-2">
-        <small>trigger</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_1">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_1', 'spellTrigger')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_2">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_2', 'spellTrigger')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_3">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_3', 'spellTrigger')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_4">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_4', 'spellTrigger')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_5">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_5', 'spellTrigger')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-      </div>
-      <div class="col-xs-2">
-        <small>charges</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_3"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_4"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_5"><br class="lh">
-      </div>
-      <div class="col-xs-1">
-        <small>ppmRate</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_3"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_4"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_5"><br class="lh">
-      </div>
-      <div class="col-xs-2">
-        <small>cooldown</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_3"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_4"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_5"><br class="lh">
-      </div>
-      <div class="col-xs-1">
-        <small>category</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_3"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_4"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_5"><br class="lh">
-      </div>
-      <div class="col-xs-2">
-        <small>categorycooldown</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_3"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_4"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_5"><br class="lh">
-      </div>
-    </div>
+	  </div>
+	  <div class="col-xs-2">
+		<small>trigger</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_1">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_1', 'spellTrigger')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_2">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_2', 'spellTrigger')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_3">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_3', 'spellTrigger')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_4">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_4', 'spellTrigger')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.spelltrigger_5">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'spelltrigger_5', 'spellTrigger')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+	  </div>
+	  <div class="col-xs-2">
+		<small>charges</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_1"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_2"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_3"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_4"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcharges_5"><br class="lh">
+	  </div>
+	  <div class="col-xs-1">
+		<small>ppmRate</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_1"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_2"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_3"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_4"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellppmRate_5"><br class="lh">
+	  </div>
+	  <div class="col-xs-2">
+		<small>cooldown</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_1"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_2"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_3"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_4"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcooldown_5"><br class="lh">
+	  </div>
+	  <div class="col-xs-1">
+		<small>category</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_1"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_2"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_3"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_4"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategory_5"><br class="lh">
+	  </div>
+	  <div class="col-xs-2">
+		<small>categorycooldown</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_1"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_2"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_3"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_4"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.spellcategorycooldown_5"><br class="lh">
+	  </div>
+	</div>
   </div>
 
   <div class="col-xs-3">
-    <div class="borders">
-      <h5 class="text-left">damage</h5>
-      <div class="row">
-        <div class="col-xs-4">
-          <small>dmg_type</small>
-          <div class="input-group">
-            <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type1"><br class="lh">
-            <div class="input-group-btn">
-              <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'dmg_type1', 'dmgType')">...</button>
-            </div>
-          </div>
-          <div class="input-group">
-            <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type2"><br class="lh">
-            <div class="input-group-btn">
-              <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'dmg_type2', 'dmgType')">...</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <small>dmg_min</small>
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_min1">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_min2">
-        </div>
-        <div class="col-xs-4">
-          <small>dmg_max</small>
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_max1">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_max2">
-        </div>
-      </div>
+	<div class="borders">
+	  <h5 class="text-left">damage</h5>
+	  <div class="row">
+		<div class="col-xs-4">
+		  <small>dmg_type</small>
+		  <div class="input-group">
+			<input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type1"><br class="lh">
+			<div class="input-group-btn">
+			  <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'dmg_type1', 'dmgType')">...</button>
+			</div>
+		  </div>
+		  <div class="input-group">
+			<input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_type2"><br class="lh">
+			<div class="input-group-btn">
+			  <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'dmg_type2', 'dmgType')">...</button>
+			</div>
+		  </div>
+		</div>
+		<div class="col-xs-4">
+		  <small>dmg_min</small>
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_min1">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_min2">
+		</div>
+		<div class="col-xs-4">
+		  <small>dmg_max</small>
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_max1">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.dmg_max2">
+		</div>
+	  </div>
 
-      <div class="col-xs-12">
-        <br class="lh">
-        <button class="btn btn-primary" ng-click="openFullScriptModal(new_item_template, 'item_template', 'entry')">FULL SQL Script</button>
-      </div>
-      <div class="col-xs-12">
-        <br class="lh">
-        <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
-      </div>
-    </div>
+	  <div class="col-xs-12">
+		<br class="lh">
+		<button class="btn btn-primary" ng-click="openFullScriptModal(new_item_template, 'item_template', 'entry')">FULL SQL Script</button>
+	  </div>
+	  <div class="col-xs-12">
+		<br class="lh">
+		<button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
+	  </div>
+	</div>
 
   </div>
 
   <div class="col-xs-2 borders" style="border-bottom: none;">
-    <h5 class="text-left">stats</h5>
-    <div class="row">
-      <div class="col-xs-6">
-        <small>stat_value</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value1"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value2"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value3"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value4"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value5"><br class="lh">
-      </div>
-      <div class="col-xs-6">
-        <small>stat_type</small>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type1">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type1', 'statType')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type2">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type2', 'statType')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type3">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type3', 'statType')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type4">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type4', 'statType')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type5">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type5', 'statType')">...</button>
-          </div>
-        </div>
-      </div>
+	<h5 class="text-left">stats</h5>
+	<div class="row">
+	  <div class="col-xs-6">
+		<small>stat_value</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value1"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value2"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value3"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value4"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value5"><br class="lh">
+	  </div>
+	  <div class="col-xs-6">
+		<small>stat_type</small>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type1">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type1', 'statType')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type2">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type2', 'statType')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type3">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type3', 'statType')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type4">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type4', 'statType')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type5">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type5', 'statType')">...</button>
+		  </div>
+		</div>
+	  </div>
 
-    </div>
+	</div>
   </div>
 
 </div>
@@ -520,216 +520,216 @@
 
   <h6 class="text-left lh">other</h6>
   <div class="col-xs-10 borders">
-    <div class="row">
+	<div class="row">
 
-      <div class="col-xs-1">
-        <small>Material</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.Material">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'Material', 'material')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <small>PageText</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.PageText">
-      </div>
-      <div class="col-xs-2">
-        <small>Duration</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.Duration">
-      </div>
-      <div class="col-xs-2">
-        <small>area</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.area">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'area', 'dbc/areas_and_zones')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <small>startquest</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.startquest">
-      </div>
-      <div class="col-xs-2">
-        <small>SoundOverrideSubclass</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.SoundOverrideSubclass">
-      </div>
-      <div class="col-xs-1">
-        <small>FoodType</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.FoodType">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'FoodType', 'foodType')">...</button>
-          </div>
-        </div>
-      </div>
-    </div>
+	  <div class="col-xs-1">
+		<small>Material</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.Material">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'Material', 'material')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-2">
+		<small>PageText</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.PageText">
+	  </div>
+	  <div class="col-xs-2">
+		<small>Duration</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.Duration">
+	  </div>
+	  <div class="col-xs-2">
+		<small>area</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.area">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'area', 'dbc/areas_and_zones')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-2">
+		<small>startquest</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.startquest">
+	  </div>
+	  <div class="col-xs-2">
+		<small>SoundOverrideSubclass</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.SoundOverrideSubclass">
+	  </div>
+	  <div class="col-xs-1">
+		<small>FoodType</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.FoodType">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'FoodType', 'foodType')">...</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
 
-    <div class="row">
-      <div class="col-xs-1">
-        <small>sheath</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.sheath">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'sheath')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <small>LanguageID</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.LanguageID">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'LanguageID', 'languages')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <small>BagFamily</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.BagFamily">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openBagFamilyModal(new_item_template, 'BagFamily', 'bagFamily')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <small>Map</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.Map">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'Map', 'dbc/maps')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <small>lockid</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.lockid">
-      </div>
-      <div class="col-xs-2">
-        <small>RandomSuffix</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RandomSuffix">
-      </div>
-      <div class="col-xs-1">
-        <small>DisenchantID</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.DisenchantID">
-      </div>
+	<div class="row">
+	  <div class="col-xs-1">
+		<small>sheath</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.sheath">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'sheath')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-2">
+		<small>LanguageID</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.LanguageID">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'LanguageID', 'languages')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-2">
+		<small>BagFamily</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.BagFamily">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openBagFamilyModal(new_item_template, 'BagFamily', 'bagFamily')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-2">
+		<small>Map</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.Map">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openSearchModal(new_item_template, 'Map', 'dbc/maps')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-2">
+		<small>lockid</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.lockid">
+	  </div>
+	  <div class="col-xs-2">
+		<small>RandomSuffix</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.RandomSuffix">
+	  </div>
+	  <div class="col-xs-1">
+		<small>DisenchantID</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.DisenchantID">
+	  </div>
 
-      <div class="col-xs-1">
-        <small>PageMaterial</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.PageMaterial">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'PageText', 'PageTextMaterial')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-1">
-        <small>TotemCategory</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.TotemCategory">
-      </div>
-      <div class="col-xs-2">
-        <small>minMoneyLoot</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.minMoneyLoot">
-      </div>
-      <div class="col-xs-2">
-        <small>maxMoneyLoot</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.maxMoneyLoot">
-      </div>
-      <div class="col-xs-2">
-        <small>RandomProperty</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.RandomProperty">
-      </div>
-      <div class="col-xs-2">
-        <small>ArmorDamageModifier</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.ArmorDamageModifier">
-      </div>
-      <div class="col-xs-2">
-        <small>ScriptName</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.ScriptName">
-      </div>
+	  <div class="col-xs-1">
+		<small>PageMaterial</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.PageMaterial">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'PageText', 'PageTextMaterial')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-1">
+		<small>TotemCategory</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.TotemCategory">
+	  </div>
+	  <div class="col-xs-2">
+		<small>minMoneyLoot</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.minMoneyLoot">
+	  </div>
+	  <div class="col-xs-2">
+		<small>maxMoneyLoot</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.maxMoneyLoot">
+	  </div>
+	  <div class="col-xs-2">
+		<small>RandomProperty</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.RandomProperty">
+	  </div>
+	  <div class="col-xs-2">
+		<small>ArmorDamageModifier</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.ArmorDamageModifier">
+	  </div>
+	  <div class="col-xs-2">
+		<small>ScriptName</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.ScriptName">
+	  </div>
 
-      <div class="col-xs-4">
-        <small>ItemLimitCategory</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.ItemLimitCategory">
-      </div>
-      <div class="col-xs-2">
-        <small>HolidayId</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.HolidayId">
-      </div>
-      <div class="col-xs-2">
-        <small>VerifiedBuild</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.VerifiedBuild">
-      </div>
-      <div class="col-xs-2">
-        <small>flagsCustom</small>
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.flagsCustom">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'flagsCustom')">...</button>
-          </div>
-        </div>
-      </div>
+	  <div class="col-xs-4">
+		<small>ItemLimitCategory</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.ItemLimitCategory">
+	  </div>
+	  <div class="col-xs-2">
+		<small>HolidayId</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.HolidayId">
+	  </div>
+	  <div class="col-xs-2">
+		<small>VerifiedBuild</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.VerifiedBuild">
+	  </div>
+	  <div class="col-xs-2">
+		<small>flagsCustom</small>
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.flagsCustom">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'flagsCustom')">...</button>
+		  </div>
+		</div>
+	  </div>
 
-    </div>
+	</div>
   </div>
 
   <div class="col-xs-2 borders" style="border-top: none;">
-    <div class="row">
-      <div class="col-xs-6">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value6"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value7"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value8"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value9"><br class="lh">
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value10"><br class="lh">
-      </div>
-      <div class="col-xs-6">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type6">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type6', 'statType')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type7">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type7', 'statType')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type8">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type8', 'statType')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type9">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type9', 'statType')">...</button>
-          </div>
-        </div>
-        <br class="lh">
-        <div class="input-group">
-          <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type10">
-          <div class="input-group-btn">
-            <button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type10', 'statType')">...</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12">
-        <small>ScalingStatDistribution</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.ScalingStatDistribution">
-      </div>
-      <div class="col-xs-12">
-        <small>ScalingStatValue</small>
-        <input class="form-control input-xs" type="text" ng-model="new_item_template.ScalingStatValue">
-      </div>
-    </div>
+	<div class="row">
+	  <div class="col-xs-6">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value6"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value7"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value8"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value9"><br class="lh">
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.stat_value10"><br class="lh">
+	  </div>
+	  <div class="col-xs-6">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type6">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type6', 'statType')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type7">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type7', 'statType')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type8">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type8', 'statType')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type9">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type9', 'statType')">...</button>
+		  </div>
+		</div>
+		<br class="lh">
+		<div class="input-group">
+		  <input class="form-control input-xs" type="text" ng-model="new_item_template.stat_type10">
+		  <div class="input-group-btn">
+			<button class="btn btn-info input-xs" ng-click="openValueModal(new_item_template, 'stat_type10', 'statType')">...</button>
+		  </div>
+		</div>
+	  </div>
+	  <div class="col-xs-12">
+		<small>ScalingStatDistribution</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.ScalingStatDistribution">
+	  </div>
+	  <div class="col-xs-12">
+		<small>ScalingStatValue</small>
+		<input class="form-control input-xs" type="text" ng-model="new_item_template.ScalingStatValue">
+	  </div>
+	</div>
   </div>
 </div>
 <br><br><br><br>

@@ -1,112 +1,112 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="keira2">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Keira2 TrinityCore Database Web-Editor">
-    <meta name="author" content="ShinDarth, Helias">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Keira2 TrinityCore Database Web-Editor">
+	<meta name="author" content="ShinDarth, Helias">
 
-    <title>Keira2 Database Editor</title>
-    <link rel="shortcut icon" href="">
+	<title>Keira2 Database Editor</title>
+	<link rel="shortcut icon" href="">
 
-    <!-- Javascript libraries -->
-    <script src="js/lib/squel.min.js"></script>
-    <script src="js/lib/highlight.min.js"></script>
+	<!-- Javascript libraries -->
+	<script src="js/lib/squel.min.js"></script>
+	<script src="js/lib/highlight.min.js"></script>
 
-    <!-- AngularJS and modules -->
-    <script src="js/lib/angular.min.js"></script>
-    <script src="js/lib/angular-ui-router.min.js"></script>
-    <script src="js/lib/ui-bootstrap.min.js"></script>
-    <script src="js/lib/loading-bar.min.js"></script>
-    <script src="js/lib/angular-tablesort.js"></script>
-    <script src="js/lib/ngStorage.min.js"></script>
-    <script src="js/lib/jdf-ngThemeSwitcher.js"></script>
-    <script src="js/lib/angular-highlightjs.min.js"></script>
+	<!-- AngularJS and modules -->
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/angular-ui-router.min.js"></script>
+	<script src="js/lib/ui-bootstrap.min.js"></script>
+	<script src="js/lib/loading-bar.min.js"></script>
+	<script src="js/lib/angular-tablesort.js"></script>
+	<script src="js/lib/ngStorage.min.js"></script>
+	<script src="js/lib/jdf-ngThemeSwitcher.js"></script>
+	<script src="js/lib/angular-highlightjs.min.js"></script>
 
-    <!-- OpenWoW Tooltips -->
-    <script src="js/lib/openwow.js"></script>
-    
-    <!-- Keira2 Core -->
-    <script src="js/app/main.js"></script>
-    <script src="config.js"></script>
-    <script src="js/app/switcher.js"></script>
-    <script src="js/app/constants.js"></script>
-    <script src="js/app/functions.js"></script>
-    <script src="js/app/info.js"></script>
-    <script src="js/app/query.js"></script>
-    <script src="js/app/modals.js"></script>
-    <script src="js/app/loot.js"></script>
-    <script src="js/app/trainer.js"></script>
-    <script src="js/app/vendor.js"></script>
-    <script src="js/app/creature.js"></script>
-    <script src="js/app/creature/quest-items.js"></script>
-    <script src="js/app/creature/spawns.js"></script>
-    <script src="js/app/quest.js"></script>
-    <script src="js/app/quest/objectives.js"></script>
-    <script src="js/app/quest/starters-enders.js"></script>
-    <script src="js/app/gameobject.js"></script>
-    <script src="js/app/gameobject/quest-items.js"></script>
-    <script src="js/app/gameobject/spawns.js"></script>
-    <script src="js/app/item.js"></script>
-    <script src="js/app/item/enchantment.js"></script>
-    <script src="js/app/character.js"></script>
-    <script src="js/app/sai.js"></script>
-    <script src="js/app/sai/search-by-entity.js"></script>
-    <script src="js/app/sai/labels.js"></script>
-    <script src="js/app/sai/editor.js"></script>
-    <script src="js/app/routes.js"></script>
+	<!-- OpenWoW Tooltips -->
+	<script src="js/lib/openwow.js"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/loading-bar.min.css">
-    <link rel="stylesheet" href="css/tablesort.css">
-    <link rel="stylesheet" href="css/github.min.css">
-    <link rel="stylesheet" href="css/style.css">
+	<!-- Keira2 Core -->
+	<script src="js/app/main.js"></script>
+	<script src="config.js"></script>
+	<script src="js/app/switcher.js"></script>
+	<script src="js/app/constants.js"></script>
+	<script src="js/app/functions.js"></script>
+	<script src="js/app/info.js"></script>
+	<script src="js/app/query.js"></script>
+	<script src="js/app/modals.js"></script>
+	<script src="js/app/loot.js"></script>
+	<script src="js/app/trainer.js"></script>
+	<script src="js/app/vendor.js"></script>
+	<script src="js/app/creature.js"></script>
+	<script src="js/app/creature/quest-items.js"></script>
+	<script src="js/app/creature/spawns.js"></script>
+	<script src="js/app/quest.js"></script>
+	<script src="js/app/quest/objectives.js"></script>
+	<script src="js/app/quest/starters-enders.js"></script>
+	<script src="js/app/gameobject.js"></script>
+	<script src="js/app/gameobject/quest-items.js"></script>
+	<script src="js/app/gameobject/spawns.js"></script>
+	<script src="js/app/item.js"></script>
+	<script src="js/app/item/enchantment.js"></script>
+	<script src="js/app/character.js"></script>
+	<script src="js/app/sai.js"></script>
+	<script src="js/app/sai/search-by-entity.js"></script>
+	<script src="js/app/sai/labels.js"></script>
+	<script src="js/app/sai/editor.js"></script>
+	<script src="js/app/routes.js"></script>
 
-    <!--[if IE]>
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/loading-bar.min.css">
+	<link rel="stylesheet" href="css/tablesort.css">
+	<link rel="stylesheet" href="css/github.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--[if IE]>
 <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
   </head>
 
   <body ng-controller="SwitcherController">
-    <div class="container text-center">
-      <p class="h5">Keira2 Database Editor</p>
-      <a ng-href="#/quest"><button class="btn-primary btn-lg">Quest</button></a>
-      <a ng-href="#/creature"><button class="btn-primary btn-lg">Creature</button></a>
-      <a ng-href="#/gameobject"><button class="btn-primary btn-lg">Game Object</button></a>
-      <a ng-href="#/item" ng-hide="version.name == '6.x'"><button class="btn-primary btn-lg">Item</button></a>
-      <a ng-href="#/character"><button class="btn-primary btn-lg">Character</button></a>
-      <a ng-href="#/sai"><button class="btn-primary btn-lg">SmartAI</button></a>
-      <a ng-href="#/"><button class="btn-primary btn-lg">Info</button></a>
-      <div class="btn-group pull-right" dropdown>
-        <theme-switcher urls="[theme.url]"></theme-switcher>
-        <div class="btn-group" dropdown is-open="status.isopen">
-          <button type="button" class="btn-success btn" dropdown-toggle ng-disabled="disabled">
-            Theme {{ theme.name }} <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li class="pointer" ng-repeat="theme in themes">
-              <a ng-href="{{currentLocation}}" ng-click="setTheme(theme)">{{theme.name}}</a>
-            </li>
-          </ul>
-          <br>
-        </div>
-      </div>
-      <br>
-      <div class="btn-group pull-right" dropdown style="margin-right: 10px;">
-        <div class="btn-group" dropdown>
-          <button type="button" class="btn-danger btn" dropdown-toggle ng-disabled="disabled">Version {{version.name}}</button>
-          <ul class="dropdown-menu" role="menu">
-            <li class="pointer" ng-repeat="version in versions">
-              <a ng-href="{{currentLocation}}" ng-click="setVersion(version)">{{version.name}}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <hr class="hr">
-      <div ui-view></div>
-    </div>
+	<div class="container text-center">
+	  <p class="h5">Keira2 Database Editor</p>
+	  <a ng-href="#/quest"><button class="btn-primary btn-lg">Quest</button></a>
+	  <a ng-href="#/creature"><button class="btn-primary btn-lg">Creature</button></a>
+	  <a ng-href="#/gameobject"><button class="btn-primary btn-lg">Game Object</button></a>
+	  <a ng-href="#/item" ng-hide="version.name == '6.x'"><button class="btn-primary btn-lg">Item</button></a>
+	  <a ng-href="#/character"><button class="btn-primary btn-lg">Character</button></a>
+	  <a ng-href="#/sai"><button class="btn-primary btn-lg">SmartAI</button></a>
+	  <a ng-href="#/"><button class="btn-primary btn-lg">Info</button></a>
+	  <div class="btn-group pull-right" dropdown>
+		<theme-switcher urls="[theme.url]"></theme-switcher>
+		<div class="btn-group" dropdown is-open="status.isopen">
+		  <button type="button" class="btn-success btn" dropdown-toggle ng-disabled="disabled">
+			Theme {{ theme.name }} <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu">
+			<li class="pointer" ng-repeat="theme in themes">
+			  <a ng-href="{{currentLocation}}" ng-click="setTheme(theme)">{{theme.name}}</a>
+			</li>
+		  </ul>
+		  <br>
+		</div>
+	  </div>
+	  <br>
+	  <div class="btn-group pull-right" dropdown style="margin-right: 10px;">
+		<div class="btn-group" dropdown>
+		  <button type="button" class="btn-danger btn" dropdown-toggle ng-disabled="disabled">Version {{version.name}}</button>
+		  <ul class="dropdown-menu" role="menu">
+			<li class="pointer" ng-repeat="version in versions">
+			  <a ng-href="{{currentLocation}}" ng-click="setVersion(version)">{{version.name}}</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	  <hr class="hr">
+	  <div ui-view></div>
+	</div>
   </body>
 </html>

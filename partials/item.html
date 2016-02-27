@@ -1,27 +1,27 @@
 <small class="selection-text"><strong>{{ selectionText }}</strong></small>
 <tabset>
   <tab heading="Search" active="itemTabs.search">
-    <div ng-include="'partials/item/search.html'"></div>
+	<div ng-include="'partials/item/search.html'"></div>
   </tab>
   <tab heading="Item" active="itemTabs.template">
-    <div ng-include="'partials/item/template.html'"></div>
+	<div ng-include="'partials/item/template.html'"></div>
   </tab>
   <tab heading="Enchantment" active="itemTabs.enchantment" ng-controller="EnchantmentController">
-    <div ng-include="'partials/item/enchantment.html'"></div>
+	<div ng-include="'partials/item/enchantment.html'"></div>
   </tab>
   <tab heading="Item Loot" active="itemTabs.itemLoot" ng-controller="LootController">
-    <div ng-include="'partials/item/item-loot.html'"></div>
+	<div ng-include="'partials/item/item-loot.html'"></div>
   </tab>
   <tab heading="Disenchant Loot" active="itemTabs.disenchantLoot" ng-controller="LootController">
-    <div ng-include="'partials/item/disenchant-loot.html'"></div>
+	<div ng-include="'partials/item/disenchant-loot.html'"></div>
   </tab>
   <tab heading="Prospecting Loot" active="itemTabs.prospectingLoot" ng-controller="LootController">
-    <div ng-include="'partials/item/prospecting-loot.html'"></div>
+	<div ng-include="'partials/item/prospecting-loot.html'"></div>
   </tab>
   <tab heading="Milling Loot" active="itemTabs.millingLoot" ng-controller="LootController">
-    <div ng-include="'partials/item/milling-loot.html'"></div>
+	<div ng-include="'partials/item/milling-loot.html'"></div>
   </tab>
   <tab heading="SQL Update Script" active="itemTabs.script" ng-click="generateItemScript()">
-    <div ng-include="'partials/item/sql-script.html'"></div>
+	<div ng-include="'partials/item/sql-script.html'"></div>
   </tab>
 </tabset>
