@@ -26,7 +26,7 @@
       <div class="col-xs-9">
         <small>Event</small>
         <select class="form-control input-xs" ng-model="selected.event_type">
-          <option ng-repeat="event in saiLabels.event_type.name track by $index" value="{{ $index }}">{{ saiLabels.event_type.name[$index] }}</option>
+          <option ng-repeat="event in saiLabels.event_type.name track by $index" value="{{ $index }}" ng-selected="selected.event_type == $index">{{ saiLabels.event_type.name[$index] }}</option>
         </select>
       </div>
       <div class="col-xs-3">
@@ -38,7 +38,7 @@
       <div class="col-xs-9">
         <small>Action</small>
         <select class="form-control input-xs" ng-model="selected.action_type">
-          <option ng-repeat="action in saiLabels.action_type.name track by $index" value="{{ $index }}">{{ saiLabels.action_type.name[$index] }}</option>
+          <option ng-repeat="action in saiLabels.action_type.name track by $index" value="{{ $index }}" ng-selected="selected.action_type == $index">{{ saiLabels.action_type.name[$index] }}</option>
         </select>
       </div>
       <div class="col-xs-3">
@@ -50,7 +50,7 @@
       <div class="col-xs-9">
         <small>Target</small>
         <select class="form-control input-xs" ng-model="selected.target_type">
-          <option ng-repeat="target in saiLabels.target_type.name track by $index" value="{{ $index }}">{{ saiLabels.target_type.name[$index] }}</option>
+          <option ng-repeat="target in saiLabels.target_type.name track by $index" value="{{ $index }}" ng-selected="selected.target_type == $index">{{ saiLabels.target_type.name[$index] }}</option>
         </select>
       </div>
       <div class="col-xs-3">
