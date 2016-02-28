@@ -11,7 +11,9 @@
   border-radius: 3px !important;
 }
 
-input.input-xs, button.input-xs {
+input.input-xs,
+select.input-xs,
+button.input-xs {
   height: 22px;
 }
 
