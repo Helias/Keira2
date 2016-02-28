@@ -1,20 +1,20 @@
 <div class="row" style="margin-bottom: 10px">
   <div class="col-xs-10 text-left sai-options-container">
-	<form class="form-inline">
-	  <div class="checkbox">
-		<label class="sai-option">
-		  <input type="checkbox" ng-model="options.showBasicInformations"> Show basic informations
-		</label>
-	  </div>
-	  <div class="checkbox">
-		<label class="sai-option">
-		  <input type="checkbox" ng-model="options.lockIds"> Lock IDs
-		</label>
-	  </div>
-	</form>
+    <form class="form-inline">
+      <div class="checkbox">
+        <label class="sai-option">
+          <input type="checkbox" ng-model="options.showBasicInformations"> Show basic informations
+        </label>
+      </div>
+      <div class="checkbox">
+        <label class="sai-option">
+          <input type="checkbox" ng-model="options.lockIds"> Lock IDs
+        </label>
+      </div>
+    </form>
   </div>
   <div class="col-xs-2 pull-right">
-	<p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}smart_scripts"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>smart_scripts</a></p>
+    <p class="text-right doc-link">Table <a target="_blank" ng-href="{{ wikiLink }}smart_scripts"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>smart_scripts</a></p>
   </div>
 </div>
 <div ng-show="selectedRow == -1 && isEntitySelected && loadAttempt == true">
@@ -22,228 +22,228 @@
 </div>
 <div class="row sai-editor-head" ng-show="selectedRow != -1">
   <div class="col-xs-3">
-	<div class="row">
-	  <div class="col-xs-9">
-		<small>Event</small>
-		<select class="form-control input-xs" ng-model="selected.event_type">
-		  <option ng-repeat="event in saiLabels.event_type.name track by $index" value="{{ $index }}">{{ saiLabels.event_type.name[$index] }}</option>
-		</select>
-	  </div>
-	  <div class="col-xs-3">
-		<br>
-		<input class="form-control input-xs" type="text" ng-model="selected.event_type">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-9">
-		<small>Action</small>
-		<select class="form-control input-xs" ng-model="selected.action_type">
-		  <option ng-repeat="action in saiLabels.action_type.name track by $index" value="{{ $index }}">{{ saiLabels.action_type.name[$index] }}</option>
-		</select>
-	  </div>
-	  <div class="col-xs-3">
-		<br>
-		<input class="form-control input-xs" type="text" ng-model="selected.action_type">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-9">
-		<small>Target</small>
-		<select class="form-control input-xs" ng-model="selected.target_type">
-		  <option ng-repeat="target in saiLabels.target_type.name track by $index" value="{{ $index }}">{{ saiLabels.target_type.name[$index] }}</option>
-		</select>
-	  </div>
-	  <div class="col-xs-3">
-		<br>
-		<input class="form-control input-xs" type="text" ng-model="selected.target_type">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-3">
-		<small>ID</small>
-		<input class="form-control input-xs" type="text" ng-model="selected.id" ng-disabled="options.lockIds">
-	  </div>
-	  <div class="col-xs-4">
-		<small>Link to</small>
-		<input class="form-control input-xs" type="text" ng-model="selected.link" ng-click="toggleMin()" tooltip="Simple event linking, example: if id = 0 and link = 1; id 1 will only be able to occur if id = 0 was triggered">
-	  </div>
-	  <div class="col-xs-5">
-		<small>Phase</small>
-		<input class="form-control input-xs" type="text" ng-model="selected.event_phase_mask" ng-click="toggleMin()" tooltip="There are 10 (9+1) different phases: 1, 2, ... 9 and the default 0">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-6">
-		<small>Flags</small>
-		<div class="input-group">
-		  <input class="form-control input-xs" type="text" ng-model="selected.event_flags" ng-click="toggleMin()" tooltip="Sets if the event should not repeat or should only happen in a given instance/dungeon difficulty. Values can be added together (bitwise math)">
-		  <div class="input-group-btn">
-			<button class="btn btn-info input-xs" ng-click="openFlagModal('partials/sai/modals/flags.html', selected, 'event_flags', 9)">...</button>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-xs-6">
-		<small>Chance</small>
-		<input class="form-control input-xs" type="number" ng-model="selected.event_chance" ng-click="toggleMin()" tooltip="This is the probability of the event to occur as a percentage from 0-100. So, if you want the event to occur roughly half of the time, then set this to 50">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-12">
-		<small>Comment</small>
-		<input class="form-control input-xs" type="text" ng-model="selected.comment">
-	  </div>
-	</div>
+    <div class="row">
+      <div class="col-xs-9">
+        <small>Event</small>
+        <select class="form-control input-xs" ng-model="selected.event_type">
+          <option ng-repeat="event in saiLabels.event_type.name track by $index" value="{{ $index }}">{{ saiLabels.event_type.name[$index] }}</option>
+        </select>
+      </div>
+      <div class="col-xs-3">
+        <br>
+        <input class="form-control input-xs" type="text" ng-model="selected.event_type">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-9">
+        <small>Action</small>
+        <select class="form-control input-xs" ng-model="selected.action_type">
+          <option ng-repeat="action in saiLabels.action_type.name track by $index" value="{{ $index }}">{{ saiLabels.action_type.name[$index] }}</option>
+        </select>
+      </div>
+      <div class="col-xs-3">
+        <br>
+        <input class="form-control input-xs" type="text" ng-model="selected.action_type">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-9">
+        <small>Target</small>
+        <select class="form-control input-xs" ng-model="selected.target_type">
+          <option ng-repeat="target in saiLabels.target_type.name track by $index" value="{{ $index }}">{{ saiLabels.target_type.name[$index] }}</option>
+        </select>
+      </div>
+      <div class="col-xs-3">
+        <br>
+        <input class="form-control input-xs" type="text" ng-model="selected.target_type">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <small>ID</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.id" ng-disabled="options.lockIds">
+      </div>
+      <div class="col-xs-4">
+        <small>Link to</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.link" ng-click="toggleMin()" uib-tooltip="Simple event linking, example: if id = 0 and link = 1; id 1 will only be able to occur if id = 0 was triggered">
+      </div>
+      <div class="col-xs-5">
+        <small>Phase</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.event_phase_mask" ng-click="toggleMin()" uib-tooltip="There are 10 (9+1) different phases: 1, 2, ... 9 and the default 0">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <small>Flags</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.event_flags" ng-click="toggleMin()" uib-tooltip="Sets if the event should not repeat or should only happen in a given instance/dungeon difficulty. Values can be added together (bitwise math)">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/sai/modals/flags.html', selected, 'event_flags', 9)">...</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <small>Chance</small>
+        <input class="form-control input-xs" type="number" ng-model="selected.event_chance" ng-click="toggleMin()" uib-tooltip="This is the probability of the event to occur as a percentage from 0-100. So, if you want the event to occur roughly half of the time, then set this to 50">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <small>Comment</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.comment">
+      </div>
+    </div>
   </div>
 
   <div class="col-xs-3 text-left input-margin">
-	<div class="row">
-	  <p class="h5 text-center">Event</p>
-	  <p class="text-center" ng-click="toggleMin()" tooltip="{{ saiLabels.event_type.tooltip[selected.event_type] ? saiLabels.event_type.tooltip[selected.event_type] : '' }}"><small>{{ saiLabels.event_type.name[selected.event_type] }}&nbsp; <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></p>
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.event_type.param1[selected.event_type] && saiLabels.event_type.param1[selected.event_type] != "") ? saiLabels.event_type.param1[selected.event_type] : "param1" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.event_param1" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip1[selected.event_type]) ? saiLabels.event_type.paramTooltip1[selected.event_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.event_type.param2[selected.event_type] && saiLabels.event_type.param2[selected.event_type] != "") ? saiLabels.event_type.param2[selected.event_type] : "param2" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.event_param2" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip2[selected.event_type]) ? saiLabels.event_type.paramTooltip2[selected.event_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.event_type.param3[selected.event_type] && saiLabels.event_type.param3[selected.event_type] != "") ? saiLabels.event_type.param3[selected.event_type] : "param3" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.event_param3" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip3[selected.event_type]) ? saiLabels.event_type.paramTooltip3[selected.event_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.event_type.param4[selected.event_type] && saiLabels.event_type.param4[selected.event_type] != "") ? saiLabels.event_type.param4[selected.event_type] : "param4" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.event_param4" ng-click="toggleMin()" tooltip="{{ (saiLabels.event_type.paramTooltip4[selected.event_type]) ? saiLabels.event_type.paramTooltip4[selected.event_type] : '' }}">
-	  </div>
-	</div>
+    <div class="row">
+      <p class="h5 text-center">Event</p>
+      <p class="text-center" ng-click="toggleMin()" uib-tooltip="{{ saiLabels.event_type.tooltip[selected.event_type] ? saiLabels.event_type.tooltip[selected.event_type] : '' }}"><small>{{ saiLabels.event_type.name[selected.event_type] }}&nbsp; <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></p>
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.event_type.param1[selected.event_type] && saiLabels.event_type.param1[selected.event_type] != "") ? saiLabels.event_type.param1[selected.event_type] : "param1" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_param1" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.event_type.paramTooltip1[selected.event_type]) ? saiLabels.event_type.paramTooltip1[selected.event_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.event_type.param2[selected.event_type] && saiLabels.event_type.param2[selected.event_type] != "") ? saiLabels.event_type.param2[selected.event_type] : "param2" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_param2" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.event_type.paramTooltip2[selected.event_type]) ? saiLabels.event_type.paramTooltip2[selected.event_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.event_type.param3[selected.event_type] && saiLabels.event_type.param3[selected.event_type] != "") ? saiLabels.event_type.param3[selected.event_type] : "param3" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_param3" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.event_type.paramTooltip3[selected.event_type]) ? saiLabels.event_type.paramTooltip3[selected.event_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.event_type.param4[selected.event_type] && saiLabels.event_type.param4[selected.event_type] != "") ? saiLabels.event_type.param4[selected.event_type] : "param4" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.event_param4" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.event_type.paramTooltip4[selected.event_type]) ? saiLabels.event_type.paramTooltip4[selected.event_type] : '' }}">
+      </div>
+    </div>
   </div>
 
   <div class="col-xs-3 text-left input-margin">
-	<div class="row">
-	  <p class="h5 text-center">Action</p>
-	  <p class="text-center" ng-click="toggleMin()" tooltip="{{ saiLabels.action_type.tooltip[selected.action_type] ? saiLabels.action_type.tooltip[selected.action_type] : '' }}"><small>{{ saiLabels.action_type.name[selected.action_type] }}&nbsp; <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></p>
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.action_type.param1[selected.action_type] && saiLabels.action_type.param1[selected.action_type] != "") ? saiLabels.action_type.param1[selected.action_type] : "param1" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.action_param1" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip1[selected.action_type]) ? saiLabels.action_type.paramTooltip1[selected.action_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.action_type.param2[selected.action_type] && saiLabels.action_type.param2[selected.action_type] != "") ? saiLabels.action_type.param2[selected.action_type] : "param2" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.action_param2" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip2[selected.action_type]) ? saiLabels.action_type.paramTooltip2[selected.action_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.action_type.param3[selected.action_type] && saiLabels.action_type.param3[selected.action_type] != "") ? saiLabels.action_type.param3[selected.action_type] : "param3" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.action_param3" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip3[selected.action_type]) ? saiLabels.action_type.paramTooltip3[selected.action_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.action_type.param4[selected.action_type] && saiLabels.action_type.param4[selected.action_type] != "") ? saiLabels.action_type.param4[selected.action_type] : "param4" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.action_param4" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip4[selected.action_type]) ? saiLabels.action_type.paramTooltip4[selected.action_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.action_type.param5[selected.action_type] && saiLabels.action_type.param5[selected.action_type] != "") ? saiLabels.action_type.param5[selected.action_type] : "param5" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.action_param5" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip5[selected.action_type]) ? saiLabels.action_type.paramTooltip5[selected.action_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.action_type.param6[selected.action_type] && saiLabels.action_type.param6[selected.action_type] != "") ? saiLabels.action_type.param6[selected.action_type] : "param6" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.action_param6" ng-click="toggleMin()" tooltip="{{ (saiLabels.action_type.paramTooltip6[selected.action_type]) ? saiLabels.action_type.paramTooltip6[selected.action_type] : '' }}">
-	  </div>
-	</div>
+    <div class="row">
+      <p class="h5 text-center">Action</p>
+      <p class="text-center" ng-click="toggleMin()" uib-tooltip="{{ saiLabels.action_type.tooltip[selected.action_type] ? saiLabels.action_type.tooltip[selected.action_type] : '' }}"><small>{{ saiLabels.action_type.name[selected.action_type] }}&nbsp; <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></p>
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.action_type.param1[selected.action_type] && saiLabels.action_type.param1[selected.action_type] != "") ? saiLabels.action_type.param1[selected.action_type] : "param1" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param1" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.action_type.paramTooltip1[selected.action_type]) ? saiLabels.action_type.paramTooltip1[selected.action_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.action_type.param2[selected.action_type] && saiLabels.action_type.param2[selected.action_type] != "") ? saiLabels.action_type.param2[selected.action_type] : "param2" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param2" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.action_type.paramTooltip2[selected.action_type]) ? saiLabels.action_type.paramTooltip2[selected.action_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.action_type.param3[selected.action_type] && saiLabels.action_type.param3[selected.action_type] != "") ? saiLabels.action_type.param3[selected.action_type] : "param3" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param3" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.action_type.paramTooltip3[selected.action_type]) ? saiLabels.action_type.paramTooltip3[selected.action_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.action_type.param4[selected.action_type] && saiLabels.action_type.param4[selected.action_type] != "") ? saiLabels.action_type.param4[selected.action_type] : "param4" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param4" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.action_type.paramTooltip4[selected.action_type]) ? saiLabels.action_type.paramTooltip4[selected.action_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.action_type.param5[selected.action_type] && saiLabels.action_type.param5[selected.action_type] != "") ? saiLabels.action_type.param5[selected.action_type] : "param5" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param5" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.action_type.paramTooltip5[selected.action_type]) ? saiLabels.action_type.paramTooltip5[selected.action_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.action_type.param6[selected.action_type] && saiLabels.action_type.param6[selected.action_type] != "") ? saiLabels.action_type.param6[selected.action_type] : "param6" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.action_param6" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.action_type.paramTooltip6[selected.action_type]) ? saiLabels.action_type.paramTooltip6[selected.action_type] : '' }}">
+      </div>
+    </div>
   </div>
 
   <div class="col-xs-3 text-left input-margin">
-	<div class="row">
-	  <p class="h5 text-center">Target</p>
-	  <p class="text-center" ng-click="toggleMin()" tooltip="{{ saiLabels.target_type.tooltip[selected.target_type] ? saiLabels.target_type.tooltip[selected.target_type] : '' }}"><small>{{ saiLabels.target_type.name[selected.target_type] }}&nbsp; <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></p>
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.target_type.param1[selected.target_type] && saiLabels.target_type.param1[selected.target_type] != "") ? saiLabels.target_type.param1[selected.target_type] : "param1" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.target_param1" ng-click="toggleMin()" tooltip="{{ (saiLabels.target_type.paramTooltip1[selected.target_type]) ? saiLabels.target_type.paramTooltip1[selected.target_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.target_type.param2[selected.target_type] && saiLabels.target_type.param2[selected.target_type] != "") ? saiLabels.target_type.param2[selected.target_type] : "param2" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.target_param2" ng-click="toggleMin()" tooltip="{{ (saiLabels.target_type.paramTooltip2[selected.target_type]) ? saiLabels.target_type.paramTooltip2[selected.target_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>{{ (saiLabels.target_type.param3[selected.target_type] && saiLabels.target_type.param3[selected.target_type] != "") ? saiLabels.target_type.param3[selected.target_type] : "param3" }}</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.target_param3" ng-click="toggleMin()" tooltip="{{ (saiLabels.target_type.paramTooltip3[selected.target_type]) ? saiLabels.target_type.paramTooltip3[selected.target_type] : '' }}">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>Target X</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.target_x">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>Target Y</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.target_y">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>Target Z</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.target_z">
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-xs-7">
-		<small>Target O</small>
-	  </div>
-	  <div class="col-xs-4">
-		<input class="form-control input-xs" type="text" ng-model="selected.target_o">
-	  </div>
-	</div>
+    <div class="row">
+      <p class="h5 text-center">Target</p>
+      <p class="text-center" ng-click="toggleMin()" uib-tooltip="{{ saiLabels.target_type.tooltip[selected.target_type] ? saiLabels.target_type.tooltip[selected.target_type] : '' }}"><small>{{ saiLabels.target_type.name[selected.target_type] }}&nbsp; <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small></p>
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.target_type.param1[selected.target_type] && saiLabels.target_type.param1[selected.target_type] != "") ? saiLabels.target_type.param1[selected.target_type] : "param1" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_param1" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.target_type.paramTooltip1[selected.target_type]) ? saiLabels.target_type.paramTooltip1[selected.target_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.target_type.param2[selected.target_type] && saiLabels.target_type.param2[selected.target_type] != "") ? saiLabels.target_type.param2[selected.target_type] : "param2" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_param2" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.target_type.paramTooltip2[selected.target_type]) ? saiLabels.target_type.paramTooltip2[selected.target_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>{{ (saiLabels.target_type.param3[selected.target_type] && saiLabels.target_type.param3[selected.target_type] != "") ? saiLabels.target_type.param3[selected.target_type] : "param3" }}</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_param3" ng-click="toggleMin()" uib-tooltip="{{ (saiLabels.target_type.paramTooltip3[selected.target_type]) ? saiLabels.target_type.paramTooltip3[selected.target_type] : '' }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>Target X</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_x">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>Target Y</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_y">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>Target Z</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_z">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7">
+        <small>Target O</small>
+      </div>
+      <div class="col-xs-4">
+        <input class="form-control input-xs" type="text" ng-model="selected.target_o">
+      </div>
+    </div>
   </div>
 
 
@@ -251,79 +251,79 @@
 <br>
 <div class="row">
   <div class="col-xs-4">
-	<button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_smart_scripts)" ng-disabled="selectedRow == -1"><i class="glyphicon glyphicon-remove"></i> Delete selected row</button>
-	<button class="btn btn-success" ng-click="addNewRow(new_smart_scripts)"><i class="glyphicon glyphicon-plus"></i> Add new row</button>
+    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_smart_scripts)" ng-disabled="selectedRow == -1"><i class="glyphicon glyphicon-remove"></i> Delete selected row</button>
+    <button class="btn btn-success" ng-click="addNewRow(new_smart_scripts)"><i class="glyphicon glyphicon-plus"></i> Add new row</button>
   </div>
   <div class="col-xs-2 pull-right">
-	<button class="btn btn-primary pull-right" ng-click="openScriptTab()">FULL SmartAI Script</button>
+    <button class="btn btn-primary pull-right" ng-click="openScriptTab()">FULL SmartAI Script</button>
   </div>
   <div class="col-xs-2 pull-right">
-	<button class="btn btn-info pull-right" ng-click="generateComments()" tooltip="All rows will have properly generated comments">Generate Comments</button>
+    <button class="btn btn-info pull-right" ng-click="generateComments()" uib-tooltip="All rows will have properly generated comments">Generate Comments</button>
   </div>
 </div>
 <br>
 <div class="sai-table-box">
   <div class="sai-table" ng-class="{'sai-table-large': !options.showBasicInformations}">
-	<table class="table table-striped table-condensed">
-	  <thead>
-		<th class="text-center"></th>
-		<th class="text-center">id</th>
-		<th class="text-center">link</th>
-		<th class="text-center">event</th>
-		<th class="text-center">phase</th>
-		<th class="text-center">chance</th>
-		<th class="text-center">flags</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">event_param1</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">event_param2</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">event_param3</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">event_param4</th>
-		<th class="text-center">action</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">action_param1</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">action_param2</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">action_param3</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">action_param4</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">action_param5</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">action_param6</th>
-		<th class="text-center">target</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">target_param1</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">target_param2</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">target_param3</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">target_x</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">target_y</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">target_z</th>
-		<th class="text-center" ng-show="!options.showBasicInformations">target_o</th>
-		<th class="text-center" style="min-width: 600px">comment</th>
-	  </thead>
-	  <tr ng-repeat="row in new_smart_scripts track by $index" ng-click="selectRow(new_smart_scripts, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
-		<td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_smart_scripts, $index)"></i></td>
-		<td>{{ row.id }}</td>
-		<td>{{ row.link }}</td>
-		<td>{{ row.event_type }}</td>
-		<td>{{ row.event_phase_mask }}</td>
-		<td>{{ row.event_chance }}</td>
-		<td>{{ row.event_flags }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.event_param1 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.event_param2 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.event_param3 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.event_param4 }}</td>
-		<td>{{ row.action_type }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.action_param1 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.action_param2 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.action_param3 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.action_param4 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.action_param5 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.action_param6 }}</td>
-		<td>{{ row.target_type }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.target_param1 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.target_param2 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.target_param3 }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.target_x }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.target_y }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.target_z }}</td>
-		<td ng-show="!options.showBasicInformations">{{ row.target_o }}</td>
-		<td>{{ row.comment }}</td>
-	  </tr>
-	</table>
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th class="text-center"></th>
+        <th class="text-center">id</th>
+        <th class="text-center">link</th>
+        <th class="text-center">event</th>
+        <th class="text-center">phase</th>
+        <th class="text-center">chance</th>
+        <th class="text-center">flags</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">event_param1</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">event_param2</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">event_param3</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">event_param4</th>
+        <th class="text-center">action</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param1</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param2</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param3</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param4</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param5</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">action_param6</th>
+        <th class="text-center">target</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_param1</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_param2</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_param3</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_x</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_y</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_z</th>
+        <th class="text-center" ng-show="!options.showBasicInformations">target_o</th>
+        <th class="text-center" style="min-width: 600px">comment</th>
+      </thead>
+      <tr ng-repeat="row in new_smart_scripts track by $index" ng-click="selectRow(new_smart_scripts, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
+        <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_smart_scripts, $index)"></i></td>
+        <td>{{ row.id }}</td>
+        <td>{{ row.link }}</td>
+        <td>{{ row.event_type }}</td>
+        <td>{{ row.event_phase_mask }}</td>
+        <td>{{ row.event_chance }}</td>
+        <td>{{ row.event_flags }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.event_param1 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.event_param2 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.event_param3 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.event_param4 }}</td>
+        <td>{{ row.action_type }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param1 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param2 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param3 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param4 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param5 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.action_param6 }}</td>
+        <td>{{ row.target_type }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_param1 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_param2 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_param3 }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_x }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_y }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_z }}</td>
+        <td ng-show="!options.showBasicInformations">{{ row.target_o }}</td>
+        <td>{{ row.comment }}</td>
+      </tr>
+    </table>
   </div>
 </div>
 <br>
