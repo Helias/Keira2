@@ -2,79 +2,79 @@
 <br>
 <div class="row">
   <div class="col-xs-6">
-	<div class="row">
-	  <div class="col-xs-3">
-		<small>SpellID</small>
-		<div class="input-group">
-		  <input class="form-control input-xs" type="text" ng-model="selected.SpellID">
-		  <div class="input-group-btn">
-			<button class="btn btn-info input-xs" ng-click="openSearchModal(selected, 'SpellID', 'dbc/spells')">...</button>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-xs-3">
-		<small>MoneyCost</small>
-		<input class="form-control input-xs" type="text" ng-model="selected.MoneyCost">
-	  </div>
-	  <div class="col-xs-3">
-		<small>ReqSkillLine</small>
-		<div class="input-group">
-		  <input class="form-control input-xs" type="text" ng-model="selected.ReqSkillLine">
-		  <div class="input-group-btn">
-			<button class="btn btn-info input-xs" ng-click="openSearchModal(selected, 'ReqSkillLine', 'dbc/skills')">...</button>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-xs-3">
-		<small>ReqSkillRank</small>
-		<div class="input-group">
-		  <input class="form-control input-xs" type="text" ng-model="selected.ReqSkillRank">
-		</div>
-	  </div>
-	</div>
+    <div class="row">
+      <div class="col-xs-3">
+        <small>SpellID</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.SpellID">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(selected, 'SpellID', 'dbc/spells')">...</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <small>MoneyCost</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.MoneyCost">
+      </div>
+      <div class="col-xs-3">
+        <small>ReqSkillLine</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.ReqSkillLine">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openSearchModal(selected, 'ReqSkillLine', 'dbc/skills')">...</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <small>ReqSkillRank</small>
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.ReqSkillRank">
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-xs-6">
-	<div class="row">
-	  <div class="col-xs-3">
-		<small>ReqLevel</small>
-		<input class="form-control input-xs" type="text" ng-model="selected.ReqLevel">
-	  </div>
-	</div>
+    <div class="row">
+      <div class="col-xs-3">
+        <small>ReqLevel</small>
+        <input class="form-control input-xs" type="text" ng-model="selected.ReqLevel">
+      </div>
+    </div>
   </div>
 </div>
 <br>
 <div class="row">
   <div class="col-xs-4">
-	<br>
-	<button class="btn btn-primary" ng-click="editSelectedRowOf(new_npc_trainer, 'SpellID')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
-	<button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_npc_trainer)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
-	<button class="btn btn-success" ng-click="addRowTo(new_npc_trainer, 'SpellID')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
+    <br>
+    <button class="btn btn-primary" ng-click="editSelectedRowOf(new_npc_trainer, 'SpellID')"><i class="glyphicon glyphicon-refresh"></i> Edit</button>
+    <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_npc_trainer)"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+    <button class="btn btn-success" ng-click="addRowTo(new_npc_trainer, 'SpellID')"><i class="glyphicon glyphicon-plus"></i> Add new</button>
   </div>
   <div class="col-xs-2 pull-right">
-	<br>
-	<button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_npc_trainer, 'npc_trainer', 'ID')">FULL Trainer Script</button>
+    <br>
+    <button class="btn btn-primary pull-right" ng-click="openFullScriptModal(new_npc_trainer, 'npc_trainer', 'ID')">FULL Trainer Script</button>
   </div>
   <div class="col-xs-2 pull-right">
-	<br>
-	<button class="btn btn-success pull-right" ng-click="openDiffScriptModal('npc_trainer', 'ID', 'SpellID', current_npc_trainer, new_npc_trainer)">DIFF Trainer Script</button>
+    <br>
+    <button class="btn btn-success pull-right" ng-click="openDiffScriptModal('npc_trainer', 'ID', 'SpellID', current_npc_trainer, new_npc_trainer)">DIFF Trainer Script</button>
   </div>
 </div>
 <br>
 <table class="table table-striped table-condensed">
   <thead>
-	<th class="text-center"></th>
-	<th class="text-center">SpellID</th>
-	<th class="text-center">MoneyCost</th>
-	<th class="text-center">ReqSkillLine</th>
-	<th class="text-center">ReqSkillRank</th>
-	<th class="text-center">ReqLevel</th>
+    <th class="text-center"></th>
+    <th class="text-center">SpellID</th>
+    <th class="text-center">MoneyCost</th>
+    <th class="text-center">ReqSkillLine</th>
+    <th class="text-center">ReqSkillRank</th>
+    <th class="text-center">ReqLevel</th>
   </thead>
   <tr ng-repeat="trainer in new_npc_trainer track by $index" ng-click="selectRow(new_npc_trainer, $index)" ng-class="{'tr-selected': $index == selectedRow}" id="{{ $index }}">
-	<td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_npc_trainer, $index)"></i></td>
-	<td>{{ trainer.SpellID }}</td>
-	<td>{{ trainer.MoneyCost }}</td>
-	<td>{{ trainer.ReqSkillLine }}</td>
-	<td>{{ trainer.ReqSkillRank }}</td>
-	<td>{{ trainer.ReqLevel }}</td>
+    <td><i class="glyphicon glyphicon-edit pointer" ng-click="selectRow(new_npc_trainer, $index)"></i></td>
+    <td>{{ trainer.SpellID }}</td>
+    <td>{{ trainer.MoneyCost }}</td>
+    <td>{{ trainer.ReqSkillLine }}</td>
+    <td>{{ trainer.ReqSkillRank }}</td>
+    <td>{{ trainer.ReqLevel }}</td>
   </tr>
 </table>

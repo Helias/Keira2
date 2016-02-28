@@ -2,621 +2,621 @@
 <div class="row">
   <div class="col-xs-5">
 
-	<div class="borders">
-	  <h5 class="text-left">Creature I</h5>
-	  <div class="row">
-		<div class="col-xs-3">
-		  <small>Entry</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.entry">
-			<div class="input-group-btn">
-			  <a ng-href="#/creature/{{ new_creature_template.entry }}"><button class="btn btn-info btn-xs">→</button></a>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-3">
-		  <small>difficulty_entry_1</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.difficulty_entry_1">
-			<div class="input-group-btn">
-			  <a ng-href="#/creature/{{ new_creature_template.difficulty_entry_1 }}"><button class="btn btn-info btn-xs">→</button></a>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-3">
-		  <small>difficulty_entry_2</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.difficulty_entry_2">
-			<div class="input-group-btn">
-			  <a ng-href="#/creature/{{ new_creature_template.difficulty_entry_2 }}"><button class="btn btn-info btn-xs">→</button></a>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-3">
-		  <small>difficulty_entry_3</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.difficulty_entry_3">
-			<div class="input-group-btn">
-			  <a ng-href="#/creature/{{ new_creature_template.difficulty_entry_3 }}"><button class="btn btn-info btn-xs">→</button></a>
-			</div>
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-6 text-left">
-			<small>KillCredit1</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.KillCredit1">
-		  </div>
-		  <div class="col-xs-6 text-left">
-			<small>KillCredit2</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.KillCredit2">
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-6 text-left">
-			<small>Name</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.name">
-		  </div>
-		  <div class="col-xs-6 text-left" ng-show="version.name == '6.x'">
-			<small>femaleName</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.femaleName">
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-6 text-left">
-			<small>subname</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.subname">
-		  </div>
-		  <div class="col-xs-6 text-left">
-			<small>IconName</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.IconName">
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 text-left">
-			<small>modelid1</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.modelid1">
-		  </div>
-		  <div class="col-xs-3 text-left">
-			<small>modelid2</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.modelid2">
-		  </div>
-		  <div class="col-xs-3 text-left">
-			<small>modelid3</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.modelid3">
-		  </div>
-		  <div class="col-xs-3 text-left">
-			<small>modelid4</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.modelid4">
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-3 text-left">
-			<small>mingold</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.mingold">
-		  </div>
-		  <div class="col-xs-3 text-left">
-			<small>maxgold</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.maxgold">
-		  </div>
-		  <div class="col-xs-3 text-left">
-			<small>minlevel</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.minlevel">
-		  </div>
-		  <div class="col-xs-3 text-left">
-			<small>maxlevel</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.maxlevel">
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-2 text-left">
-			<small>Health_mod</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.HealthModifier">
-		  </div>
-		  <div class="col-xs-2 text-left">
-			<small>Mana_mod</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.ManaModifier">
-		  </div>
-		  <div class="col-xs-3 text-left">
-			<small>Vehicleid</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.Vehicleid">
-		  </div>
-		  <div class="col-xs-2 text-left">
-			<small>exp</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.exp">
-		  </div>
-		</div>
-		<div class="row">
-		  <div ng-show="version.name == '6.x'">
-			<div class="col-xs-3 text-left">
-			  <small>HealthModifierExtra</small>
-			  <input type="text" class="form-control input-xs" ng-model="new_creature_template.HealthModifierExtra">
-			</div>
-			<div class="col-xs-3 text-left">
-			  <small>ManaModifierExtra</small>
-			  <input type="text" class="form-control input-xs" ng-model="new_creature_template.ManaModifierExtra">
-			</div>
-		  </div>
-		  <div class="col-xs-2 text-left" ng-show="version.name == '6.x'">
-			<small>exp_unk</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.exp_unk">
-		  </div>
-		</div>
-	  </div>
-	</div>
-	<br>
+    <div class="borders">
+      <h5 class="text-left">Creature I</h5>
+      <div class="row">
+        <div class="col-xs-3">
+          <small>Entry</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.entry">
+            <div class="input-group-btn">
+              <a ng-href="#/creature/{{ new_creature_template.entry }}"><button class="btn btn-info btn-xs">→</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <small>difficulty_entry_1</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.difficulty_entry_1">
+            <div class="input-group-btn">
+              <a ng-href="#/creature/{{ new_creature_template.difficulty_entry_1 }}"><button class="btn btn-info btn-xs">→</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <small>difficulty_entry_2</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.difficulty_entry_2">
+            <div class="input-group-btn">
+              <a ng-href="#/creature/{{ new_creature_template.difficulty_entry_2 }}"><button class="btn btn-info btn-xs">→</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <small>difficulty_entry_3</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.difficulty_entry_3">
+            <div class="input-group-btn">
+              <a ng-href="#/creature/{{ new_creature_template.difficulty_entry_3 }}"><button class="btn btn-info btn-xs">→</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <small>KillCredit1</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.KillCredit1">
+          </div>
+          <div class="col-xs-6 text-left">
+            <small>KillCredit2</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.KillCredit2">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <small>Name</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.name">
+          </div>
+          <div class="col-xs-6 text-left" ng-show="version.name == '6.x'">
+            <small>femaleName</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.femaleName">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <small>subname</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.subname">
+          </div>
+          <div class="col-xs-6 text-left">
+            <small>IconName</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.IconName">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 text-left">
+            <small>modelid1</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.modelid1">
+          </div>
+          <div class="col-xs-3 text-left">
+            <small>modelid2</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.modelid2">
+          </div>
+          <div class="col-xs-3 text-left">
+            <small>modelid3</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.modelid3">
+          </div>
+          <div class="col-xs-3 text-left">
+            <small>modelid4</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.modelid4">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 text-left">
+            <small>mingold</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.mingold">
+          </div>
+          <div class="col-xs-3 text-left">
+            <small>maxgold</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.maxgold">
+          </div>
+          <div class="col-xs-3 text-left">
+            <small>minlevel</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.minlevel">
+          </div>
+          <div class="col-xs-3 text-left">
+            <small>maxlevel</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.maxlevel">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 text-left">
+            <small>Health_mod</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.HealthModifier">
+          </div>
+          <div class="col-xs-2 text-left">
+            <small>Mana_mod</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.ManaModifier">
+          </div>
+          <div class="col-xs-3 text-left">
+            <small>Vehicleid</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.Vehicleid">
+          </div>
+          <div class="col-xs-2 text-left">
+            <small>exp</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.exp">
+          </div>
+        </div>
+        <div class="row">
+          <div ng-show="version.name == '6.x'">
+            <div class="col-xs-3 text-left">
+              <small>HealthModifierExtra</small>
+              <input type="text" class="form-control input-xs" ng-model="new_creature_template.HealthModifierExtra">
+            </div>
+            <div class="col-xs-3 text-left">
+              <small>ManaModifierExtra</small>
+              <input type="text" class="form-control input-xs" ng-model="new_creature_template.ManaModifierExtra">
+            </div>
+          </div>
+          <div class="col-xs-2 text-left" ng-show="version.name == '6.x'">
+            <small>exp_unk</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.exp_unk">
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
 
-	<div class="row">
-	  <div class="col-xs-4 text-left borders">
+    <div class="row">
+      <div class="col-xs-4 text-left borders">
 
-		<h5 class="text-left">Loot</h5>
-		<small>lootid</small>
-		<input type="text" class="form-control input-xs" ng-model="new_creature_template.lootid">
-		<small>pickpocketloot</small>
-		<input type="text" class="form-control input-xs" ng-model="new_creature_template.pickpocketloot">
-		<small>skinloot</small>
-		<input type="text" class="form-control input-xs" ng-model="new_creature_template.skinloot">
+        <h5 class="text-left">Loot</h5>
+        <small>lootid</small>
+        <input type="text" class="form-control input-xs" ng-model="new_creature_template.lootid">
+        <small>pickpocketloot</small>
+        <input type="text" class="form-control input-xs" ng-model="new_creature_template.pickpocketloot">
+        <small>skinloot</small>
+        <input type="text" class="form-control input-xs" ng-model="new_creature_template.skinloot">
 
-	  </div>
-	  <div class="col-xs-8 text-left borders">
+      </div>
+      <div class="col-xs-8 text-left borders">
 
-		<h5 class="text-left">Resistance</h5>
-		<div class="row">
-		  <div class="col-xs-6 text-left">
-			<small>resistance1</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance1">
-			<small>resistance2</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance2">
-			<small>resistance3</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance3">
-		  </div>
-		  <div class="col-xs-6 text-left">
-			<small>resistance4</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance4">
-			<small>resistance5</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance5">
-			<small>resistance6</small>
-			<input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance6">
-		  </div>
-		</div>
+        <h5 class="text-left">Resistance</h5>
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <small>resistance1</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance1">
+            <small>resistance2</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance2">
+            <small>resistance3</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance3">
+          </div>
+          <div class="col-xs-6 text-left">
+            <small>resistance4</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance4">
+            <small>resistance5</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance5">
+            <small>resistance6</small>
+            <input type="text" class="form-control input-xs" ng-model="new_creature_template.resistance6">
+          </div>
+        </div>
 
-	  </div>
-	</div>
+      </div>
+    </div>
 
-	<br>
-	<div class="row">
+    <br>
+    <div class="row">
 
-	  <div class="col-xs-2 text-left">
-		<small>RacialLeader</small>
-		<input type="text" class="form-control input-xs" ng-model="new_creature_template.RacialLeader">
-	  </div>
-	  <div class="col-xs-3 text-left">
-		<small>flags_extra</small>
-		<div class="input-group">
-		  <input type="text" class="form-control input-xs" ng-model="new_creature_template.flags_extra">
-		  <div class="input-group-btn">
-			<button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/flags-extra.html', new_creature_template, 'flags_extra', 32)">...</button>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-xs-3 text-left" ng-show="version.name == '3.3.5'">
-		<small>PetSpellDataId</small>
-		<input type="text" class="form-control input-xs" ng-model="new_creature_template.PetSpellDataId">
-	  </div>
-	  <div class="col-xs-3 text-left">
-		<small>mechanic_immune_mask</small>
-		<div class="input-group">
-		  <input type="text" class="form-control input-xs" ng-model="new_creature_template.mechanic_immune_mask">
-		  <div class="input-group-btn">
-			<button class="btn btn-info input-xs" ng-click="openFlagModal( 'partials/creature/modals/mechanic.html', new_creature_template, 'mechanic_immune_mask', 31)">...</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
+      <div class="col-xs-2 text-left">
+        <small>RacialLeader</small>
+        <input type="text" class="form-control input-xs" ng-model="new_creature_template.RacialLeader">
+      </div>
+      <div class="col-xs-3 text-left">
+        <small>flags_extra</small>
+        <div class="input-group">
+          <input type="text" class="form-control input-xs" ng-model="new_creature_template.flags_extra">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/flags-extra.html', new_creature_template, 'flags_extra', 32)">...</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 text-left" ng-show="version.name == '3.3.5'">
+        <small>PetSpellDataId</small>
+        <input type="text" class="form-control input-xs" ng-model="new_creature_template.PetSpellDataId">
+      </div>
+      <div class="col-xs-3 text-left">
+        <small>mechanic_immune_mask</small>
+        <div class="input-group">
+          <input type="text" class="form-control input-xs" ng-model="new_creature_template.mechanic_immune_mask">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openFlagModal( 'partials/creature/modals/mechanic.html', new_creature_template, 'mechanic_immune_mask', 31)">...</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
   <div class="col-xs-7">
-	<div class="borders">
-	  <div class="row">
-		<h5 class="text-left">&nbsp;&nbsp;Creature II</h5>
-		<div class="col-xs-2">
-		  <small>RegenHealth</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.RegenHealth">
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>unit_class</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.unit_class">
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>dmgschool</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.dmgschool">
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>RangeAttackTime</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.RangeAttackTime">
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>BaseAttackTime</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.BaseAttackTime">
-		  </div>
-		</div>
-	  </div>
-	  <div class="row">
-		<div class="col-xs-2">
-		  <small>npcflag</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.npcflag">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openFlagModal( 'partials/creature/modals/npcflag.html', new_creature_template, 'npcflag', 28)">...</button>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>family</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.family">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'family')">...</button>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>unit_flags2</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.unit_flags2">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/unit-flags2.html', new_creature_template, 'unit_flags2', 22)">...</button>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>faction</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.faction">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'faction')">...</button>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>type</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.type">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'type')">...</button>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="row">
-		<div class="col-xs-2">
-		  <small>rank</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.rank">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'rank')">...</button>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>unit_flags</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.unit_flags">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/unit-flags.html', new_creature_template, 'unit_flags', 32)">...</button>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>type_flags</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.type_flags">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/type-flags.html', new_creature_template, 'type_flags', 32)">...</button>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-2" ng-show="version.name == '6.x'">
-		  <small>type_flags2</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.type_flags2">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/type-flags.html', new_creature_template, 'type_flags', 32)">...</button>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>dynamicflags</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.dynamicflags">
-			<div class="input-group-btn">
-			  <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/dynamicflags.html', new_creature_template, 'dynamicflags', 8)">...</button>
-			</div>
-		  </div>
-		</div>
-		<div class="col-xs-2">
-		  <small>VerifiedBuild</small>
-		  <div class="input-group">
-			<input class="form-control input-xs" type="text" ng-model="new_creature_template.VerifiedBuild">
-		  </div>
-		</div>
-	  </div>
-	</div>
-	<br>
-	<div class="row">
-	  <div class="col-xs-4">
-		<div class="borders">
-		  <div class="row">
-			<h5 class="text-center">Trainer</h5>
-			<div class="col-xs-6">
-			  <small>trainer_type</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_type">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'trainer_type')">...</button>
-				</div>
-			  </div>
-			</div>
-			<div class="col-xs-6">
-			  <small>trainer_class</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_class">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'trainer_class', 'classes')">...</button>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-			<div class="col-xs-6">
-			  <small>trainer_race</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_race">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'trainer_race', 'race')">...</button>
-				</div>
-			  </div>
-			</div>
-			<div class="col-xs-6" ng-show="version.name == '3.3.5'">
-			  <small>trainer_spell</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_spell">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'trainer_spell', 'dbc/spells')">...</button>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
+    <div class="borders">
+      <div class="row">
+        <h5 class="text-left">&nbsp;&nbsp;Creature II</h5>
+        <div class="col-xs-2">
+          <small>RegenHealth</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.RegenHealth">
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>unit_class</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.unit_class">
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>dmgschool</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.dmgschool">
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>RangeAttackTime</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.RangeAttackTime">
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>BaseAttackTime</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.BaseAttackTime">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <small>npcflag</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.npcflag">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal( 'partials/creature/modals/npcflag.html', new_creature_template, 'npcflag', 28)">...</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>family</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.family">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'family')">...</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>unit_flags2</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.unit_flags2">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/unit-flags2.html', new_creature_template, 'unit_flags2', 22)">...</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>faction</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.faction">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'faction')">...</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>type</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.type">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'type')">...</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2">
+          <small>rank</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.rank">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'rank')">...</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>unit_flags</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.unit_flags">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/unit-flags.html', new_creature_template, 'unit_flags', 32)">...</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>type_flags</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.type_flags">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/type-flags.html', new_creature_template, 'type_flags', 32)">...</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2" ng-show="version.name == '6.x'">
+          <small>type_flags2</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.type_flags2">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/type-flags.html', new_creature_template, 'type_flags', 32)">...</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>dynamicflags</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.dynamicflags">
+            <div class="input-group-btn">
+              <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/dynamicflags.html', new_creature_template, 'dynamicflags', 8)">...</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <small>VerifiedBuild</small>
+          <div class="input-group">
+            <input class="form-control input-xs" type="text" ng-model="new_creature_template.VerifiedBuild">
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="borders">
+          <div class="row">
+            <h5 class="text-center">Trainer</h5>
+            <div class="col-xs-6">
+              <small>trainer_type</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_type">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'trainer_type')">...</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <small>trainer_class</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_class">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'trainer_class', 'classes')">...</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <small>trainer_race</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_race">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'trainer_race', 'race')">...</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6" ng-show="version.name == '3.3.5'">
+              <small>trainer_spell</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.trainer_spell">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'trainer_spell', 'dbc/spells')">...</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-		<br>
-		<div class="borders">
-		  <div class="row">
-			<h5 class="text-center">Spell</h5>
-			<div class="col-xs-6">
-			  <small>spell1</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.spell1">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell1', 'dbc/spells')">...</button>
-				</div>
-			  </div>
-			</div>
-			<div class="col-xs-6">
-			  <small>spell2</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.spell2">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell2', 'dbc/spells')">...</button>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-			<div class="col-xs-6">
-			  <small>spell3</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.spell3">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell3', 'dbc/spells')">...</button>
-				</div>
-			  </div>
-			</div>
-			<div class="col-xs-6">
-			  <small>spell4</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.spell4">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell4', 'dbc/spells')">...</button>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-			<div class="col-xs-6">
-			  <small>spell5</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.spell5">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell5', 'dbc/spells')">...</button>
-				</div>
-			  </div>
-			</div>
-			<div class="col-xs-6">
-			  <small>spell6</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.spell6">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell6', 'dbc/spells')">...</button>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <div class="row">
-			<div class="col-xs-6">
-			  <small>spell7</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.spell7">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell7', 'dbc/spells')">...</button>
-				</div>
-			  </div>
-			</div>
-			<div class="col-xs-6">
-			  <small>spell8</small>
-			  <div class="input-group">
-				<input class="form-control input-xs" type="text" ng-model="new_creature_template.spell8">
-				<div class="input-group-btn">
-				  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell8', 'dbc/spells')">...</button>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-xs-4 borders">
-		<div class="row">
-		  <h5 class="text-center">Modifiers</h5>
-		  <div class="col-xs-6">
-			<small>ArmorModifier</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.ArmorModifier">
-			</div>
-		  </div>
-		  <div class="col-xs-6">
-			<small>scale</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.scale">
-			</div>
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-6">
-			<small>speed_walk</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.speed_walk">
-			</div>
-		  </div>
-		  <div class="col-xs-6">
-			<small>speed_run</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.speed_run">
-			</div>
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-6">
-			<small>ExperienceModifier</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.ExperienceModifier">
-			</div>
-		  </div>
-		  <div class="col-xs-6">
-			<small>DamageModifier</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.DamageModifier">
-			</div>
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-6">
-			<small>HealthModifier</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.HealthModifier">
-			</div>
-		  </div>
-		  <div class="col-xs-6">
-			<small>ManaModifier</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.ManaModifier">
-			</div>
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col-xs-6">
-			<small>BaseVariance</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.BaseVariance">
-			</div>
-		  </div>
-		  <div class="col-xs-6">
-			<small>RangeVariance</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.RangeVariance">
-			</div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-xs-4 borders">
-		<div class="row">
-		  <div class="col-xs-12">
-			<h5 class="text-center">Behavior</h5>
-			<small>AIName</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.AIName">
-			</div>
-		  </div>
-		  <div class="col-xs-10">
-			<small>MovementType</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.MovementType">
-			  <div class="input-group-btn">
-				<button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'MovementType')">...</button>
-			  </div>
-			</div>
-		  </div>
-		  <div class="col-xs-12">
-			<small>movementId</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.movementId">
-			</div>
-		  </div>
-		  <div class="col-xs-10">
-			<small>InhabitType</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.InhabitType">
-			  <div class="input-group-btn">
-				<button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/inhabit-type.html', new_creature_template, 'InhabitType', 3)">...</button>
-			  </div>
-			</div>
-		  </div>
-		  <div class="col-xs-12">
-			<small>HoverHeight</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.HoverHeight">
-			</div>
-		  </div>
-		  <div class="col-xs-12">
-			<small>gossip_menu_id</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.gossip_menu_id">
-			</div>
-		  </div>
-		  <div class="col-xs-12">
-			<small>ScriptName</small>
-			<div class="input-group">
-			  <input class="form-control input-xs" type="text" ng-model="new_creature_template.ScriptName">
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
+        <br>
+        <div class="borders">
+          <div class="row">
+            <h5 class="text-center">Spell</h5>
+            <div class="col-xs-6">
+              <small>spell1</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.spell1">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell1', 'dbc/spells')">...</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <small>spell2</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.spell2">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell2', 'dbc/spells')">...</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <small>spell3</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.spell3">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell3', 'dbc/spells')">...</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <small>spell4</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.spell4">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell4', 'dbc/spells')">...</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <small>spell5</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.spell5">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell5', 'dbc/spells')">...</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <small>spell6</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.spell6">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell6', 'dbc/spells')">...</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <small>spell7</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.spell7">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell7', 'dbc/spells')">...</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <small>spell8</small>
+              <div class="input-group">
+                <input class="form-control input-xs" type="text" ng-model="new_creature_template.spell8">
+                <div class="input-group-btn">
+                  <button class="btn btn-info input-xs" ng-click="openSearchModal(new_creature_template, 'spell8', 'dbc/spells')">...</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 borders">
+        <div class="row">
+          <h5 class="text-center">Modifiers</h5>
+          <div class="col-xs-6">
+            <small>ArmorModifier</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.ArmorModifier">
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <small>scale</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.scale">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <small>speed_walk</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.speed_walk">
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <small>speed_run</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.speed_run">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <small>ExperienceModifier</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.ExperienceModifier">
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <small>DamageModifier</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.DamageModifier">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <small>HealthModifier</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.HealthModifier">
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <small>ManaModifier</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.ManaModifier">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <small>BaseVariance</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.BaseVariance">
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <small>RangeVariance</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.RangeVariance">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 borders">
+        <div class="row">
+          <div class="col-xs-12">
+            <h5 class="text-center">Behavior</h5>
+            <small>AIName</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.AIName">
+            </div>
+          </div>
+          <div class="col-xs-10">
+            <small>MovementType</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.MovementType">
+              <div class="input-group-btn">
+                <button class="btn btn-info input-xs" ng-click="openValueModal(new_creature_template, 'MovementType')">...</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <small>movementId</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.movementId">
+            </div>
+          </div>
+          <div class="col-xs-10">
+            <small>InhabitType</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.InhabitType">
+              <div class="input-group-btn">
+                <button class="btn btn-info input-xs" ng-click="openFlagModal('partials/creature/modals/inhabit-type.html', new_creature_template, 'InhabitType', 3)">...</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <small>HoverHeight</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.HoverHeight">
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <small>gossip_menu_id</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.gossip_menu_id">
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <small>ScriptName</small>
+            <div class="input-group">
+              <input class="form-control input-xs" type="text" ng-model="new_creature_template.ScriptName">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-2 col-xs-offset-8">
-	<button class="btn btn-primary" ng-click="openFullScriptModal(new_creature_template, 'creature_template', 'entry')">FULL SQL Script</button>
+    <button class="btn btn-primary" ng-click="openFullScriptModal(new_creature_template, 'creature_template', 'entry')">FULL SQL Script</button>
   </div>
   <div class="col-xs-2">
-	<button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
+    <button class="btn btn-success" ng-click="openScriptTab()">UPDATE SQL Script</button>
   </div>
 </div>
 <br><br><br><br>

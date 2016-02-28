@@ -1,32 +1,32 @@
 <div class="row">
   <br>
   <form>
-	<div class="form-group col-xs-2">
-	  <label class="control-label">guid</label>
-	  <input class="form-control" type="text" placeholder="Character GUID" pattern="[0-9]{1,}" title="Please enter a GUID!" ng-model="char.guid">
-	</div>
-	<div class="form-group col-xs-3">
-	  <label class="control-label">Name</label>
-	  <input class="form-control" type="text" placeholder="Character Name (case sensitive)" ng-model="char.name">
-	</div>
-	<div class="col-xs-1">
-	  <button type="submit" class="btn btn-primary" ng-click="search(char.guid, char.name)" style="margin-top: 25px">Search</button>
-	</div>
+    <div class="form-group col-xs-2">
+      <label class="control-label">guid</label>
+      <input class="form-control" type="text" placeholder="Character GUID" pattern="[0-9]{1,}" title="Please enter a GUID!" ng-model="char.guid">
+    </div>
+    <div class="form-group col-xs-3">
+      <label class="control-label">Name</label>
+      <input class="form-control" type="text" placeholder="Character Name (case sensitive)" ng-model="char.name">
+    </div>
+    <div class="col-xs-1">
+      <button type="submit" class="btn btn-primary" ng-click="search(char.guid, char.name)" style="margin-top: 25px">Search</button>
+    </div>
   </form>
 
 </div>
 <br>
 <table class="table table-striped table-condensed" style="max-width: 420px" ts-wrapper>
   <thead>
-	<th class="text-center" ts-criteria="guid|parseInt">guid</th>
-	<th class="text-center" ts-criteria="name|lowercase">name</th>
-	<th class="text-center" ts-criteria="account|parseInt">account</th>
+    <th class="text-center" ts-criteria="guid|parseInt">guid</th>
+    <th class="text-center" ts-criteria="name|lowercase">name</th>
+    <th class="text-center" ts-criteria="account|parseInt">account</th>
   </thead>
   <tbody>
-	<tr ng-repeat="character in characters" ts-repeat>
-	  <td><a ng-href="./#/character/{{ character.guid }}">{{ character.guid }}</a></td>
-	  <td><a ng-href="./#/character/{{ character.guid }}">{{ character.name }}</a></td>
-	  <td>{{ character.account }}</td>
-	</tr>
+    <tr ng-repeat="character in characters" ts-repeat>
+      <td><a ng-href="./#/character/{{ character.guid }}">{{ character.guid }}</a></td>
+      <td><a ng-href="./#/character/{{ character.guid }}">{{ character.name }}</a></td>
+      <td>{{ character.account }}</td>
+    </tr>
   </tbody>
 </table>

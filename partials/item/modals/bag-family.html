@@ -3,16 +3,16 @@
 </div>
 <div class="modal-body modal-overflow">
   <table class="table table-striped table-condensed">
-	<thead>
-	  <th class="text-left">ID</th>
-	  <th class="text-left">Value</th>
-	</thead>
-	<tbody>
-	  <tr ng-repeat="bagFamily in constants.bagFamily" ng-click="selectModalRow(bagFamily.id)" ng-class="{'tr-selected': bagFamily.id == selectedRow}" ng-show="bagFamily.id !== NULL">
-		<td>{{ bagFamily.id}}</td>
-		<td>{{ bagFamily.name }}</td>
-	  </tr>
-	</tbody>
+    <thead>
+      <th class="text-left">ID</th>
+      <th class="text-left">Value</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="bagFamily in constants.bagFamily" ng-click="selectModalRow(bagFamily.id)" ng-class="{'tr-selected': bagFamily.id == selectedRow}" ng-show="bagFamily.id !== NULL">
+        <td>{{ bagFamily.id}}</td>
+        <td>{{ bagFamily.name }}</td>
+      </tr>
+    </tbody>
   </table>
 </div>
 <div class="modal-footer">

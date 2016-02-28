@@ -1,31 +1,31 @@
 <div class="row">
   <br>
   <form>
-	<div class="form-group col-xs-2">
-	  <label class="control-label">Entry</label>
-	  <input class="form-control" type="text" placeholder="Quest Id" pattern="[0-9]{1,}" title="Please enter an Id!" ng-model="quest_template.ID">
-	</div>
-	<div class="form-group col-xs-3">
-	  <label class="control-label">Name</label>
-	  <input class="form-control" type="text" placeholder="Quest Title" ng-model="quest_template.LogTitle">
-	</div>
-	<div class="col-xs-1">
-	  <button type="submit" class="btn btn-primary" ng-click="search(quest_template.ID, quest_template.LogTitle)" style="margin-top: 25px">Search</button>
-	</div>
+    <div class="form-group col-xs-2">
+      <label class="control-label">Entry</label>
+      <input class="form-control" type="text" placeholder="Quest Id" pattern="[0-9]{1,}" title="Please enter an Id!" ng-model="quest_template.ID">
+    </div>
+    <div class="form-group col-xs-3">
+      <label class="control-label">Name</label>
+      <input class="form-control" type="text" placeholder="Quest Title" ng-model="quest_template.LogTitle">
+    </div>
+    <div class="col-xs-1">
+      <button type="submit" class="btn btn-primary" ng-click="search(quest_template.ID, quest_template.LogTitle)" style="margin-top: 25px">Search</button>
+    </div>
   </form>
 </div>
 <br>
 <table class="table table-striped table-condensed" ts-wrapper>
   <thead>
-	<th class="text-center" ts-criteria="ID|parseInt">ID</th>
-	<th class="text-center" ts-criteria="LogTitle|lowercase">LogTitle</th>
-	<th class="text-center" ts-criteria="QuestDescription|lowercase">QuestDescription</th>
+    <th class="text-center" ts-criteria="ID|parseInt">ID</th>
+    <th class="text-center" ts-criteria="LogTitle|lowercase">LogTitle</th>
+    <th class="text-center" ts-criteria="QuestDescription|lowercase">QuestDescription</th>
   </thead>
   <tbody>
-	<tr ng-repeat="quest in quests" ts-repeat>
-	  <td><a ng-href="./#/quest/{{ quest.ID }}">{{ quest.ID }}</a></td>
-	  <td><a ng-href="./#/quest/{{ quest.ID }}">{{ quest.LogTitle }}</a></td>
-	  <td>{{ quest.QuestDescription | limitTo: 100 }}</td>
-	</tr>
+    <tr ng-repeat="quest in quests" ts-repeat>
+      <td><a ng-href="./#/quest/{{ quest.ID }}">{{ quest.ID }}</a></td>
+      <td><a ng-href="./#/quest/{{ quest.ID }}">{{ quest.LogTitle }}</a></td>
+      <td>{{ quest.QuestDescription | limitTo: 100 }}</td>
+    </tr>
   </tbody>
 </table>

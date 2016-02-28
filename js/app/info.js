@@ -8,60 +8,60 @@
 
   app.controller("InfoController", function ($scope, $http) {
 
-	// Eventual error message
-	$scope.errorText = "";
+    // Eventual error message
+    $scope.errorText = "";
 
-	// Keira version
-	$scope.keiraVersion = "DEV";
-	$scope.keiraTag     = "v" + $scope.keiraVersion;
+    // Keira version
+    $scope.keiraVersion = "DEV";
+    $scope.keiraTag     = "v" + $scope.keiraVersion;
 
-	// API min required version
-	$scope.apiRequiredVersion = 0.6;
+    // API min required version
+    $scope.apiRequiredVersion = 0.6;
 
-	// API version
-	$http.get(app.api + "api")
-	  .success(function (data, status, header, config) {
-	  $scope.apiVersion = data.api_version;
-	  $scope.apiBranch  = data.api_branch;
+    // API version
+    $http.get(app.api + "api")
+      .success(function (data, status, header, config) {
+      $scope.apiVersion = data.api_version;
+      $scope.apiBranch  = data.api_branch;
 
-	  if (parseFloat($scope.apiVersion, 10) < parseFloat($scope.apiRequiredVersion, 10)) {
-		$scope.errorText = "ERROR: Your TrinityCore JSON API version is " + $scope.apiVersion + ", but Keira2 requires version " + $scope.apiRequiredVersion + ". Please update your API.";
-	  }
-	})
-	  .error(function (data, status, header, config) {
-	  $scope.errorText = "ERROR: API not found, please edit your config.js file and set the path of your TrinityCore JSON API istance.";
-	  console.log("[ERROR] /api/ $http.get request failed");
-	});
+      if (parseFloat($scope.apiVersion, 10) < parseFloat($scope.apiRequiredVersion, 10)) {
+        $scope.errorText = "ERROR: Your TrinityCore JSON API version is " + $scope.apiVersion + ", but Keira2 requires version " + $scope.apiRequiredVersion + ". Please update your API.";
+      }
+    })
+      .error(function (data, status, header, config) {
+      $scope.errorText = "ERROR: API not found, please edit your config.js file and set the path of your TrinityCore JSON API istance.";
+      console.log("[ERROR] /api/ $http.get request failed");
+    });
 
-	// Database world version
-	$http.get(app.api + "version")
-	  .success(function (data, status, header, config) {
-	  $scope.databaseVersion  = data[0].db_version;
-	  $scope.coreVersion      = data[0].core_version;
-	  $scope.coreRevision     = data[0].core_revision;
-	})
-	  .error(function (data, status, header, config) {
-	  console.log("[ERROR] /version/ $http.get request failed");
-	});
+    // Database world version
+    $http.get(app.api + "version")
+      .success(function (data, status, header, config) {
+      $scope.databaseVersion  = data[0].db_version;
+      $scope.coreVersion      = data[0].core_version;
+      $scope.coreRevision     = data[0].core_revision;
+    })
+      .error(function (data, status, header, config) {
+      console.log("[ERROR] /version/ $http.get request failed");
+    });
 
-	// Check for newer versions
-	$scope.updateAvaialable = false;
+    // Check for newer versions
+    $scope.updateAvaialable = false;
 
-	if ($scope.keiraVersion != "DEV") {
-	  $http.get( "https://api.github.com/repos/Helias/Keira2/releases" )
-		.success(function (data, status, header, config) {
+    if ($scope.keiraVersion != "DEV") {
+      $http.get( "https://api.github.com/repos/Helias/Keira2/releases" )
+        .success(function (data, status, header, config) {
 
-		var latestReleaseTag = data[0].tag_name;
+        var latestReleaseTag = data[0].tag_name;
 
-		if ($scope.keiraTag != latestReleaseTag) {
-		  $scope.updateAvaialable = true;
-		}
+        if ($scope.keiraTag != latestReleaseTag) {
+          $scope.updateAvaialable = true;
+        }
 
-	  })
-		.error(function (data, status, header, config) {
-		console.log("[ERROR] https://api.github.com/repos/Helias/Keira2/releases $http.get request failed");
-	  });
-	}
+      })
+        .error(function (data, status, header, config) {
+        console.log("[ERROR] https://api.github.com/repos/Helias/Keira2/releases $http.get request failed");
+      });
+    }
 
   });
 
