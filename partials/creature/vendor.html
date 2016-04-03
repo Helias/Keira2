@@ -32,7 +32,12 @@
     <div class="row">
       <div class="col-xs-3">
         <small>ExtendedCost</small>
-        <input class="form-control input-xs" type="text" ng-model="selected.ExtendedCost">
+        <div class="input-group">
+          <input class="form-control input-xs" type="text" ng-model="selected.ExtendedCost">
+          <div class="input-group-btn">
+            <button class="btn btn-info input-xs" ng-click="openValueModal(selected, 'ExtendedCost')">...</button>
+          </div>
+        </div>
       </div>
       <div ng-show="version.name == '6.x'">
         <div class="col-xs-2">
