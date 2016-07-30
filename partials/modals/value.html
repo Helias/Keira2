@@ -9,7 +9,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="data in constants track by $index" id="{{ $index }}" ng-click="selectModalRow($index)" ng-class="{'tr-selected': $index == selectedRow}" ng-show="data !== NULL">
-        <td>{{ $index }}</td>
+        <td>{{ $index+modifier }}</td>
         <td>{{ data }}</td>
       </tr>
     </tbody>

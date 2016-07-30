@@ -61,8 +61,9 @@
    * params:
    *  - property: the field name of the table which the modal will return the value
    *  - constant: name of the constants (property of app.modalConstants[])
+   *  - modifier: an additional value to constant
    */
-  app.controller('ValueModalController', function ($scope, $uibModalInstance, property, constant) {
+  app.controller('ValueModalController', function ($scope, $uibModalInstance, property, constant, modifier) {
 
     var arr;
 
@@ -82,6 +83,8 @@
 
 
     $scope.modalTitle = property;
+
+    $scope.modifier = modifier;
 
     $scope.selectedRow = null;
 

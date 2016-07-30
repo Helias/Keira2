@@ -69,18 +69,15 @@
      * object      => new_tablename the object responsible of the table (example: new_creature_template)
      * property    => field of the table to modify (example: npcflag)
      * numValues   => number of the total values (flag) of the property
-     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
      */
-    $rootScope.openFlagModal = function (TemplateUrl, object, property, numValues, size) {
+    $rootScope.openFlagModal = function (TemplateUrl, object, property, numValues) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
-
-      if (size == null) { size = ''; }
 
       var modalInstance = $uibModal.open({
         templateUrl: TemplateUrl,
         controller: "FlagModalController",
-        size: size,
+        size: '',
         resolve: {
           propertyVal: function () {
             return object[property];
@@ -105,39 +102,41 @@
     /* Modal to handle generic values:
      * object      => new_tablename the object responsible of the table (example: new_creature_template)
      * property    => field of the table to modify (example: npcflag)
-     * numValues   => number of the total values (flag) of the property
      * constant    => name of the constant that will be passed to ValueModalController
-     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
+     * modifier    => an additional value to constant
      */
-    $rootScope.openValueModal = function (object, property, constant, size) {
+    $rootScope.openValueModal = function (object, property, constant, modifier) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
 
-      if(constant == null) {
+      if (constant == null) {
         constant = property;
       }
 
-      if(size == null) {
-        size = ''; // default size
+      if (modifier == null) {
+        modifier = 0;
       }
 
       var modalInstance = $uibModal.open({
         templateUrl: "partials/modals/value.html",
         controller: "ValueModalController",
-        size: size,
+        size: '',
         resolve: {
           property: function () {
             return property;
           },
           constant: function () {
             return constant;
+          },
+          modifier: function () {
+            return modifier;
           }
         }
       });
 
       // When the modal will be closed this function takes the new value to assign
       modalInstance.result.then(function (Res) {
-        object[property] = Res;
+        object[property] = Res + modifier;
       });
 
     };
@@ -145,26 +144,20 @@
     /* Modal to handle generic values:
      * object      => new_tablename the object responsible of the table (example: new_creature_template)
      * property    => field of the table to modify (example: npcflag)
-     * numValues   => number of the total values (flag) of the property
      * constant    => name of the constant that will be passed to ValueModalController
-     * size        => size of the modal (example: '', 'sm', 'lg'), '' is the default size
      */
-    $rootScope.openBagFamilyModal = function (object, property, constant, size) {
+    $rootScope.openBagFamilyModal = function (object, property, constant) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
 
-      if(constant == null) {
+      if (constant == null) {
         constant = property;
-      }
-
-      if(size == null) {
-        size = ''; // default size
       }
 
       var modalInstance = $uibModal.open({
         templateUrl: "partials/item/modals/bag-family.html",
         controller: "BagFamilyModalController",
-        size: size,
+        size: '',
         resolve: {
           property: function () {
             return property;
@@ -182,7 +175,7 @@
 
     };
 
-    $rootScope.openSearchModal = function (object, property, search_param, size) {
+    $rootScope.openSearchModal = function (object, property, search_param) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
 
@@ -193,7 +186,7 @@
       var modalInstance = $uibModal.open({
         templateUrl: "partials/modals/search.html",
         controller: "SearchModalController",
-        size: size,
+        size: '',
         resolve: {
           property: function () {
             return property;
@@ -211,14 +204,14 @@
 
     };
 
-    $rootScope.openUnusuedGuidModal = function (object, property, table, size) {
+    $rootScope.openUnusuedGuidModal = function (object, property, table) {
 
       if ( !$rootScope.isEntrySelected() ) { return; }
 
       var modalInstance = $uibModal.open({
         templateUrl: "partials/modals/unusued-guid-search.html",
         controller: "UnusuedGuidModalController",
-        size: size,
+        size: '',
         resolve: {
           property: function () {
             return property;
