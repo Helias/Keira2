@@ -41,6 +41,10 @@ If you have the TrinityCore JSON API on an external machine, you should set it l
 - Report any bug or suggestion by [opening a new issue](https://github.com/Helias/Keira2/issues/new).
 - Check our [documentation](https://github.com/Helias/Keira2/wiki) to understand how the source is structured.
 
+or you can donate to support us
+
+[![Donate](https://www.paypal.com/en_GB/i/btn/btn_donateCC_LG.gif "Donate")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=52AZFFD86N39Q)
+
 ### License
 
 Keira2 is open-sourced software licensed under the [GNU AGPL license](https://github.com/Helias/Keira2/blob/master/LICENSE).
