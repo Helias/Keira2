@@ -848,7 +848,7 @@
             }
           }
 
-          Array.reverse(arrayOfSplitPhases); //! Reverse them so they are ascending
+          arrayOfSplitPhases.reverse(); //! Reverse them so they are ascending
           fullLine += " (Phase";
 
           if (arrayOfSplitPhases.length > 1) {
