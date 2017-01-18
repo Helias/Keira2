@@ -286,6 +286,7 @@
   app.saiLabels.target_type.name[24] = "THREAT_LIST";
   app.saiLabels.target_type.name[25] = "CLOSEST_ENEMY";
   app.saiLabels.target_type.name[26] = "CLOSEST_FRIENDLY";
+  app.saiLabels.target_type.name[27] = "LOOT_RECIPIENTS";
 
   /* ACTION TOOLTIPS */
   app.saiLabels.action_type.tooltip[0]   = "No action type is specified. Do not use because it will cause errors on start-up.";
@@ -499,6 +500,7 @@
   app.saiLabels.target_type.tooltip[24] = "Targets the entire threatlist of the creature";
   app.saiLabels.target_type.tooltip[25] = "Takes the closest unfriendly unit (both creatures and players) within a given distance. If second parameter is set to 1, it will only target nearby friendly players";
   app.saiLabels.target_type.tooltip[26] = "Takes the closest friendly unit (both creatures and players) within a given distance. If second parameter is set to 1, it will only target nearby friendly players";
+  app.saiLabels.target_type.tooltip[27] = "All tagging players";
 
   /* ACTION PARAM1 NAMES */
   app.saiLabels.action_type.param1[1]   = "GroupId";

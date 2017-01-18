@@ -379,7 +379,8 @@
     THREAT_LIST : 24,
     CLOSEST_ENEMY : 25,
     CLOSEST_FRIENDLY : 26,
-    MAX : 27
+    LOOT_RECIPIENTS : 27,
+    MAX : 28
   };
 
   /* SAI template constants */
