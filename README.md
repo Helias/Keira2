@@ -43,7 +43,7 @@ If you have the TrinityCore JSON API on an external machine, you should set it l
 
 or you can donate to support us
 
-[![Donate](https://www.paypal.com/en_GB/i/btn/btn_donateCC_LG.gif "Donate")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=52AZFFD86N39Q)
+[![Donate](https://www.paypal.com/en_GB/i/btn/btn_donateCC_LG.gif "Donate")](https://www.paypal.me/Stefano303)
 
 ### License
 
