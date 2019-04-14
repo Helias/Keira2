@@ -1,3 +1,7 @@
+### News from Keira's authors
+
+- Heads up! [Keira3 is coming...](https://github.com/azerothcore/forum/issues/21)
+
 ## Keira2 the TrinityCore Database Web-Editor
 
 This software is a Database Editor web application for the [TrinityCore MMORPG framework](https://github.com/TrinityCore/TrinityCore) built with [AngularJS](https://angularjs.org/) and using the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/) to retrieve database data.
