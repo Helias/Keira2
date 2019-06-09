@@ -1,6 +1,8 @@
 ### News from Keira's authors
 
-- Heads up! [Keira3 is coming...](https://github.com/azerothcore/forum/issues/21)
+- Keira2 is no longer mantained and it has been replaced by [Keira3](https://github.com/azerothcore/Keira3)
+
+------------------
 
 ## Keira2 the TrinityCore Database Web-Editor
 
