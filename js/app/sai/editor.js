@@ -57,6 +57,9 @@
       target_o          : 0.0,
       comment           : ''
     };
+    
+     /* Default new row */
+
 
     /* Type check */
     $scope.parseValues = function() {
@@ -117,9 +120,99 @@
       if (!$rootScope.isEntrySelected()) { return; }
 
       var newRow = angular.copy($scope.defaultNewRow);
-      newRow.id = rows.length;
+      
+      var lastrow = rows.length-1;
+      
+            try{ 
+             if($scope.new_smart_scripts[lastrow].id >=0)
+             {  
+
+                newRow.id = $scope.new_smart_scripts[lastrow].id+1;
+                console.log(newRow.id);
+             }
+             else
+             {
+               newRow.id = rows.length+1;  
+               console.log(newRow.id);
+             }   
+            }
+            catch(err)
+            {
+
+            }
+    
+        
+ 
+      rows.splice(rows.length, 0, angular.copy(newRow));
+    };
+    
+    /* [Function] Duplicate row to collection */
+    $scope.duplicate = function(rows) {
+       if (!$rootScope.isEntrySelected() || $scope.selectedRow == -1) { return; } 
+       
+            $scope.duplicateNewRow = {
+                entryorguid       : parseInt($stateParams.entryOrGuid, 10),
+                source_type       : parseInt($stateParams.sourceType, 10),
+                id                : 0,
+                link              : parseInt($scope.selected.link, 10),
+                event_type        : parseInt($scope.selected.event_type, 10),
+                event_phase_mask  : parseInt($scope.selected.event_phase_mask, 10),
+                event_chance      : parseInt($scope.selected.event_chance, 10),
+                event_flags       : parseInt($scope.selected.event_flags, 10),
+                event_param1      : parseInt($scope.selected.event_param1, 10),
+                event_param2      : parseInt($scope.selected.event_param2, 10),
+                event_param3      : parseInt($scope.selected.event_param3, 10),
+                event_param4      : parseInt($scope.selected.event_param4, 10),
+                action_type       : parseInt($scope.selected.action_type, 10),
+                action_param1     : parseInt($scope.selected.action_param1, 10),
+                action_param2     : parseInt($scope.selected.action_param2, 10),
+                action_param3     : parseInt($scope.selected.action_param3, 10),
+                action_param4     : parseInt($scope.selected.action_param4, 10),
+                action_param5     : parseInt($scope.selected.action_param5, 10),
+                action_param6     : parseInt($scope.selected.action_param6, 10),
+                target_type       : parseInt($scope.selected.target_type, 10),
+                target_param1     : parseInt($scope.selected.target_param1, 10),
+                target_param2     : parseInt($scope.selected.target_param2, 10),
+                target_param3     : parseInt($scope.selected.target_param3, 10),
+                target_x          : parseFloat($scope.selected.target_x, 10),
+                target_y          : parseFloat($scope.selected.target_y, 10),
+                target_z          : parseFloat($scope.selected.target_z, 10),
+                target_o          : parseFloat($scope.selected.target_o, 10),
+                comment           : ''
+              };
+       
+      var newRow = angular.copy($scope.duplicateNewRow);
+      
+           var lastrow = rows.length-1;
+      
+            try{ 
+             if($scope.new_smart_scripts[lastrow].id >=0)
+             {  
+
+                newRow.id = $scope.new_smart_scripts[lastrow].id+1;
+                console.log(newRow.id);
+             }
+             else
+             {
+               newRow.id = rows.length+1;  
+               console.log(newRow.id);
+             }   
+            }
+            catch(err)
+            {
+
+            }
 
       rows.splice(rows.length, 0, angular.copy(newRow));
+    };
+    
+    /* [Function] Reload Page */
+    $scope.Reload = function() {
+     window.location.reload(); 
+    };
+    
+    $scope.SaveToDatabase = function() {
+       $scope.generateSAIScript();
     };
 
     /* [Function] Get string by target_type */

@@ -250,9 +250,12 @@
 </div>
 <br>
 <div class="row">
-  <div class="col-xs-4">
+  <div class="col-xs-8">
     <button class="btn btn-danger" ng-click="deleteSelectedRowFrom(new_smart_scripts)" ng-disabled="selectedRow == -1"><i class="glyphicon glyphicon-remove"></i> Delete selected row</button>
     <button class="btn btn-success" ng-click="addNewRow(new_smart_scripts)"><i class="glyphicon glyphicon-plus"></i> Add new row</button>
+    <button class="btn btn" ng-click="duplicate(new_smart_scripts)"><i class="glyphicon glyphicon-refresh"></i> Duplicate</button> 
+    <button class="btn btn" ng-click="Reload(new_smart_scripts)"><i class="glyphicon glyphicon-refresh"></i> Refresh</button> 
+    <button class="btn btn-primary" ng-click="SaveToDatabase(new_smart_scripts)"><i class="glyphicon glyphicon-upload"></i> Upload</button>
   </div>
   <div class="col-xs-2 pull-right">
     <button class="btn btn-primary pull-right" ng-click="openScriptTab()">FULL SmartAI Script</button>
