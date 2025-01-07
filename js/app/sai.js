@@ -277,7 +277,9 @@
         return;
       }
 
-      $scope.SAIScript = "-- " + $scope.selectionText + "\n\n";
+     // $scope.SAIScript = "-- " + $scope.selectionText + "\n\n";
+
+     $scope.SAIScript = "SQL = ";
 
       // non-smart_scripts data
       switch (Number($stateParams.sourceType)) {
@@ -306,6 +308,22 @@
       } else {
         $scope.SAIScript += "DELETE FROM `smart_scripts` WHERE (`source_type` = " + $stateParams.sourceType + " AND `entryorguid` = " + $stateParams.entryOrGuid + ");\n";
       }
+      
+
+      
+      $http({
+          method  : 'POST',
+          url     : 'http://localhost/dev/sai_parser.php',
+          data    :  $scope.SAIScript, //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+          .success(function(data) {  
+
+                }
+             );
+
+
+         // console.log($scope.SAIScript);
     };
 
     /* [Function] disactive all tabs */
@@ -321,6 +339,8 @@
       $scope.generateSAIScript();
       $scope.saiTabs.script = true;
     };
+
+
 
   });
 
