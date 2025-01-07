@@ -1,6 +1,7 @@
-### News from Keira's authors
-
-- Keira2 is no longer mantained and it has been replaced by [Keira3](https://github.com/azerothcore/Keira3)
+> [!IMPORTANT]  
+> Keira2 is no longer being mantained and has been archived by the Keira's authors as for: 16th of June, 2019.
+> 
+> Keira development has moved from [TrinityCore](https://github.com/TrinityCore/TrinityCore) ([Keira2](https://github.com/Helias/Keira2)) to [AzerothCore](https://github.com/azerothcore/azerothcore-wotlk) ([Keira3](https://github.com/azerothcore/Keira3))
 
 ------------------
 
@@ -18,7 +19,7 @@ Also you can change the GUI style choosing a different **graphic theme** using t
 
 ## Live demo
 
-A live demo is available [here](http://shinworld.altervista.org/Keira2/). You can use it for production but be aware that its database may not be updated to the latest version.
+A live demo is available [here](https://keira2.altervista.org/Keira2-dev/). You can use it for production but be aware that its database may not be updated to the latest version. (Current Version: [TDB](https://github.com/TrinityCore/TrinityCore/issues/14421) 335.59)
 
 Also you can **help us** by testing the development version **without installing it**, simply using our [development live demo](http://keira2.altervista.org/Keira2-dev/). Remember to **clear your browser cache** before testing it and [report any bug or suggestion](https://github.com/Helias/Keira2/issues/new).
 
