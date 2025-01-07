@@ -16,7 +16,7 @@
     $scope.keiraTag     = "v" + $scope.keiraVersion;
 
     // API min required version
-    $scope.apiRequiredVersion = 0.6;
+    $scope.apiRequiredVersion = 0.8;
 
     // API version
     $http.get(app.api + "api")
@@ -35,10 +35,10 @@
 
     // Database world version
     $http.get(app.api + "version")
-      .success(function (data, status, header, config) {
-      $scope.databaseVersion  = data[0].db_version;
-      $scope.coreVersion      = data[0].core_version;
-      $scope.coreRevision     = data[0].core_revision;
+      .success(function (response, status, header, config) {
+      $scope.databaseVersion  = response.db_version;
+      $scope.coreVersion      = response.core_version;
+      $scope.coreRevision     = response.core_revision;
     })
       .error(function (data, status, header, config) {
       console.log("[ERROR] /version/ $http.get request failed");
